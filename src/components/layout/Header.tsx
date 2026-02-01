@@ -6,25 +6,32 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navigation = [
-  { name: "About", href: "/about" },
+  {
+    name: "About",
+    href: "/about",
+    children: [
+      { name: "Our Mission", href: "/about" },
+      { name: "Our Team", href: "/team" },
+    ],
+  },
   {
     name: "For Leaders",
     href: "/for-leaders",
-    children: [
-      { name: "Join the Network", href: "/for-leaders/join" },
-      { name: "Mentoring Program", href: "/for-leaders/mentoring" },
-      { name: "Events", href: "/events" },
-      { name: "Resources", href: "/resources" },
-    ],
+    // children: [
+    //   { name: "Join the Network", href: "/for-leaders/join" },
+    //   { name: "Mentoring Program", href: "/for-leaders/mentoring" },
+    //   { name: "Events", href: "/events" },
+    //   { name: "Resources", href: "/resources" },
+    // ],
   },
   {
     name: "For Companies",
     href: "/for-companies",
-    children: [
-      { name: "Corporate Membership", href: "/for-companies/membership" },
-      { name: "Sponsorship", href: "/for-companies/sponsorship" },
-      { name: "Speaking Bureau", href: "/for-companies/speakers" },
-    ],
+    // children: [
+    //   { name: "Corporate Membership", href: "/for-companies/membership" },
+    //   { name: "Sponsorship", href: "/for-companies/sponsorship" },
+    //   { name: "Speaking Bureau", href: "/for-companies/speakers" },
+    // ],
   },
   { name: "Programs", href: "/programs" },
   { name: "News", href: "/news" },

@@ -16,6 +16,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://globalwomentechleaders.com"),
   title: {
     default: "Global Women TechLeaders | Empowering Women in Tech",
     template: "%s | GWTL",
