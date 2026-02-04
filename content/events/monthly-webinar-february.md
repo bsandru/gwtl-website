@@ -5,7 +5,7 @@ date: "2026-02-15"
 location: "Online (Zoom)"
 category: "Webinar"
 featured: false
-image: "/images/events/webinar-feb.jpg"
+image: "/images/events/event.jpg"
 registrationUrl: "https://example.com/register"
 ---
 

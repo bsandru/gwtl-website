@@ -5,6 +5,17 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
 import { WYSIWYGEditor } from "@/components/admin/Editor";
+import { DateRangePicker } from "@/components/ui/date-range-picker";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { ImageUpload } from "@/components/ui/image-upload";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface EventFormData {
   title: string;
@@ -102,7 +113,7 @@ export default function EditEventPage({
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="w-8 h-8 text-emerald-400 animate-spin" />
+        <Loader2 className="w-8 h-8 text-brand-teal animate-spin" />
       </div>
     );
   }
@@ -112,15 +123,15 @@ export default function EditEventPage({
       <div className="flex items-center gap-4 mb-8">
         <Link
           href="/admin/events"
-          className="p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+          className="p-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-lg transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="text-3xl font-bold text-white">
+          <h1 className="text-3xl font-bold text-foreground">
             {isNew ? "New Event" : "Edit Event"}
           </h1>
-          <p className="text-white/50 mt-1">
+          <p className="text-muted-foreground mt-1">
             {isNew ? "Create a new event" : `Editing: ${formData.title}`}
           </p>
         </div>
@@ -131,146 +142,128 @@ export default function EditEventPage({
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <label className="block text-sm font-medium text-white/70 mb-2">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Event Title
               </label>
-              <input
+              <Input
                 type="text"
                 value={formData.title}
                 onChange={(e) =>
                   setFormData({ ...formData, title: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 placeholder="Event title"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-white/70 mb-2">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Excerpt
               </label>
-              <textarea
+              <Textarea
                 value={formData.excerpt}
                 onChange={(e) =>
                   setFormData({ ...formData, excerpt: e.target.value })
                 }
                 rows={3}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
                 placeholder="Brief description of the event"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-white/70 mb-2">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Event Details
               </label>
               <WYSIWYGEditor
                 content={formData.content}
-                onChange={(html) => setFormData({ ...formData, content: html })}
+                onChange={(markdown) => setFormData({ ...formData, content: markdown })}
                 placeholder="Write the event details..."
               />
             </div>
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-              <h3 className="text-lg font-semibold text-white">Event Details</h3>
+          <div className="space-y-6 sticky top-6 self-start">
+            <div className="bg-card border border-border rounded-2xl p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-foreground">Event Details</h3>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">
-                    Start Date
-                  </label>
-                  <input
-                    type="date"
-                    value={formData.date}
-                    onChange={(e) =>
-                      setFormData({ ...formData, date: e.target.value })
-                    }
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">
-                    End Date
-                  </label>
-                  <input
-                    type="date"
-                    value={formData.endDate}
-                    onChange={(e) =>
-                      setFormData({ ...formData, endDate: e.target.value })
-                    }
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                  />
-                </div>
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Event Dates
+                </label>
+                <DateRangePicker
+                  from={formData.date}
+                  to={formData.endDate}
+                  onChange={(from, to) =>
+                    setFormData({ ...formData, date: from, endDate: to })
+                  }
+                  placeholder="Select event dates"
+                />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
                   Location
                 </label>
-                <input
+                <Input
                   type="text"
                   value={formData.location}
                   onChange={(e) =>
                     setFormData({ ...formData, location: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                   placeholder="City, Country"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
                   Category
                 </label>
-                <select
+                <Select
                   value={formData.category}
-                  onChange={(e) =>
-                    setFormData({ ...formData, category: e.target.value })
+                  onValueChange={(value) =>
+                    setFormData({ ...formData, category: value })
                   }
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 >
-                  <option value="Conference">Conference</option>
-                  <option value="Webinar">Webinar</option>
-                  <option value="Workshop">Workshop</option>
-                  <option value="Meetup">Meetup</option>
-                  <option value="Summit">Summit</option>
-                </select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Conference">Conference</SelectItem>
+                    <SelectItem value="Webinar">Webinar</SelectItem>
+                    <SelectItem value="Workshop">Workshop</SelectItem>
+                    <SelectItem value="Meetup">Meetup</SelectItem>
+                    <SelectItem value="Summit">Summit</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
                   Registration URL
                 </label>
-                <input
+                <Input
                   type="url"
                   value={formData.registrationUrl}
                   onChange={(e) =>
                     setFormData({ ...formData, registrationUrl: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                   placeholder="https://example.com/register"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
-                  Featured Image URL
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Featured Image
                 </label>
-                <input
-                  type="text"
+                <ImageUpload
                   value={formData.image}
-                  onChange={(e) =>
-                    setFormData({ ...formData, image: e.target.value })
+                  onChange={(url) =>
+                    setFormData({ ...formData, image: url })
                   }
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                  placeholder="/images/events/example.jpg"
+                  placeholder="Click or drag event image"
                 />
               </div>
 
@@ -282,9 +275,9 @@ export default function EditEventPage({
                   onChange={(e) =>
                     setFormData({ ...formData, featured: e.target.checked })
                   }
-                  className="w-5 h-5 rounded bg-white/5 border-white/10 text-emerald-600 focus:ring-emerald-500"
+                  className="w-5 h-5 rounded bg-input border-border text-brand-teal focus:ring-brand-teal"
                 />
-                <label htmlFor="featured" className="text-white/70">
+                <label htmlFor="featured" className="text-muted-foreground">
                   Featured event
                 </label>
               </div>
@@ -293,7 +286,7 @@ export default function EditEventPage({
             <button
               type="submit"
               disabled={saving}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-600/50 text-white font-medium rounded-xl transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-brand-teal hover:bg-brand-teal-light disabled:bg-brand-teal/50 text-white font-medium rounded-xl transition-colors"
             >
               {saving ? (
                 <Loader2 className="w-5 h-5 animate-spin" />

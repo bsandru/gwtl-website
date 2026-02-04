@@ -5,6 +5,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
+import { Markdown } from "tiptap-markdown";
 import {
   Bold,
   Italic,
@@ -45,12 +46,12 @@ function MenuBar({ editor }: MenuBarProps) {
 
   const buttonClass = (active: boolean) =>
     `p-2 rounded transition-colors ${active
-      ? "bg-violet-600 text-white"
-      : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+      ? "bg-brand-teal text-white"
+      : "bg-accent text-muted-foreground hover:bg-muted hover:text-foreground"
     }`;
 
   return (
-    <div className="flex flex-wrap gap-1 p-3 border-b border-white/10 bg-white/5">
+    <div className="flex flex-wrap gap-1 p-3 border-b border-border bg-muted">
       <button
         type="button"
         onClick={() => editor.chain().focus().toggleBold().run()}
@@ -76,7 +77,7 @@ function MenuBar({ editor }: MenuBarProps) {
         <Code className="w-4 h-4" />
       </button>
 
-      <div className="w-px bg-white/10 mx-1" />
+      <div className="w-px bg-border mx-1" />
 
       <button
         type="button"
@@ -103,7 +104,7 @@ function MenuBar({ editor }: MenuBarProps) {
         <Heading3 className="w-4 h-4" />
       </button>
 
-      <div className="w-px bg-white/10 mx-1" />
+      <div className="w-px bg-border mx-1" />
 
       <button
         type="button"
@@ -138,7 +139,7 @@ function MenuBar({ editor }: MenuBarProps) {
         <Minus className="w-4 h-4" />
       </button>
 
-      <div className="w-px bg-white/10 mx-1" />
+      <div className="w-px bg-border mx-1" />
 
       <button
         type="button"
@@ -181,17 +182,23 @@ function MenuBar({ editor }: MenuBarProps) {
   );
 }
 
-interface WYSIWYGEditorProps {
+interface MarkdownEditorProps {
   content: string;
-  onChange: (html: string) => void;
+  onChange: (markdown: string) => void;
   placeholder?: string;
 }
 
-export function WYSIWYGEditor({
+/**
+ * Markdown WYSIWYG Editor
+ * 
+ * This editor accepts markdown content and outputs markdown.
+ * It uses Tiptap with the tiptap-markdown extension for markdown support.
+ */
+export function MarkdownEditor({
   content,
   onChange,
   placeholder = "Start writing...",
-}: WYSIWYGEditorProps) {
+}: MarkdownEditorProps) {
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [
@@ -203,7 +210,7 @@ export function WYSIWYGEditor({
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: "text-violet-400 underline",
+          class: "text-brand-teal underline",
         },
       }),
       Image.configure({
@@ -214,25 +221,48 @@ export function WYSIWYGEditor({
       Placeholder.configure({
         placeholder,
       }),
+      Markdown.configure({
+        html: false,
+        transformPastedText: true,
+        transformCopiedText: true,
+      }),
     ],
     content,
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML());
+      // Get content as markdown using the tiptap-markdown extension
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const markdownStorage = (editor.storage as any).markdown;
+      onChange(markdownStorage.getMarkdown());
     },
     editorProps: {
       attributes: {
         class:
-          "prose prose-invert prose-violet max-w-none min-h-[300px] p-4 focus:outline-none",
+          "prose max-w-none min-h-[300px] p-4 focus:outline-none",
       },
     },
   });
 
   return (
-    <div className="border border-white/10 rounded-xl overflow-hidden bg-black/20">
+    <div className="border border-border rounded-xl overflow-hidden bg-input/10">
       <MenuBar editor={editor} />
       <EditorContent editor={editor} />
     </div>
   );
 }
 
-export default WYSIWYGEditor;
+// Keep the old WYSIWYGEditor for backwards compatibility, but now it uses markdown
+export function WYSIWYGEditor({
+  content,
+  onChange,
+  placeholder = "Start writing...",
+}: MarkdownEditorProps) {
+  return (
+    <MarkdownEditor
+      content={content}
+      onChange={onChange}
+      placeholder={placeholder}
+    />
+  );
+}
+
+export default MarkdownEditor;
