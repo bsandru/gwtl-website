@@ -1,140 +1,199 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Users, Globe, Award, Sparkles } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 const stats = [
-  { label: "Members Worldwide", value: "10,000+", icon: Users },
-  { label: "Countries", value: "50+", icon: Globe },
-  { label: "Years of Impact", value: "9", icon: Award },
+  { value: "10K+", label: "Leaders" },
+  { value: "50+", label: "Countries" },
+  { value: "9", label: "Years" },
 ];
+
+const trustedBy = ["Google", "Microsoft", "Amazon", "Meta", "Oracle", "OpenAI", "Accenture", "Spotify", "Trimble", "KPMG"];
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-secondary-50">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-linear-to-br from-primary-50 via-secondary-50 to-white" />
+    <section className="relative min-h-screen overflow-hidden bg-[#fafafa]">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Large teal gradient blob */}
+        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-gradient-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
+
+        {/* Secondary blob */}
+        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
+
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-brand-teal/40 animate-float [animation-delay:0s]" />
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 rounded-full bg-brand-teal-light/50 animate-float [animation-delay:1s]" />
+        <div className="absolute bottom-1/3 left-1/3 w-4 h-4 rounded-full bg-brand-teal/30 animate-float [animation-delay:2s]" />
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-pattern-dots opacity-30" />
+      </div>
 
       {/* Main content */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div className="relative z-10">
-            {/* Badge */}
-            <div className="animate-fade-in-up inline-flex items-center gap-3 px-5 py-2.5 rounded-full shadow-lg mb-8 bg-white border border-secondary-200 opacity-0 [animation-delay:0.1s]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-brand-teal"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-teal"></span>
+      <div className="relative pt-30 lg:pt-36 pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Top badge */}
+          {/* <div className="flex justify-center mb-8 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
+            <div className="glass-badge inline-flex items-center gap-3 px-5 py-2.5 rounded-full">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal"></span>
               </span>
-              <span className="text-brand-navy text-sm font-medium">Featured at Davos 2026</span>
-              <Sparkles className="h-4 w-4 text-brand-teal" />
+              <span className="text-sm font-semibold text-brand-navy tracking-wide">
+                Featured at Davos 2026
+              </span>
             </div>
+          </div> */}
 
-            <h1 className="animate-fade-in-up font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] opacity-0 [animation-delay:0.2s]">
-              <span className="text-brand-navy">Where Balanced,</span>{" "}
-              <span className="text-brand-teal">AI-Powered Leadership</span>{" "}
-              <span className="text-brand-navy">Reshapes Tech</span>
+          {/* Main headline - Editorial style */}
+          <div className="text-center max-w-5xl mx-auto mb-8">
+            <h1 className="editorial-headline font-display animate-fade-in-up opacity-0 [animation-delay:0.2s]">
+              <span className="block text-brand-navy">Where AI-Powered Leadership and</span>
+              <span className="block gradient-text-hero leading-tight">Visionary Women</span>
+              <span className="block text-brand-navy">Reshape Tech</span>
             </h1>
+          </div>
 
-            <p className="animate-fade-in-up mt-8 text-lg sm:text-xl max-w-xl leading-relaxed text-secondary-600 opacity-0 [animation-delay:0.3s]">
-              Join a global network of senior women in technology. Learn, connect, and lead the future of tech through mentorship, events, and strategic partnerships.
-            </p>
+          {/* Subheadline */}
+          <p className="text-center text-lg sm:text-xl max-w-2xl mx-auto text-secondary-600 leading-relaxed mb-12 animate-fade-in-up opacity-0 [animation-delay:0.3s]">
+            Join a global network of 10,000+ senior women in technology.
+            Learn, connect, and lead the future of tech through mentorship,
+            events, and strategic partnerships.
+          </p>
 
-            {/* CTAs */}
-            <div className="animate-fade-in-up mt-10 flex flex-col sm:flex-row gap-4 opacity-0 [animation-delay:0.4s]">
-              <Link href="/for-leaders/join">
-                <button className="w-full sm:w-auto group h-16 px-10 text-lg rounded-2xl font-bold shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl inline-flex items-center justify-center bg-brand-teal text-white">
-                  Join Our Community
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-              <Link href="/for-companies">
-                <button className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl font-bold border-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg inline-flex items-center justify-center border-brand-navy text-brand-navy bg-transparent">
-                  Partner With Us
-                </button>
-              </Link>
-            </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
+            <Link href="/for-leaders/join">
+              <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold text-white overflow-hidden bg-brand-navy shadow-lg shadow-brand-navy/20">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Join the Community
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-teal to-brand-teal-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="magnetic-btn group h-14 px-8 rounded-2xl font-bold text-brand-navy border-2 border-brand-navy/10 hover:border-brand-teal/30 hover:bg-brand-teal/5 transition-all duration-300 flex items-center justify-center gap-2">
+                <Play className="h-4 w-4" />
+                Watch Our Story
+              </button>
+            </Link>
+          </div>
 
-            {/* Trust Badges */}
-            <div className="animate-fade-in-up mt-14 pt-10 border-t border-secondary-200 opacity-0 [animation-delay:0.5s]">
-              <p className="text-sm font-medium mb-5 uppercase tracking-wider text-secondary-500">Trusted by leaders from</p>
-              <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
-                {['Google', 'Microsoft', 'Amazon', 'Meta', 'SAP'].map((company) => (
-                  <span
-                    key={company}
-                    className="text-lg font-semibold hover:opacity-70 transition-opacity cursor-default text-secondary-400"
-                  >
-                    {company}
-                  </span>
-                ))}
+          {/* Stats row */}
+          <div className="flex justify-center gap-8 sm:gap-16 mb-20 animate-fade-in-up opacity-0 [animation-delay:0.5s]">
+            {stats.map((stat, idx) => (
+              <div key={stat.label} className="text-center">
+                <div className="font-display text-4xl sm:text-5xl font-bold gradient-text-teal leading-tight">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-secondary-500 mt-1 uppercase tracking-wider">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Hero Image Section */}
+          <div className="relative max-w-5xl mx-auto animate-fade-in-scale opacity-0 [animation-delay:0.6s]">
+            {/* Main image container with creative shape */}
+            <div>
+              {/* Glow effect behind image */}
+              {/* <div className="absolute -inset-4 bg-gradient-to-r from-brand-teal/20 via-brand-teal-light/20 to-brand-teal/20 rounded-[3rem] blur-2xl animate-glow-pulse" /> */}
+
+              {/* Main image */}
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-navy/10">
+                <div className="aspect-[16/9] relative">
+                  <Image
+                    src="https://images.unsplash.com/photo-1718866033984-c3ddab9af2a0?q=80&w=1024&auto=format&fit=crop&crop=faces"
+                    alt="Women tech leaders collaborating"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
+
+                  {/* Bottom content overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
+                    <div className="flex flex-wrap items-end justify-between gap-6">
+                      {/* Quote */}
+                      <div className="max-w-lg">
+                        <p className="text-white/90 text-lg sm:text-xl font-medium italic mb-3">
+                          "&quot;Empowering the next generation of tech leaders&quot;"
+                        </p>
+                        <p className="text-white/60 text-sm">
+                          — GWTL Global Mission
+                        </p>
+                      </div>
+
+                      {/* Floating action card */}
+                      <div className="glass-card-dark rounded-2xl p-4 sm:p-5">
+                        <div className="flex items-center gap-4">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
+                            <span className="text-xl font-bold text-white">26</span>
+                          </div>
+                          <div>
+                            <p className="text-white font-semibold">2026 Cohort</p>
+                            <p className="text-white/60 text-sm">Now accepting applications</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating stat cards */}
+              <div className="hidden lg:block absolute -left-16 top-1/4 animate-float [animation-delay:0.5s]">
+                <div className="glass-card rounded-2xl p-5 shadow-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
+                      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-brand-navy">500+</p>
+                      <p className="text-xs text-secondary-500">Active Mentors</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden lg:block absolute -right-12 bottom-1/4 animate-float-reverse [animation-delay:1s]">
+                <div className="glass-card rounded-2xl p-5 shadow-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-navy to-brand-navy-light flex items-center justify-center">
+                      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-brand-navy">50+</p>
+                      <p className="text-xs text-secondary-500">Countries</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Visual side */}
-          <div className="relative lg:h-[700px] animate-fade-in-scale opacity-0 [animation-delay:0.3s]">
-            {/* Main image container */}
-            <div className="relative h-[500px] lg:h-full">
-              {/* Background shape */}
-              <div className="absolute inset-4 rounded-[3rem] transform rotate-3 bg-linear-to-br from-brand-teal to-brand-navy" />
-
-              {/* Image container */}
-              <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=1000&fit=crop&crop=faces"
-                  alt="Women tech leaders collaborating"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-linear-to-t from-brand-navy/70 to-transparent" />
-              </div>
-
-              {/* Stats floating card */}
-              <div className="absolute -bottom-6 -left-6 lg:-left-12 rounded-3xl shadow-2xl p-6 lg:p-8 max-w-sm animate-float bg-white [animation-delay:1s]">
-                <h3 className="font-display text-xl font-bold mb-6 text-brand-navy">
-                  A Global Community of Impact
-                </h3>
-                <div className="space-y-4">
-                  {stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="flex items-center gap-4 p-3 rounded-xl transition-colors hover:scale-105 duration-300 bg-primary-50"
-                    >
-                      <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-linear-to-br from-brand-teal to-brand-teal-dark">
-                        <stat.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-brand-navy">
-                          {stat.value}
-                        </div>
-                        <div className="text-sm text-secondary-500">{stat.label}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Announcement floating card */}
-              <div className="absolute -top-4 -right-4 lg:-right-8 rounded-2xl shadow-xl p-5 max-w-xs animate-float bg-white [animation-delay:2s]">
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-full flex items-center justify-center shrink-0 animate-pulse bg-brand-teal">
-                    <Sparkles className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">
-                      2026 Leadership Cohort
-                    </p>
-                    <p className="text-xs mt-0.5 text-secondary-500">Program now open</p>
-                    <Link
-                      href="/programs/mentoring"
-                      className="inline-flex items-center mt-2 text-xs font-semibold hover:opacity-70 transition-opacity text-brand-teal"
-                    >
-                      Learn more <ArrowRight className="ml-1 h-3 w-3" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+          {/* Trusted by section */}
+          <div className="mt-20 pt-12 border-t border-secondary-200/50 animate-fade-in-up opacity-0 [animation-delay:0.7s]">
+            <p className="text-center text-sm font-medium uppercase tracking-widest text-secondary-400 mb-8">
+              Leaders from top companies trust GWTL
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+              {trustedBy.map((company) => (
+                <span
+                  key={company}
+                  className="text-xl font-bold text-secondary-300 hover:text-brand-teal transition-colors duration-300 cursor-default"
+                >
+                  {company}
+                </span>
+              ))}
             </div>
           </div>
         </div>

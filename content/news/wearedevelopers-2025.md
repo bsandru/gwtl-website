@@ -4,7 +4,7 @@ excerpt: "GWTL highlighted women's leadership in AI, hosting panels on inclusive
 date: "2025-07-20"
 category: "Events"
 featured: false
-image: "/images/news/wearedevelopers-2025.jpg"
+image: "/images/news/wearedevelopers-2025.svg"
 ---
 
 Global Women TechLeaders made a significant impact at the **WeAreDevelopers World Congress 2025** in Berlin, one of the largest developer conferences in the world.

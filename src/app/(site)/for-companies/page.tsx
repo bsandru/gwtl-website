@@ -88,7 +88,7 @@ const partnerBenefits = [
   "Dedicated partnership management",
 ];
 
-const partnerLogos = ["Google", "Microsoft", "Amazon", "SAP", "Accenture"];
+const partnerLogos = ["Google", "Microsoft", "Amazon", "SAP", "Accenture", "Stripe", "Spotify", "Trimble", "Etsy", "KPMG", "PayPal", "Salesforce", "VMware", "Wix", "Zoom"];
 
 export default function ForCompaniesPage() {
   return (
@@ -169,9 +169,6 @@ export default function ForCompaniesPage() {
             <div className="relative animate-fade-in-scale opacity-0 [animation-delay:0.3s]">
               {/* Main card */}
               <div className="relative bg-white rounded-5xl shadow-elegant-lg p-8 lg:p-10 border border-secondary-100">
-                {/* Decorative gradient line */}
-                <div className="absolute top-0 left-8 right-8 h-1 rounded-full bg-linear-to-r from-brand-teal via-violet-500 to-brand-navy" />
-
                 <div className="flex items-center gap-3 mb-8">
                   <div className="h-12 w-12 rounded-2xl bg-linear-to-br from-brand-teal to-brand-teal-dark flex items-center justify-center">
                     <Sparkles className="h-6 w-6 text-white" />
@@ -364,8 +361,6 @@ export default function ForCompaniesPage() {
                   </div>
                 </div>
 
-                {/* Decorative gradient */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-3xl bg-linear-to-r from-brand-teal via-violet-500 to-brand-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             ))}
           </div>

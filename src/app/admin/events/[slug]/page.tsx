@@ -1,0 +1,310 @@
+"use client";
+
+import { useState, useEffect, use } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { ArrowLeft, Save, Loader2 } from "lucide-react";
+import { WYSIWYGEditor } from "@/components/admin/Editor";
+
+interface EventFormData {
+  title: string;
+  excerpt: string;
+  date: string;
+  endDate: string;
+  location: string;
+  category: string;
+  featured: boolean;
+  image: string;
+  registrationUrl: string;
+  content: string;
+}
+
+export default function EditEventPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = use(params);
+  const router = useRouter();
+  const isNew = slug === "new";
+
+  const [loading, setLoading] = useState(!isNew);
+  const [saving, setSaving] = useState(false);
+  const [formData, setFormData] = useState<EventFormData>({
+    title: "",
+    excerpt: "",
+    date: new Date().toISOString().split("T")[0],
+    endDate: "",
+    location: "",
+    category: "Conference",
+    featured: false,
+    image: "",
+    registrationUrl: "",
+    content: "",
+  });
+
+  useEffect(() => {
+    if (!isNew) {
+      fetch(`/api/admin/events/${slug}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.error) {
+            alert("Event not found");
+            router.push("/admin/events");
+            return;
+          }
+          setFormData({
+            title: data.title || "",
+            excerpt: data.excerpt || "",
+            date: data.date || new Date().toISOString().split("T")[0],
+            endDate: data.endDate || "",
+            location: data.location || "",
+            category: data.category || "Conference",
+            featured: data.featured || false,
+            image: data.image || "",
+            registrationUrl: data.registrationUrl || "",
+            content: data.content || "",
+          });
+          setLoading(false);
+        })
+        .catch(() => {
+          alert("Failed to load event");
+          router.push("/admin/events");
+        });
+    }
+  }, [slug, isNew, router]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSaving(true);
+
+    try {
+      const response = await fetch(`/api/admin/events/${isNew ? "new" : slug}`, {
+        method: isNew ? "POST" : "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        router.push("/admin/events");
+      } else {
+        alert(result.error || "Failed to save");
+      }
+    } catch {
+      alert("Failed to save event");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="w-8 h-8 text-emerald-400 animate-spin" />
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="flex items-center gap-4 mb-8">
+        <Link
+          href="/admin/events"
+          className="p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5" />
+        </Link>
+        <div>
+          <h1 className="text-3xl font-bold text-white">
+            {isNew ? "New Event" : "Edit Event"}
+          </h1>
+          <p className="text-white/50 mt-1">
+            {isNew ? "Create a new event" : `Editing: ${formData.title}`}
+          </p>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-white/70 mb-2">
+                Event Title
+              </label>
+              <input
+                type="text"
+                value={formData.title}
+                onChange={(e) =>
+                  setFormData({ ...formData, title: e.target.value })
+                }
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                placeholder="Event title"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-white/70 mb-2">
+                Excerpt
+              </label>
+              <textarea
+                value={formData.excerpt}
+                onChange={(e) =>
+                  setFormData({ ...formData, excerpt: e.target.value })
+                }
+                rows={3}
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+                placeholder="Brief description of the event"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-white/70 mb-2">
+                Event Details
+              </label>
+              <WYSIWYGEditor
+                content={formData.content}
+                onChange={(html) => setFormData({ ...formData, content: html })}
+                placeholder="Write the event details..."
+              />
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-white">Event Details</h3>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-white/70 mb-2">
+                    Start Date
+                  </label>
+                  <input
+                    type="date"
+                    value={formData.date}
+                    onChange={(e) =>
+                      setFormData({ ...formData, date: e.target.value })
+                    }
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-white/70 mb-2">
+                    End Date
+                  </label>
+                  <input
+                    type="date"
+                    value={formData.endDate}
+                    onChange={(e) =>
+                      setFormData({ ...formData, endDate: e.target.value })
+                    }
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Location
+                </label>
+                <input
+                  type="text"
+                  value={formData.location}
+                  onChange={(e) =>
+                    setFormData({ ...formData, location: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="City, Country"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Category
+                </label>
+                <select
+                  value={formData.category}
+                  onChange={(e) =>
+                    setFormData({ ...formData, category: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                >
+                  <option value="Conference">Conference</option>
+                  <option value="Webinar">Webinar</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Meetup">Meetup</option>
+                  <option value="Summit">Summit</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Registration URL
+                </label>
+                <input
+                  type="url"
+                  value={formData.registrationUrl}
+                  onChange={(e) =>
+                    setFormData({ ...formData, registrationUrl: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="https://example.com/register"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Featured Image URL
+                </label>
+                <input
+                  type="text"
+                  value={formData.image}
+                  onChange={(e) =>
+                    setFormData({ ...formData, image: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  placeholder="/images/events/example.jpg"
+                />
+              </div>
+
+              <div className="flex items-center gap-3">
+                <input
+                  type="checkbox"
+                  id="featured"
+                  checked={formData.featured}
+                  onChange={(e) =>
+                    setFormData({ ...formData, featured: e.target.checked })
+                  }
+                  className="w-5 h-5 rounded bg-white/5 border-white/10 text-emerald-600 focus:ring-emerald-500"
+                />
+                <label htmlFor="featured" className="text-white/70">
+                  Featured event
+                </label>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={saving}
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-600/50 text-white font-medium rounded-xl transition-colors"
+            >
+              {saving ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Save className="w-5 h-5" />
+              )}
+              {saving ? "Saving..." : "Save Event"}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}

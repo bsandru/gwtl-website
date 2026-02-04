@@ -4,7 +4,7 @@ excerpt: "Partnership to offer impactful leadership programs for women in techno
 date: "2025-01-15"
 category: "Partnerships"
 featured: false
-image: "/images/news/ebu-partnership.jpg"
+image: "/images/news/ebu-partnership.svg"
 ---
 
 Global Women TechLeaders is proud to announce a strategic partnership with the **European Business University of Luxembourg (EBU)**, one of Europe's leading institutions for executive education.

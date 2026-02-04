@@ -4,7 +4,7 @@ excerpt: "Join Global Women TechLeaders as a mentor to empower and guide women i
 date: "2025-03-01"
 category: "Programs"
 featured: false
-image: "/images/news/mentoring-2025.jpg"
+image: "/images/news/mentoring-2025.svg"
 ---
 
 We are excited to announce the launch of our flagship **Global Top Tech Mentoring Program 2025**, designed to connect aspiring women technologists with experienced leaders in the field.

@@ -4,7 +4,7 @@ excerpt: "A 24-month Erasmus+ initiative empowering girls aged 16-18 with digita
 date: "2025-12-15"
 category: "Programs"
 featured: true
-image: "/images/news/girls-who-lead.jpg"
+image: "/images/news/girls-who-lead.svg"
 ---
 
 We are thrilled to announce the launch of **Girls Who Lead**, a transformative 24-month initiative funded by the Erasmus+ program, designed to empower young women aged 16-18 with the skills they need to become tomorrow's leaders.

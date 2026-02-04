@@ -636,7 +636,7 @@ export default function ForLeadersPage() {
               Leaders from these companies are in our network
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-              {["Google", "Microsoft", "Amazon", "Meta", "Stripe", "SAP"].map((company) => (
+              {["Google", "Microsoft", "Amazon", "Meta", "Stripe", "Oracle", "Accenture", "Spotify", "Trimble", "Etsy", "KPMG", "PayPal", "Salesforce", "VMware", "Wix", "Zoom"].map((company) => (
                 <span
                   key={company}
                   className="text-lg font-semibold transition-opacity hover:opacity-100 text-white/40"

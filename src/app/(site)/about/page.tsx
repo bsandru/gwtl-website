@@ -558,7 +558,7 @@ export default function AboutPage() {
               Leaders from these companies trust us
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-              {["Google", "Microsoft", "Amazon", "SAP", "Meta"].map((company) => (
+              {["Google", "Microsoft", "Amazon", "SAP", "Meta", "Stripe", "Accenture", "Spotify", "Trimble", "Etsy", "KPMG", "PayPal", "Salesforce", "VMware", "Wix", "Zoom"].map((company) => (
                 <span
                   key={company}
                   className="text-lg font-semibold transition-opacity hover:opacity-100 text-white/40"

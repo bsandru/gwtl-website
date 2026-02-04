@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <!-- Elegant dark blue gradient -->
+    <linearGradient id="bgGradPR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="50%" style="stop-color:#1b263b"/>
+      <stop offset="100%" style="stop-color:#0d1b2a"/>
+    </linearGradient>
+
+    <!-- Gold accent -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="50%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+
+    <!-- Teal accent -->
+    <linearGradient id="tealGradPR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00A3A3"/>
+      <stop offset="100%" style="stop-color:#2DD4BF"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="softGlowPR" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Elegant pattern -->
+    <pattern id="elegantPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="1" fill="#fbbf24" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGradPR)"/>
+
+  <!-- Pattern overlay -->
+  <rect width="1200" height="675" fill="url(#elegantPattern)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="600" cy="300" rx="400" ry="250" fill="#fbbf24" opacity="0.05" filter="url(#softGlowPR)"/>
+  <ellipse cx="200" cy="500" rx="200" ry="150" fill="#00A3A3" opacity="0.08" filter="url(#softGlowPR)"/>
+
+  <!-- Parliament building silhouette -->
+  <g transform="translate(600, 480)" opacity="0.15">
+    <!-- Base -->
+    <rect x="-300" y="0" width="600" height="20" fill="url(#goldGrad)"/>
+    <!-- Columns -->
+    <rect x="-250" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="-180" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="-110" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="-40" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="30" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="100" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="170" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <rect x="240" y="-150" width="25" height="150" fill="url(#goldGrad)"/>
+    <!-- Pediment -->
+    <polygon points="-280,-150 0,-220 280,-150" fill="url(#goldGrad)"/>
+    <!-- Top element -->
+    <rect x="-20" y="-250" width="40" height="30" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Roundtable representation -->
+  <g transform="translate(600, 350)">
+    <!-- Table ellipse -->
+    <ellipse cx="0" cy="0" rx="180" ry="60" fill="none" stroke="url(#goldGrad)" stroke-width="3" opacity="0.4"/>
+
+    <!-- Seats around the table -->
+    <g opacity="0.5">
+      <circle cx="-150" cy="0" r="15" fill="url(#tealGradPR)"/>
+      <circle cx="-100" cy="-45" r="15" fill="url(#tealGradPR)"/>
+      <circle cx="-30" cy="-55" r="15" fill="url(#tealGradPR)"/>
+      <circle cx="40" cy="-55" r="15" fill="url(#tealGradPR)"/>
+      <circle cx="110" cy="-45" r="15" fill="url(#tealGradPR)"/>
+      <circle cx="160" cy="0" r="15" fill="url(#tealGradPR)"/>
+      <circle cx="110" cy="45" r="15" fill="url(#goldGrad)"/>
+      <circle cx="40" cy="55" r="15" fill="url(#goldGrad)"/>
+      <circle cx="-30" cy="55" r="15" fill="url(#goldGrad)"/>
+      <circle cx="-100" cy="45" r="15" fill="url(#goldGrad)"/>
+    </g>
+  </g>
+
+  <!-- Decorative laurels -->
+  <g transform="translate(180, 300)" opacity="0.2">
+    <path d="M0 0 Q-30 -50 -10 -100 Q10 -50 0 0" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+    <path d="M-5 -20 Q-25 -40 -15 -70" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+    <path d="M-5 -40 Q-20 -50 -18 -80" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+  </g>
+  <g transform="translate(1020, 300) scale(-1, 1)" opacity="0.2">
+    <path d="M0 0 Q-30 -50 -10 -100 Q10 -50 0 0" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+    <path d="M-5 -20 Q-25 -40 -15 -70" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+    <path d="M-5 -40 Q-20 -50 -18 -80" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+  </g>
+
+  <!-- Decorative lines -->
+  <line x1="300" y1="180" x2="500" y2="180" stroke="url(#goldGrad)" stroke-width="2" opacity="0.5"/>
+  <line x1="700" y1="180" x2="900" y2="180" stroke="url(#goldGrad)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Main title -->
+  <text x="600" y="140" font-family="Georgia, serif" font-size="28" fill="#fbbf24" text-anchor="middle" letter-spacing="6" opacity="0.9">ROMANIAN PARLIAMENT</text>
+
+  <text x="600" y="240" font-family="Georgia, serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">Leadership</text>
+  <text x="600" y="310" font-family="Georgia, serif" font-size="56" font-weight="bold" fill="url(#tealGradPR)" text-anchor="middle">Roundtable</text>
+
+  <!-- Subtitle badge -->
+  <g transform="translate(600, 580)">
+    <rect x="-140" y="-22" width="280" height="44" rx="22" fill="url(#goldGrad)" opacity="0.15" stroke="url(#goldGrad)" stroke-width="1"/>
+    <text x="0" y="6" font-family="system-ui, sans-serif" font-size="14" fill="#fbbf24" text-anchor="middle" letter-spacing="2">ADVOCACY &amp; POLICY</text>
+  </g>
+
+  <!-- GWTL mark -->
+  <g transform="translate(80, 60)">
+    <circle cx="25" cy="25" r="25" fill="url(#tealGradPR)"/>
+    <text x="25" y="33" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#0d1b2a" text-anchor="middle">G</text>
+  </g>
+</svg>

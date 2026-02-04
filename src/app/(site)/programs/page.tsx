@@ -223,17 +223,15 @@ export default function ProgramsPage() {
             {programs.map((program, index) => (
               <div
                 key={program.title}
-                className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Number indicator */}
                 <div
-                  className={`absolute -top-8 ${
-                    index % 2 === 1 ? "lg:right-0" : "lg:left-0"
-                  } hidden lg:block`}
+                  className={`absolute -top-8 ${index % 2 === 1 ? "lg:right-0" : "lg:left-0"
+                    } hidden lg:block`}
                 >
-                  <span className="text-[12rem] font-display font-bold leading-none select-none gradient-text-number">
+                  <span className="font-display text-[180px] font-bold leading-none text-secondary-100">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -245,38 +243,35 @@ export default function ProgramsPage() {
                   {/* Status badge */}
                   <div className="flex items-center gap-3 mb-6">
                     <span
-                      className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold ${
-                        program.statusColor === "teal"
+                      className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold ${program.statusColor === "teal"
                           ? "bg-teal-100 text-teal-700"
                           : program.statusColor === "emerald"
                             ? "bg-emerald-100 text-emerald-700"
                             : program.statusColor === "violet"
                               ? "bg-violet-100 text-violet-700"
                               : "bg-amber-100 text-amber-700"
-                      }`}
+                        }`}
                     >
                       <span className="relative flex h-2 w-2">
                         <span
-                          className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                            program.statusColor === "teal"
+                          className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${program.statusColor === "teal"
                               ? "bg-teal-500"
                               : program.statusColor === "emerald"
                                 ? "bg-emerald-500"
                                 : program.statusColor === "violet"
                                   ? "bg-violet-500"
                                   : "bg-amber-500"
-                          }`}
+                            }`}
                         />
                         <span
-                          className={`relative inline-flex rounded-full h-2 w-2 ${
-                            program.statusColor === "teal"
+                          className={`relative inline-flex rounded-full h-2 w-2 ${program.statusColor === "teal"
                               ? "bg-teal-500"
                               : program.statusColor === "emerald"
                                 ? "bg-emerald-500"
                                 : program.statusColor === "violet"
                                   ? "bg-violet-500"
                                   : "bg-amber-500"
-                          }`}
+                            }`}
                         />
                       </span>
                       {program.status}
@@ -301,15 +296,14 @@ export default function ProgramsPage() {
                         className="flex items-start gap-3 text-gray-700"
                       >
                         <CheckCircle2
-                          className={`h-5 w-5 mt-0.5 shrink-0 ${
-                            program.statusColor === "teal"
+                          className={`h-5 w-5 mt-0.5 shrink-0 ${program.statusColor === "teal"
                               ? "text-teal-500"
                               : program.statusColor === "emerald"
                                 ? "text-emerald-500"
                                 : program.statusColor === "violet"
                                   ? "text-violet-500"
                                   : "text-amber-500"
-                          }`}
+                            }`}
                         />
                         <span>{feature}</span>
                       </li>
@@ -362,11 +356,10 @@ export default function ProgramsPage() {
                           {[...Array(5)].map((_, i) => (
                             <div
                               key={i}
-                              className={`h-2 w-2 rounded-full ${
-                                i <= index
+                              className={`h-2 w-2 rounded-full ${i <= index
                                   ? `bg-gradient-to-r ${program.accent}`
                                   : "bg-gray-200"
-                              }`}
+                                }`}
                             />
                           ))}
                         </div>

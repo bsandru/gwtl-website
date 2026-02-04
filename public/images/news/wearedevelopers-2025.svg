@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <!-- Dark tech gradient -->
+    <linearGradient id="bgGradWAD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="50%" style="stop-color:#0f1629"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+
+    <!-- Neon teal -->
+    <linearGradient id="neonTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00A3A3"/>
+      <stop offset="100%" style="stop-color:#2DD4BF"/>
+    </linearGradient>
+
+    <!-- Purple accent -->
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+
+    <!-- Code glow -->
+    <filter id="codeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Ambient glow -->
+    <filter id="ambientGlowWAD" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="gridPattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#00A3A3" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGradWAD)"/>
+
+  <!-- Grid overlay -->
+  <rect width="1200" height="675" fill="url(#gridPattern)"/>
+
+  <!-- Ambient glows -->
+  <circle cx="300" cy="200" r="200" fill="#00A3A3" opacity="0.15" filter="url(#ambientGlowWAD)"/>
+  <circle cx="900" cy="450" r="180" fill="#8b5cf6" opacity="0.1" filter="url(#ambientGlowWAD)"/>
+
+  <!-- Code snippets in background -->
+  <g font-family="monospace" font-size="14" fill="#00A3A3" opacity="0.3" filter="url(#codeGlow)">
+    <text x="50" y="100">const future = await women.lead();</text>
+    <text x="80" y="130">function empower(community) {</text>
+    <text x="100" y="160">  return innovation;</text>
+    <text x="80" y="190">}</text>
+
+    <text x="900" y="500">import { Leadership } from '@gwtl';</text>
+    <text x="920" y="530">export const impact = true;</text>
+    <text x="880" y="560">// Building the future together</text>
+  </g>
+
+  <!-- Floating brackets -->
+  <g font-family="monospace" font-size="200" font-weight="100" opacity="0.1">
+    <text x="80" y="400" fill="url(#neonTeal)">{</text>
+    <text x="1020" y="400" fill="url(#purpleGrad)">}</text>
+  </g>
+
+  <!-- Binary stream decoration -->
+  <g font-family="monospace" font-size="12" fill="#2DD4BF" opacity="0.2">
+    <text x="50" y="550">01001000 01101001</text>
+    <text x="200" y="580">10110010 01100101</text>
+    <text x="1000" y="120">11010101 00101010</text>
+    <text x="1050" y="150">01110011 10001001</text>
+  </g>
+
+  <!-- Terminal window decoration -->
+  <g transform="translate(150, 250)">
+    <rect x="0" y="0" width="300" height="180" rx="10" fill="#1a1a2e" stroke="#00A3A3" stroke-width="1" opacity="0.5"/>
+    <circle cx="20" cy="15" r="5" fill="#ff5f57"/>
+    <circle cx="40" cy="15" r="5" fill="#ffbd2e"/>
+    <circle cx="60" cy="15" r="5" fill="#28ca42"/>
+    <text x="15" y="50" font-family="monospace" font-size="12" fill="#00A3A3" opacity="0.8">$ npm run empower</text>
+    <text x="15" y="75" font-family="monospace" font-size="12" fill="#2DD4BF" opacity="0.8">> Building future leaders...</text>
+    <text x="15" y="100" font-family="monospace" font-size="12" fill="#2DD4BF" opacity="0.8">> Success: Impact achieved</text>
+    <rect x="15" y="120" width="8" height="15" fill="#00A3A3" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Main title -->
+  <text x="600" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-1">WeAreDevelopers</text>
+  <text x="600" y="350" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="url(#neonTeal)" text-anchor="middle">World Congress</text>
+
+  <!-- Year and location -->
+  <g transform="translate(600, 420)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="24" fill="white" text-anchor="middle" opacity="0.7">Berlin 2025</text>
+  </g>
+
+  <!-- Tag line -->
+  <g transform="translate(600, 480)">
+    <rect x="-120" y="-18" width="240" height="36" rx="18" fill="url(#purpleGrad)" opacity="0.8"/>
+    <text x="0" y="6" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">WOMEN SHAPING AI</text>
+  </g>
+
+  <!-- Connection nodes -->
+  <g opacity="0.3">
+    <circle cx="800" cy="200" r="8" fill="url(#neonTeal)"/>
+    <circle cx="900" cy="250" r="6" fill="url(#purpleGrad)"/>
+    <circle cx="850" cy="320" r="10" fill="url(#neonTeal)"/>
+    <line x1="800" y1="200" x2="900" y2="250" stroke="url(#neonTeal)" stroke-width="1"/>
+    <line x1="900" y1="250" x2="850" y2="320" stroke="url(#purpleGrad)" stroke-width="1"/>
+    <line x1="800" y1="200" x2="850" y2="320" stroke="url(#neonTeal)" stroke-width="1"/>
+  </g>
+
+  <!-- GWTL mark -->
+  <g transform="translate(80, 60)">
+    <circle cx="25" cy="25" r="25" fill="url(#neonTeal)"/>
+    <text x="25" y="33" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#0a0a0f" text-anchor="middle">G</text>
+  </g>
+</svg>

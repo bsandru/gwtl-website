@@ -4,7 +4,7 @@ excerpt: "Global Women TechLeaders co-organizes Davos Innovation Week 2026, host
 date: "2026-01-21"
 category: "Events"
 featured: true
-image: "/images/news/davos-2026.jpg"
+image: "/images/news/davos-2026.svg"
 ---
 
 Global Women TechLeaders is proud to co-organize **Davos Innovation Week 2026**, bringing together thought leaders, executives, and innovators from around the world to discuss the future of leadership in an AI-driven era.

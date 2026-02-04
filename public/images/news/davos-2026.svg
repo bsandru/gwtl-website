@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <!-- Main gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1629"/>
+      <stop offset="50%" style="stop-color:#1a2744"/>
+      <stop offset="100%" style="stop-color:#0f1629"/>
+    </linearGradient>
+
+    <!-- Teal accent gradient -->
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A3A3"/>
+      <stop offset="100%" style="stop-color:#2DD4BF"/>
+    </linearGradient>
+
+    <!-- Mountain gradient -->
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3f5f"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Snow pattern -->
+    <pattern id="snow" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/>
+      <circle cx="50" cy="30" r="1.5" fill="white" opacity="0.2"/>
+      <circle cx="80" cy="60" r="1" fill="white" opacity="0.4"/>
+      <circle cx="30" cy="80" r="1" fill="white" opacity="0.2"/>
+      <circle cx="70" cy="90" r="1.5" fill="white" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+
+  <!-- Ambient glow orbs -->
+  <ellipse cx="300" cy="200" rx="300" ry="250" fill="#00A3A3" opacity="0.1" filter="url(#glow)"/>
+  <ellipse cx="900" cy="500" rx="250" ry="200" fill="#2DD4BF" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Snow overlay -->
+  <rect width="1200" height="675" fill="url(#snow)"/>
+
+  <!-- Mountains - back layer -->
+  <path d="M0 675 L0 450 Q100 380 200 420 L400 300 L550 380 L700 280 L850 350 L1000 250 L1200 350 L1200 675 Z" fill="url(#mountainGrad)" opacity="0.5"/>
+
+  <!-- Mountains - front layer -->
+  <path d="M0 675 L0 500 L150 420 L300 480 L450 380 L600 450 L750 350 L900 420 L1050 340 L1200 400 L1200 675 Z" fill="url(#mountainGrad)" opacity="0.8"/>
+
+  <!-- Globe wireframe -->
+  <g transform="translate(600, 280)" opacity="0.15">
+    <circle cx="0" cy="0" r="150" fill="none" stroke="url(#tealGrad)" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="150" ry="50" fill="none" stroke="url(#tealGrad)" stroke-width="1"/>
+    <ellipse cx="0" cy="0" rx="100" ry="150" fill="none" stroke="url(#tealGrad)" stroke-width="1"/>
+    <ellipse cx="0" cy="0" rx="50" ry="150" fill="none" stroke="url(#tealGrad)" stroke-width="1"/>
+    <line x1="-150" y1="0" x2="150" y2="0" stroke="url(#tealGrad)" stroke-width="1"/>
+    <line x1="0" y1="-150" x2="0" y2="150" stroke="url(#tealGrad)" stroke-width="1"/>
+  </g>
+
+  <!-- Decorative lines -->
+  <line x1="100" y1="150" x2="350" y2="150" stroke="url(#tealGrad)" stroke-width="3" opacity="0.6"/>
+  <line x1="850" y1="550" x2="1100" y2="550" stroke="url(#tealGrad)" stroke-width="3" opacity="0.6"/>
+
+  <!-- Year badge -->
+  <g transform="translate(600, 580)">
+    <rect x="-60" y="-25" width="120" height="50" rx="25" fill="url(#tealGrad)" opacity="0.9"/>
+    <text x="0" y="8" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#0f1629" text-anchor="middle">2026</text>
+  </g>
+
+  <!-- Text content -->
+  <text x="600" y="260" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle" opacity="0.95">DAVOS</text>
+  <text x="600" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#2DD4BF" text-anchor="middle" letter-spacing="8">INNOVATION WEEK</text>
+
+  <!-- GWTL Logo mark -->
+  <g transform="translate(80, 60)">
+    <circle cx="25" cy="25" r="25" fill="url(#tealGrad)" opacity="0.9"/>
+    <text x="25" y="33" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#0f1629" text-anchor="middle">G</text>
+  </g>
+</svg>
