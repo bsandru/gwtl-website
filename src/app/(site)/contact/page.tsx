@@ -60,7 +60,7 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-gray-900">Location</h3>
                     <p className="text-gray-600">Brașov, Romania</p>
                     <p className="text-sm text-gray-500">
-                      Operating globally across 50+ countries
+                      Operating globally across 10+ countries
                     </p>
                   </div>
                 </div>

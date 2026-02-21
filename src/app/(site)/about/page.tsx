@@ -54,7 +54,7 @@ const timeline = [
 
 const impactStats = [
   { value: "5,000+", label: "Members", icon: Users },
-  { value: "50+", label: "Countries", icon: Globe },
+  { value: "10+", label: "Countries", icon: Globe },
   { value: "500+", label: "Events Hosted", icon: Sparkles },
   { value: "9", label: "Years of Impact", icon: Award },
 ];
@@ -63,13 +63,13 @@ export default function AboutPage() {
   return (
     <div className="pt-20 overflow-hidden">
       {/* Hero - Dramatic asymmetric layout */}
-      <section className="relative min-h-[90vh] flex items-center py-20 lg:py-32">
+      <section className="relative py-20 lg:py-24">
         {/* Background elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50" />
+        <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50" />
 
         {/* Organic shape decorations */}
         <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full opacity-30 blur-3xl bg-gradient-to-br from-brand-teal to-brand-teal-light" />
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full opacity-20 blur-3xl bg-gradient-to-br from-brand-navy to-brand-navy-light" />
+        {/* <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full opacity-20 blur-3xl bg-gradient-to-br from-brand-navy to-brand-navy-light" /> */}
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -82,10 +82,10 @@ export default function AboutPage() {
                 <span className="text-brand-navy">Empowering Women</span>
                 <br />
                 <span className="text-brand-navy">Tech Leaders </span>
-                <span className="relative">
+                {/* <span className="relative"> */}
                   <span className="gradient-text">Since 2017</span>
                   <svg
-                    className="absolute -bottom-2 left-0 w-full"
+                    className="absolute -bottom-4 left-0 w-34"
                     viewBox="0 0 200 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ export default function AboutPage() {
                       </linearGradient>
                     </defs>
                   </svg>
-                </span>
+                {/* </span> */}
               </h1>
 
               <p className="mt-8 text-xl leading-relaxed max-w-2xl animate-fade-in-up text-secondary-600 opacity-0 [animation-delay:0.3s]">
@@ -116,7 +116,7 @@ export default function AboutPage() {
               <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
                 {impactStats.map((stat) => (
                   <div key={stat.label} className="group">
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex items-center gap-2 mb-1">
                       <div className="h-10 w-10 shrink-0 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 bg-gradient-to-br from-brand-teal to-brand-teal-dark">
                         <stat.icon className="h-5 w-5 text-white" />
                       </div>
@@ -134,12 +134,12 @@ export default function AboutPage() {
 
             {/* Visual - spans 5 columns */}
             <div className="lg:col-span-5 relative animate-fade-in-scale opacity-0 [animation-delay:0.4s]">
-              <div className="relative">
+              <div className="relative mx-8">
                 {/* Background decorative shape */}
                 <div className="absolute -inset-4 rounded-[3rem] transform rotate-3 bg-gradient-to-br from-brand-teal to-brand-navy" />
 
                 {/* Main image */}
-                <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <div className="relative aspect-4/5 rounded-5xl overflow-hidden shadow-2xl">
                   <Image
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=1000&fit=crop&crop=faces"
                     alt="Women tech leaders collaborating"
@@ -157,7 +157,7 @@ export default function AboutPage() {
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-bold text-brand-navy">50+ Countries</p>
+                      <p className="font-bold text-brand-navy">10+ Countries</p>
                       <p className="text-sm text-secondary-500">Global Network</p>
                     </div>
                   </div>
@@ -254,8 +254,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
             {/* Featured card - Diversity & Inclusion */}
             <div className="lg:col-span-7 group relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-rose-500 to-pink-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-[2rem] p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-rose-500 to-pink-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+              <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-rose-500 to-pink-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
+              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-rose-500 to-pink-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                 {/* Decorative shapes */}
                 <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20 blur-2xl bg-white" />
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full opacity-30 bg-white/10" />
@@ -281,8 +281,8 @@ export default function AboutPage() {
 
             {/* Creativity & Innovation */}
             <div className="lg:col-span-5 group relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-amber-500 to-orange-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-[2rem] p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-amber-500 to-orange-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+              <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-amber-500 to-orange-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
+              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-amber-500 to-orange-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                 {/* Number badge */}
                 <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
                   <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">02</span>
@@ -307,8 +307,8 @@ export default function AboutPage() {
 
             {/* Collaboration & Integrity */}
             <div className="lg:col-span-5 group relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-brand-teal to-emerald-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-[2rem] p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-brand-teal to-emerald-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+              <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-brand-teal to-emerald-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
+              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-brand-teal to-emerald-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                 {/* Number badge */}
                 <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
                   <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">03</span>
@@ -334,8 +334,8 @@ export default function AboutPage() {
 
             {/* Empowerment - Featured */}
             <div className="lg:col-span-7 group relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-brand-navy to-indigo-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-[2rem] p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-brand-navy to-indigo-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+              <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-brand-navy to-indigo-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
+              <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-gradient-to-br from-brand-navy to-indigo-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                 {/* Number badge */}
                 <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
                   <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">04</span>

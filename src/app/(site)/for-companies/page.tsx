@@ -83,27 +83,27 @@ const testimonials = [
 const partnerBenefits = [
   "Access to 10,000+ senior women tech leaders",
   "Proven DEI impact with measurable results",
-  "Global reach across 50+ countries",
+  "Global reach across 10+ countries",
   "Davos-level credibility and visibility",
   "Dedicated partnership management",
 ];
 
-const partnerLogos = ["Google", "Microsoft", "Amazon", "SAP", "Accenture", "Stripe", "Spotify", "Trimble", "Etsy", "KPMG", "PayPal", "Salesforce", "VMware", "Wix", "Zoom"];
+const partnerLogos = ["Google", "Microsoft", "Amazon", "SAP", "Accenture", "Stripe", "Spotify", "Trimble", "Etsy", "KPMG", "PayPal", "Salesforce", "VMware", "Oracle", "Zoom"];
 
 export default function ForCompaniesPage() {
   return (
-    <div className="pt-20 overflow-hidden">
+    <div className="pt-10 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center py-20 lg:py-32">
+      <section className="relative py-20 lg:py-24">
         {/* Background */}
         <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50/30" />
 
         {/* Decorative shapes */}
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-radial-teal opacity-30 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-radial-violet opacity-20 blur-3xl" />
+        {/* <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-radial-teal opacity-30 blur-3xl" /> */}
+        {/* <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-radial-violet opacity-20 blur-3xl" /> */}
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-pattern-grid opacity-[0.02]" />
+        {/* <div className="absolute inset-0 bg-pattern-grid opacity-[0.02]" /> */}
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -198,7 +198,7 @@ export default function ForCompaniesPage() {
                 <div className="mt-8 pt-8 border-t border-secondary-100 grid grid-cols-3 gap-4">
                   {[
                     { value: "10K+", label: "Leaders" },
-                    { value: "50+", label: "Countries" },
+                    { value: "10+", label: "Countries" },
                     { value: "9", label: "Years" },
                   ].map((stat) => (
                     <div key={stat.label} className="text-center">

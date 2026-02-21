@@ -85,27 +85,24 @@ export function WhatWeDo() {
               <Link
                 key={feature.title}
                 href={feature.link}
-                className={`group relative rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0 ${
-                  isLarge ? "lg:col-span-2" : ""
-                }`}
+                className={`group relative rounded-4xl overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0 ${isLarge ? "lg:col-span-2" : ""
+                  }`}
                 style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
               >
                 {/* Card background */}
                 <div
-                  className={`absolute inset-0 transition-opacity duration-500 ${
-                    isTeal
+                  className={`absolute inset-0 transition-opacity duration-500 ${isTeal
                       ? "bg-gradient-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
                       : "bg-gradient-to-br from-brand-navy via-brand-navy to-brand-navy-dark"
-                  }`}
+                    }`}
                 />
 
                 {/* Hover gradient overlay */}
                 <div
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                    isTeal
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isTeal
                       ? "bg-gradient-to-br from-brand-teal-light via-brand-teal to-brand-teal-dark"
                       : "bg-gradient-to-br from-brand-navy-light via-brand-navy to-brand-navy-dark"
-                  }`}
+                    }`}
                 />
 
                 {/* Pattern overlay */}

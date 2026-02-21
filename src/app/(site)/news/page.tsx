@@ -80,7 +80,7 @@ export default function NewsPage() {
               {mainFeatured && (
                 <Link
                   href={`/news/${mainFeatured.slug}`}
-                  className="group relative rounded-[2rem] overflow-hidden lg:row-span-2"
+                  className="group relative rounded-4xl overflow-hidden lg:row-span-2"
                 >
                   {/* Image */}
                   <div className="absolute inset-0">

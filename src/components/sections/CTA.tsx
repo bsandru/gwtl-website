@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Globe, Users, Award } from "lucide-react";
 
 const stats = [
   { value: "10K+", label: "Leaders", icon: Users },
-  { value: "50+", label: "Countries", icon: Globe },
+  { value: "10+", label: "Countries", icon: Globe },
   { value: "95%", label: "Satisfaction", icon: Award },
 ];
 

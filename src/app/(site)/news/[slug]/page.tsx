@@ -91,7 +91,7 @@ export default async function NewsArticlePage({ params }: Props) {
 
         {/* Hero Image */}
         <div className="relative h-[50vh] min-h-[400px] max-h-[600px] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative h-full rounded-[2rem] overflow-hidden">
+          <div className="relative h-full rounded-4xl overflow-hidden">
             <Image
               src={articleImage}
               alt={item.title}

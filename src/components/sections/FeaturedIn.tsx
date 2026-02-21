@@ -88,7 +88,7 @@ export function FeaturedIn() {
           {featuredArticle && (
             <Link
               href={featuredArticle.link}
-              className="group relative rounded-[2rem] overflow-hidden animate-fade-in-up opacity-0 [animation-delay:0.3s] lg:row-span-2"
+              className="group relative rounded-4xl overflow-hidden animate-fade-in-up opacity-0 [animation-delay:0.3s] lg:row-span-2"
             >
               <div className="absolute inset-0">
                 <Image

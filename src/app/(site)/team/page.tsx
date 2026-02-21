@@ -27,7 +27,7 @@ export default function TeamPage() {
       <section className="relative min-h-[60vh] flex items-center py-20 lg:py-28">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50" />
-        
+
         {/* Decorative elements */}
         <div className="absolute top-10 right-0 w-[500px] h-[500px] rounded-full opacity-30 blur-3xl bg-gradient-to-br from-brand-teal to-brand-teal-light" />
         <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full opacity-20 blur-3xl bg-gradient-to-br from-brand-navy to-brand-navy-light" />
@@ -90,7 +90,7 @@ export default function TeamPage() {
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-brand-navy">50+</p>
+                  <p className="text-2xl font-bold text-brand-navy">10+</p>
                   <p className="text-sm text-secondary-500">Countries Reached</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function TeamPage() {
       <section className="relative py-20 lg:py-28">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-primary-50/20 to-white" />
-        
+
         {/* Floating decorative elements */}
         <div className="absolute top-40 -left-20 w-[300px] h-[300px] rounded-full opacity-15 blur-3xl bg-gradient-to-br from-brand-teal to-brand-teal-light animate-float" />
         <div className="absolute bottom-40 -right-20 w-[250px] h-[250px] rounded-full opacity-10 blur-3xl bg-gradient-to-br from-brand-navy to-brand-navy-light animate-float [animation-delay:2s]" />
@@ -123,7 +123,7 @@ export default function TeamPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {team.map((member, index) => {
               const gradientClass = cardGradients[index % cardGradients.length];
-              
+
               return (
                 <Link
                   key={member.slug}
@@ -133,9 +133,9 @@ export default function TeamPage() {
                 >
                   <div className="relative h-full">
                     {/* Glow effect on hover */}
-                    <div className={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${gradientClass} opacity-0 group-hover:opacity-40 blur-xl transition-all duration-700`} />
-                    
-                    <div className="relative h-full bg-white rounded-[2rem] overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50">
+                    <div className={`absolute inset-0 rounded-4xl bg-gradient-to-br ${gradientClass} opacity-0 group-hover:opacity-40 blur-xl transition-all duration-700`} />
+
+                    <div className="relative h-full bg-white rounded-4xl overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50">
                       {/* Avatar section with gradient */}
                       <div className={`relative aspect-[4/3] bg-gradient-to-br ${gradientClass} overflow-hidden`}>
                         {/* Decorative pattern */}
@@ -145,7 +145,7 @@ export default function TeamPage() {
                             <circle cx="20" cy="80" r="20" fill="white" fillOpacity="0.2" />
                           </svg>
                         </div>
-                        
+
                         {/* Initials */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <div className="relative">
@@ -158,7 +158,7 @@ export default function TeamPage() {
                         {/* Bottom gradient overlay */}
                         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/20 to-transparent" />
                       </div>
-                      
+
                       {/* Info */}
                       <div className="p-6">
                         <h3 className="text-xl font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300">
@@ -170,7 +170,7 @@ export default function TeamPage() {
                         <p className="mt-3 text-secondary-500 text-sm leading-relaxed line-clamp-2">
                           {member.bio}
                         </p>
-                        
+
                         {/* Footer with social & arrow */}
                         <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
                           {/* Social Links */}
@@ -186,7 +186,7 @@ export default function TeamPage() {
                               </span>
                             )}
                           </div>
-                          
+
                           {/* View profile arrow */}
                           <span className="text-sm font-medium text-secondary-400 group-hover:text-brand-teal transition-colors duration-300 flex items-center gap-1">
                             View
@@ -203,7 +203,7 @@ export default function TeamPage() {
 
           {/* Empty State */}
           {team.length === 0 && (
-            <div className="text-center py-20 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-[2rem] border border-gray-100">
+            <div className="text-center py-20 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-4xl border border-gray-100">
               <div className="h-16 w-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-brand-teal to-brand-teal-dark">
                 <Users className="h-8 w-8 text-white" />
               </div>
@@ -218,11 +218,11 @@ export default function TeamPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-dark to-brand-navy" />
-        
+
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl bg-brand-teal" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal-light" />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%221%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
 
@@ -236,7 +236,7 @@ export default function TeamPage() {
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
             Want to Make an Impact?
           </h2>
-          
+
           <p className="mt-6 text-xl text-white/70 max-w-2xl mx-auto">
             We&apos;re always looking for passionate individuals to help advance our mission of empowering women in tech leadership.
           </p>

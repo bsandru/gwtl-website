@@ -71,18 +71,18 @@ export function Header() {
       <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center group">
             <div className="relative">
               <Image
                 src="/images/logo.png"
                 alt="Global Women TechLeaders"
-                width={50}
-                height={50}
+                width={80}
+                height={64}
                 className="group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="hidden sm:block">
-              <span className="font-display text-brand-navy text-lg font-bold tracking-tight">
+              <span className="text-brand-teal text-xl font-semibold tracking-tight">
                 Global Women TechLeaders
               </span>
             </div>
@@ -99,11 +99,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`group flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 ${
-                    scrolled
-                      ? "text-brand-navy hover:bg-brand-navy/5"
-                      : "text-brand-navy hover:bg-white/50"
-                  }`}
+                  className="group flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 text-brand-navy hover:text-brand-teal hover:bg-brand-teal/5"
                 >
                   <span>{item.name}</span>
                   {item.children && (
@@ -113,30 +109,31 @@ export function Header() {
 
                 {/* Dropdown */}
                 {item.children && openDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-white/95 backdrop-blur-xl border border-secondary-100 shadow-xl shadow-black/10 py-3 animate-fade-in-scale origin-top-left">
-                    {/* Dropdown arrow */}
-                    <div className="absolute -top-2 left-6 w-4 h-4 bg-white border-l border-t border-secondary-100 rotate-45" />
+                  <div className="absolute top-full left-0 w-72 pt-2">
+                    <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-secondary-100 shadow-xl shadow-black/10 py-3 animate-fade-in-scale origin-top-left">
+                      <div className="absolute -top-0.5 left-6 w-4 h-4 bg-white border-l border-t border-secondary-100 rotate-45" />
 
-                    <div className="relative">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="group block px-5 py-3 transition-colors hover:bg-brand-teal/5"
-                        >
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <p className="text-sm font-semibold text-brand-navy group-hover:text-brand-teal transition-colors">
-                                {child.name}
-                              </p>
-                              <p className="text-xs text-secondary-500 mt-0.5">
-                                {child.description}
-                              </p>
+                      <div className="relative">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className="group block px-5 py-3 transition-colors hover:bg-brand-teal/5"
+                          >
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <p className="text-sm font-semibold text-brand-navy group-hover:text-brand-teal transition-colors">
+                                  {child.name}
+                                </p>
+                                <p className="text-xs text-secondary-500 mt-0.5">
+                                  {child.description}
+                                </p>
+                              </div>
+                              <ArrowRight className="h-4 w-4 text-secondary-300 group-hover:text-brand-teal group-hover:translate-x-1 transition-all" />
                             </div>
-                            <ArrowRight className="h-4 w-4 text-secondary-300 group-hover:text-brand-teal group-hover:translate-x-1 transition-all" />
-                          </div>
-                        </Link>
-                      ))}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -146,7 +143,7 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
-            <button
+            {/* <button
               className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300 ${
                 scrolled
                   ? "text-brand-navy hover:bg-brand-navy/5"
@@ -154,7 +151,7 @@ export function Header() {
               }`}
             >
               Sign In
-            </button>
+            </button> */}
             <Link href="/for-leaders/join">
               <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
                 <span className="relative z-10 flex items-center gap-2">
@@ -220,7 +217,7 @@ export function Header() {
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-4 text-lg font-semibold text-brand-navy rounded-xl transition-colors hover:bg-brand-teal/5 animate-fade-in-up"
+                    className="block px-4 py-4 text-lg font-semibold text-brand-navy rounded-xl transition-colors hover:bg-brand-teal/5  animate-fade-in-up"
                     style={{ animationDelay: `${idx * 0.05}s` }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -246,9 +243,9 @@ export function Header() {
 
             {/* Mobile CTAs */}
             <div className="mt-8 pt-8 space-y-3 border-t border-secondary-200">
-              <button className="w-full py-3.5 px-6 rounded-xl font-semibold border-2 border-brand-navy text-brand-navy transition-all hover:bg-brand-navy hover:text-white">
+              {/* <button className="w-full py-3.5 px-6 rounded-xl font-semibold border-2 border-brand-navy text-brand-navy transition-all hover:bg-brand-navy hover:text-white">
                 Sign In
-              </button>
+              </button> */}
               <Link href="/for-leaders/join" onClick={() => setMobileMenuOpen(false)}>
                 <button className="w-full py-3.5 px-6 rounded-xl font-bold bg-brand-navy text-white shadow-lg shadow-brand-navy/20 hover:bg-brand-teal transition-colors">
                   Join Community

@@ -66,7 +66,7 @@ function formatDateRange(start: string, end?: string): string {
     })} - ${endDate.getDate()}, ${endDate.getFullYear()}`;
   }
 
-  return `${formatDate(start)} - ${formatDate(end)}, ${endDate.getFullYear()}`;
+  return `${formatDate(start)} - ${formatDate(end || "")}, ${endDate.getFullYear()}`;
 }
 
 function getDaysUntil(dateString: string): number {
@@ -90,9 +90,9 @@ export default function EventsPage() {
   const otherUpcoming = upcomingEvents.filter((e) => e.slug !== mainFeatured?.slug);
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="pt-10 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative py-20 lg:py-24">
         {/* Background elements */}
         <div className="absolute inset-0">
           <div className="absolute -top-[300px] -right-[200px] w-[700px] h-[700px] rounded-full bg-gradient-to-br from-brand-teal/15 via-brand-teal-light/10 to-transparent blur-3xl" />
@@ -153,7 +153,7 @@ export default function EventsPage() {
             <div className="animate-fade-in-up opacity-0 [animation-delay:0.5s]">
               <Link
                 href={`/events/${mainFeatured.slug}`}
-                className="group relative block rounded-[2rem] overflow-hidden"
+                className="group relative block rounded-4xl overflow-hidden"
               >
                 {/* Image */}
                 <div className="relative h-[400px] lg:h-[500px]">

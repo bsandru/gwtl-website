@@ -3,8 +3,8 @@ import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 
 const stats = [
-  { value: "10K+", label: "Leaders" },
-  { value: "50+", label: "Countries" },
+  { value: "10,000+", label: "Leaders" },
+  { value: "10+", label: "Countries" },
   { value: "9", label: "Years" },
 ];
 
@@ -22,9 +22,9 @@ export function Hero() {
         <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
 
         {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-brand-teal/40 animate-float [animation-delay:0s]" />
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 rounded-full bg-brand-teal-light/50 animate-float [animation-delay:1s]" />
-        <div className="absolute bottom-1/3 left-1/3 w-4 h-4 rounded-full bg-brand-teal/30 animate-float [animation-delay:2s]" />
+        <div className="absolute top-1/5 left-1/6 w-3 h-3 rounded-full bg-brand-teal/30 animate-float [animation-delay:0s]" />
+        <div className="absolute top-1/4 right-1/6 w-3 h-3 rounded-full bg-brand-teal-light/50 animate-float [animation-delay:1s]" />
+        {/* <div className="absolute top-[100px] left-1/3 w-4 h-4 rounded-full bg-brand-teal/30 animate-float [animation-delay:2s]" /> */}
 
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-pattern-dots opacity-30" />
@@ -103,8 +103,8 @@ export function Hero() {
               {/* <div className="absolute -inset-4 bg-gradient-to-r from-brand-teal/20 via-brand-teal-light/20 to-brand-teal/20 rounded-[3rem] blur-2xl animate-glow-pulse" /> */}
 
               {/* Main image */}
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-navy/10">
-                <div className="aspect-[16/9] relative">
+              <div className="relative rounded-5xl overflow-hidden shadow-2xl shadow-brand-navy/10">
+                <div className="aspect-video relative">
                   <Image
                     src="https://images.unsplash.com/photo-1718866033984-c3ddab9af2a0?q=80&w=1024&auto=format&fit=crop&crop=faces"
                     alt="Women tech leaders collaborating"
@@ -171,7 +171,7 @@ export function Hero() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-brand-navy">50+</p>
+                      <p className="text-2xl font-bold text-brand-navy">10+</p>
                       <p className="text-xs text-secondary-500">Countries</p>
                     </div>
                   </div>

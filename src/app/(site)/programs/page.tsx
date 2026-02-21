@@ -104,9 +104,9 @@ export default function ProgramsPage() {
   return (
     <div className="pt-20 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-36">
+      <section className="relative py-24 lg:py-24">
         {/* Background */}
-        <div className="absolute inset-0 bg-hero-gradient" />
+        <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50 " />
 
         {/* Decorative grid pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-pattern-grid" />
@@ -177,7 +177,7 @@ export default function ProgramsPage() {
               {[
                 { value: "2,500+", label: "Program Alumni" },
                 { value: "92%", label: "Career Advancement" },
-                { value: "50+", label: "Countries Reached" },
+                { value: "10+", label: "Countries Reached" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl sm:text-4xl font-bold font-display text-primary-500">
@@ -409,7 +409,7 @@ export default function ProgramsPage() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button
-                size="xl"
+                size="lg"
                 className="w-full sm:w-auto group shadow-xl bg-gradient-teal hover:opacity-90"
               >
                 Schedule a Call
@@ -418,7 +418,7 @@ export default function ProgramsPage() {
             </Link>
             <Link href="/about">
               <Button
-                size="xl"
+                size="lg"
                 variant="secondary"
                 className="w-full sm:w-auto btn-outline-teal hover:bg-white/10"
               >
@@ -435,7 +435,7 @@ export default function ProgramsPage() {
             <div className="flex justify-center gap-6">
               {[
                 { icon: Users, label: "10K+ Members" },
-                { icon: Globe, label: "50+ Countries" },
+                { icon: Globe, label: "10+ Countries" },
                 { icon: Award, label: "9 Years Impact" },
               ].map((item) => (
                 <div

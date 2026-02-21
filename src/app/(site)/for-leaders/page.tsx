@@ -29,7 +29,7 @@ const benefits = [
     icon: Users,
     title: "Global Network",
     description:
-      "Connect with 10,000+ women tech leaders across 50+ countries. Build meaningful relationships that accelerate your career.",
+      "Connect with 10,000+ women tech leaders across 10+ countries. Build meaningful relationships that accelerate your career.",
     color: "from-brand-teal to-emerald-600",
     bgColor: "bg-gradient-to-br from-teal-50 to-emerald-50",
   },
@@ -145,7 +145,7 @@ const testimonials = [
 
 const stats = [
   { value: "10K+", label: "Active Members", icon: Users },
-  { value: "50+", label: "Countries", icon: Globe },
+  { value: "10+", label: "Countries", icon: Globe },
   { value: "92%", label: "Career Growth", icon: Rocket },
   { value: "500+", label: "Mentors", icon: Heart },
 ];
@@ -181,15 +181,11 @@ export default function ForLeadersPage() {
   return (
     <div className="pt-20 overflow-hidden">
       {/* Hero Section - Dramatic asymmetric layout */}
-      <section className="relative min-h-[90vh] flex items-center py-20 lg:py-32">
+      <section className="relative py-20 lg:py-24">
         {/* Background elements */}
-        <div className="absolute inset-0 bg-hero-gradient" />
+        <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50" />
 
-        {/* Organic shape decorations */}
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full opacity-30 blur-3xl bg-radial-teal animate-float" />
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full opacity-20 blur-3xl bg-radial-violet animate-float [animation-delay:2s]" />
-        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] rounded-full opacity-15 blur-3xl bg-radial-navy animate-float [animation-delay:4s]" />
-
+       
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-pattern-grid" />
 
@@ -276,12 +272,12 @@ export default function ForLeadersPage() {
 
             {/* Visual - spans 5 columns */}
             <div className="lg:col-span-5 relative animate-fade-in-scale opacity-0 [animation-delay:0.4s]">
-              <div className="relative">
+              <div className="relative mx-8">
                 {/* Background decorative shape */}
                 <div className="absolute -inset-4 rounded-[3rem] transform -rotate-3 bg-gradient-to-br from-brand-teal to-violet-600" />
 
                 {/* Main image */}
-                <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <div className="relative aspect-4/5 rounded-5xl overflow-hidden shadow-2xl">
                   <Image
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&crop=faces"
                     alt="Women tech leader"
@@ -305,7 +301,7 @@ export default function ForLeadersPage() {
                         </div>
                         <div className="flex-1">
                           <p className="text-sm font-semibold text-brand-navy">Join 10K+ Leaders</p>
-                          <p className="text-xs text-secondary-500">From 50+ countries</p>
+                          <p className="text-xs text-secondary-500">From 10+ countries</p>
                         </div>
                         <Sparkles className="h-5 w-5 text-brand-teal" />
                       </div>
@@ -359,11 +355,11 @@ export default function ForLeadersPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className={`group relative ${benefit.bgColor} rounded-[2rem] p-8 lg:p-10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl`}
+                className={`group relative ${benefit.bgColor} rounded-4xl p-8 lg:p-10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl`}
               >
                 {/* Decorative number */}
                 <div className="absolute top-6 right-6 lg:top-8 lg:right-8">
-                  <span className="text-7xl lg:text-8xl font-display font-bold text-black/[0.03]">
+                  <span className="text-7xl lg:text-8xl font-display font-bold text-black/3">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -428,7 +424,7 @@ export default function ForLeadersPage() {
                   <div className="hidden lg:block absolute top-12 left-1/2 w-full h-px bg-gradient-to-r from-brand-teal/50 to-transparent" />
                 )}
 
-                <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center transition-all duration-500 hover:bg-white/10 hover:border-brand-teal/30 hover:-translate-y-2">
+                <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-10 text-center transition-all duration-500 hover:bg-white/10 hover:border-brand-teal/30 hover:-translate-y-2">
                   {/* Step number */}
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center justify-center h-8 w-12 rounded-full bg-brand-teal text-white text-sm font-bold">
@@ -478,9 +474,8 @@ export default function ForLeadersPage() {
             {membershipTiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative bg-white rounded-3xl border-2 p-8 transition-all duration-500 hover:-translate-y-2 ${tier.accent} ${
-                  tier.highlighted ? "lg:-translate-y-4" : ""
-                }`}
+                className={`relative bg-white rounded-3xl border-2 p-8 transition-all duration-500 hover:-translate-y-2 ${tier.accent} ${tier.highlighted ? "lg:-translate-y-4" : ""
+                  }`}
               >
                 {/* Popular badge */}
                 {tier.highlighted && (
