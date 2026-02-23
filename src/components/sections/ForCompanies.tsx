@@ -64,7 +64,7 @@ const tiers = [
   },
 ];
 
-export function ForCompanies({ showmembership = false }: { showmembership: boolean }) {
+export function ForCompanies({ showmembership = false }: { showmembership?: boolean }) {
   return (
     <section className="relative bg-white py-28 lg:py-40 overflow-hidden">
       {/* Background decoration */}
