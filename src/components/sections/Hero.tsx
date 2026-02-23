@@ -49,8 +49,8 @@ export function Hero() {
           {/* Main headline - Editorial style */}
           <div className="text-center max-w-5xl mx-auto mb-8">
             <h1 className="editorial-headline font-display animate-fade-in-up opacity-0 [animation-delay:0.2s]">
-              <span className="block text-brand-navy">Where AI-Powered Leadership and</span>
-              <span className="block gradient-text-hero leading-tight">Visionary Women</span>
+              <span className="text-brand-navy">Where AI-Powered Leadership <br />and </span>
+              <span className="gradient-text-hero leading-tight">Visionary Women</span>
               <span className="block text-brand-navy">Reshape Tech</span>
             </h1>
           </div>
