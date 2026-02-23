@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://globalwomentechleaders.com"),
   title: {
-    default: "Global Women TechLeaders | Empowering Women in Tech",
+    default: "Global Women TechLeaders",
     template: "%s | GWTL",
   },
   description:
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://globalwomentechleaders.com",
     siteName: "Global Women TechLeaders",
-    title: "Global Women TechLeaders | Empowering Women in Tech",
+    title: "Global Women TechLeaders",
     description:
       "Join a global network of senior women in technology. Connect with peers, access world-class mentorship, and shape the future of tech leadership.",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description:
       "Empowering women tech leaders worldwide through networking, mentorship, and advocacy.",
     images: ["/og-image.png"],
-    creator: "@glowomentechlea",
+    creator: "@gwtl",
   },
   robots: {
     index: true,

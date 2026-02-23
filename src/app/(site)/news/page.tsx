@@ -5,8 +5,8 @@ import { ArrowRight, ArrowUpRight, Calendar, Sparkles, Clock } from "lucide-reac
 import { getAllNews } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "News & Updates | GWTL",
-  description: "Latest news, events, and updates from Global Women TechLeaders.",
+  title: "News & Updates",
+  description: "Latest news, insights, and updates from Global Women TechLeaders.",
 };
 
 // Default images for news items without images
