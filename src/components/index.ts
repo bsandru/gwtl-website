@@ -12,3 +12,4 @@ export { WhatWeDo } from "./sections/WhatWeDo";
 export { ForCompanies } from "./sections/ForCompanies";
 export { FeaturedIn } from "./sections/FeaturedIn";
 export { CTA } from "./sections/CTA";
+export { Partners } from "./sections/Partners";

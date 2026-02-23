@@ -19,8 +19,8 @@ const features = [
     description:
       "A 24-month initiative empowering girls aged 16-18 with digital, entrepreneurial, and leadership skills.",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-    link: "/programs/erasmus",
-    date: "2024-2026",
+    link: "/news/girls-who-lead",
+    date: "2025-2027",
     location: "Europe",
     tag: "Program",
     featured: false,

@@ -594,16 +594,16 @@ body {
 
 /* Floating shape gradients */
 .bg-radial-teal {
-  background: radial-gradient(circle, rgba(0, 163, 163, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgb(0, 163, 163, 0.5) 0%, #aeebe3 70%);
 }
 
-.bg-radial-violet {
+/* .bg-radial-violet {
   background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
 }
 
 .bg-radial-navy {
   background: radial-gradient(circle, rgba(15, 22, 41, 0.2) 0%, transparent 70%);
-}
+} */
 
 /* Glass badge */
 .glass-badge {

@@ -1,4 +1,4 @@
-import { Hero, WhatWeDo, ForCompanies, FeaturedIn, CTA } from "@/components";
+import { Hero, WhatWeDo, ForCompanies, FeaturedIn, Partners, CTA } from "@/components";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <WhatWeDo />
       <FeaturedIn />
       <ForCompanies />
+      <Partners />
       <CTA />
     </>
   );

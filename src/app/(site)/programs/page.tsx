@@ -108,13 +108,10 @@ export default function ProgramsPage() {
         {/* Background */}
         <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50 " />
 
-        {/* Decorative grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03] bg-pattern-grid" />
-
         {/* Floating decorative shapes */}
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-30 animate-float bg-radial-teal" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-20 animate-float [animation-delay:3s] bg-radial-violet" />
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-20 animate-float [animation-delay:1.5s] bg-radial-navy" />
+        {/* <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-20 animate-float [animation-delay:3s] bg-radial-violet" /> */}
+        {/* <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-20 animate-float [animation-delay:1.5s] bg-radial-navy" /> */}
 
         {/* Content */}
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -378,12 +375,6 @@ export default function ProgramsPage() {
         {/* Background */}
         <div className="absolute inset-0 bg-cta-gradient" />
 
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-pattern-grid-teal" />
-
-        {/* Glow effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-20 bg-radial-teal-cta" />
-
         {/* Content */}
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           {/* Icon */}
@@ -410,7 +401,8 @@ export default function ProgramsPage() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="w-full sm:w-auto group shadow-xl bg-gradient-teal hover:opacity-90"
+                variant="full"
+                className="sm:w-auto group"
               >
                 Schedule a Call
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -420,7 +412,7 @@ export default function ProgramsPage() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="w-full sm:w-auto btn-outline-teal hover:bg-white/10"
+                className="sm:w-auto"
               >
                 Learn About GWTL
               </Button>

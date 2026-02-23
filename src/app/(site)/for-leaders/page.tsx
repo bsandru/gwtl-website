@@ -186,10 +186,6 @@ export default function ForLeadersPage() {
         {/* Background elements */}
         <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50" />
 
-
-        {/* Grid pattern */}
-        {/* <div className="absolute inset-0  bg-pattern-grid" /> */}
-
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Content - spans 7 columns */}
@@ -330,9 +326,6 @@ export default function ForLeadersPage() {
 
       {/* Benefits Section - Bento Grid */}
       <section className="relative py-24 lg:py-32 bg-white">
-        {/* Decorative elements */}
-        <div className="absolute top-20 -left-40 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl bg-radial-teal" />
-        <div className="absolute bottom-20 -right-40 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-radial-violet" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section header */}
@@ -397,7 +390,6 @@ export default function ForLeadersPage() {
       {/* Journey Section */}
       <section className="relative py-24 lg:py-32 bg-brand-navy overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-[0.03] bg-pattern-grid" />
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl bg-brand-teal" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-violet-500" />
 
@@ -452,8 +444,8 @@ export default function ForLeadersPage() {
       {/* Membership Tiers */}
       <section id="membership" className="relative py-24 lg:py-32 bg-linear-to-br from-white via-primary-50/30 to-white overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-radial-teal" />
-        <div className="absolute bottom-20 -left-40 w-[400px] h-[400px] rounded-full opacity-15 blur-3xl bg-radial-violet" />
+        {/* <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-radial-teal" /> */}
+        {/* <div className="absolute bottom-20 -left-40 w-[400px] h-[400px] rounded-full opacity-15 blur-3xl bg-radial-violet" /> */}
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section header */}
@@ -590,7 +582,6 @@ export default function ForLeadersPage() {
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl bg-brand-teal" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-violet-500" />
-        <div className="absolute inset-0 opacity-[0.03] bg-pattern-grid" />
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           {/* Icon */}

@@ -306,7 +306,7 @@ export default function ForCompaniesPage() {
       {/* Testimonials Section */}
       <section className="relative py-24 lg:py-36 bg-secondary-50 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-pattern-grid-teal opacity-[0.02]" />
+        <div className="absolute inset-0 bg-pattern-grid" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-radial-teal opacity-20 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -369,9 +369,9 @@ export default function ForCompaniesPage() {
       {/* CTA Section */}
       <section className="relative py-24 lg:py-36 bg-brand-navy overflow-hidden">
         {/* Background effects */}
-        <div className="absolute inset-0 bg-pattern-grid opacity-[0.03]" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-radial-teal-cta opacity-30 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-radial-violet opacity-20 blur-3xl" />
+        {/* <div className="absolute inset-0 bg-pattern-grid opacity-[0.03]" /> */}
+        {/* <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-radial-teal opacity-30 blur-3xl" /> */}
+        {/* <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-radial-violet opacity-20 blur-3xl" /> */}
 
         {/* Content */}
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
