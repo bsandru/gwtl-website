@@ -29,7 +29,7 @@ const timeline = [
   {
     year: "2020",
     title: "International Expansion",
-    description: "Grew to 25+ countries with 5,000+ members",
+    description: "Grew to 5+ countries with 1,000+ members",
     highlight: false,
   },
   {
@@ -39,7 +39,7 @@ const timeline = [
     highlight: false,
   },
   {
-    year: "2024",
+    year: "2025",
     title: "Erasmus+ Partnership",
     description: "Launched Girls Who Lead initiative",
     highlight: false,
@@ -439,16 +439,6 @@ export default function AboutPage() {
                         : "bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-brand-teal/30"
                         }`}
                     >
-                      {/* Highlight badge */}
-                      {item.highlight && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                          <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-white text-brand-navy text-xs font-bold">
-                            <Sparkles className="h-3 w-3" />
-                            Latest
-                          </div>
-                        </div>
-                      )}
-
                       <h3 className={`text-xl font-bold mb-3 ${item.highlight ? "text-white" : "text-white"}`}>
                         {item.title}
                       </h3>

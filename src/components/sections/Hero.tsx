@@ -3,8 +3,8 @@ import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 
 const stats = [
-  { value: "5,000+", label: "Leaders" },
-  { value: "10+", label: "Countries" },
+  { value: "10K+", label: "Leaders" },
+  { value: "50+", label: "Countries" },
   { value: "9", label: "Years" },
 ];
 
@@ -16,15 +16,15 @@ export function Hero() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large teal gradient blob */}
-        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-linear-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
+        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-gradient-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
 
         {/* Secondary blob */}
-        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-linear-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
+        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
 
         {/* Floating orbs */}
-        <div className="absolute top-1/5 left-1/6 w-3 h-3 rounded-full bg-brand-teal/30 animate-float [animation-delay:0s]" />
-        <div className="absolute top-1/4 right-1/6 w-3 h-3 rounded-full bg-brand-teal-light/50 animate-float [animation-delay:1s]" />
-        {/* <div className="absolute top-[100px] left-1/3 w-4 h-4 rounded-full bg-brand-teal/30 animate-float [animation-delay:2s]" /> */}
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-brand-teal/40 animate-float [animation-delay:0s]" />
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 rounded-full bg-brand-teal-light/50 animate-float [animation-delay:1s]" />
+        <div className="absolute bottom-1/3 left-1/3 w-4 h-4 rounded-full bg-brand-teal/30 animate-float [animation-delay:2s]" />
 
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-pattern-dots opacity-30" />
@@ -49,7 +49,7 @@ export function Hero() {
           {/* Main headline - Editorial style */}
           <div className="text-center max-w-5xl mx-auto mb-8">
             <h1 className="editorial-headline font-display animate-fade-in-up opacity-0 [animation-delay:0.2s]">
-              <span className="text-brand-navy">Where AI-Powered Leadership <br />and </span>
+              <span className="text-brand-navy">Where AI-Powered Leadership<br />and </span>
               <span className="gradient-text-hero leading-tight">Visionary Women</span>
               <span className="block text-brand-navy">Reshape Tech</span>
             </h1>
@@ -63,14 +63,14 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
+          <div className="flex flex-row flex-wrap gap-4 justify-center mb-16 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
             <Link href="/for-leaders/join">
               <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold text-white overflow-hidden bg-brand-navy shadow-lg shadow-brand-navy/20">
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Join the Community
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-              </button>
+                              </button>
             </Link>
             <Link href="/about">
               <button className="magnetic-btn group h-14 px-8 rounded-2xl font-bold text-brand-navy border-2 border-brand-navy/10 hover:border-brand-teal/30 hover:bg-brand-teal/5 transition-all duration-300 flex items-center justify-center gap-2">
