@@ -11,7 +11,7 @@ const strategicPartners: Partner[] = [
   // { name: "Microsoft", logo: "/images/partners/Microsoft.png", url: "https://microsoft.com" },
   { name: "EU Digital Skills & Jobs Coalition", logo: "/images/partners/DSJC.png", url: "https://digital-strategy.ec.europa.eu/en" },
   { name: "WeAreDevelopers", logo: "/images/partners/WAD.svg", url: "https://wearedevelopers.com" },
-  { name: "European Centre for Women and Technology", logo: "/images/partners/ecwt.png", url: "https://ecwt.eu" },
+  { name: "European Centre for Women and Technology", logo: "/images/partners/ecwt.webp", url: "https://ecwt.eu" },
   // { name: "Global Semiconductor Alliance", logo: "/images/partners/gsa.png" },
   // { name: "Zitec", logo: "/images/partners/Zitec.webp", url: "https://zitec.com" },
 ];
@@ -41,13 +41,13 @@ const communityPartners: Partner[] = [
 
 function PartnerLogo({ partner, small = false }: { partner: Partner, small?: boolean }) {
   const content = (
-    <div className="group relative flex items-center justify-center h-full transition-all duration-500 hover:-translate-y-1">
+    <div className="group relative flex items-center mx-auto h-full w-fit transition-all duration-500 hover:-translate-y-1">
       <Image
         src={partner.logo}
         alt={partner.name}
-        width={260}
+        width={256}
         height={144}
-        className={`object-contain ${small ? 'max-h-24' : 'max-h-36'} w-auto`}
+        className={`object-contain ${small ? 'h-24' : 'h-36'} w-auto`}
       />
     </div>
   );
@@ -98,7 +98,7 @@ export function Partners() {
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
           </div>
 
-          <div className="flex flex-wrap justify-center space-x-20 space-y-5">
+          <div className="grid grid-flow-col justify-items-center gap-5">
             {strategicPartners.map((partner) => (
               <PartnerLogo key={partner.name} partner={partner} />
             ))}
