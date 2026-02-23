@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { getEvent, saveEvent } from "@/lib/actions";
 
 interface EventFormData {
   title: string;
@@ -56,10 +57,9 @@ export default function EditEventPage({
 
   useEffect(() => {
     if (!isNew) {
-      fetch(`/api/admin/events/${slug}`)
-        .then((res) => res.json())
+      getEvent(slug)
         .then((data) => {
-          if (data.error) {
+          if ("error" in data) {
             alert("Event not found");
             router.push("/admin/events");
             return;
@@ -90,15 +90,9 @@ export default function EditEventPage({
     setSaving(true);
 
     try {
-      const response = await fetch(`/api/admin/events/${isNew ? "new" : slug}`, {
-        method: isNew ? "POST" : "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const result = await saveEvent(formData, isNew ? undefined : slug);
 
-      const result = await response.json();
-
-      if (result.success) {
+      if ("success" in result) {
         router.push("/admin/events");
       } else {
         alert(result.error || "Failed to save");

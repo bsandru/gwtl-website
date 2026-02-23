@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   LayoutDashboard,
   Newspaper,
   Calendar,
+  Users,
   ArrowLeft,
 } from "lucide-react";
 
@@ -17,7 +19,10 @@ export default function AdminLayout({
         {/* Sidebar */}
         <aside className="w-64 min-h-screen bg-card border-r border-border p-6 flex flex-col">
           <div className="mb-8">
-            <h1 className="text-xl font-bold text-foreground">GWTL Admin</h1>
+            <Link href="/" className="flex items-center">
+              {/* <Image src="/images/logo.png" alt="GWTL Logo" width={50} height={50} /> */}
+              <h1 className="inline-block text-xl font-bold text-brand-teal">GWTL Admin</h1>
+            </Link>
             <p className="text-sm text-muted-foreground">Content Management</p>
           </div>
 
@@ -42,6 +47,13 @@ export default function AdminLayout({
             >
               <Calendar className="w-5 h-5" />
               Events
+            </Link>
+            <Link
+              href="/admin/team"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+            >
+              <Users className="w-5 h-5" />
+              Team
             </Link>
           </nav>
 

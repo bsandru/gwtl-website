@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { getNews, saveNews } from "@/lib/actions";
 
 interface NewsFormData {
   title: string;
@@ -50,10 +51,9 @@ export default function EditNewsPage({
 
   useEffect(() => {
     if (!isNew) {
-      fetch(`/api/admin/news/${slug}`)
-        .then((res) => res.json())
+      getNews(slug)
         .then((data) => {
-          if (data.error) {
+          if ("error" in data) {
             alert("Article not found");
             router.push("/admin/news");
             return;
@@ -81,15 +81,9 @@ export default function EditNewsPage({
     setSaving(true);
 
     try {
-      const response = await fetch(`/api/admin/news/${isNew ? "new" : slug}`, {
-        method: isNew ? "POST" : "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const result = await saveNews(formData, isNew ? undefined : slug);
 
-      const result = await response.json();
-
-      if (result.success) {
+      if ("success" in result) {
         router.push("/admin/news");
       } else {
         alert(result.error || "Failed to save");

@@ -13,6 +13,7 @@ import {
   Sparkles,
   Building2,
 } from "lucide-react";
+import { COMPANIES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "For Companies",
@@ -88,8 +89,6 @@ const partnerBenefits = [
   "Dedicated partnership management",
 ];
 
-const partnerLogos = ["Google", "Microsoft", "Amazon", "SAP", "Accenture", "Stripe", "Spotify", "Trimble", "Etsy", "KPMG", "PayPal", "Salesforce", "VMware", "Oracle", "Zoom"];
-
 export default function ForCompaniesPage() {
   return (
     <div className="pt-10 overflow-hidden">
@@ -153,7 +152,7 @@ export default function ForCompaniesPage() {
                   Trusted by leading companies
                 </p>
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-                  {partnerLogos.map((company) => (
+                  {COMPANIES.map((company) => (
                     <span
                       key={company}
                       className="text-lg font-semibold text-secondary-400 hover:text-secondary-600 transition-colors cursor-default"
@@ -302,7 +301,7 @@ export default function ForCompaniesPage() {
       </section>
 
       {/* Pricing */}
-      <ForCompanies />
+      <ForCompanies showmembership={true} />
 
       {/* Testimonials Section */}
       <section className="relative py-24 lg:py-36 bg-secondary-50 overflow-hidden">
@@ -413,7 +412,7 @@ export default function ForCompaniesPage() {
               Joining companies already partnering with GWTL
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-              {partnerLogos.map((company) => (
+              {COMPANIES.map((company) => (
                 <span
                   key={company}
                   className="text-lg font-semibold text-secondary-500"

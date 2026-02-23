@@ -13,6 +13,7 @@ import {
     InfiniteProgress,
     useDropzone,
 } from "@/components/ui/dropzone";
+import { uploadImage } from "@/lib/actions";
 
 interface ImageUploadProps {
     value: string;
@@ -31,22 +32,17 @@ export function ImageUpload({
             formData.append("file", file);
 
             try {
-                const response = await fetch("/api/admin/upload", {
-                    method: "POST",
-                    body: formData,
-                });
+                const data = await uploadImage(formData);
 
-                const data = await response.json();
-
-                if (!response.ok || !data.success) {
+                if (!data.success) {
                     return {
                         status: "error",
                         error: data.error || "Upload failed",
                     };
                 }
 
-                onChange(data.url);
-                return { status: "success", result: data.url };
+                onChange(data.url!);
+                return { status: "success", result: data.url! };
             } catch {
                 return { status: "error", error: "Network error during upload" };
             }

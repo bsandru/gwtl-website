@@ -4,6 +4,9 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
+
+export const COMPANIES = ["Google", "Microsoft", "Amazon", "Total Soft", "Bitdefender", "UiPath", "Accenture", "Spotify", "Trimble", "Endava", "Druid", "Bosh", "Honeywell", "Yokogawa", "Globant", "IKEA"];
+
 // Content directory paths
 const contentDirectory = path.join(process.cwd(), "content");
 

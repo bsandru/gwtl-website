@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Plus, Edit, Trash2, MapPin } from "lucide-react";
 import { getAllEvents } from "@/lib/content";
+import { deleteEvent } from "@/lib/actions";
 
 export default function AdminEventsPage() {
   const events = getAllEvents();
@@ -72,7 +73,7 @@ export default function AdminEventsPage() {
                     >
                       <Edit className="w-4 h-4" />
                     </Link>
-                    <form action={`/api/admin/events/${item.slug}/delete`} method="POST">
+                    <form action={deleteEvent.bind(null, item.slug)}>
                       <button
                         type="submit"
                         className="p-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg transition-colors"

@@ -64,7 +64,7 @@ const tiers = [
   },
 ];
 
-export function ForCompanies() {
+export function ForCompanies({ showmembership = false }: { showmembership: boolean }) {
   return (
     <section className="relative bg-white py-28 lg:py-40 overflow-hidden">
       {/* Background decoration */}
@@ -138,117 +138,119 @@ export function ForCompanies() {
         </div>
 
         {/* Pricing tiers */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {tiers.map((tier, idx) => {
-            const isTeal = tier.color === "teal";
+        {showmembership && (
+          <div className="grid lg:grid-cols-3 gap-8">
+            {tiers.map((tier, idx) => {
+              const isTeal = tier.color === "teal";
 
-            return (
-              <div
-                key={tier.name}
-                className={`group relative rounded-4xl overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0 ${tier.popular
-                  ? "lg:-mt-4 lg:mb-4"
-                  : ""
-                  }`}
-                style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
-              >
-                {/* Card background */}
+              return (
                 <div
-                  className={`absolute inset-0 ${isTeal
-                    ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
-                    : "bg-white border border-secondary-200"
+                  key={tier.name}
+                  className={`group relative rounded-4xl overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0 ${tier.popular
+                    ? "lg:-mt-4 lg:mb-4"
+                    : ""
                     }`}
-                />
-
-                {/* Popular badge glow */}
-                {tier.popular && (
-                  <div className="absolute -inset-[1px] rounded-4xl bg-linear-to-r from-brand-teal via-brand-teal-light to-brand-teal blur-sm opacity-50" />
-                )}
-
-                <div className={`relative p-8 lg:p-10 ${isTeal ? "" : ""}`}>
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div
-                      className={`h-14 w-14 rounded-2xl flex items-center justify-center ${isTeal
-                        ? "bg-white/20 backdrop-blur-sm"
-                        : "bg-brand-navy"
-                        }`}
-                    >
-                      <tier.icon
-                        className={`h-7 w-7 ${isTeal ? "text-white" : "text-white"}`}
-                      />
-                    </div>
-                    {tier.popular && (
-                      <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-brand-teal">
-                        Most Popular
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Title */}
-                  <h3
-                    className={`font-display text-2xl font-bold mb-2 ${isTeal ? "text-white" : "text-brand-navy"
+                  style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
+                >
+                  {/* Card background */}
+                  <div
+                    className={`absolute inset-0 ${isTeal
+                      ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
+                      : "bg-white border border-secondary-200"
                       }`}
-                  >
-                    {tier.name}
-                  </h3>
-                  <p
-                    className={`text-sm mb-6 ${isTeal ? "text-white/70" : "text-secondary-500"
-                      }`}
-                  >
-                    {tier.description}
-                  </p>
+                  />
 
-                  {/* Price */}
-                  <div className="flex items-baseline gap-1 mb-8">
-                    <span
-                      className={`font-display text-5xl font-bold ${isTeal ? "text-white" : "text-brand-navy"
-                        }`}
-                    >
-                      {tier.price}
-                    </span>
-                    <span className={isTeal ? "text-white/60" : "text-secondary-400"}>
-                      {tier.period}
-                    </span>
-                  </div>
+                  {/* Popular badge glow */}
+                  {tier.popular && (
+                    <div className="absolute -inset-[1px] rounded-4xl bg-linear-to-r from-brand-teal via-brand-teal-light to-brand-teal blur-sm opacity-50" />
+                  )}
 
-                  {/* Features */}
-                  <ul className="space-y-4 mb-10">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <div
-                          className={`h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${isTeal ? "bg-white/20" : "bg-brand-teal/10"
-                            }`}
-                        >
-                          <Check
-                            className={`h-3 w-3 ${isTeal ? "text-white" : "text-brand-teal"
-                              }`}
-                          />
-                        </div>
-                        <span
-                          className={isTeal ? "text-white/80" : "text-secondary-600"}
-                        >
-                          {feature}
+                  <div className={`relative p-8 lg:p-10 ${isTeal ? "" : ""}`}>
+                    {/* Header */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div
+                        className={`h-14 w-14 rounded-2xl flex items-center justify-center ${isTeal
+                          ? "bg-white/20 backdrop-blur-sm"
+                          : "bg-brand-navy"
+                          }`}
+                      >
+                        <tier.icon
+                          className={`h-7 w-7 ${isTeal ? "text-white" : "text-white"}`}
+                        />
+                      </div>
+                      {tier.popular && (
+                        <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-brand-teal">
+                          Most Popular
                         </span>
-                      </li>
-                    ))}
-                  </ul>
+                      )}
+                    </div>
 
-                  {/* CTA */}
-                  <Link href="/for-companies/membership">
-                    <button
-                      className={`magnetic-btn w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 ${isTeal
-                        ? "bg-white text-brand-teal hover:bg-white/90"
-                        : "bg-brand-navy text-white hover:bg-brand-teal"
+                    {/* Title */}
+                    <h3
+                      className={`font-display text-2xl font-bold mb-2 ${isTeal ? "text-white" : "text-brand-navy"
                         }`}
                     >
-                      Get Started
-                    </button>
-                  </Link>
+                      {tier.name}
+                    </h3>
+                    <p
+                      className={`text-sm mb-6 ${isTeal ? "text-white/70" : "text-secondary-500"
+                        }`}
+                    >
+                      {tier.description}
+                    </p>
+
+                    {/* Price */}
+                    <div className="flex items-baseline gap-1 mb-8">
+                      <span
+                        className={`font-display text-5xl font-bold ${isTeal ? "text-white" : "text-brand-navy"
+                          }`}
+                      >
+                        {tier.price}
+                      </span>
+                      <span className={isTeal ? "text-white/60" : "text-secondary-400"}>
+                        {tier.period}
+                      </span>
+                    </div>
+
+                    {/* Features */}
+                    <ul className="space-y-4 mb-10">
+                      {tier.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <div
+                            className={`h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${isTeal ? "bg-white/20" : "bg-brand-teal/10"
+                              }`}
+                          >
+                            <Check
+                              className={`h-3 w-3 ${isTeal ? "text-white" : "text-brand-teal"
+                                }`}
+                            />
+                          </div>
+                          <span
+                            className={isTeal ? "text-white/80" : "text-secondary-600"}
+                          >
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA */}
+                    <Link href="/for-companies/membership">
+                      <button
+                        className={`magnetic-btn w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 ${isTeal
+                          ? "bg-white text-brand-teal hover:bg-white/90"
+                          : "bg-brand-navy text-white hover:bg-brand-teal"
+                          }`}
+                      >
+                        Get Started
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div className="mt-20 text-center animate-fade-in-up opacity-0 [animation-delay:0.9s]">

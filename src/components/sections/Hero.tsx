@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
+import { COMPANIES } from "@/lib/content";
 
 const stats = [
-  { value: "10K+", label: "Leaders" },
-  { value: "50+", label: "Countries" },
+  { value: "5000+", label: "Leaders" },
+  { value: "10+", label: "Countries" },
   { value: "9", label: "Years" },
 ];
-
-const trustedBy = ["Google", "Microsoft", "Amazon", "Meta", "Oracle", "OpenAI", "Accenture", "Spotify", "Trimble", "KPMG"];
 
 export function Hero() {
   return (
@@ -185,7 +184,7 @@ export function Hero() {
               Leaders from top companies trust GWTL
             </p>
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-              {trustedBy.map((company) => (
+              {COMPANIES.map((company) => (
                 <span
                   key={company}
                   className="text-xl font-bold text-secondary-300 hover:text-brand-teal transition-colors duration-300 cursor-default"
