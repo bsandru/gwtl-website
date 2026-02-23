@@ -198,7 +198,7 @@ export function getUpcomingEvents(): EventItem[] {
   const allEvents = getAllEvents();
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  
+
   return allEvents.filter((event) => new Date(event.date) >= today);
 }
 
@@ -206,7 +206,7 @@ export function getPastEvents(): EventItem[] {
   const allEvents = getAllEvents();
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  
+
   return allEvents.filter((event) => new Date(event.date) < today);
 }
 
@@ -244,30 +244,3 @@ export function getAllTeamMembers(): TeamMember[] {
   return team.sort((a, b) => a.order - b.order);
 }
 
-export async function getTeamMember(slug: string): Promise<TeamMember | null> {
-  const teamDirectory = getContentDirectory("team");
-  const fullPath = path.join(teamDirectory, `${slug}.md`);
-
-  if (!fs.existsSync(fullPath)) {
-    return null;
-  }
-
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-  const htmlContent = await markdownToHtml(content);
-
-  return {
-    slug,
-    name: data.name || "",
-    role: data.role || "",
-    bio: data.bio || "",
-    image: data.image || undefined,
-    linkedin: data.linkedin || undefined,
-    twitter: data.twitter || undefined,
-    order: data.order || 999,
-    category: data.category || "leadership",
-    company: data.company || undefined,
-    country: data.country || undefined,
-    content: htmlContent,
-  };
-}
