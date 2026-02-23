@@ -81,7 +81,7 @@ const testimonials = [
 ];
 
 const partnerBenefits = [
-  "Access to 10,000+ senior women tech leaders",
+  "Access to 5,000+ senior women tech leaders",
   "Proven DEI impact with measurable results",
   "Global reach across 10+ countries",
   "Davos-level credibility and visibility",
@@ -197,7 +197,7 @@ export default function ForCompaniesPage() {
                 {/* Stats row */}
                 <div className="mt-8 pt-8 border-t border-secondary-100 grid grid-cols-3 gap-4">
                   {[
-                    { value: "10K+", label: "Leaders" },
+                    { value: "5K+", label: "Leaders" },
                     { value: "10+", label: "Countries" },
                     { value: "9", label: "Years" },
                   ].map((stat) => (
@@ -410,7 +410,7 @@ export default function ForCompaniesPage() {
           {/* Trust element */}
           <div className="mt-14 pt-10 border-t border-white/10">
             <p className="text-sm text-secondary-400 mb-4">
-              Joining 200+ companies already partnering with GWTL
+              Joining companies already partnering with GWTL
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
               {partnerLogos.map((company) => (

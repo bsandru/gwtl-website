@@ -29,9 +29,9 @@ const benefits = [
     icon: Users,
     title: "Global Network",
     description:
-      "Connect with 10,000+ women tech leaders across 10+ countries. Build meaningful relationships that accelerate your career.",
+      "Connect with 5,000+ women tech leaders across 10+ countries. Build meaningful relationships that accelerate your career.",
     color: "from-brand-teal to-emerald-600",
-    bgColor: "bg-gradient-to-br from-teal-50 to-emerald-50",
+    bgColor: "bg-linear-to-br from-teal-50 to-emerald-50",
   },
   {
     icon: BookOpen,
@@ -39,7 +39,7 @@ const benefits = [
     description:
       "Get matched with senior leaders through our AI-powered platform. Personalized guidance from those who've walked your path.",
     color: "from-violet-500 to-purple-600",
-    bgColor: "bg-gradient-to-br from-violet-50 to-purple-50",
+    bgColor: "bg-linear-to-br from-violet-50 to-purple-50",
   },
   {
     icon: Calendar,
@@ -47,7 +47,7 @@ const benefits = [
     description:
       "Access invitation-only roundtables, workshops, and networking events. From local meetups to Davos Innovation Week.",
     color: "from-amber-500 to-orange-600",
-    bgColor: "bg-gradient-to-br from-amber-50 to-orange-50",
+    bgColor: "bg-linear-to-br from-amber-50 to-orange-50",
   },
   {
     icon: Rocket,
@@ -55,7 +55,7 @@ const benefits = [
     description:
       "92% of our members report career advancement within 2 years. Leadership programs, visibility opportunities, and more.",
     color: "from-rose-500 to-pink-600",
-    bgColor: "bg-gradient-to-br from-rose-50 to-pink-50",
+    bgColor: "bg-linear-to-br from-rose-50 to-pink-50",
   },
 ];
 
@@ -144,7 +144,7 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "10K+", label: "Active Members", icon: Users },
+  { value: "5K+", label: "Active Members", icon: Users },
   { value: "10+", label: "Countries", icon: Globe },
   { value: "92%", label: "Career Growth", icon: Rocket },
   { value: "500+", label: "Mentors", icon: Heart },
@@ -185,9 +185,9 @@ export default function ForLeadersPage() {
         {/* Background elements */}
         <div className="absolute inset-0 bg-linear-to-br from-secondary-50 via-white to-primary-50" />
 
-       
+
         {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03] bg-pattern-grid" />
+        {/* <div className="absolute inset-0  bg-pattern-grid" /> */}
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -200,7 +200,7 @@ export default function ForLeadersPage() {
                   For Women Tech Leaders
                 </span>
                 <span className="text-xs px-2 py-0.5 rounded-full bg-brand-teal/10 text-brand-teal font-semibold">
-                  10K+ Members
+                  5K+ Members
                 </span>
               </div>
 
@@ -258,7 +258,7 @@ export default function ForLeadersPage() {
               <div className="animate-fade-in-up mt-12 flex flex-wrap gap-8 opacity-0 stagger-5">
                 {stats.map((stat) => (
                   <div key={stat.label} className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-brand-teal to-brand-teal-dark">
+                    <div className="h-10 w-10 rounded-xl flex items-center justify-center bg-linear-to-br from-brand-teal to-brand-teal-dark">
                       <stat.icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -274,7 +274,7 @@ export default function ForLeadersPage() {
             <div className="lg:col-span-5 relative animate-fade-in-scale opacity-0 [animation-delay:0.4s]">
               <div className="relative mx-8">
                 {/* Background decorative shape */}
-                <div className="absolute -inset-4 rounded-[3rem] transform -rotate-3 bg-gradient-to-br from-brand-teal to-violet-600" />
+                <div className="absolute -inset-4 rounded-[3rem] transform -rotate-3 bg-linear-to-br from-brand-teal to-violet-600" />
 
                 {/* Main image */}
                 <div className="relative aspect-4/5 rounded-5xl overflow-hidden shadow-2xl">
@@ -285,7 +285,7 @@ export default function ForLeadersPage() {
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 via-transparent to-transparent" />
 
                   {/* Overlay content */}
                   <div className="absolute bottom-6 left-6 right-6">
@@ -295,12 +295,12 @@ export default function ForLeadersPage() {
                           {[1, 2, 3, 4].map((i) => (
                             <div
                               key={i}
-                              className="h-8 w-8 rounded-full border-2 border-white bg-gradient-to-br from-brand-teal to-brand-navy"
+                              className="h-8 w-8 rounded-full border-2 border-white bg-linear-to-br from-brand-teal to-brand-navy"
                             />
                           ))}
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm font-semibold text-brand-navy">Join 10K+ Leaders</p>
+                          <p className="text-sm font-semibold text-brand-navy">Join 5K+ Leaders</p>
                           <p className="text-xs text-secondary-500">From 10+ countries</p>
                         </div>
                         <Sparkles className="h-5 w-5 text-brand-teal" />
@@ -312,7 +312,7 @@ export default function ForLeadersPage() {
                 {/* Floating badge */}
                 <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-elegant-lg p-4 animate-float [animation-delay:1s]">
                   <div className="flex items-center gap-2">
-                    <div className="h-10 w-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-violet-500 to-purple-600">
+                    <div className="h-10 w-10 rounded-xl flex items-center justify-center bg-linear-to-br from-violet-500 to-purple-600">
                       <Award className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -367,7 +367,7 @@ export default function ForLeadersPage() {
                 <div className="relative z-10">
                   {/* Icon */}
                   <div
-                    className={`h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br ${benefit.color} shadow-lg group-hover:scale-110 transition-transform duration-500`}
+                    className={`h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-linear-to-br ${benefit.color} shadow-lg group-hover:scale-110 transition-transform duration-500`}
                   >
                     <benefit.icon className="h-8 w-8 text-white" />
                   </div>
@@ -421,7 +421,7 @@ export default function ForLeadersPage() {
               <div key={item.step} className="relative group">
                 {/* Connector line (hidden on last item) */}
                 {index < journeySteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-1/2 w-full h-px bg-gradient-to-r from-brand-teal/50 to-transparent" />
+                  <div className="hidden lg:block absolute top-12 left-1/2 w-full h-px bg-linear-to-r from-brand-teal/50 to-transparent" />
                 )}
 
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-10 text-center transition-all duration-500 hover:bg-white/10 hover:border-brand-teal/30 hover:-translate-y-2">
@@ -433,7 +433,7 @@ export default function ForLeadersPage() {
                   </div>
 
                   {/* Icon */}
-                  <div className="h-16 w-16 mx-auto rounded-2xl flex items-center justify-center mb-6 mt-4 bg-gradient-to-br from-brand-teal/20 to-violet-500/20 border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                  <div className="h-16 w-16 mx-auto rounded-2xl flex items-center justify-center mb-6 mt-4 bg-linear-to-br from-brand-teal/20 to-violet-500/20 border border-white/10 group-hover:scale-110 transition-transform duration-500">
                     <item.icon className="h-8 w-8 text-brand-teal-light" />
                   </div>
 
@@ -449,7 +449,7 @@ export default function ForLeadersPage() {
       </section>
 
       {/* Membership Tiers */}
-      <section id="membership" className="relative py-24 lg:py-32 bg-gradient-to-b from-white via-primary-50/30 to-white overflow-hidden">
+      <section id="membership" className="relative py-24 lg:py-32 bg-linear-to-br from-white via-primary-50/30 to-white overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-radial-teal" />
         <div className="absolute bottom-20 -left-40 w-[400px] h-[400px] rounded-full opacity-15 blur-3xl bg-radial-violet" />
@@ -594,7 +594,7 @@ export default function ForLeadersPage() {
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           {/* Icon */}
           <div className="flex justify-center mb-8">
-            <div className="h-20 w-20 rounded-3xl flex items-center justify-center animate-pulse-glow bg-gradient-to-br from-brand-teal to-violet-600">
+            <div className="h-20 w-20 rounded-3xl flex items-center justify-center animate-pulse-glow bg-linear-to-br from-brand-teal to-violet-600">
               <Sparkles className="h-10 w-10 text-white" />
             </div>
           </div>
@@ -606,7 +606,7 @@ export default function ForLeadersPage() {
           </h2>
 
           <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Join 10,000+ women tech leaders who are building the future together.
+            Join 5,000+ women tech leaders who are building the future together.
             Your next chapter starts with a single step.
           </p>
 

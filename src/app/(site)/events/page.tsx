@@ -95,8 +95,8 @@ export default function EventsPage() {
       <section className="relative py-20 lg:py-24">
         {/* Background elements */}
         <div className="absolute inset-0">
-          <div className="absolute -top-[300px] -right-[200px] w-[700px] h-[700px] rounded-full bg-gradient-to-br from-brand-teal/15 via-brand-teal-light/10 to-transparent blur-3xl" />
-          <div className="absolute -bottom-[200px] -left-[200px] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-brand-navy/5 to-transparent blur-3xl" />
+          <div className="absolute -top-[300px] -right-[200px] w-[700px] h-[700px] rounded-full bg-linear-to-br from-brand-teal/15 via-brand-teal-light/10 to-transparent blur-3xl" />
+          <div className="absolute -bottom-[200px] -left-[200px] w-[500px] h-[500px] rounded-full bg-linear-to-tr from-brand-navy/5 to-transparent blur-3xl" />
           <div className="absolute inset-0 bg-pattern-dots opacity-20" />
         </div>
 
@@ -163,7 +163,7 @@ export default function EventsPage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-brand-navy/20" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/60 to-brand-navy/20" />
                 </div>
 
                 {/* Content */}
@@ -277,7 +277,7 @@ export default function EventsPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-brand-navy/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                    <div className="absolute inset-0 bg-linear-to-t from-brand-navy/80 via-brand-navy/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
                     {/* Category tag */}
                     <div className="absolute top-4 left-4">
@@ -436,8 +436,8 @@ export default function EventsPage() {
       <section className="py-20 lg:py-28 bg-brand-navy relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-brand-teal/20 to-transparent blur-[100px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-tl from-brand-teal-light/15 to-transparent blur-[80px]" />
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-linear-to-br from-brand-teal/20 to-transparent blur-[100px]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-linear-to-tl from-brand-teal-light/15 to-transparent blur-[80px]" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -460,7 +460,7 @@ export default function EventsPage() {
             />
             <button
               type="submit"
-              className="magnetic-btn px-8 py-4 font-bold rounded-xl transition-all duration-300 bg-gradient-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30 flex items-center justify-center gap-2"
+              className="magnetic-btn px-8 py-4 font-bold rounded-xl transition-all duration-300 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30 flex items-center justify-center gap-2"
             >
               <span>Subscribe</span>
               <ArrowRight className="h-4 w-4" />

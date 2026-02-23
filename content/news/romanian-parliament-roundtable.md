@@ -4,7 +4,7 @@ excerpt: "GWTL and the Committee for Labour held a Roundtable on 'Shaping the Fu
 date: "2025-06-10"
 category: "Advocacy"
 featured: false
-image: "/images/news/parliament-roundtable.svg"
+image: "/images/news/parlament-roundtable-2025.jpg"
 ---
 
 In a landmark event for women in technology, Global Women TechLeaders partnered with the **Romanian Parliament's Committee for Labour** to host a high-level roundtable discussion on advancing women's leadership in the tech sector.

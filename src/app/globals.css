@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -485,14 +486,6 @@ body {
     0 40px 50px -12px rgba(15, 22, 41, 0.2);
 }
 
-/* Hover lift */
-/* .hover-lift {
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-12px);
-} */
 
 /* Section divider */
 .section-divider {
@@ -687,6 +680,7 @@ body {
 
 .magnetic-btn:hover {
   transform: scale(1.05);
+  background: linear-gradient(to right, var(--brand-teal), var(--brand-teal-light));
 }
 
 .magnetic-btn:active {

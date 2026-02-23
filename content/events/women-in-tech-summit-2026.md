@@ -1,12 +1,12 @@
 ---
-title: "Women in Tech Summit 2026"
+title: "GWTL @ Web Summit 2026"
 excerpt: "Our annual flagship conference bringing together women leaders from across the tech industry."
 date: "2026-03-08"
 endDate: "2026-03-09"
 location: "Brussels, Belgium"
 category: "Conference"
 featured: true
-image: "/images/events/wit-summit-2026.jpg"
+image: "/images/events/web_summit_2026.jpg"
 registrationUrl: "https://example.com/register"
 ---
 

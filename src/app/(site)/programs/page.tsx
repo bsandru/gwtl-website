@@ -35,7 +35,7 @@ const programs = [
     status: "Applications Open",
     statusColor: "teal",
     accent: "from-teal-400 via-teal-500 to-emerald-600",
-    bgAccent: "bg-gradient-to-br from-teal-50 to-emerald-50",
+    bgAccent: "bg-linear-to-br from-teal-50 to-emerald-50",
     gradientTextClass: "gradient-text-teal",
   },
   {
@@ -55,7 +55,7 @@ const programs = [
     status: "Always Open",
     statusColor: "emerald",
     accent: "from-cyan-400 via-sky-500 to-blue-600",
-    bgAccent: "bg-gradient-to-br from-sky-50 to-blue-50",
+    bgAccent: "bg-linear-to-br from-sky-50 to-blue-50",
     gradientTextClass: "gradient-text-emerald",
   },
   {
@@ -75,7 +75,7 @@ const programs = [
     status: "In Progress",
     statusColor: "violet",
     accent: "from-violet-400 via-purple-500 to-indigo-600",
-    bgAccent: "bg-gradient-to-br from-violet-50 to-indigo-50",
+    bgAccent: "bg-linear-to-br from-violet-50 to-indigo-50",
     gradientTextClass: "gradient-text-violet",
   },
   {
@@ -95,7 +95,7 @@ const programs = [
     status: "By Invitation",
     statusColor: "amber",
     accent: "from-amber-400 via-orange-500 to-rose-500",
-    bgAccent: "bg-gradient-to-br from-amber-50 to-orange-50",
+    bgAccent: "bg-linear-to-br from-amber-50 to-orange-50",
     gradientTextClass: "gradient-text-amber",
   },
 ];
@@ -244,33 +244,33 @@ export default function ProgramsPage() {
                   <div className="flex items-center gap-3 mb-6">
                     <span
                       className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold ${program.statusColor === "teal"
-                          ? "bg-teal-100 text-teal-700"
-                          : program.statusColor === "emerald"
-                            ? "bg-emerald-100 text-emerald-700"
-                            : program.statusColor === "violet"
-                              ? "bg-violet-100 text-violet-700"
-                              : "bg-amber-100 text-amber-700"
+                        ? "bg-teal-100 text-teal-700"
+                        : program.statusColor === "emerald"
+                          ? "bg-emerald-100 text-emerald-700"
+                          : program.statusColor === "violet"
+                            ? "bg-violet-100 text-violet-700"
+                            : "bg-amber-100 text-amber-700"
                         }`}
                     >
                       <span className="relative flex h-2 w-2">
                         <span
                           className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${program.statusColor === "teal"
-                              ? "bg-teal-500"
-                              : program.statusColor === "emerald"
-                                ? "bg-emerald-500"
-                                : program.statusColor === "violet"
-                                  ? "bg-violet-500"
-                                  : "bg-amber-500"
+                            ? "bg-teal-500"
+                            : program.statusColor === "emerald"
+                              ? "bg-emerald-500"
+                              : program.statusColor === "violet"
+                                ? "bg-violet-500"
+                                : "bg-amber-500"
                             }`}
                         />
                         <span
                           className={`relative inline-flex rounded-full h-2 w-2 ${program.statusColor === "teal"
-                              ? "bg-teal-500"
-                              : program.statusColor === "emerald"
-                                ? "bg-emerald-500"
-                                : program.statusColor === "violet"
-                                  ? "bg-violet-500"
-                                  : "bg-amber-500"
+                            ? "bg-teal-500"
+                            : program.statusColor === "emerald"
+                              ? "bg-emerald-500"
+                              : program.statusColor === "violet"
+                                ? "bg-violet-500"
+                                : "bg-amber-500"
                             }`}
                         />
                       </span>
@@ -297,12 +297,12 @@ export default function ProgramsPage() {
                       >
                         <CheckCircle2
                           className={`h-5 w-5 mt-0.5 shrink-0 ${program.statusColor === "teal"
-                              ? "text-teal-500"
-                              : program.statusColor === "emerald"
-                                ? "text-emerald-500"
-                                : program.statusColor === "violet"
-                                  ? "text-violet-500"
-                                  : "text-amber-500"
+                            ? "text-teal-500"
+                            : program.statusColor === "emerald"
+                              ? "text-emerald-500"
+                              : program.statusColor === "violet"
+                                ? "text-violet-500"
+                                : "text-amber-500"
                             }`}
                         />
                         <span>{feature}</span>
@@ -332,14 +332,14 @@ export default function ProgramsPage() {
                     <div className="absolute inset-6 rounded-2xl shadow-2xl overflow-hidden glass-card">
                       {/* Gradient border effect */}
                       <div
-                        className={`absolute inset-0 rounded-2xl opacity-50 bg-gradient-to-br ${program.accent} gradient-border-mask`}
+                        className={`absolute inset-0 rounded-2xl opacity-50 bg-linear-to-br ${program.accent} gradient-border-mask`}
                       />
 
                       {/* Content inside glass card */}
                       <div className="relative h-full flex flex-col items-center justify-center p-8">
                         {/* Icon */}
                         <div
-                          className={`h-24 w-24 rounded-3xl flex items-center justify-center mb-6 bg-gradient-to-br ${program.accent} shadow-lg`}
+                          className={`h-24 w-24 rounded-3xl flex items-center justify-center mb-6 bg-linear-to-br ${program.accent} shadow-lg`}
                         >
                           <program.icon className="h-12 w-12 text-white" />
                         </div>
@@ -357,8 +357,8 @@ export default function ProgramsPage() {
                             <div
                               key={i}
                               className={`h-2 w-2 rounded-full ${i <= index
-                                  ? `bg-gradient-to-r ${program.accent}`
-                                  : "bg-gray-200"
+                                ? `bg-linear-to-r ${program.accent}`
+                                : "bg-gray-200"
                                 }`}
                             />
                           ))}
@@ -430,11 +430,11 @@ export default function ProgramsPage() {
           {/* Trust indicator */}
           <div className="mt-14 pt-10 border-t border-white/10">
             <p className="text-sm text-gray-400 mb-4">
-              Join 10,000+ women leaders who&apos;ve transformed their careers
+              Join 5,000+ women leaders who&apos;ve transformed their careers
             </p>
             <div className="flex justify-center gap-6">
               {[
-                { icon: Users, label: "10K+ Members" },
+                { icon: Users, label: "5K+ Members" },
                 { icon: Globe, label: "10+ Countries" },
                 { icon: Award, label: "9 Years Impact" },
               ].map((item) => (

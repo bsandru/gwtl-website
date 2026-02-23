@@ -42,12 +42,12 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-brand-navy">
       {/* Decorative gradient top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-teal via-brand-teal-light to-brand-teal" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-brand-teal via-brand-teal-light to-brand-teal" />
 
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[400px] -right-[200px] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-brand-teal/10 to-transparent blur-3xl" />
-        <div className="absolute -bottom-[300px] -left-[200px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-brand-teal-light/5 to-transparent blur-3xl" />
+        <div className="absolute -top-[400px] -right-[200px] w-[800px] h-[800px] rounded-full bg-linear-to-br from-brand-teal/10 to-transparent blur-3xl" />
+        <div className="absolute -bottom-[300px] -left-[200px] w-[600px] h-[600px] rounded-full bg-linear-to-tr from-brand-teal-light/5 to-transparent blur-3xl" />
       </div>
 
       {/* Main Footer Content */}
@@ -192,7 +192,7 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="magnetic-btn group px-8 py-4 font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 bg-gradient-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30"
+                className="magnetic-btn group px-8 py-4 font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30"
               >
                 <Mail className="h-5 w-5" />
                 <span>Subscribe</span>

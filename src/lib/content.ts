@@ -46,6 +46,9 @@ export interface TeamMember {
   twitter?: string;
   order: number;
   content: string;
+  category?: string;
+  company?: string;
+  country?: string;
 }
 
 // ============================================
@@ -63,7 +66,9 @@ function ensureDirectoryExists(dir: string): void {
 }
 
 async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(html).process(markdown);
+  const result = await remark()
+    .use(html, { sanitize: false })
+    .process(markdown);
   return result.toString();
 }
 
@@ -225,6 +230,9 @@ export function getAllTeamMembers(): TeamMember[] {
       linkedin: data.linkedin || undefined,
       twitter: data.twitter || undefined,
       order: data.order || 999,
+      category: data.category || "leadership",
+      company: data.company || undefined,
+      country: data.country || undefined,
       content,
     } as TeamMember;
   });
@@ -254,6 +262,9 @@ export async function getTeamMember(slug: string): Promise<TeamMember | null> {
     linkedin: data.linkedin || undefined,
     twitter: data.twitter || undefined,
     order: data.order || 999,
+    category: data.category || "leadership",
+    company: data.company || undefined,
+    country: data.country || undefined,
     content: htmlContent,
   };
 }

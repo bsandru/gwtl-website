@@ -19,7 +19,7 @@ const features = [
       "Build global alliances and leverage diverse expertise across 50+ countries.",
     icon: Users,
     link: "/for-leaders/join",
-    stat: "10K+",
+    stat: "5K+",
     statLabel: "Members",
     color: "navy",
     size: "small",
@@ -53,7 +53,7 @@ export function WhatWeDo() {
     <section className="relative bg-white py-28 lg:py-40 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-b from-brand-teal/5 to-transparent blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-linear-to-br from-brand-teal/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -92,16 +92,16 @@ export function WhatWeDo() {
                 {/* Card background */}
                 <div
                   className={`absolute inset-0 transition-opacity duration-500 ${isTeal
-                      ? "bg-gradient-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
-                      : "bg-gradient-to-br from-brand-navy via-brand-navy to-brand-navy-dark"
+                    ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
+                    : "bg-linear-to-br from-brand-navy via-brand-navy to-brand-navy-dark"
                     }`}
                 />
 
                 {/* Hover gradient overlay */}
                 <div
                   className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isTeal
-                      ? "bg-gradient-to-br from-brand-teal-light via-brand-teal to-brand-teal-dark"
-                      : "bg-gradient-to-br from-brand-navy-light via-brand-navy to-brand-navy-dark"
+                    ? "bg-linear-to-br from-brand-teal-light via-brand-teal to-brand-teal-dark"
+                    : "bg-linear-to-br from-brand-navy-light via-brand-navy to-brand-navy-dark"
                     }`}
                 />
 
@@ -158,7 +158,7 @@ export function WhatWeDo() {
                 </div>
 
                 {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-[4rem]" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-brl from-white/10 to-transparent rounded-bl-[4rem]" />
               </Link>
             );
           })}

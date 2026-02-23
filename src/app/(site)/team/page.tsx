@@ -1,47 +1,35 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Twitter, Users, Sparkles, ArrowRight, Heart } from "lucide-react";
+import { Linkedin, Users, Sparkles, ArrowRight, Globe, Crown, Star, ExternalLink } from "lucide-react";
 import { getAllTeamMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Our Team",
-  description: "Meet the team behind Global Women TechLeaders.",
+  description:
+    "Meet the team behind Global Women TechLeaders — leadership board and advisory board members driving our mission forward.",
 };
-
-// Color palettes for team member cards
-const cardGradients = [
-  "from-brand-teal to-emerald-600",
-  "from-brand-navy to-indigo-600",
-  "from-rose-500 to-pink-600",
-  "from-amber-500 to-orange-600",
-  "from-violet-500 to-purple-600",
-  "from-cyan-500 to-blue-600",
-];
 
 export default function TeamPage() {
   const team = getAllTeamMembers();
+  const leadership = team.filter((m) => m.category === "leadership");
+  const advisory = team.filter((m) => m.category === "advisory");
 
   return (
     <div className="pt-20 overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center py-20 lg:py-28">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50" />
-
-        {/* Decorative elements */}
-        <div className="absolute top-10 right-0 w-[500px] h-[500px] rounded-full opacity-30 blur-3xl bg-gradient-to-br from-brand-teal to-brand-teal-light" />
-        <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full opacity-20 blur-3xl bg-gradient-to-br from-brand-navy to-brand-navy-light" />
-        <div className="absolute top-1/3 left-1/4 w-[200px] h-[200px] rounded-full opacity-10 blur-2xl bg-gradient-to-br from-violet-500 to-purple-600" />
+      {/* Hero */}
+      <section className="relative min-h-[55vh] flex items-center py-20 lg:py-28">
+        <div className="absolute inset-0 bg-linear-to-br from-primary-50 via-white to-secondary-50" />
+        <div className="absolute top-10 right-0 w-[500px] h-[500px] rounded-full opacity-30 blur-3xl bg-linear-to-br from-brand-teal to-brand-teal-light" />
+        <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full opacity-20 blur-3xl bg-linear-to-br from-brand-navy to-brand-navy-light" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl">
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8 bg-brand-teal/10 text-brand-teal border border-brand-teal/20 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
               <Users className="h-4 w-4" />
               Meet Our Team
             </div>
 
-            {/* Decorative line */}
             <div className="decorative-line mb-8 animate-fade-in-up opacity-0 [animation-delay:0.15s]" />
 
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] animate-fade-in-up opacity-0 [animation-delay:0.2s]">
@@ -61,7 +49,13 @@ export default function TeamPage() {
                     strokeLinecap="round"
                   />
                   <defs>
-                    <linearGradient id="team-underline" x1="0" y1="0" x2="300" y2="0">
+                    <linearGradient
+                      id="team-underline"
+                      x1="0"
+                      y1="0"
+                      x2="300"
+                      y2="0"
+                    >
                       <stop stopColor="#00A3A3" />
                       <stop offset="1" stopColor="#1C2541" />
                     </linearGradient>
@@ -71,163 +65,226 @@ export default function TeamPage() {
             </h1>
 
             <p className="mt-8 text-xl lg:text-2xl leading-relaxed text-secondary-600 max-w-3xl animate-fade-in-up opacity-0 [animation-delay:0.3s]">
-              Meet the passionate individuals driving our mission to empower women in technology leadership across the globe.
+              Our team can help you at any stage of your growth. Meet the
+              passionate individuals driving our mission to empower women in
+              technology leadership across the globe.
             </p>
-
-            {/* Stats row */}
-            <div className="mt-12 flex flex-wrap gap-8 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
-              <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-brand-teal to-brand-teal-dark">
-                  <Heart className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-brand-navy">{team.length}+</p>
-                  <p className="text-sm text-secondary-500">Team Members</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-brand-navy to-brand-navy-light">
-                  <Sparkles className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-brand-navy">10+</p>
-                  <p className="text-sm text-secondary-500">Countries Reached</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Grid - Creative cards */}
+      {/* Leadership Board */}
       <section className="relative py-20 lg:py-28">
-        {/* Background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-primary-50/20 to-white" />
-
-        {/* Floating decorative elements */}
-        <div className="absolute top-40 -left-20 w-[300px] h-[300px] rounded-full opacity-15 blur-3xl bg-gradient-to-br from-brand-teal to-brand-teal-light animate-float" />
-        <div className="absolute bottom-40 -right-20 w-[250px] h-[250px] rounded-full opacity-10 blur-3xl bg-gradient-to-br from-brand-navy to-brand-navy-light animate-float [animation-delay:2s]" />
+        <div className="absolute inset-0 bg-linear-to-br from-white via-primary-50/20 to-white" />
+        <div className="absolute top-40 -left-20 w-[300px] h-[300px] rounded-full opacity-15 blur-3xl bg-linear-to-br from-brand-teal to-brand-teal-light animate-float" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
           <div className="text-center mb-16">
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-brand-navy">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
+              <Crown className="h-4 w-4" />
+              Leadership Board
+            </div>
+            <h2 className="font-display text-3xl lg:text-5xl font-bold text-brand-navy">
               Leadership & <span className="gradient-text">Core Team</span>
             </h2>
-            <p className="mt-4 text-secondary-500 max-w-2xl mx-auto">
-              Dedicated professionals working together to create meaningful impact
+            <p className="mt-4 text-lg text-secondary-500 max-w-3xl mx-auto">
+              Our Leadership Board counts savvy, proactive and dynamic
+              professionals with studies or work experience in tech, that
+              strongly contribute to GWTL&apos;s growth and success.
             </p>
+            <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-brand-teal to-brand-teal-light" />
           </div>
 
-          {/* Team grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {team.map((member, index) => {
-              const gradientClass = cardGradients[index % cardGradients.length];
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {leadership.map((member, index) => (
+              <a
+                key={member.slug}
+                href={member.linkedin || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group animate-fade-in-up opacity-0"
+                style={{ animationDelay: `${0.1 + index * 0.08}s` }}
+              >
+                <div className="relative h-full">
+                  <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-brand-teal to-brand-navy opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700" />
 
-              return (
-                <Link
-                  key={member.slug}
-                  href={`/team/${member.slug}`}
-                  className="group animate-fade-in-up opacity-0"
-                  style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-                >
-                  <div className="relative h-full">
-                    {/* Glow effect on hover */}
-                    <div className={`absolute inset-0 rounded-4xl bg-gradient-to-br ${gradientClass} opacity-0 group-hover:opacity-40 blur-xl transition-all duration-700`} />
-
-                    <div className="relative h-full bg-white rounded-4xl overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50">
-                      {/* Avatar section with gradient */}
-                      <div className={`relative aspect-[4/3] bg-gradient-to-br ${gradientClass} overflow-hidden`}>
-                        {/* Decorative pattern */}
-                        <div className="absolute inset-0 opacity-10">
-                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-                            <circle cx="80" cy="20" r="30" fill="white" fillOpacity="0.3" />
-                            <circle cx="20" cy="80" r="20" fill="white" fillOpacity="0.2" />
-                          </svg>
-                        </div>
-
-                        {/* Initials */}
+                  <div className="relative h-full bg-white rounded-3xl overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50">
+                    <div className="relative aspect-[3/3.2] overflow-hidden bg-linear-to-br from-secondary-100 to-primary-100">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="relative">
-                            <span className="text-7xl font-display font-bold text-white/90 group-hover:scale-110 transition-transform duration-500 inline-block">
-                              {member.name.split(" ").map((n) => n[0]).join("")}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Bottom gradient overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/20 to-transparent" />
-                      </div>
-
-                      {/* Info */}
-                      <div className="p-6">
-                        <h3 className="text-xl font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300">
-                          {member.name}
-                        </h3>
-                        <p className={`mt-1 text-sm font-semibold bg-gradient-to-r ${gradientClass} bg-clip-text text-transparent`}>
-                          {member.role}
-                        </p>
-                        <p className="mt-3 text-secondary-500 text-sm leading-relaxed line-clamp-2">
-                          {member.bio}
-                        </p>
-
-                        {/* Footer with social & arrow */}
-                        <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
-                          {/* Social Links */}
-                          <div className="flex gap-2">
-                            {member.linkedin && (
-                              <span className="h-8 w-8 rounded-lg flex items-center justify-center bg-gray-50 text-secondary-400 group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-all duration-300">
-                                <Linkedin className="h-4 w-4" />
-                              </span>
-                            )}
-                            {member.twitter && (
-                              <span className="h-8 w-8 rounded-lg flex items-center justify-center bg-gray-50 text-secondary-400 group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-all duration-300">
-                                <Twitter className="h-4 w-4" />
-                              </span>
-                            )}
-                          </div>
-
-                          {/* View profile arrow */}
-                          <span className="text-sm font-medium text-secondary-400 group-hover:text-brand-teal transition-colors duration-300 flex items-center gap-1">
-                            View
-                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                          <span className="text-6xl font-display font-bold text-brand-teal/30">
+                            {member.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
                           </span>
                         </div>
-                      </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {member.linkedin && (
+                        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                          <span className="h-9 w-9 rounded-xl flex items-center justify-center bg-white/90 backdrop-blur-sm text-[#0077B5] shadow-lg">
+                            <Linkedin className="h-4 w-4" />
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="p-5">
+                      <h3 className="text-lg font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight flex items-center gap-1.5">
+                        {member.name}
+                        {member.linkedin && <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />}
+                      </h3>
+                      {member.company && (
+                        <p className="mt-1 text-xs font-semibold text-brand-teal uppercase tracking-wider">
+                          {member.company}
+                        </p>
+                      )}
+                      <p className="mt-1 text-sm text-secondary-500">
+                        {member.role}
+                      </p>
                     </div>
                   </div>
-                </Link>
-              );
-            })}
+                </div>
+              </a>
+            ))}
           </div>
-
-          {/* Empty State */}
-          {team.length === 0 && (
-            <div className="text-center py-20 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-4xl border border-gray-100">
-              <div className="h-16 w-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-brand-teal to-brand-teal-dark">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <p className="text-xl font-semibold text-brand-navy">Team information coming soon!</p>
-              <p className="mt-2 text-secondary-500">We&apos;re updating our team profiles.</p>
-            </div>
-          )}
         </div>
       </section>
+
+      {/* Advisory Board */}
+      <section className="relative py-20 lg:py-28">
+        <div className="absolute inset-0 bg-linear-to-br from-white via-secondary-50/40 to-white" />
+        <div className="absolute bottom-40 -right-20 w-[250px] h-[250px] rounded-full opacity-10 blur-3xl bg-linear-to-br from-brand-navy to-brand-navy-light animate-float [animation-delay:2s]" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-navy/10 text-brand-navy border border-brand-navy/20">
+              <Star className="h-4 w-4" />
+              Advisory Board
+            </div>
+            <h2 className="font-display text-3xl lg:text-5xl font-bold text-brand-navy">
+              Strategic <span className="gradient-text">Advisors</span>
+            </h2>
+            <p className="mt-4 text-lg text-secondary-500 max-w-3xl mx-auto">
+              Our Advisory Board brings together renowned leaders from the
+              international and national tech business environment, with
+              expertise in technology, entrepreneurship and leadership.
+            </p>
+            <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-brand-navy to-brand-teal" />
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+            {advisory.map((member, index) => (
+              <a
+                key={member.slug}
+                href={member.linkedin || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group animate-fade-in-up opacity-0"
+                style={{ animationDelay: `${0.1 + index * 0.05}s` }}
+              >
+                <div className="relative h-full">
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-brand-navy to-brand-teal opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
+
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-1.5 border border-gray-100/50">
+                    <div className="relative aspect-[4/4] overflow-hidden bg-linear-to-br from-secondary-50 to-primary-50">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-5xl font-display font-bold text-brand-navy/20">
+                            {member.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </span>
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {member.country && (
+                        <div className="absolute top-3 left-3">
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm text-xs font-medium text-brand-navy shadow-sm">
+                            <Globe className="h-3 w-3 text-brand-teal" />
+                            {member.country}
+                          </span>
+                        </div>
+                      )}
+
+                      {member.linkedin && (
+                        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                          <span className="h-8 w-8 rounded-lg flex items-center justify-center bg-white/90 backdrop-blur-sm text-[#0077B5] shadow-lg">
+                            <Linkedin className="h-3.5 w-3.5" />
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="p-4">
+                      <h3 className="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight flex items-center gap-1.5">
+                        {member.name}
+                        {member.linkedin && <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-60 transition-opacity" />}
+                      </h3>
+                      {member.company && (
+                        <p className="mt-1 text-xs font-semibold text-brand-teal uppercase tracking-wider">
+                          {member.company}
+                        </p>
+                      )}
+                      <p className="mt-0.5 text-sm text-secondary-500">
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Empty State */}
+      {team.length === 0 && (
+        <section className="py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center py-20 bg-linear-to-br from-primary-50 to-secondary-50 rounded-4xl border border-gray-100">
+              <div className="h-16 w-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-linear-to-br from-brand-teal to-brand-teal-dark">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <p className="text-xl font-semibold text-brand-navy">
+                Team information coming soon!
+              </p>
+              <p className="mt-2 text-secondary-500">
+                We&apos;re updating our team profiles.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Join the Team CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-dark to-brand-navy" />
-
-        {/* Decorative elements */}
+        <div className="absolute inset-0 bg-linear-to-br from-brand-navy via-brand-navy-dark to-brand-navy" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl bg-brand-teal" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal-light" />
-
-        {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%221%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 bg-brand-teal/20 text-brand-teal-light">
             <Sparkles className="h-4 w-4" />
             Join the Movement
@@ -238,7 +295,8 @@ export default function TeamPage() {
           </h2>
 
           <p className="mt-6 text-xl text-white/70 max-w-2xl mx-auto">
-            We&apos;re always looking for passionate individuals to help advance our mission of empowering women in tech leadership.
+            We&apos;re always looking for passionate individuals to help advance
+            our mission of empowering women in tech leadership.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -255,7 +313,6 @@ export default function TeamPage() {
             </Link>
           </div>
 
-          {/* Decorative bottom element */}
           <div className="mt-16 flex justify-center">
             <div className="flex items-center gap-3">
               <div className="h-1 w-12 rounded-full bg-brand-teal/30" />

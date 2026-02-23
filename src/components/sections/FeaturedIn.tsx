@@ -55,7 +55,7 @@ export function FeaturedIn() {
     <section className="relative bg-[#f8f8f8] py-28 lg:py-40 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-0 w-[600px] h-[600px] -translate-y-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-brand-teal/5 to-transparent blur-3xl" />
+        <div className="absolute top-1/2 left-0 w-[600px] h-[600px] -translate-y-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-brand-teal/5 to-transparent blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-y-1/2 translate-x-1/4 rounded-full bg-gradient-to-l from-brand-navy/5 to-transparent blur-3xl" />
       </div>
 
@@ -98,7 +98,7 @@ export function FeaturedIn() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/50 to-transparent" />
               </div>
 
               {/* Content */}
@@ -208,7 +208,7 @@ export function FeaturedIn() {
           {/* Partner logos */}
           <div className="relative overflow-hidden">
             {/* Gradient masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8f8f8] to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-[#f8f8f8] to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8f8f8] to-transparent z-10" />
 
             {/* Scrolling track */}

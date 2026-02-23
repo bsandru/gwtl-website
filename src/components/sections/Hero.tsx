@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 
 const stats = [
-  { value: "10,000+", label: "Leaders" },
+  { value: "5,000+", label: "Leaders" },
   { value: "10+", label: "Countries" },
   { value: "9", label: "Years" },
 ];
@@ -16,10 +16,10 @@ export function Hero() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large teal gradient blob */}
-        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-gradient-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
+        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-linear-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
 
         {/* Secondary blob */}
-        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
+        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-linear-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
 
         {/* Floating orbs */}
         <div className="absolute top-1/5 left-1/6 w-3 h-3 rounded-full bg-brand-teal/30 animate-float [animation-delay:0s]" />
@@ -57,7 +57,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="text-center text-lg sm:text-xl max-w-2xl mx-auto text-secondary-600 leading-relaxed mb-12 animate-fade-in-up opacity-0 [animation-delay:0.3s]">
-            Join a global network of 10,000+ senior women in technology.
+            Join a global network of 5,000+ senior women in technology.
             Learn, connect, and lead the future of tech through mentorship,
             events, and strategic partnerships.
           </p>
@@ -70,7 +70,6 @@ export function Hero() {
                   Join the Community
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-teal to-brand-teal-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </Link>
             <Link href="/about">
@@ -100,7 +99,7 @@ export function Hero() {
             {/* Main image container with creative shape */}
             <div>
               {/* Glow effect behind image */}
-              {/* <div className="absolute -inset-4 bg-gradient-to-r from-brand-teal/20 via-brand-teal-light/20 to-brand-teal/20 rounded-[3rem] blur-2xl animate-glow-pulse" /> */}
+              {/* <div className="absolute -inset-4 bg-linear-to-r from-brand-teal/20 via-brand-teal-light/20 to-brand-teal/20 rounded-[3rem] blur-2xl animate-glow-pulse" /> */}
 
               {/* Main image */}
               <div className="relative rounded-5xl overflow-hidden shadow-2xl shadow-brand-navy/10">
@@ -113,7 +112,7 @@ export function Hero() {
                     priority
                   />
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 via-transparent to-transparent" />
 
                   {/* Bottom content overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
@@ -131,7 +130,7 @@ export function Hero() {
                       {/* Floating action card */}
                       <div className="glass-card-dark rounded-2xl p-4 sm:p-5">
                         <div className="flex items-center gap-4">
-                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
+                          <div className="h-12 w-12 rounded-xl bg-linear-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
                             <span className="text-xl font-bold text-white">26</span>
                           </div>
                           <div>
@@ -149,7 +148,7 @@ export function Hero() {
               <div className="hidden lg:block absolute -left-16 top-1/4 animate-float [animation-delay:0.5s]">
                 <div className="glass-card rounded-2xl p-5 shadow-xl">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
+                    <div className="h-10 w-10 rounded-xl bg-linear-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
                       <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -165,7 +164,7 @@ export function Hero() {
               <div className="hidden lg:block absolute -right-12 bottom-1/4 animate-float-reverse [animation-delay:1s]">
                 <div className="glass-card rounded-2xl p-5 shadow-xl">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-navy to-brand-navy-light flex items-center justify-center">
+                    <div className="h-10 w-10 rounded-xl bg-linear-to-br from-brand-navy to-brand-navy-light flex items-center justify-center">
                       <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
                       </svg>

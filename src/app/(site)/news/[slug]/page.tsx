@@ -79,7 +79,7 @@ export default async function NewsArticlePage({ params }: Props) {
       {/* Hero Section with Image */}
       <section className="relative pt-24 pb-0">
         {/* Back link - floating */}
-        <div className="absolute top-28 left-4 sm:left-6 lg:left-8 z-20">
+        <div className="fixed top-28 left-4 sm:left-6 lg:left-8 z-20">
           <Link
             href="/news"
             className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm text-sm font-medium text-brand-navy shadow-lg hover:bg-white transition-all"
@@ -100,7 +100,7 @@ export default async function NewsArticlePage({ params }: Props) {
               priority
             />
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/40 to-transparent" />
 
             {/* Content overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
@@ -192,7 +192,7 @@ export default async function NewsArticlePage({ params }: Props) {
               </p>
 
               {/* Divider */}
-              <div className="w-20 h-1 bg-gradient-to-r from-brand-teal to-brand-teal-light rounded-full mb-10" />
+              <div className="w-20 h-1 bg-linear-to-r from-brand-teal to-brand-teal-light rounded-full mb-10" />
 
               {/* Article body */}
               <div
@@ -269,7 +269,7 @@ export default async function NewsArticlePage({ params }: Props) {
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 to-transparent" />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/90 backdrop-blur-sm text-brand-navy">
                         {related.category}
@@ -312,7 +312,7 @@ export default async function NewsArticlePage({ params }: Props) {
       <section className="py-16 lg:py-20 bg-brand-navy relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-brand-teal/20 to-transparent blur-[100px]" />
+          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-linear-to-br from-brand-teal/20 to-transparent blur-[100px]" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">

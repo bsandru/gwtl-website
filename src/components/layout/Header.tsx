@@ -53,19 +53,14 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "py-2"
           : "py-4"
-      }`}
+        }`}
     >
       {/* Background blur layer */}
       <div
-        className={`absolute inset-0 transition-all duration-500 ${
-          scrolled
-            ? "bg-white/80 backdrop-blur-2xl border-b border-black/5 shadow-lg shadow-black/5"
-            : "bg-transparent"
-        }`}
+        className={"absolute inset-0 transition-all duration-500 bg-white/90 backdrop-blur-2xl border-b border-black/5 shadow-lg shadow-black/5"}
       />
 
       <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -158,7 +153,6 @@ export function Header() {
                   Join Community
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-teal to-brand-teal-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </Link>
           </div>
@@ -166,9 +160,8 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className={`lg:hidden p-2.5 rounded-xl transition-colors ${
-              scrolled ? "hover:bg-brand-navy/5" : "hover:bg-white/50"
-            }`}
+            className={`lg:hidden p-2.5 rounded-xl transition-colors ${scrolled ? "hover:bg-brand-navy/5" : "hover:bg-white/50"
+              }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -183,9 +176,8 @@ export function Header() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
-          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       >
         {/* Backdrop */}
         <div
@@ -195,9 +187,8 @@ export function Header() {
 
         {/* Menu panel */}
         <div
-          className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-2xl transition-transform duration-500 ${
-            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-2xl transition-transform duration-500 ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           {/* Close button */}
           <div className="flex justify-end p-4">

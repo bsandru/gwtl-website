@@ -1,6 +1,6 @@
 "use client";
 
-import { Upload, X, Image as ImageIcon } from "lucide-react";
+import { Upload, X, Image as ImageIcon, CheckCircle2 } from "lucide-react";
 import {
     Dropzone,
     DropZoneArea,
@@ -20,11 +20,6 @@ interface ImageUploadProps {
     placeholder?: string;
 }
 
-/**
- * Image upload component using shadcn-dropzone
- * For now, it simulates upload and stores the file as a data URL
- * In production, replace onDropFile with actual upload to your storage
- */
 export function ImageUpload({
     value,
     onChange,
@@ -32,19 +27,29 @@ export function ImageUpload({
 }: ImageUploadProps) {
     const dropzone = useDropzone<string, string>({
         onDropFile: async (file) => {
-            // Simulate upload - in production, upload to your storage service
-            return new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onload = () => {
-                    const dataUrl = reader.result as string;
-                    onChange(dataUrl);
-                    resolve({ status: "success", result: dataUrl });
-                };
-                reader.onerror = () => {
-                    resolve({ status: "error", error: "Failed to read file" });
-                };
-                reader.readAsDataURL(file);
-            });
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("/api/admin/upload", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const data = await response.json();
+
+                if (!response.ok || !data.success) {
+                    return {
+                        status: "error",
+                        error: data.error || "Upload failed",
+                    };
+                }
+
+                onChange(data.url);
+                return { status: "success", result: data.url };
+            } catch {
+                return { status: "error", error: "Network error during upload" };
+            }
         },
         onRemoveFile: () => {
             onChange("");
@@ -53,27 +58,64 @@ export function ImageUpload({
             accept: {
                 "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"],
             },
-            maxSize: 10 * 1024 * 1024, // 10MB
+            maxSize: 10 * 1024 * 1024,
             maxFiles: 1,
         },
     });
 
-    // If there's already a value and no files in dropzone, show the preview
     if (value && dropzone.fileStatuses.length === 0) {
         return (
-            <div className="relative rounded-xl overflow-hidden border border-border bg-muted/20">
+            <div className="relative rounded-xl overflow-hidden border border-border bg-muted/20 group">
+                <img
+                    src={value}
+                    alt="Featured image"
+                    className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
+                <button
+                    type="button"
+                    onClick={() => onChange("")}
+                    className="absolute top-2 right-2 p-2 bg-background/80 hover:bg-destructive hover:text-white rounded-full transition-colors opacity-0 group-hover:opacity-100"
+                >
+                    <X className="w-4 h-4" />
+                </button>
+                <div className="absolute bottom-0 inset-x-0 px-3 py-1.5 bg-background/70 text-xs text-muted-foreground truncate opacity-0 group-hover:opacity-100 transition-opacity">
+                    {value}
+                </div>
+            </div>
+        );
+    }
+
+    const uploadedFile = dropzone.fileStatuses.find(
+        (f) => f.status === "success"
+    );
+
+    if (uploadedFile && value) {
+        return (
+            <div className="relative rounded-xl overflow-hidden border border-border bg-muted/20 group">
                 <img
                     src={value}
                     alt="Uploaded image"
                     className="w-full h-48 object-cover"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
+                <div className="absolute top-2 left-2 flex items-center gap-1.5 bg-emerald-600/90 text-white text-xs font-medium px-2.5 py-1 rounded-full">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Uploaded
+                </div>
                 <button
                     type="button"
-                    onClick={() => onChange("")}
-                    className="absolute top-2 right-2 p-2 bg-background/80 hover:bg-background rounded-full transition-colors"
+                    onClick={() => {
+                        dropzone.onRemoveFile(uploadedFile.id);
+                        onChange("");
+                    }}
+                    className="absolute top-2 right-2 p-2 bg-background/80 hover:bg-destructive hover:text-white rounded-full transition-colors opacity-0 group-hover:opacity-100"
                 >
                     <X className="w-4 h-4" />
                 </button>
+                <div className="absolute bottom-0 inset-x-0 px-3 py-1.5 bg-background/70 text-xs text-muted-foreground truncate opacity-0 group-hover:opacity-100 transition-opacity">
+                    {value}
+                </div>
             </div>
         );
     }

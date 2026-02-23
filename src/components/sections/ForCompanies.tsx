@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Check, ArrowRight, Sparkles, Crown, Zap, Building2 } from "lucide-react";
 
 const benefits = [
-  "Access to a curated network of 10,000+ senior women tech leaders",
+  "Access to a curated network of 5,000+ senior women tech leaders",
   "DEI reporting and impact metrics for your organization",
   "Co-branded events and visibility at global forums",
   "Priority access to our speaker bureau for your conferences",
@@ -69,8 +69,8 @@ export function ForCompanies() {
     <section className="relative bg-white py-28 lg:py-40 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] -translate-y-1/2 translate-x-1/4 rounded-full bg-gradient-to-bl from-brand-teal/5 to-transparent blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] translate-y-1/2 -translate-x-1/4 rounded-full bg-gradient-to-tr from-brand-navy/5 to-transparent blur-3xl" />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] -translate-y-1/2 translate-x-1/4 rounded-full bg-linear-to-brl from-brand-teal/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] translate-y-1/2 -translate-x-1/4 rounded-full bg-linear-to-tr from-brand-navy/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -103,7 +103,7 @@ export function ForCompanies() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/50 lg:bg-gradient-to-t lg:from-brand-navy/90 lg:via-brand-navy/50 lg:to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/50 lg:bg-linear-to-t lg:from-brand-navy/90 lg:via-brand-navy/50 lg:to-transparent" />
 
               {/* Content on image */}
               <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
@@ -124,7 +124,7 @@ export function ForCompanies() {
                     key={benefit}
                     className="group flex items-start gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300"
                   >
-                    <div className="h-8 w-8 rounded-full flex items-center justify-center shrink-0 bg-gradient-to-br from-brand-teal to-brand-teal-light shadow-md shadow-brand-teal/20">
+                    <div className="h-8 w-8 rounded-full flex items-center justify-center shrink-0 bg-linear-to-br from-brand-teal to-brand-teal-light shadow-md shadow-brand-teal/20">
                       <Check className="h-4 w-4 text-white" />
                     </div>
                     <span className="font-medium text-brand-navy group-hover:text-brand-teal transition-colors">
@@ -154,14 +154,14 @@ export function ForCompanies() {
                 {/* Card background */}
                 <div
                   className={`absolute inset-0 ${isTeal
-                    ? "bg-gradient-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
+                    ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
                     : "bg-white border border-secondary-200"
                     }`}
                 />
 
                 {/* Popular badge glow */}
                 {tier.popular && (
-                  <div className="absolute -inset-[1px] rounded-4xl bg-gradient-to-r from-brand-teal via-brand-teal-light to-brand-teal blur-sm opacity-50" />
+                  <div className="absolute -inset-[1px] rounded-4xl bg-linear-to-r from-brand-teal via-brand-teal-light to-brand-teal blur-sm opacity-50" />
                 )}
 
                 <div className={`relative p-8 lg:p-10 ${isTeal ? "" : ""}`}>

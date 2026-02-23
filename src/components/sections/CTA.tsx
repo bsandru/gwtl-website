@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Globe, Users, Award } from "lucide-react";
 
 const stats = [
-  { value: "10K+", label: "Leaders", icon: Users },
+  { value: "5K+", label: "Leaders", icon: Users },
   { value: "10+", label: "Countries", icon: Globe },
   { value: "95%", label: "Satisfaction", icon: Award },
 ];
@@ -13,29 +13,24 @@ export function CTA() {
       {/* Dark background with animated gradient mesh */}
       <div className="absolute inset-0 bg-brand-navy">
         {/* Animated gradient orbs */}
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-brand-teal/30 to-transparent blur-[120px] animate-glow-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-brand-teal-light/20 to-transparent blur-[100px] animate-glow-pulse [animation-delay:2s]" />
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full bg-linear-to-br from-brand-teal/30 to-transparent blur-[120px] animate-glow-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-linear-to-tl from-brand-teal-light/20 to-transparent blur-[100px] animate-glow-pulse [animation-delay:2s]" />
         <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-brand-teal/25 to-transparent blur-[80px] animate-glow-pulse [animation-delay:4s]" />
 
         {/* Noise texture */}
         <div className="absolute inset-0 noise-overlay" />
-
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:80px_80px]" />
-        </div>
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Main content card */}
         <div className="relative">
           {/* Glowing border effect */}
-          <div className="absolute -inset-[1px] rounded-[3rem] bg-gradient-to-r from-brand-teal/50 via-brand-teal-light/50 to-brand-teal/50 blur-sm" />
+          <div className="absolute -inset-px rounded-[3rem] bg-linear-to-r from-brand-navy/50 via-brand-navy-light/50 to-brand-navy/50 blur-sm" />
 
           {/* Glass card */}
           <div className="relative rounded-[3rem] p-10 sm:p-14 lg:p-20 overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10">
             {/* Inner glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-brand-teal-light/60 to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-linear-to-r from-transparent via-brand-teal-light/60 to-transparent" />
 
             {/* Content */}
             <div className="text-center">
@@ -43,7 +38,7 @@ export function CTA() {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full mb-10 animate-fade-in-up opacity-0 [animation-delay:0.1s] bg-brand-teal/20 border border-brand-teal/30">
                 <Sparkles className="h-4 w-4 text-brand-teal-light" />
                 <span className="text-sm font-semibold text-brand-teal-light tracking-wide">
-                  Join 10,000+ Leaders Worldwide
+                  Join 5,000+ Leaders Worldwide
                 </span>
               </div>
 
@@ -54,7 +49,7 @@ export function CTA() {
                 <span className="relative inline-block mt-2">
                   <span className="gradient-text-cta">Tech Leadership</span>
                   {/* Animated underline */}
-                  <span className="absolute -bottom-2 left-0 right-0 h-1.5 rounded-full bg-gradient-to-r from-brand-teal-light via-brand-teal to-brand-teal-light animate-line-grow" />
+                  <span className="absolute -bottom-2 left-0 right-0 h-1.5 rounded-full bg-linear-to-r from-brand-teal-light via-brand-teal to-brand-teal-light animate-line-grow" />
                 </span>
                 <span className="text-white">?</span>
               </h2>
@@ -72,9 +67,9 @@ export function CTA() {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
                 <Link href="/for-leaders/join">
-                  <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold overflow-hidden bg-gradient-to-r from-brand-teal to-brand-teal-light text-brand-navy shadow-lg shadow-brand-teal/30">
+                  <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold overflow-hidden bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy shadow-lg shadow-brand-teal/30">
                     {/* Shimmer effect */}
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                    <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <span className="relative flex items-center justify-center gap-2">
                       Join as a Leader
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -111,10 +106,10 @@ export function CTA() {
 
         {/* Floating decorative elements */}
         <div className="hidden lg:block absolute -left-20 top-1/3 animate-float">
-          <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-teal-light opacity-20 blur-sm" />
+          <div className="h-20 w-20 rounded-2xl bg-linear-to-br from-brand-teal to-brand-teal-light opacity-20 blur-sm" />
         </div>
         <div className="hidden lg:block absolute -right-16 bottom-1/4 animate-float-reverse">
-          <div className="h-16 w-16 rounded-full bg-gradient-to-br from-brand-teal-light to-brand-teal opacity-30 blur-sm" />
+          <div className="h-16 w-16 rounded-full bg-linear-to-br from-brand-teal-light to-brand-teal opacity-30 blur-sm" />
         </div>
       </div>
     </section>
