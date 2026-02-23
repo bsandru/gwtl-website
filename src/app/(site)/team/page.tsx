@@ -95,7 +95,7 @@ export default function TeamPage() {
             <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-brand-teal to-brand-teal-light" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-8">
             {leadership.map((member, index) => (
               <a
                 key={member.slug}
@@ -108,51 +108,53 @@ export default function TeamPage() {
                 <div className="relative h-full">
                   <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-brand-teal to-brand-navy opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700" />
 
-                  <div className="relative h-full bg-white rounded-3xl overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50">
-                    <div className="relative aspect-[3/3.2] overflow-hidden bg-linear-to-br from-secondary-100 to-primary-100">
-                      {member.image ? (
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-6xl font-display font-bold text-brand-teal/30">
-                            {member.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
-                          </span>
+                  <div className="relative h-full bg-white rounded-3xl shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50 py-6 px-5 text-center">
+                    {/* Rounded image with gradient ring */}
+                    <div className="relative mx-auto w-36 h-36 mb-5">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-teal via-brand-teal-light to-brand-navy p-[3px] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-6">
+                        <div className="w-full h-full rounded-full bg-white p-[3px]">
+                          <div className="relative w-full h-full rounded-full overflow-hidden bg-linear-to-br from-secondary-100 to-primary-100">
+                            {member.image ? (
+                              <Image
+                                src={member.image}
+                                alt={member.name}
+                                fill
+                                className="object-cover"
+                                sizes="144px"
+                              />
+                            ) : (
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="font-bold text-brand-teal/30">
+                                  {member.name}
+                                </span>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      )}
-                      <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                      {member.linkedin && (
-                        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                          <span className="h-9 w-9 rounded-xl flex items-center justify-center bg-white/90 backdrop-blur-sm text-[#0077B5] shadow-lg">
-                            <Linkedin className="h-4 w-4" />
-                          </span>
-                        </div>
-                      )}
+                      </div>
                     </div>
 
-                    <div className="p-5">
-                      <h3 className="text-lg font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight flex items-center gap-1.5">
-                        {member.name}
-                        {member.linkedin && <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />}
-                      </h3>
-                      {member.company && (
-                        <p className="mt-1 text-xs font-semibold text-brand-teal uppercase tracking-wider">
-                          {member.company}
-                        </p>
-                      )}
-                      <p className="mt-1 text-sm text-secondary-500">
-                        {member.role}
+                    {/* Name and info */}
+                    <h3 className="text-lg font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight inline-flex items-center justify-center gap-1.5">
+                      {member.name}
+                      {member.linkedin && <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />}
+                    </h3>
+                    {member.company && (
+                      <p className="mt-1.5 text-xs font-semibold text-brand-teal uppercase tracking-wider">
+                        {member.company}
                       </p>
-                    </div>
+                    )}
+                    <p className="mt-1 text-sm text-secondary-500">
+                      {member.role}
+                    </p>
+
+                    {/* LinkedIn badge */}
+                    {member.linkedin && (
+                      <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0077B5]/5 text-[#0077B5] text-xs font-medium transition-all duration-300 group-hover:bg-[#0077B5]/10">
+                        <Linkedin className="h-3.5 w-3.5" />
+                        LinkedIn
+                      </div>
+                    )}
                   </div>
                 </div>
               </a>
@@ -183,7 +185,7 @@ export default function TeamPage() {
             <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-brand-navy to-brand-teal" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-7">
             {advisory.map((member, index) => (
               <a
                 key={member.slug}
@@ -196,59 +198,60 @@ export default function TeamPage() {
                 <div className="relative h-full">
                   <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-brand-navy to-brand-teal opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
 
-                  <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-1.5 border border-gray-100/50">
-                    <div className="relative aspect-[4/4] overflow-hidden bg-linear-to-br from-secondary-50 to-primary-50">
-                      {member.image ? (
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-5xl font-display font-bold text-brand-navy/20">
-                            {member.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
-                          </span>
+                  <div className="relative h-full bg-white rounded-2xl shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-1.5 border border-gray-100/50 pt-8 pb-5 px-4 text-center">
+                    {/* Rounded image with gradient ring */}
+                    <div className="relative mx-auto w-28 h-28 mb-4">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-navy via-brand-teal to-brand-teal-light p-[3px] transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-6">
+                        <div className="w-full h-full rounded-full bg-white p-[2px]">
+                          <div className="relative w-full h-full rounded-full overflow-hidden bg-linear-to-br from-secondary-50 to-primary-50">
+                            {member.image ? (
+                              <Image
+                                src={member.image}
+                                alt={member.name}
+                                fill
+                                className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                                sizes="112px"
+                              />
+                            ) : (
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="font-display font-bold text-brand-navy/20">
+                                  {member.name}
+                                </span>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      )}
-                      <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                      {member.country && (
-                        <div className="absolute top-3 left-3">
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm text-xs font-medium text-brand-navy shadow-sm">
-                            <Globe className="h-3 w-3 text-brand-teal" />
-                            {member.country}
-                          </span>
-                        </div>
-                      )}
-
-                      {member.linkedin && (
-                        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                          <span className="h-8 w-8 rounded-lg flex items-center justify-center bg-white/90 backdrop-blur-sm text-[#0077B5] shadow-lg">
-                            <Linkedin className="h-3.5 w-3.5" />
-                          </span>
-                        </div>
-                      )}
+                      </div>
                     </div>
 
-                    <div className="p-4">
-                      <h3 className="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight flex items-center gap-1.5">
-                        {member.name}
-                        {member.linkedin && <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-60 transition-opacity" />}
-                      </h3>
-                      {member.company && (
-                        <p className="mt-1 text-xs font-semibold text-brand-teal uppercase tracking-wider">
-                          {member.company}
-                        </p>
-                      )}
-                      <p className="mt-0.5 text-sm text-secondary-500">
-                        {member.role}
+                    {/* Name and info */}
+                    <h3 className="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight inline-flex items-center justify-center gap-1.5">
+                      {member.name}
+                      {member.linkedin && <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-60 transition-opacity" />}
+                    </h3>
+                    {member.company && (
+                      <p className="mt-1 text-xs font-semibold text-brand-teal uppercase tracking-wider">
+                        {member.company}
                       </p>
+                    )}
+                    <p className="mt-0.5 text-sm text-secondary-500">
+                      {member.role}
+                    </p>
+
+                    {/* Country & LinkedIn badges */}
+                    <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
+                      {member.country && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-50 text-xs font-medium text-brand-navy">
+                          <Globe className="h-3 w-3 text-brand-teal" />
+                          {member.country}
+                        </span>
+                      )}
+                      {member.linkedin && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#0077B5]/5 text-[#0077B5] text-xs font-medium transition-all duration-300 group-hover:bg-[#0077B5]/10">
+                          <Linkedin className="h-3 w-3" />
+                          LinkedIn
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
