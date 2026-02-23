@@ -21,7 +21,6 @@ export default function TeamPage() {
       <section className="relative min-h-[55vh] flex items-center py-20 lg:py-28">
         <div className="absolute inset-0 bg-linear-to-br from-primary-50 via-white to-secondary-50" />
         <div className="absolute top-10 right-0 w-[500px] h-[500px] rounded-full opacity-30 blur-3xl bg-linear-to-br from-brand-teal to-brand-teal-light" />
-        <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full opacity-20 blur-3xl bg-linear-to-br from-brand-navy to-brand-navy-light" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl">
