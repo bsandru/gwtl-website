@@ -83,8 +83,7 @@ export function Partners() {
             <span className="gradient-text-teal">Partners</span>
           </h2>
           <p className="mt-6 text-lg text-secondary-600 leading-relaxed animate-fade-in-up opacity-0 [animation-delay:0.3s]">
-            Collaborating with leading organizations to advance women&apos;s leadership
-            in technology across the globe.
+            Leaders from these organizations are part of GWTL
           </p>
         </div>
 

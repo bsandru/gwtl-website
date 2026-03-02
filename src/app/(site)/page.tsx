@@ -1,12 +1,14 @@
-import { Hero, WhatWeDo, ForCompanies, FeaturedIn, Partners, CTA } from "@/components";
+import { Hero, WhatWeDo, ForCompanies, FeaturedIn, Partners, CTA, PositioningStrip, AINativeDifference } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <PositioningStrip />
       <WhatWeDo />
-      <FeaturedIn />
+      <AINativeDifference />
       <ForCompanies />
+      <FeaturedIn />
       <Partners />
       <CTA />
     </>

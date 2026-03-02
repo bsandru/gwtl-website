@@ -1,23 +1,23 @@
 ---
 title: "Monthly Webinar: Building Your Personal Brand in Tech"
-excerpt: "Learn strategies for establishing thought leadership and growing your professional presence online."
-date: "2026-02-15"
+excerpt: "Thought leadership and professional presence for women tech leaders."
+date: "2026-03-15"
 location: "Online (Zoom)"
 category: "Webinar"
 featured: false
 image: "/images/events/gen-event.jpg"
-registrationUrl: "https://example.com/register"
+registrationUrl: ""
 ---
 
 ## February Monthly Webinar
 
-Join us for our monthly webinar series, featuring industry experts sharing practical insights for career growth.
+Thought leadership and professional presence for women tech leaders.
 
 ### This Month's Topic
 
 **Building Your Personal Brand in Tech**
 
-In this session, you'll learn:
+In this session, attendees learned:
 
 - Why personal branding matters for career advancement
 - How to identify and communicate your unique value proposition
@@ -31,7 +31,7 @@ In this session, you'll learn:
 
 ## Details
 
-- **Date**: February 15, 2026
+- **Date**: March 15, 2026
 - **Time**: 18:00 CET / 12:00 EST
 - **Duration**: 60 minutes + 30 min Q&A
 - **Platform**: Zoom (link sent upon registration)

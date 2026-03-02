@@ -1,22 +1,24 @@
 ---
-title: "Davos Innovation Week 2026"
-excerpt: "Join GWTL at Davos Innovation Week for executive panels on AI leadership and investment trends."
-date: "2026-01-20"
-endDate: "2026-01-24"
+title: "Davos Innovation Week"
+excerpt: "Executive panels on AI leadership and investment trends. GWTL co-organized."
+date: "2026-10-20"
+endDate: "2026-10-24"
 location: "Davos, Switzerland"
 category: "Conference"
-featured: true
+featured: false
 image: "https://globalwomentechleaders.com/images/news/davos-innovation-week-2026.jpg"
-registrationUrl: "https://example.com/register"
+registrationUrl: ""
 ---
 
 ## About the Event
 
-Davos Innovation Week 2026 brings together the world's most influential leaders in technology, business, and policy to discuss the future of innovation and leadership.
+Executive panels on AI leadership and investment trends. GWTL co-organized.
+
+Davos Innovation Week 2026 brought together the world's most influential leaders in technology, business, and policy to discuss the future of innovation and leadership.
 
 ### GWTL Sessions
 
-Global Women TechLeaders is proud to co-organize two flagship panels:
+Global Women TechLeaders co-organized two flagship panels:
 
 **Day 2 - AI-Driven Leadership in the Digital Age**
 - Time: 14:00 - 15:30 CET

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { COMPANIES } from "@/lib/content";
 
 const stats = [
-  { value: "5000+", label: "Leaders" },
+  { value: "30%", label: "Tech leadership by 2030" },
+  { value: "1,200+", label: "Placements by 2030" },
   { value: "10+", label: "Countries" },
-  { value: "9", label: "Years" },
+  { value: "€150M+", label: "Funding directed to women-led ventures" },
 ];
 
 export function Hero() {
@@ -30,22 +31,9 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative pt-30 lg:pt-36 pb-20">
+      <div className="relative pt-30 lg:pt-40 pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Top badge */}
-          {/* <div className="flex justify-center mb-8 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
-            <div className="glass-badge inline-flex items-center gap-3 px-5 py-2.5 rounded-full">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal"></span>
-              </span>
-              <span className="text-sm font-semibold text-brand-navy tracking-wide">
-                Featured at Davos 2026
-              </span>
-            </div>
-          </div> */}
-
-          {/* Main headline - Editorial style */}
+          {/* Main headline */}
           <div className="text-center max-w-5xl mx-auto mb-8">
             <h1 className="editorial-headline font-display animate-fade-in-up opacity-0 [animation-delay:0.2s]">
               <span className="text-brand-navy">Where AI-Powered Leadership<br />and </span>
@@ -55,44 +43,52 @@ export function Hero() {
           </div>
 
           {/* Subheadline */}
-          <p className="text-center text-lg sm:text-xl max-w-2xl mx-auto text-secondary-600 leading-relaxed mb-12 animate-fade-in-up opacity-0 [animation-delay:0.3s]">
-            Join a global network of 5,000+ senior women in technology.
-            Learn, connect, and lead the future of tech through mentorship,
-            events, and strategic partnerships.
-          </p>
+          <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in-up opacity-0 [animation-delay:0.3s]">
+            <p className="text-lg sm:text-xl text-secondary-600 leading-relaxed mb-4">
+              Women are 50% of talent. 15% of tech leadership.<br />
+              <span className="font-semibold text-brand-teal">
+                That&apos;s not a fairness gap — it&apos;s a $12 trillion inefficiency.
+              </span>
+            </p>
+          </div>
 
           {/* CTAs */}
-          <div className="flex flex-row flex-wrap gap-4 justify-center mb-16 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
+          <div className="flex flex-row flex-wrap gap-4 justify-center mb-20 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
             <Link href="/for-leaders/join">
               <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold text-white overflow-hidden bg-brand-navy shadow-lg shadow-brand-navy/20">
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Join the Community
+                  I&apos;m a Woman Leader
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-                              </button>
+              </button>
             </Link>
-            <Link href="/about">
+            <Link href="/for-companies">
               <button className="magnetic-btn group h-14 px-8 rounded-2xl font-bold text-brand-navy border-2 border-brand-navy/10 hover:border-brand-teal/30 hover:bg-brand-teal/5 transition-all duration-300 flex items-center justify-center gap-2">
-                <Play className="h-4 w-4" />
-                Watch Our Story
+                Partner With Us
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </Link>
           </div>
 
-          {/* Stats row */}
-          <div className="flex justify-center gap-8 sm:gap-16 mb-20 animate-fade-in-up opacity-0 [animation-delay:0.5s]">
-            {stats.map((stat, idx) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-display text-4xl sm:text-5xl font-bold gradient-text-teal leading-tight">
-                  {stat.value}
+          {/* Stats bar */}
+          <div className="max-w-5xl text-center mx-auto mb-20 animate-fade-in-up opacity-0 [animation-delay:0.5s]">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/10 mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
+              <Sparkles className="h-4 w-4 text-brand-teal" />
+              <span className="text-sm font-semibold text-brand-teal">Our Target</span>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-secondary-200/60">
+              {stats.map((stat) => (
+                <div key={stat.label} className="px-6">
+                  <div className="font-display text-4xl sm:text-5xl font-bold gradient-text-teal leading-tight">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-secondary-500 mt-2 leading-snug">
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-sm text-secondary-500 mt-1 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-
           {/* Hero Image Section */}
           <div className="relative max-w-5xl mx-auto animate-fade-in-scale opacity-0 [animation-delay:0.6s]">
             {/* Main image container with creative shape */}
@@ -119,7 +115,8 @@ export function Hero() {
                       {/* Quote */}
                       <div className="max-w-lg">
                         <p className="text-white/90 text-lg sm:text-xl font-medium italic mb-3">
-                          "&quot;Empowering the next generation of tech leaders&quot;"
+                          &quot;GWTL accelerates women into tech leadership through board
+                          placements, capital connections, and corporate accountability&quot;
                         </p>
                         <p className="text-white/60 text-sm">
                           — GWTL Global Mission

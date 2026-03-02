@@ -3,31 +3,23 @@ import Image from "next/image";
 import { Linkedin, Twitter, Instagram, Youtube, Mail, ArrowUpRight, Heart } from "lucide-react";
 
 const footerLinks = {
-  organization: [
-    { name: "About Us", href: "/about" },
+  about: [
+    { name: "Our Story", href: "/about" },
     { name: "Our Team", href: "/team" },
-    { name: "Advisory Board", href: "/about/advisory" },
-    { name: "Partners", href: "/about/partners" },
+    { name: "Ambassadors", href: "/about/ambassadors" },
     { name: "Contact", href: "/contact" },
   ],
-  forLeaders: [
-    { name: "Join the Network", href: "/for-leaders/join" },
-    { name: "Mentoring Program", href: "/for-leaders/mentoring" },
+  organization: [
+    { name: "Partnerships", href: "/about/partnerships" },
     { name: "Events", href: "/events" },
-    { name: "Resources", href: "/resources" },
+    { name: "News", href: "/news" },
     { name: "Success Stories", href: "/stories" },
   ],
-  forCompanies: [
-    { name: "Corporate Membership", href: "/for-companies/membership" },
-    { name: "Sponsorship", href: "/for-companies/sponsorship" },
-    { name: "Speaking Bureau", href: "/for-companies/speakers" },
-    { name: "DEI Consulting", href: "/for-companies/consulting" },
-  ],
   programs: [
-    { name: "Leadership Cohorts", href: "/programs/cohorts" },
+    { name: "Power Tables", href: "/programs/power-tables" },
     { name: "Erasmus+ Initiative", href: "/programs/erasmus" },
-    { name: "Executive Roundtables", href: "/programs/roundtables" },
-    { name: "Global Conference", href: "/programs/conference" },
+    { name: "Sponsor Match", href: "/programs/sponsor-match" },
+    { name: "Global Shift Summit", href: "/programs/summit" },
   ],
 };
 
@@ -52,7 +44,7 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center space-x-3 group">
@@ -70,9 +62,9 @@ export function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="mt-6 text-sm max-w-xs leading-relaxed text-white/50">
-              Where visionary women shape the future of tech. Empowering leaders
-              worldwide since 2017.
+            <p className="mt-6 text-sm max-w-md leading-relaxed text-white/50">
+              GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. <br />AI-native. Outcomes-driven. Global.
+              <span className="block mt-2 text-brand-teal-light">Led by humans. Run by AI agents.</span>
             </p>
 
             {/* Social links */}
@@ -95,6 +87,26 @@ export function Footer() {
           {/* Organization */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-brand-teal-light">
+              About
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.about.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="group text-sm text-white/50 hover:text-white transition-colors inline-flex items-center gap-1"
+                  >
+                    <span>{link.name}</span>
+                    <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* For Leaders */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-brand-teal-light">
               Organization
             </h3>
             <ul className="space-y-3">
@@ -112,45 +124,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* For Leaders */}
-          <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-brand-teal-light">
-              For Leaders
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.forLeaders.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="group text-sm text-white/50 hover:text-white transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>{link.name}</span>
-                    <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* For Companies */}
-          <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-brand-teal-light">
-              For Companies
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.forCompanies.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="group text-sm text-white/50 hover:text-white transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>{link.name}</span>
-                    <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        
 
           {/* Programs */}
           <div>
@@ -206,10 +180,10 @@ export function Footer() {
       <div className="relative border-t border-white/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <p className="text-sm flex items-center gap-1.5 text-white/40">
-              © {new Date().getFullYear()} Global Women TechLeaders. Made with
+            <p className="text-sm flex flex-wrap gap-1.5 text-white/40">
+              © {new Date().getFullYear()} Global Women TechLeaders. <span className="flex items-center gap-1">Made with
               <Heart className="h-4 w-4 text-brand-teal fill-brand-teal" />
-              worldwide.
+              worldwide.</span>
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link
@@ -223,12 +197,6 @@ export function Footer() {
                 className="text-white/40 hover:text-white transition-colors"
               >
                 Terms of Service
-              </Link>
-              <Link
-                href="/gdpr"
-                className="text-white/40 hover:text-white transition-colors"
-              >
-                GDPR
               </Link>
               <Link
                 href="/cookies"

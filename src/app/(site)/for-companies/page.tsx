@@ -301,7 +301,7 @@ export default function ForCompaniesPage() {
       </section>
 
       {/* Pricing */}
-      <ForCompanies showmembership={true} />
+      <ForCompanies />
 
       {/* Testimonials Section */}
       <section className="relative py-24 lg:py-36 bg-secondary-50 overflow-hidden">

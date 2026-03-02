@@ -8,7 +8,9 @@ export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 
 // Sections
 export { Hero } from "./sections/Hero";
+export { PositioningStrip } from "./sections/PositioningStrip";
 export { WhatWeDo } from "./sections/WhatWeDo";
+export { AINativeDifference } from "./sections/AINativeDifference";
 export { ForCompanies } from "./sections/ForCompanies";
 export { FeaturedIn } from "./sections/FeaturedIn";
 export { CTA } from "./sections/CTA";

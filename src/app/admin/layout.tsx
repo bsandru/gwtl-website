@@ -17,7 +17,7 @@ export default function AdminLayout({
     <div className="min-h-screen bg-background text-foreground">
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-64 min-h-screen bg-card border-r border-border p-6 flex flex-col">
+        <aside className="w-48 min-h-screen bg-card border-r border-border p-6 flex flex-col">
           <div className="mb-8">
             <Link href="/" className="flex items-center">
               {/* <Image src="/images/logo.png" alt="GWTL Logo" width={50} height={50} /> */}

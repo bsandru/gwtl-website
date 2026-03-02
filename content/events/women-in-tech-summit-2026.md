@@ -1,8 +1,8 @@
 ---
 title: "GWTL @ Web Summit 2026"
-excerpt: "Our annual flagship conference bringing together women leaders from across the tech industry."
-date: "2026-03-08"
-endDate: "2026-03-09"
+excerpt: "GWTL at one of Europe's largest tech stages. Our delegation of women tech leaders meets corporate partners, investors, and decision-makers in structured sessions alongside the main conference."
+date: "2026-08-08"
+endDate: "2026-08-09"
 location: "Brussels, Belgium"
 category: "Conference"
 featured: true
@@ -10,39 +10,24 @@ image: "/images/events/web_summit_2026.jpg"
 registrationUrl: "https://example.com/register"
 ---
 
-## International Women's Day Celebration
+## GWTL @ Web Summit 2026
 
-Marking International Women's Day, GWTL presents the **Women in Tech Summit 2026** — our most anticipated event of the year.
+GWTL at one of Europe's largest tech stages. Our delegation of women tech leaders meets corporate partners, investors, and decision-makers in structured sessions alongside the main conference.
 
-### Conference Highlights
+### What We're Doing at Web Summit
 
-**40+ Speakers** from leading tech companies, startups, and research institutions
+- Structured sessions between GWTL leaders and decision-makers
+- Curated introductions with corporate partners and investors
+- Public commitment opportunities for sponsors
+- Networking alongside the main Web Summit conference
 
-**6 Tracks** covering:
-- Technical Leadership
-- Product & Innovation
-- Entrepreneurship
-- AI & Emerging Tech
-- Career Development
-- Policy & Advocacy
+### Who Should Attend
 
-**Networking Hub** with structured networking sessions and an expo area featuring partner organizations
+- Women tech leaders seeking visibility and connections
+- Corporate partners looking to engage with diverse leadership
+- Investors interested in women-led ventures
+- Decision-makers committed to gender parity in tech
 
-## Keynote Speakers
+## Registration
 
-Stay tuned for keynote announcements in January 2026.
-
-## Tickets
-
-| Ticket Type | Price |
-|-------------|-------|
-| Early Bird | €299 |
-| Standard | €399 |
-| VIP | €699 |
-| Student | €99 |
-
-GWTL members receive 25% off all ticket types.
-
-## Location
-
-The event will be held at the Brussels Congress Centre, easily accessible by public transportation and close to major hotels.
+Register through the GWTL delegation for structured access to our curated sessions and introductions.

@@ -10,20 +10,24 @@ const navigation = [
     name: "About",
     href: "/about",
     children: [
-      { name: "Our Mission", href: "/about", description: "What drives us forward" },
+      { name: "Our Story", href: "/about", description: "Who we are and why we exist" },
       { name: "Our Team", href: "/team", description: "Meet the leadership" },
+      { name: "Ambassadors", href: "/about#ambassadors", description: "Our global ambassador network" },
     ],
   },
   {
-    name: "For Leaders",
-    href: "/for-leaders",
+    name: "Programs",
+    href: "/programs",
+    children: [
+      { name: "Power Tables", href: "/programs#power-tables", description: "Curated peer-learning circles" },
+      { name: "Sponsor Match", href: "/programs#sponsor-match", description: "AI-powered sponsorship pairing" },
+      { name: "Global Shift Summit", href: "/programs#global-shift-summit", description: "Our flagship annual event" },
+    ],
   },
-  {
-    name: "For Companies",
-    href: "/for-companies",
-  },
-  { name: "Programs", href: "/programs" },
+  { name: "Events", href: "/events" },
+  { name: "Partnerships", href: "/sponsorship" },
   { name: "News", href: "/news" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -54,8 +58,8 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "py-2"
-          : "py-4"
+        ? "py-2"
+        : "py-4"
         }`}
     >
       {/* Background blur layer */}
@@ -147,10 +151,10 @@ export function Header() {
             >
               Sign In
             </button> */}
-            <Link href="/for-leaders/join">
+            <Link href="/contact">
               <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
                 <span className="relative z-10 flex items-center gap-2">
-                  Join Community
+                  Apply / Partner
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </button>
@@ -237,9 +241,10 @@ export function Header() {
               {/* <button className="w-full py-3.5 px-6 rounded-xl font-semibold border-2 border-brand-navy text-brand-navy transition-all hover:bg-brand-navy hover:text-white">
                 Sign In
               </button> */}
-              <Link href="/for-leaders/join" onClick={() => setMobileMenuOpen(false)}>
-                <button className="w-full py-3.5 px-6 rounded-xl font-bold bg-brand-navy text-white shadow-lg shadow-brand-navy/20 hover:bg-brand-teal transition-colors">
-                  Join Community
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                <button className="w-full py-3.5 px-6 rounded-xl font-bold bg-brand-navy text-white shadow-lg shadow-brand-navy/20 hover:bg-brand-teal transition-colors flex items-center justify-center gap-2">
+                  Apply / Partner
+                  <ArrowRight className="h-4 w-4" />
                 </button>
               </Link>
             </div>

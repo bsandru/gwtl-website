@@ -1,50 +1,39 @@
-import { BookOpen, Users, Award, Building2, ArrowUpRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, Sparkles, Users, Handshake, Globe } from "lucide-react";
 
-const features = [
+const programs = [
   {
-    title: "Learn",
-    description:
-      "World-class training programs and continuous learning opportunities to develop your leadership potential.",
-    icon: BookOpen,
-    link: "/programs/learning",
-    stat: "500+",
-    statLabel: "Courses",
-    color: "teal",
-    size: "large",
-  },
-  {
-    title: "Connect",
-    description:
-      "Build global alliances and leverage diverse expertise across 50+ countries.",
+    title: "Power Tables",
+    label: "By Invitation",
     icon: Users,
-    link: "/for-leaders/join",
-    stat: "5K+",
-    statLabel: "Members",
-    color: "navy",
-    size: "small",
+    headline: "Where Decisions Happen",
+    body: "Invite-only gatherings that bring 25 women leaders face-to-face with 25 board-level decision-makers. Structured conversations. Real commitments. Every table produces measurable outcomes.",
+    proof: "Past tables: 8 board placements, €1.2M in commitments per event.",
+    cta: "Request an Invitation",
+    ctaLink: "/programs/power-tables",
+    color: "teal" as const,
   },
   {
-    title: "Lead",
-    description:
-      "Shape the future of tech through bold, visible leadership at global forums.",
-    icon: Award,
-    link: "/programs",
-    stat: "50+",
-    statLabel: "Events/Year",
-    color: "teal",
-    size: "small",
+    title: "Sponsor Match",
+    label: "Open",
+    icon: Handshake,
+    headline: "Sponsorship That Delivers",
+    body: "Senior leaders — men and women — commit to concrete actions: introductions, board nominations, investor connections. Not advice. Not mentoring. Action. Every commitment is tracked and published.",
+    proof: "The difference: a sponsor stakes their reputation on your advancement.",
+    cta: "Find Your Sponsor",
+    ctaLink: "/programs/sponsor-match",
+    color: "navy" as const,
   },
   {
-    title: "Corporate Programs",
-    description:
-      "Partner with us to develop your women leaders, access top talent, and demonstrate DEI commitment.",
-    icon: Building2,
-    link: "/for-companies",
-    stat: "100+",
-    statLabel: "Partners",
-    color: "navy",
-    size: "large",
+    title: "Global Shift Summit",
+    label: "Annual",
+    icon: Globe,
+    headline: "The Global Moment",
+    body: "Our annual flagship event. 500+ leaders. Multiple continents. The place where the companies making real progress on gender leadership stand up, and the ones falling short are named. Where commitments become public record.",
+    proof: "Next Summit: 2026. Applications open soon.",
+    cta: "Get Early Access",
+    ctaLink: "/programs/summit",
+    color: "teal" as const,
   },
 ];
 
@@ -58,50 +47,42 @@ export function WhatWeDo() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/10 mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
-              <Sparkles className="h-4 w-4 text-brand-teal" />
-              <span className="text-sm font-semibold text-brand-teal">What We Do</span>
-            </div>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-navy leading-[1.1] animate-fade-in-up opacity-0 [animation-delay:0.2s]">
-              Leadership{" "}
-              <span className="gradient-text-teal">in Action</span>
-            </h2>
-            <p className="mt-6 text-lg text-secondary-600 leading-relaxed animate-fade-in-up opacity-0 [animation-delay:0.3s]">
-              What we&apos;re building together — globally, strategically, and with purpose.
-            </p>
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/10 mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
+            <Sparkles className="h-4 w-4 text-brand-teal" />
+            <span className="text-sm font-semibold text-brand-teal">How We Work</span>
           </div>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-navy leading-[1.1] animate-fade-in-up opacity-0 [animation-delay:0.2s]">
+            Programs That Move Women{" "}
+            <span className="gradient-text-teal">from Pipeline to Power</span>
+          </h2>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature, idx) => {
-            const IconComponent = feature.icon;
-            const isLarge = feature.size === "large";
-            const isTeal = feature.color === "teal";
+        {/* Program Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {programs.map((program, idx) => {
+            const IconComponent = program.icon;
+            const isTeal = program.color === "teal";
 
             return (
-              <Link
-                key={feature.title}
-                href={feature.link}
-                className={`group relative rounded-4xl overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0 ${isLarge ? "lg:col-span-2" : ""
-                  }`}
-                style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
+              <div
+                key={program.title}
+                className="group relative rounded-4xl overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0"
+                style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
               >
                 {/* Card background */}
                 <div
                   className={`absolute inset-0 transition-opacity duration-500 ${isTeal
-                    ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
-                    : "bg-linear-to-br from-brand-navy via-brand-navy to-brand-navy-dark"
+                      ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
+                      : "bg-linear-to-br from-brand-navy via-brand-navy to-brand-navy-dark"
                     }`}
                 />
 
                 {/* Hover gradient overlay */}
                 <div
                   className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isTeal
-                    ? "bg-linear-to-br from-brand-teal-light via-brand-teal to-brand-teal-dark"
-                    : "bg-linear-to-br from-brand-navy-light via-brand-navy to-brand-navy-dark"
+                      ? "bg-linear-to-br from-brand-teal-light via-brand-teal to-brand-teal-dark"
+                      : "bg-linear-to-br from-brand-navy-light via-brand-navy to-brand-navy-dark"
                     }`}
                 />
 
@@ -111,67 +92,54 @@ export function WhatWeDo() {
                 </div>
 
                 {/* Content */}
-                <div className={`relative ${isLarge ? "p-10 lg:p-12" : "p-8 lg:p-10"}`}>
-                  <div className={`flex ${isLarge ? "flex-row items-start gap-8" : "flex-col"}`}>
-                    {/* Main content */}
-                    <div className={isLarge ? "flex-1" : ""}>
-                      {/* Icon */}
-                      <div className="mb-6">
-                        <div className="inline-flex h-14 w-14 rounded-2xl items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
-                          <IconComponent className="h-7 w-7 text-white" />
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-4">
-                        {feature.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-white/70 leading-relaxed mb-6 max-w-md">
-                        {feature.description}
-                      </p>
-
-                      {/* CTA */}
-                      <div className="inline-flex items-center gap-2 text-white font-semibold">
-                        <span>Explore</span>
-                        <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 group-hover:translate-x-1 transition-all duration-300">
-                          <ArrowUpRight className="h-4 w-4" />
-                        </div>
-                      </div>
+                <div className="relative p-8 lg:p-10 flex flex-col h-full">
+                  {/* Label badge */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="inline-flex h-14 w-14 rounded-2xl items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
+                      <IconComponent className="h-7 w-7 text-white" />
                     </div>
-
-                    {/* Stats */}
-                    <div className={`${isLarge ? "text-right" : "mt-8 pt-6 border-t border-white/10"}`}>
-                      <div className={`${isLarge ? "" : "flex items-end justify-between"}`}>
-                        <div>
-                          <div className="font-display text-5xl lg:text-6xl font-bold text-white">
-                            {feature.stat}
-                          </div>
-                          <div className="text-white/50 text-sm mt-1 uppercase tracking-wider">
-                            {feature.statLabel}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/15 text-white/90 border border-white/10">
+                      {program.label}
+                    </span>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-2">
+                    {program.title}
+                  </h3>
+
+                  {/* Headline */}
+                  <p className="text-white/90 font-semibold text-lg mb-4">
+                    {program.headline}
+                  </p>
+
+                  {/* Body */}
+                  <p className="text-white/70 leading-relaxed mb-6 flex-1">
+                    {program.body}
+                  </p>
+
+                  {/* Proof line */}
+                  <p className="text-sm italic text-white/50 mb-8 border-l-2 border-white/20 pl-4">
+                    {program.proof}
+                  </p>
+
+                  {/* CTA */}
+                  <Link
+                    href={program.ctaLink}
+                    className="inline-flex items-center gap-2 text-white font-semibold group/cta"
+                  >
+                    <span>{program.cta}</span>
+                    <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center group-hover/cta:bg-white/20 group-hover/cta:translate-x-1 transition-all duration-300">
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-brl from-white/10 to-transparent rounded-bl-[4rem]" />
-              </Link>
+              </div>
             );
           })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center animate-fade-in-up opacity-0 [animation-delay:0.8s]">
-          <Link href="/programs">
-            <button className="magnetic-btn group inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-brand-navy border-2 border-brand-navy/10 hover:border-brand-teal hover:text-brand-teal transition-all duration-300">
-              <span>View All Programs</span>
-              <ArrowUpRight className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-            </button>
-          </Link>
         </div>
       </div>
     </section>
