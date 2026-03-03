@@ -261,7 +261,7 @@ export default function NewsPage() {
                 <Link
                   key={item.slug}
                   href={`/news/${item.slug}`}
-                  className="group relative rounded-[1.5rem] overflow-hidden bg-secondary-50 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 animate-fade-in-up opacity-0"
+                  className="group relative rounded-[1.5rem] overflow-hidden bg-secondary-50 hover:bg-white transition-all duration-500 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 animate-fade-in-up opacity-0"
                   style={{ animationDelay: `${0.1 * idx}s` }}
                 >
                   {/* Image */}
@@ -356,20 +356,15 @@ export default function NewsPage() {
             insights delivered directly to your inbox.
           </p>
 
-          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal/50 transition-all bg-white/10 border border-white/10 text-white placeholder:text-white/40"
-            />
-            <button
-              type="submit"
+          <div className="flex justify-center max-w-lg mx-auto">
+            <Link
+              href="/contact"
               className="magnetic-btn px-8 py-4 font-bold rounded-xl transition-all duration-300 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30 flex items-center justify-center gap-2"
             >
               <span>Subscribe</span>
               <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

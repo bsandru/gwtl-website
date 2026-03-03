@@ -142,23 +142,22 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
-            {/* <button
-              className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300 ${
-                scrolled
-                  ? "text-brand-navy hover:bg-brand-navy/5"
-                  : "text-brand-navy hover:bg-white/50"
-              }`}
-            >
-              Sign In
-            </button> */}
-            <Link href="/contact">
+            <Link href="https://platform.globalwomentechleaders.com" target="_blank">
+              <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
+                <span className="relative z-10 flex items-center gap-2">
+                  GWTL Raise
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </button>
+            </Link>
+            {/* <Link href="/contact">
               <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
                 <span className="relative z-10 flex items-center gap-2">
                   Apply / Partner
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </button>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile menu button */}

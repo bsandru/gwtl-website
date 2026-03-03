@@ -14,7 +14,6 @@ import {
   TrendingUp,
   Award,
   BookOpen,
-  Phone,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -651,11 +650,11 @@ function ProgramsCTA() {
       {/* Content */}
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Icon */}
-        <div className="flex justify-center mb-8">
+        {/* <div className="flex justify-center mb-8">
           <div className="h-20 w-20 rounded-3xl flex items-center justify-center animate-pulse-glow bg-gradient-to-br from-primary-500 to-primary-400">
             <Phone className="h-10 w-10 text-white" />
           </div>
-        </div>
+        </div> */}
 
         <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
           Not Sure Which Program
@@ -671,8 +670,8 @@ function ProgramsCTA() {
         {/* CTA */}
         <div className="mt-10 flex justify-center">
           <Link href="/contact">
-            <Button size="lg" variant="full" className="sm:w-auto group">
-              Book a 20-minute call
+            <Button size="xlg" variant="full" className="sm:w-auto group">
+              Contact Us
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

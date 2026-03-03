@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Instagram, Youtube, Mail, ArrowUpRight, Heart } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight, Heart } from "lucide-react";
+import { SubscribeForm } from "@/components/SubscribeForm";
 
 const footerLinks = {
   about: [
@@ -16,10 +17,10 @@ const footerLinks = {
     { name: "Success Stories", href: "/stories" },
   ],
   programs: [
-    { name: "Power Tables", href: "/programs/power-tables" },
-    { name: "Erasmus+ Initiative", href: "/programs/erasmus" },
-    { name: "Sponsor Match", href: "/programs/sponsor-match" },
-    { name: "Global Shift Summit", href: "/programs/summit" },
+    { name: "Power Tables", href: "/programs#power-tables" },
+    { name: "Erasmus+ Initiative", href: "/programs#erasmus" },
+    { name: "Sponsor Match", href: "/programs#sponsor-match" },
+    { name: "Global Shift Summit", href: "/programs#global-shift-summit" },
   ],
 };
 
@@ -44,7 +45,7 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 lg:gap-12 justify-items-end">
           {/* Brand Column */}
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center space-x-3 group">
@@ -158,20 +159,9 @@ export function Footer() {
                 Get the latest news, events, and opportunities delivered weekly.
               </p>
             </div>
-            <form className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 lg:w-80 px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal/50 transition-all bg-white/5 border border-white/10 text-white placeholder:text-white/30"
-              />
-              <button
-                type="submit"
-                className="magnetic-btn group px-8 py-4 font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30"
-              >
-                <Mail className="h-5 w-5" />
-                <span>Subscribe</span>
-              </button>
-            </form>
+            <div className="w-full lg:w-auto">
+              <SubscribeForm source="footer" variant="dark" showIcon />
+            </div>
           </div>
         </div>
       </div>

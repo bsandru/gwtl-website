@@ -10,7 +10,6 @@ import {
   Crown,
   Landmark,
   Handshake,
-  Mail,
 } from "lucide-react";
 import { getUpcomingEvents, getPastEvents } from "@/lib/content";
 
@@ -106,7 +105,7 @@ function EventsHero() {
             <span className="text-sm font-medium text-secondary-800">
               Events
             </span>
-             <span className="text-xs px-2 py-0.5 rounded-full bg-teal-100 text-teal-700 font-semibold">
+            <span className="text-xs px-2 py-0.5 rounded-full bg-teal-100 text-teal-700 font-semibold">
               Conferences / Webinars
             </span>
           </div>
@@ -312,7 +311,7 @@ function UpcomingEvents() {
                 <Link
                   key={event.slug}
                   href={`/events/${event.slug}`}
-                  className="group relative rounded-[1.5rem] overflow-hidden bg-secondary-50 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 animate-fade-in-up opacity-0"
+                  className="group relative rounded-[1.5rem] overflow-hidden bg-secondary-50 hover:bg-white transition-all duration-500 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-black/10 animate-fade-in-up opacity-0"
                   style={{ animationDelay: `${0.3 + 0.1 * idx}s` }}
                 >
                   {/* Image */}
@@ -556,9 +555,6 @@ function NewsletterSignup() {
       </div>
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-white/10 mb-6">
-          <Mail className="h-8 w-8 text-brand-teal-light" />
-        </div>
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
           Never Miss an Event
         </h2>
@@ -570,20 +566,15 @@ function NewsletterSignup() {
           Subscribe to be the first to know.
         </p>
 
-        <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal/50 transition-all bg-white/10 border border-white/10 text-white placeholder:text-white/40"
-          />
-          <button
-            type="submit"
+        <div className="flex justify-center max-w-lg mx-auto">
+          <Link
+            href="/contact"
             className="magnetic-btn px-8 py-4 font-bold rounded-xl transition-all duration-300 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30 flex items-center justify-center gap-2"
           >
             <span>Subscribe</span>
             <ArrowRight className="h-4 w-4" />
-          </button>
-        </form>
+          </Link>
+        </div>
 
         <p className="mt-6 text-white/30 text-sm">
           One email per month. No fluff.
