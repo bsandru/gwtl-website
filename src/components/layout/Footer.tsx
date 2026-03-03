@@ -125,7 +125,7 @@ export function Footer() {
             </ul>
           </div>
 
-        
+
 
           {/* Programs */}
           <div>
@@ -172,8 +172,8 @@ export function Footer() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <p className="text-sm flex flex-wrap gap-1.5 text-white/40">
               © {new Date().getFullYear()} Global Women TechLeaders. <span className="flex items-center gap-1">Made with
-              <Heart className="h-4 w-4 text-brand-teal fill-brand-teal" />
-              worldwide.</span>
+                <Heart className="h-4 w-4 text-brand-teal fill-brand-teal" />
+                worldwide.</span>
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link
