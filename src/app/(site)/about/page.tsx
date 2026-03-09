@@ -201,17 +201,17 @@ function TheMission() {
           </blockquote>
         </div>
 
-        {/* What that means in practice */}
+        {/* What we focus on */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
           <div>
             <h3 className="font-display text-2xl lg:text-3xl font-bold text-brand-navy mb-8">
-              What that means in practice
+              What we focus on — not everything, just this:
             </h3>
             <div className="space-y-5">
               {[
                 {
                   icon: DoorOpen,
-                  text: "We place women on boards.",
+                  text: "We work to get women into boardrooms.",
                   anti: "We don't teach them how to ask.",
                 },
                 {
@@ -221,7 +221,7 @@ function TheMission() {
                 },
                 {
                   icon: ShieldCheck,
-                  text: "We hold companies accountable to their public commitments.",
+                  text: "We hold companies accountable to their commitments.",
                   anti: "We don't accept press releases.",
                 },
               ].map((item) => (
@@ -235,8 +235,8 @@ function TheMission() {
                   <div>
                     <span className="font-semibold text-secondary-800">
                       {item.text}
-                    </span>{" "}
-                    <span className="text-secondary-500">{item.anti}</span>
+                    </span>
+                    <span className=" text-secondary-500 block">{item.anti}</span>
                   </div>
                 </div>
               ))}
@@ -352,6 +352,12 @@ function The2030Goal() {
                 boards went from 12.5% to 40%+ women between 2010 and 2024 when
                 this target was taken seriously.
               </p>
+              {/* <blockquote className="mt-8 pl-6 border-l-4 border-brand-teal"> */}
+              <p className="text-xl font-display italic text-brand-navy">
+                30% is the floor. Parity is the ceiling. We&apos;re
+                building from here.
+              </p>
+              {/* </blockquote> */}
               <p>
                 30% is where parity becomes self-sustaining. Once critical mass
                 is reached, the next generation of women leaders isn&apos;t
@@ -362,9 +368,8 @@ function The2030Goal() {
 
             {/* The line */}
             <blockquote className="mt-8 pl-6 border-l-4 border-brand-teal">
-              <p className="text-xl font-display italic text-brand-navy">
-                &ldquo;30% is the floor. Parity is the ceiling. We&apos;re
-                building from here.&rdquo;
+              <p className="text-3xl italic text-brand-teal">
+                &ldquo;A world where 30% of tech leadership is women — not because it&apos;s fair, but because it&apos;s unstoppable.&rdquo;
               </p>
             </blockquote>
           </div>
@@ -487,7 +492,7 @@ function AINativeModel() {
                 organization and the overhead of four.
               </p>
               <p className="text-brand-teal-light font-semibold">
-                We don&apos;t talk about AI transforming leadership. <br/>We
+                We don&apos;t talk about AI transforming leadership. <br />We
                 demonstrate it.
               </p>
             </div>
@@ -923,11 +928,13 @@ function StrategicCouncil() {
             </h3>
             <p className="text-secondary-600 mb-8 leading-relaxed">
               We are selecting the 2026 council. If you can open 3 doors a
-              quarter, we want to talk.
+              quarter, we want to talk. <br />
+              <span className="font-semibold mt-6 block">One share a month. One referral a quarter.</span>
+              <span className="italic">Optional: attend a Power Table in your city.</span>
             </p>
             <Link href="/contact">
               <Button size="lg" className="w-full group">
-                Join the Strategic Council
+                Apply for the Council
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -950,6 +957,28 @@ function Ambassadors() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Info card */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
+              <Megaphone className="h-4 w-4" />
+              Ambassadors
+            </div>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
+              The Network That{" "}
+              <span className="gradient-text">Amplifies the Message</span>
+            </h2>
+
+            <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
+              <p>
+                GWTL Ambassadors are the distributed force behind our reach.
+                Senior professionals across{" "}
+                <strong className="text-secondary-800">10+ countries</strong>{" "}
+                who share our content, refer women into programs, and open their
+                own doors.
+              </p>
+            </div>
+          </div>  
+
+          {/* Right - Text */}
           <div className="premium-card p-10 lg:p-12 bg-linear-to-br from-brand-navy to-brand-navy-light order-2 lg:order-1">
             <h3 className="font-display text-2xl font-bold text-secondary-800 mb-6">
               The bar is low. The impact is real.
@@ -984,28 +1013,6 @@ function Ambassadors() {
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-          </div>
-
-          {/* Right - Text */}
-          <div className="order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
-              <Megaphone className="h-4 w-4" />
-              Ambassadors
-            </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
-              The Network That{" "}
-              <span className="gradient-text">Amplifies the Message</span>
-            </h2>
-
-            <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
-              <p>
-                GWTL Ambassadors are the distributed force behind our reach.
-                Senior professionals across{" "}
-                <strong className="text-secondary-800">10+ countries</strong>{" "}
-                who share our content, refer women into programs, and open their
-                own doors.
-              </p>
-            </div>
           </div>
         </div>
       </div>

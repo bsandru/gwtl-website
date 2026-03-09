@@ -12,7 +12,7 @@ const navigation = [
     children: [
       { name: "Our Story", href: "/about", description: "Who we are and why we exist" },
       { name: "Our Team", href: "/team", description: "Meet the leadership" },
-      { name: "Ambassadors", href: "/about#ambassadors", description: "Our global ambassador network" },
+      { name: "Ambassadors", href: "/about/ambassadors", description: "Our global ambassador network" },
     ],
   },
   {
