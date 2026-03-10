@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -69,22 +69,22 @@ export default function ContactPage() {
               <div className="mt-12">
                 <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex gap-4">
-                  <a
-                    href="https://linkedin.com/company/globalwomentechleaders"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary-100 transition-colors"
-                  >
-                    <Linkedin className="h-5 w-5 text-gray-600" />
-                  </a>
-                  <a
-                    href="https://twitter.com/glowomentechlea"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary-100 transition-colors"
-                  >
-                    <Twitter className="h-5 w-5 text-gray-600" />
-                  </a>
+                  {[
+                    { href: "https://www.linkedin.com/company/global-women-techleaders", icon: Linkedin },
+                    { href: "https://www.facebook.com/GlobalWomeninTech", icon: Facebook },
+                    { href: "https://instagram.com/globalwomentechleaders", icon: Instagram },
+                    { href: "https://x.com/globalwomentechleaders", icon: Twitter },
+                  ].map(({ href, icon: Icon }) => (
+                    <a
+                      key={href}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-10 w-10 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary-100 transition-colors"
+                    >
+                      <Icon className="h-5 w-5 text-gray-600" />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

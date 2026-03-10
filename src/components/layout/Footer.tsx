@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight, Heart } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight, Heart, Facebook } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 
 const footerLinks = {
@@ -26,9 +26,9 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "LinkedIn", href: "https://linkedin.com/company/globalwomentechleaders", icon: Linkedin },
-  { name: "Twitter", href: "https://twitter.com/glowomentechlea", icon: Twitter },
+  { name: "Facebook", href: "https://facebook.com/GlobalWomeninTech", icon: Facebook },
   { name: "Instagram", href: "https://instagram.com/globalwomentechleaders", icon: Instagram },
-  { name: "YouTube", href: "https://youtube.com/@globalwomentechleaders", icon: Youtube },
+  { name: "Twitter", href: "https://x.com/globalwomentechleaders", icon: Twitter },
 ];
 
 export function Footer() {
