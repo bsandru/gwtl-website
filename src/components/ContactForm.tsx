@@ -1,19 +1,51 @@
 "use client";
 
-import { useActionState } from "react";
+import { useRef, useState, useTransition } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { Button } from "@/components/ui/button";
 import { sendContactEmail } from "@/lib/actions";
 import { CheckCircle, AlertCircle } from "lucide-react";
 
 export function ContactForm() {
-  const [state, formAction, isPending] = useActionState(
-    async (_prev: { success?: boolean; error?: string } | null, formData: FormData) => {
-      return sendContactEmail(formData);
-    },
-    null
-  );
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isPending, startTransition] = useTransition();
+  const captchaRef = useRef<HCaptcha>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  if (state?.success) {
+  const sitekey = process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ?? "";
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (!captchaToken) {
+      setStatus("error");
+      setErrorMessage("Please complete the captcha.");
+      return;
+    }
+
+    const formData = new FormData(e.currentTarget);
+    formData.set("captchaToken", captchaToken);
+
+    startTransition(async () => {
+      const result = await sendContactEmail(formData);
+
+      if (result.success) {
+        setStatus("success");
+        setCaptchaToken(null);
+        captchaRef.current?.resetCaptcha();
+        formRef.current?.reset();
+      } else {
+        setStatus("error");
+        setErrorMessage(result.error ?? "Something went wrong.");
+        captchaRef.current?.resetCaptcha();
+        setCaptchaToken(null);
+      }
+    });
+  }
+
+  if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center text-center py-12">
         <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
@@ -29,18 +61,18 @@ export function ContactForm() {
 
   return (
     <>
-      <h2 className="text-2xl font-bold text-gray-900">
+      {/* <h2 className="mb-6 text-2xl font-bold text-gray-900">
         Send us a Message
-      </h2>
+      </h2> */}
 
-      {state?.error && (
-        <div className="mb-6 flex items-start gap-3 rounded-lg bg-red-50 border border-red-200 p-4">
+      {status === "error" && (
+        <div className="mt-4 flex items-start gap-3 rounded-lg bg-red-50 border border-red-200 p-4">
           <AlertCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
-          <p className="text-sm text-red-700">{state.error}</p>
+          <p className="text-sm text-red-700">{errorMessage}</p>
         </div>
       )}
 
-      <form action={formAction} className="space-y-4">
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label
             htmlFor="name"
@@ -116,7 +148,27 @@ export function ContactForm() {
           />
         </div>
 
-        <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+        {sitekey && (
+          <HCaptcha
+            sitekey={sitekey}
+            theme="light"
+            size="normal"
+            onVerify={(token) => {
+              setCaptchaToken(token);
+              if (status === "error") setStatus("idle");
+            }}
+            onExpire={() => setCaptchaToken(null)}
+            onError={() => setCaptchaToken(null)}
+            ref={captchaRef}
+          />
+        )}
+
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full"
+          disabled={isPending || !captchaToken}
+        >
           {isPending ? "Sending…" : "Send Message"}
         </Button>
       </form>

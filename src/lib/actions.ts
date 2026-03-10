@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { revalidatePath } from "next/cache";
+import { verify } from "hcaptcha";
 
 // ============================================
 // Directory Helpers
@@ -447,6 +448,7 @@ export async function sendContactEmail(formData: FormData) {
   const email = (formData.get("email") as string)?.trim();
   const subject = (formData.get("subject") as string)?.trim();
   const message = (formData.get("message") as string)?.trim();
+  const captchaToken = (formData.get("captchaToken") as string)?.trim();
 
   if (!name || !email || !subject || !message) {
     return { error: "All fields are required." };
@@ -455,6 +457,24 @@ export async function sendContactEmail(formData: FormData) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return { error: "Please provide a valid email address." };
+  }
+
+  if (!captchaToken) {
+    return { error: "Please complete the captcha." };
+  }
+
+  const hcaptchaSecret = process.env.HCAPTCHA_SECRET;
+  if (!hcaptchaSecret) {
+    return { error: "Server configuration error." };
+  }
+
+  try {
+    const verification = await verify(hcaptchaSecret, captchaToken);
+    if (!verification.success) {
+      return { error: "Captcha verification failed. Please try again." };
+    }
+  } catch {
+    return { error: "Captcha verification failed. Please try again." };
   }
 
   try {
