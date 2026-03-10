@@ -434,3 +434,78 @@ export async function uploadImage(formData: FormData) {
 
   return { success: true, url: publicUrl, fileName };
 }
+
+// ============================================
+// Contact Form Action
+// ============================================
+
+const NEWSLETTER_API = "https://newsleter.globalwomentechleaders.com/api/send";
+const NEWSLETTER_TOKEN = process.env.NEWSLETTER_API_TOKEN!;
+
+export async function sendContactEmail(formData: FormData) {
+  const name = (formData.get("name") as string)?.trim();
+  const email = (formData.get("email") as string)?.trim();
+  const subject = (formData.get("subject") as string)?.trim();
+  const message = (formData.get("message") as string)?.trim();
+
+  if (!name || !email || !subject || !message) {
+    return { error: "All fields are required." };
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return { error: "Please provide a valid email address." };
+  }
+
+  try {
+    const res = await fetch(NEWSLETTER_API, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${NEWSLETTER_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        mode: "raw",
+        to: "simona.sandru@gmail.com",
+        subject: `[GWTL Contact] ${subject}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <table style="border-collapse:collapse;width:100%;max-width:600px;">
+            <tr>
+              <td style="padding:8px 12px;font-weight:bold;vertical-align:top;color:#555;">Name</td>
+              <td style="padding:8px 12px;">${escapeHtml(name)}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;font-weight:bold;vertical-align:top;color:#555;">Email</td>
+              <td style="padding:8px 12px;"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;font-weight:bold;vertical-align:top;color:#555;">Subject</td>
+              <td style="padding:8px 12px;">${escapeHtml(subject)}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;font-weight:bold;vertical-align:top;color:#555;">Message</td>
+              <td style="padding:8px 12px;white-space:pre-wrap;">${escapeHtml(message)}</td>
+            </tr>
+          </table>
+        `,
+      }),
+    });
+
+    if (!res.ok) {
+      return { error: "Failed to send message. Please try again later." };
+    }
+
+    return { success: true };
+  } catch {
+    return { error: "Failed to send message. Please try again later." };
+  }
+}
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
