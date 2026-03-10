@@ -76,7 +76,7 @@ export function ForCompanies() {
             This isn&apos;t charity. It&apos;s{" "}
             <span className="gradient-text-teal">competitive advantage.</span>
           </p>
-          <Link href="/for-companies">
+          <Link href="/sponsorship">
             <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold text-white overflow-hidden bg-brand-navy shadow-lg shadow-brand-navy/20">
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Partner With GWTL

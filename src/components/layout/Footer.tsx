@@ -11,10 +11,10 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   organization: [
+    { name: "Strategic Council", href: "/about/strategic-council" },
     { name: "Partnerships", href: "/about/partnerships" },
     { name: "Events", href: "/events" },
     { name: "News", href: "/news" },
-    { name: "Success Stories", href: "/stories" },
   ],
   programs: [
     { name: "Power Tables", href: "/programs#power-tables" },

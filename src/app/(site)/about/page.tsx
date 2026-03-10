@@ -21,6 +21,8 @@ import {
   CheckCircle2,
   XCircle,
   Users,
+  type LucideIcon,
+  Funnel,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -66,6 +68,102 @@ const timeline = [
       "New mission. New model. AI-native operations. Three core programs: Power Tables, Sponsor Match, Global Shift Summit. The goal is set: 30% of tech leadership held by women by 2030.",
     highlight: true,
   },
+];
+
+interface ValueItem {
+  number: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  gradient: { from: string; to: string };
+  colSpan: string;
+  decorative: React.ReactNode;
+}
+
+const values: ValueItem[] = [
+  {
+    number: "01",
+    title: "Access Over Awareness",
+    description:
+      "We create access to decision-makers, not awareness campaigns. A warm introduction beats a webinar every time. We believe in the power of human connection and the importance of building relationships.",
+    icon: DoorOpen,
+    gradient: { from: "from-brand-teal", to: "to-emerald-600" },
+    colSpan: "lg:col-span-7",
+    decorative: (
+      <>
+        <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20 blur-2xl bg-white" />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full opacity-30 bg-white/10" />
+      </>
+    ),
+  },
+  {
+    number: "02",
+    title: "Outcomes Over Activities",
+    description:
+      'We measure placements, funding, and policy wins \u2014 not attendees, followers, or \u201Creach.\u201D If it doesn\u2019t move a woman into a leadership role, it doesn\u2019t count.',
+    icon: BarChart3,
+    gradient: { from: "from-amber-500", to: "to-orange-600" },
+    colSpan: "lg:col-span-5",
+    decorative: (
+      <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full opacity-20 blur-xl bg-white" />
+    ),
+  },
+  {
+    number: "03",
+    title: "Accountability Over Promises",
+    description:
+      "Every commitment is published. Every delivery is tracked. The Accountability Report names names \u2014 the companies who acted, and the ones who didn\u2019t.",
+    icon: ShieldCheck,
+    gradient: { from: "from-rose-500", to: "to-pink-600" },
+    colSpan: "lg:col-span-5",
+    decorative: (
+      <>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border-4 border-white/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-white/5" />
+      </>
+    ),
+  },
+  {
+    number: "04",
+    title: "Inclusion Over Ideology",
+    description:
+      "Men and women at the table. Economic framing over activist language. Results over rhetoric. We welcome anyone \u2014 man or woman \u2014 who can open doors and deliver results.",
+    icon: UsersRound,
+    gradient: { from: "from-brand-navy", to: "to-indigo-600" },
+    colSpan: "lg:col-span-7",
+    decorative: (
+      <svg
+        className="absolute bottom-0 left-0 w-full h-32 opacity-10"
+        viewBox="0 0 400 100"
+        fill="none"
+      >
+        <path
+          d="M0 80 Q100 20 200 60 T400 40"
+          stroke="white"
+          strokeWidth="2"
+          fill="none"
+        />
+        <path
+          d="M0 90 Q100 30 200 70 T400 50"
+          stroke="white"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
+    ),
+  },
+  {
+    number: "05",
+    title: "Pipeline Over Tokenism",
+    description:
+      "Placing women in leadership today matters. So does building the generation coming behind them. Girls Who Lead invests in young women's AI literacy and tech leadership skills — because in an AI-native world, the skills gap is real and starts early. We refuse to let it become the next door that gets locked.",
+    icon: Funnel,
+    gradient: { from: "from-brand-navy-light", to: "to-brand-navy" },
+    colSpan: "lg:col-span-9",
+    decorative: (
+      <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full opacity-20 blur-xl bg-white" />
+    ),
+  }
 ];
 
 /* ─── PAGE HERO ────────────────────────────────────────────────────────────── */
@@ -193,11 +291,11 @@ function TheMission() {
               to decision-makers, delivering measurable outcomes, and holding
               institutions accountable.
             </p>
-            <div className="mt-6 text-center">
+            {/* <div className="mt-6 text-center">
               <span className="inline-block text-lg font-bold gradient-text-hero">
                 The short version: From pipeline to power.
               </span>
-            </div>
+            </div> */}
           </blockquote>
         </div>
 
@@ -576,154 +674,38 @@ function CoreValues() {
 
         {/* Bento grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
-          {/* Value 1: Access Over Awareness */}
-          <div className="lg:col-span-7 group relative">
-            <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-brand-teal to-emerald-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-            <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-linear-to-br from-brand-teal to-emerald-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-              {/* Decorative shapes */}
-              <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20 blur-2xl bg-white" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full opacity-30 bg-white/10" />
+          {values.map((value) => {
+            const Icon = value.icon;
+            return (
+              <div key={value.number} className={`${value.colSpan} group relative`}>
+                <div className={`absolute inset-0 rounded-4xl bg-linear-to-br ${value.gradient.from} ${value.gradient.to} opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700`} />
+                <div className={`relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-linear-to-br ${value.gradient.from} ${value.gradient.to} shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2`}>
+                  {value.decorative}
 
-              {/* Number badge */}
-              <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
-                <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
-                  01
-                </span>
-              </div>
+                  <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
+                    <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
+                      {value.number}
+                    </span>
+                  </div>
 
-              <div className="relative z-10 h-full flex flex-col justify-end">
-                <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
-                  <DoorOpen className="h-8 w-8 text-white" />
+                  <div className="relative z-10 h-full flex flex-col justify-end">
+                    <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
+                      <Icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+                      {value.title}
+                    </h3>
+                    <p className="text-base lg:text-lg text-white/90 leading-relaxed max-w-lg">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                  Access Over Awareness
-                </h3>
-                <p className="text-lg text-white/90 leading-relaxed max-w-lg">
-                  We create access to decision-makers, not awareness campaigns.
-                  A warm introduction beats a webinar every time.
-                </p>
               </div>
-            </div>
-          </div>
-
-          {/* Value 2: Outcomes Over Activities */}
-          <div className="lg:col-span-5 group relative">
-            <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-amber-500 to-orange-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-            <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-linear-to-br from-amber-500 to-orange-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-              {/* Number badge */}
-              <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
-                <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
-                  02
-                </span>
-              </div>
-
-              {/* Decorative element */}
-              <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full opacity-20 blur-xl bg-white" />
-
-              <div className="relative z-10 h-full flex flex-col justify-end">
-                <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
-                  <BarChart3 className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                  Outcomes Over Activities
-                </h3>
-                <p className="text-base lg:text-lg text-white/90 leading-relaxed">
-                  We measure placements, funding, and policy wins — not
-                  attendees, followers, or &ldquo;reach.&rdquo; If it
-                  doesn&apos;t move a woman into a leadership role, it
-                  doesn&apos;t count.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Value 3: Accountability Over Promises */}
-          <div className="lg:col-span-5 group relative">
-            <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-rose-500 to-pink-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-            <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-linear-to-br from-rose-500 to-pink-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-              {/* Number badge */}
-              <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
-                <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
-                  03
-                </span>
-              </div>
-
-              {/* Decorative circles */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border-4 border-white/10" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-white/5" />
-
-              <div className="relative z-10 h-full flex flex-col justify-end">
-                <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
-                  <ShieldCheck className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                  Accountability Over Promises
-                </h3>
-                <p className="text-base lg:text-lg text-white/90 leading-relaxed">
-                  Every commitment is published. Every delivery is tracked. The
-                  Accountability Report names names — the companies who acted,
-                  and the ones who didn&apos;t.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Value 4: Inclusion Over Ideology */}
-          <div className="lg:col-span-7 group relative">
-            <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-brand-navy to-indigo-600 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-            <div className="relative h-full min-h-[320px] lg:min-h-[380px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-linear-to-br from-brand-navy to-indigo-600 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-              {/* Number badge */}
-              <div className="absolute top-8 right-8 lg:top-10 lg:right-10">
-                <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
-                  04
-                </span>
-              </div>
-
-              {/* Decorative lines */}
-              <svg
-                className="absolute bottom-0 left-0 w-full h-32 opacity-10"
-                viewBox="0 0 400 100"
-                fill="none"
-              >
-                <path
-                  d="M0 80 Q100 20 200 60 T400 40"
-                  stroke="white"
-                  strokeWidth="2"
-                  fill="none"
-                />
-                <path
-                  d="M0 90 Q100 30 200 70 T400 50"
-                  stroke="white"
-                  strokeWidth="1"
-                  fill="none"
-                />
-              </svg>
-
-              <div className="relative z-10 h-full flex flex-col justify-end">
-                <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
-                  <UsersRound className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                  Inclusion Over Ideology
-                </h3>
-                <p className="text-lg text-white/90 leading-relaxed max-w-lg">
-                  Men and women at the table. Economic framing over activist
-                  language. Results over rhetoric. We welcome anyone — man or
-                  woman — who can open doors and deliver results.
-                </p>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Bottom decorative element */}
-        <div className="mt-16 flex justify-center">
-          <div className="flex items-center gap-3">
-            <div className="h-1 w-12 rounded-full bg-brand-teal/30" />
-            <div className="h-2 w-2 rounded-full bg-brand-teal" />
-            <div className="h-1 w-12 rounded-full bg-brand-navy/30" />
-          </div>
-        </div>
+      
       </div>
     </section>
   );
@@ -932,7 +914,7 @@ function StrategicCouncil() {
               <span className="font-semibold mt-6 block">One share a month. One referral a quarter.</span>
               <span className="italic">Optional: attend a Power Table in your city.</span>
             </p>
-            <Link href="/contact">
+            <Link href="/about/strategic-council">
               <Button size="lg" className="w-full group">
                 Apply for the Council
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
