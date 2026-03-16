@@ -303,7 +303,7 @@ function TheMission() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
           <div>
             <h3 className="font-display text-2xl lg:text-3xl font-bold text-brand-navy mb-8">
-              What we focus on — not everything, just this:
+              What we focus on:
             </h3>
             <div className="space-y-5">
               {[
@@ -342,63 +342,8 @@ function TheMission() {
           </div>
 
           {/* What we're not / What we are */}
-          <div className="space-y-8">
-            {/* What we're not */}
-            <div className="premium-card p-8">
-              <h4 className="font-display text-lg font-bold text-secondary-800 mb-5">
-                What we&apos;re not
-              </h4>
-              <div className="space-y-3">
-                {[
-                  {
-                    text: "An awareness campaign",
-                    sub: "everyone knows there's a gap.",
-                  },
-                  {
-                    text: "A training program",
-                    sub: "women are already qualified.",
-                  },
-                  {
-                    text: "A networking event",
-                    sub: "LinkedIn exists.",
-                  },
-                  {
-                    text: "An inspiration platform",
-                    sub: "inspiration doesn't open doors.",
-                  },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-start gap-3">
-                    <XCircle className="h-5 w-5 mt-0.5 shrink-0 text-red-400" />
-                    <span className="text-secondary-600">
-                      <strong className="text-secondary-800">
-                        {item.text}
-                      </strong>{" "}
-                      — {item.sub}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* What we are */}
-            <div className="premium-card p-8 bg-linear-to-br from-brand-navy to-brand-navy-light">
-              <h4 className="font-display text-lg font-bold text-secondary-800 mb-5">
-                What we are
-              </h4>
-              <div className="space-y-3">
-                {[
-                  "Access to the rooms where decisions happen.",
-                  "Sponsors who stake their reputation on placing women.",
-                  "Public accountability for corporate commitments.",
-                  "Capital flowing to women-led ventures.",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-brand-teal-light" />
-                    <span className="text-secondary-800">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="hidden md:block space-y-8">
+           <img src="/images/focus.jpg" alt="What we are" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
