@@ -39,7 +39,7 @@ export function AINativeDifference() {
 
             <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
               <p>
-                Four C-level executives. Twenty-five AI agents. We operate with
+                C-level executives. Twenty-five AI agents. We operate with
                 the output of a 50-person organization and the overhead of four.
               </p>
               <p>

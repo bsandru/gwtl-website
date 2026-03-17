@@ -44,7 +44,7 @@ const timeline = [
     year: "2020",
     title: "International Expansion",
     description:
-      "Grew to 5+ countries, 1,000+ members. Established partnerships across Europe. Confirmed what the data was showing: the pipeline existed. The doors were locked.",
+      "Grew to 5+ countries, 2,000+ members. Established partnerships across Europe. Confirmed what the data was showing: the pipeline existed. The doors were locked.",
     highlight: false,
   },
   {
@@ -112,7 +112,7 @@ const values: ValueItem[] = [
     number: "03",
     title: "Accountability Over Promises",
     description:
-      "Every commitment is published. Every delivery is tracked. The Accountability Report names names \u2014 the companies who acted, and the ones who didn\u2019t.",
+      "Every commitment is published. Every delivery is tracked. The Accountability Report names names \u2014 the companies who acted and made the difference in tech leadership.",
     icon: ShieldCheck,
     gradient: { from: "from-rose-500", to: "to-pink-600" },
     colSpan: "lg:col-span-5",
@@ -526,7 +526,7 @@ function AINativeModel() {
                 <strong className="text-white">AI-native nonprofit</strong>.
               </p>
               <p>
-                Four C-level executives set strategy and make decisions.
+                C-level executives set strategy and make decisions.
                 Twenty-five AI agents handle execution — content, outreach,
                 research, coordination, analytics.
               </p>
@@ -543,14 +543,14 @@ function AINativeModel() {
             {/* CTA */}
             <div className="mt-10">
               <Link
-                href="/team"
+                href="/ai-governance"
                 className="group inline-flex items-center gap-2 font-semibold transition-all text-brand-teal-light hover:text-brand-teal"
               >
-                Meet the Team
+                AI Governance
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <p className="mt-2 text-sm text-white/50">
-                Four humans hold the strategy. Meet the council.
+                Humans hold the strategy. See the AI Governance Summary.
               </p>
             </div>
           </div>

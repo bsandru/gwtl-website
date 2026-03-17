@@ -54,7 +54,7 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-row flex-wrap gap-4 justify-center mb-20 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
-            <Link href="/for-leaders/join">
+            <Link href="/programs">
               <button className="magnetic-btn group relative h-14 px-8 rounded-2xl font-bold text-white overflow-hidden bg-brand-navy shadow-lg shadow-brand-navy/20">
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   I&apos;m a Woman Leader
@@ -62,7 +62,7 @@ export function Hero() {
                 </span>
               </button>
             </Link>
-            <Link href="/for-companies">
+            <Link href="/sponsorship">
               <button className="magnetic-btn group h-14 px-8 rounded-2xl font-bold text-brand-navy border-2 border-brand-navy/10 hover:border-brand-teal/30 hover:bg-brand-teal/5 transition-all duration-300 flex items-center justify-center gap-2">
                 Partner With Us
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />

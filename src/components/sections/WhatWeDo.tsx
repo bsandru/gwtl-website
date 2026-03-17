@@ -10,7 +10,7 @@ const programs = [
     body: "Invite-only gatherings that bring 25 women leaders face-to-face with 25 board-level decision-makers. Structured conversations. Real commitments. Every table produces measurable outcomes.",
     proof: "Past tables: 8 board placements, €1.2M in commitments per event.",
     cta: "Request an Invitation",
-    ctaLink: "/programs/power-tables",
+    ctaLink: "/programs#power-tables",
     color: "teal" as const,
   },
   {
@@ -21,7 +21,7 @@ const programs = [
     body: "Senior leaders — men and women — commit to concrete actions: introductions, board nominations, investor connections. Not advice. Not mentoring. Action. Every commitment is tracked and published.",
     proof: "The difference: a sponsor stakes their reputation on your advancement.",
     cta: "Find Your Sponsor",
-    ctaLink: "/programs/sponsor-match",
+    ctaLink: "/programs#sponsor-match",
     color: "navy" as const,
   },
   {
@@ -32,7 +32,7 @@ const programs = [
     body: "Our annual flagship event. 500+ leaders. Multiple continents. The place where the companies making real progress on gender leadership stand up, and the ones falling short are named. Where commitments become public record.",
     proof: "Next Summit: 2026. Applications open soon.",
     cta: "Get Early Access",
-    ctaLink: "/programs/summit",
+    ctaLink: "/programs#global-shift-summit",
     color: "teal" as const,
   },
 ];
