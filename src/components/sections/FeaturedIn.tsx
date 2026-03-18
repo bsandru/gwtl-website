@@ -200,18 +200,15 @@ export function FeaturedIn() {
         </div>
 
         {/* Partners - Marquee style */}
-        <div className="pt-16 border-t border-secondary-200/50">
+        {/* <div className="pt-16 border-t border-secondary-200/50">
           <p className="text-center text-sm font-medium uppercase tracking-widest text-secondary-400 mb-10">
             Strategic Partners & Affiliations
           </p>
 
-          {/* Partner logos */}
           <div className="relative overflow-hidden">
-            {/* Gradient masks */}
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-[#f8f8f8] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8f8f8] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-[#f8f8f8] to-transparent z-10" />
 
-            {/* Scrolling track */}
             <div className="flex gap-8 animate-marquee">
               {[...partners, ...partners].map((partner, idx) => (
                 <div
@@ -225,7 +222,7 @@ export function FeaturedIn() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

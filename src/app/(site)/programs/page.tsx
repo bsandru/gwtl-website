@@ -11,7 +11,6 @@ import {
   CalendarDays,
   MapPin,
   Target,
-  TrendingUp,
   Award,
   BookOpen,
 } from "lucide-react";
@@ -140,7 +139,7 @@ function PowerTables() {
             Power Tables
           </h2>
           <p className="mt-3 text-xl sm:text-2xl text-primary-500 font-medium">
-            The room where decisions happen.
+            The room where decisions get made.
           </p>
         </div>
 
@@ -149,18 +148,18 @@ function PowerTables() {
           <div className="relative z-10">
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-4">
               <p>
-                Most networking events create connections. Power Tables create <strong className="text-secondary-800">outcomes</strong>.
+                Most events create conversations. Power Tables create <strong className="text-secondary-800">commitments</strong>.
               </p>
               <p>
-                Each Power Table brings together 25 high-potential women leaders
-                and 25 decision-makers — board chairs, CEOs, investors, and
-                hiring executives — for structured, outcome-focused
-                conversations.
+                Each Power Table brings together 25 senior decision-makers —
+                CEOs, investors, board chairs, policy makers, and tech leaders —
+                for a single purpose: to state what they will do, on the record.
               </p>
               <p>
-                There&apos;s no keynote. No panel. No &ldquo;lean in&rdquo;
-                moment. Just direct access to the people who can open doors —
-                and a public commitment record for everyone in the room.
+                There&apos;s no keynote. No panel. A skilled moderator guides
+                the room through three sessions — from context, to commitment,
+                to action. Every pledge is published within 48 hours. Every
+                attendee knows their name will be on the accountability list.
               </p>
             </div>
 
@@ -171,30 +170,35 @@ function PowerTables() {
               </h3>
               <ol className="space-y-5">
                 {[
-                  {
-                    title: "Curated invitations",
-                    desc: "Both sides are vetted. Every participant has demonstrated track record. Every decision-maker has real authority.",
-                  },
-                  {
-                    title: "Structured conversations",
-                    desc: "Purpose-designed format that moves from introduction to commitment in a single session.",
-                  },
-                  {
-                    title: "Public commitment log",
-                    desc: "Every commitment made is recorded and published in our Accountability Report.",
-                  },
-                  {
-                    title: "Follow-through tracking",
-                    desc: "Six months later, we check. Who delivered? Who didn't?",
-                  },
-                ].map((step, i) => (
-                  <li key={step.title} className="flex gap-4">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-500 text-white text-sm font-bold">
-                      {i + 1}
+                  { step: 1, title: "Curated invitations", desc: "Attendance is selective. Every person in the room has real authority and a willingness to commit publicly." },
+                  { step: 2, title: "Pre-work", desc: "Each attendee submits their commitment before they arrive. The room knows what's coming." },
+                  { step: 3, title: "Three sessions", subItems: [
+                    { label: "State of play", desc: "regional data on women in tech leadership, framed for this specific room" },
+                    { label: "Commitment round", desc: "each attendee states their pledge publicly, on record" },
+                    { label: "Problem-solving", desc: "what's blocking progress, who can move what" },
+                  ]},
+                  { step: 4, title: "Published record", desc: "Commitments go live within 48 hours. Named. Tracked." },
+                  { step: 5, title: "Follow-through", desc: "Quarterly check-ins. Annual Accountability Report. Who delivered, who didn't." },
+                ].map((item) => (
+                  <li key={item.step} className="flex gap-4">
+                    <span className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-500 text-white text-sm font-bold">
+                      {item.step}
                     </span>
                     <div>
-                      <span className="font-semibold text-secondary-800">{step.title}</span>
-                      <span className="text-gray-600"> — {step.desc}</span>
+                      <span className="font-semibold text-secondary-800">{item.title}</span>
+                      {item.desc && (
+                        <span className="text-gray-600"> — {item.desc}</span>
+                      )}
+                      {item.subItems && (
+                        <ul className="mt-2 space-y-1.5 text-gray-600 text-sm">
+                          {item.subItems.map((sub) => (
+                            <li key={sub.label} className="flex gap-2">
+                              <span className="text-primary-400 font-bold mt-0.5">—</span>
+                              <span><em className="not-italic font-medium text-secondary-700">{sub.label}</em> — {sub.desc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </li>
                 ))}
@@ -202,31 +206,21 @@ function PowerTables() {
             </div>
           </div>
 
-          {/* Right: Stats + Details */}
+          {/* Right: Bridge Model + Who Attends + Where + CTA */}
           <div className="space-y-8">
-            {/* Outcomes Card */}
-            <div className="premium-card p-8">
-              <h3 className="font-display text-xl font-bold text-secondary-800 mb-6 flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-primary-500" />
-                Outcomes from Past Tables
+            {/* The Bridge Model */}
+            <div className="premium-card p-8 border-l-4 border-primary-500">
+              <h3 className="font-display text-xl font-bold text-secondary-800 mb-4 flex items-center gap-2">
+                <Globe className="h-5 w-5 text-primary-500" />
+                The Bridge Model
               </h3>
-              <div className="space-y-5">
-                {[
-                  { value: "8", label: "board introductions per event", suffix: "avg" },
-                  { value: "€1.2M", label: "in funding conversations initiated", suffix: "avg" },
-                  { value: "73%", label: "of commitments delivered within 6 months", suffix: "" },
-                ].map((outcome) => (
-                  <div key={outcome.label} className="flex items-baseline gap-3">
-                    <span className="text-3xl font-bold font-display text-primary-500">
-                      {outcome.value}
-                    </span>
-                    <span className="text-gray-600 text-sm leading-tight">
-                      {outcome.suffix && <span className="text-xs font-medium text-primary-400 mr-1">{outcome.suffix}</span>}
-                      {outcome.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <blockquote className="text-gray-600 leading-relaxed">
+                Power Tables connect ecosystems — not just cities. Each table is
+                built around a specific bridge:{" "}
+                <strong className="text-secondary-800">EU × Gulf, EU × Africa, EU × UK, EU × LATAM</strong>.
+                The people in the room can create real cross-border capital flow,
+                hiring pipelines, and policy change. That&apos;s the point.
+              </blockquote>
             </div>
 
             {/* Who attends */}
@@ -237,8 +231,8 @@ function PowerTables() {
               </h3>
               <ul className="space-y-3">
                 {[
+                  "Senior decision-makers: CEOs, investors, board directors, policy makers, tech leaders",
                   "Women leaders targeting board seats, C-suite roles, or VC funding",
-                  "Corporate executives, board directors, investors, and hiring leaders",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-gray-600">
                     <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-primary-500" />
@@ -255,17 +249,14 @@ function PowerTables() {
                 Where
               </h3>
               <p className="text-gray-600 mb-3">
-                Power Tables run across Europe, Gulf, and Africa. Locations rotate.
+                Power Tables rotate across Europe, the Gulf, and Africa.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["London", "Dubai", "Amsterdam", "Nairobi"].map((city) => (
+                {["London", "Dubai", "Amsterdam", "Nairobi", "Berlin", "Lisbon", "Bucharest"].map((city) => (
                   <span key={city} className="px-3 py-1.5 rounded-full text-sm font-medium bg-primary-50 text-primary-700 border border-primary-100">
                     {city}
                   </span>
                 ))}
-                <span className="px-3 py-1.5 rounded-full text-sm font-medium bg-secondary-100 text-secondary-600">
-                  2026 Schedule
-                </span>
               </div>
             </div>
 
@@ -286,7 +277,9 @@ function PowerTables() {
             </div>
 
             <p className="text-sm text-gray-400 text-center">
-              Applications are by invitation. If you&apos;ve been referred, apply above. Otherwise, register your interest for a future table.
+              Attendance is by invitation. If you&apos;ve been referred, apply
+              below. If you&apos;d like to be considered, register your interest
+              — we review every submission.
             </p>
           </div>
         </div>

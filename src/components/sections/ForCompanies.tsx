@@ -45,7 +45,7 @@ export function ForCompanies() {
           </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-navy leading-[1.1] animate-fade-in-up opacity-0 [animation-delay:0.2s]">
             The Business Case{" "}
-            <span className="gradient-text-teal">Is Closed</span>
+            <span className="gradient-text-teal inline-block">Is Closed</span>
           </h2>
         </div>
 
@@ -57,7 +57,7 @@ export function ForCompanies() {
               className="group relative rounded-4xl bg-secondary-50 p-8 lg:p-10 border border-secondary-200/60 hover:border-brand-teal/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-teal/5 animate-fade-in-up opacity-0"
               style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
             >
-              <div className="font-display text-5xl lg:text-6xl font-bold gradient-text-teal mb-3">
+              <div className="font-display text-5xl lg:text-6xl font-bold gradient-text-teal mb-3 leading-tight">
                 {stat.value}
               </div>
               <p className="text-secondary-600 leading-relaxed mb-4">

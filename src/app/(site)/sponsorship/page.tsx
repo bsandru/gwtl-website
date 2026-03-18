@@ -308,75 +308,144 @@ function PartnershipTiers() {
   const tiers = [
     {
       name: "Community Partner",
-      tagline:
-        "For organizations entering the ecosystem. Ideal for scale-ups and regional firms.",
+      tagline: "For scale-ups, regional firms, and mission-aligned organizations.",
       icon: Users,
       color: "emerald",
       featured: false,
-      includes: [
-        "Listed in Accountability Report",
-        "1 Sponsor Match placement",
-        "2 seats at Power Tables",
-        "Access to GWTL network and events",
-        "Annual outcome summary",
+      categories: [
+        {
+          label: "Visibility",
+          items: [
+            "Listed in the annual Accountability Report",
+            "2 social posts per year",
+            "Listed in the GWTL newsletter partner section",
+            "2 seats at Power Tables",
+          ],
+        },
+        {
+          label: "Programs",
+          items: [
+            "Access to GWTL network and events",
+            "1 Sponsor Match placement",
+          ],
+        },
+        {
+          label: "Reporting",
+          items: ["Annual outcome summary"],
+        },
       ],
       cta: "Get in touch for partnership details",
     },
     {
       name: "Strategic Partner",
-      tagline:
-        "For companies ready to demonstrate leadership publicly.",
+      tagline: "For companies ready to lead — publicly and measurably.",
       icon: Crown,
       color: "amber",
       featured: true,
-      includes: [
-        "Named lead sponsor in Accountability Report",
-        "Dedicated Power Table (your executives + 25 women leaders)",
-        "5 Sponsor Match placements (your senior leaders as sponsors)",
-        "10 seats at Global Shift Summit",
-        "Co-branded content and press recognition",
-        "Quarterly outcome report for ESG reporting",
-        "Strategic Council observer seat",
+      categories: [
+        {
+          label: "Visibility",
+          items: [
+            "Lead feature in the annual Accountability Report (named, with outcomes)",
+            "Monthly mention across GWTL social channels",
+            "Monthly co-authored newsletter feature",
+            "Named presence at Global Shift Summit: 10 seats + stage recognition",
+          ],
+        },
+        {
+          label: "Programs",
+          items: [
+            "Named Power Table: your executives + 25 women leaders, fully facilitated",
+            "30 Sponsor Match pairs on GWTL Raise — tracked, reported, accountable",
+            "5 Sponsor Match placements",
+          ],
+        },
+        // {
+        //   label: "AI Readiness",
+        //   items: [
+        //     "Full AI agent suite: GWTL designs, builds, and documents a set of AI agent workflows for your DEI and talent team — the same model we run on. Delivered and ready to deploy.",
+        //   ],
+        // },
+        {
+          label: "Reporting",
+          items: [
+            "Quarterly outcome report formatted for ESG and sustainability reporting",
+            "Strategic Council observer seat",
+          ],
+        },
       ],
       cta: "Get in touch for partnership details",
     },
     {
-      name: "Impact Partner",
-      tagline:
-        "For companies committed to measurable outcomes and public recognition.",
+      name: "Corporate Partner",
+      tagline: "For companies committed to outcomes, not just optics.",
       icon: Star,
       color: "primary",
       featured: false,
-      includes: [
-        "Named in Accountability Report",
-        "2 Sponsor Match placements",
-        "4 seats at Global Shift Summit",
-        "Priority access to GWTL talent pipeline",
-        "Bi-annual outcome report",
-        "Co-branded event presence",
+      categories: [
+        {
+          label: "Visibility",
+          items: [
+            "Named case study in the annual Accountability Report",
+            "Monthly feature across GWTL social channels",
+            "Quarterly spotlight in the GWTL newsletter",
+            "6 seats at Global Shift Summit",
+          ],
+        },
+        {
+          label: "Programs",
+          items: [
+            "Co-branded Power Table: 1 per year in your city or region",
+            "15 Sponsor Match pairs on GWTL Raise — tracked, reported, accountable",
+            "2 Sponsor Match placements",
+          ],
+        },
+        // {
+        //   label: "AI Readiness",
+        //   items: [
+        //     "1 scoped AI agent: GWTL designs and documents one AI agent workflow for your talent or DEI team. Clear input, clear output, ready to use.",
+        //   ],
+        // },
+        {
+          label: "Reporting",
+          items: ["Bi-annual outcome report for internal and ESG use"],
+        },
       ],
       cta: "Get in touch for partnership details",
     },
+    
   ];
 
-  const colorMap: Record<string, { badge: string; iconBg: string; border: string; check: string }> = {
+  const colorMap: Record<
+    string,
+    {
+      badge: string;
+      iconBg: string;
+      border: string;
+      check: string;
+      categoryLabel: string;
+    }
+  > = {
     amber: {
       badge: "bg-amber-100 text-amber-700",
       iconBg: "from-amber-400 to-amber-600",
       border: "border-amber-200",
       check: "text-amber-500",
+      categoryLabel: "text-amber-600",
     },
     primary: {
       badge: "bg-primary-100 text-primary-700",
       iconBg: "from-primary-400 to-primary-600",
       border: "border-primary-200",
       check: "text-primary-500",
+      categoryLabel: "text-primary-600",
     },
     emerald: {
       badge: "bg-emerald-100 text-emerald-700",
       iconBg: "from-emerald-400 to-emerald-600",
       border: "border-emerald-200",
       check: "text-emerald-500",
+      categoryLabel: "text-emerald-600",
     },
   };
 
@@ -403,9 +472,9 @@ function PartnershipTiers() {
               <div
                 key={tier.name}
                 className={`premium-card p-8 lg:p-10 flex flex-col relative ${tier.featured
-                  ? `border-2 ${colors.border} ring-1 ring-amber-100`
-                  : ""
-                  }`}
+                    ? `border-2 ${colors.border} ring-1 ring-amber-100`
+                    : ""
+                }`}
               >
                 {/* Featured badge */}
                 {tier.featured && (
@@ -423,35 +492,39 @@ function PartnershipTiers() {
                   >
                     <tier.icon className="h-5 w-5 text-white" />
                   </div>
-                  <div>
-                    <h3 className="font-display text-xl font-bold text-secondary-800">
-                      {tier.name}
-                    </h3>
-                  </div>
+                  <h3 className="font-display text-xl font-bold text-secondary-800">
+                    {tier.name}
+                  </h3>
                 </div>
 
                 <p className="text-sm text-gray-500 italic mb-6">
                   {tier.tagline}
                 </p>
 
-                {/* Includes list */}
-                <div className="flex-1">
-                  <span className="text-xs uppercase tracking-wider text-gray-400 font-semibold block mb-4">
-                    Includes
-                  </span>
-                  <ul className="space-y-3">
-                    {tier.includes.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-gray-600 text-sm"
+                {/* Categorized includes */}
+                <div className="flex-1 space-y-5">
+                  {tier.categories.map((category) => (
+                    <div key={category.label}>
+                      <span
+                        className={`text-xs uppercase tracking-wider font-bold block mb-2 ${colors.categoryLabel}`}
                       >
-                        <CheckCircle2
-                          className={`h-4 w-4 mt-0.5 shrink-0 ${colors.check}`}
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                        {category.label}
+                      </span>
+                      <ul className="space-y-2">
+                        {category.items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-3 text-gray-600 text-sm"
+                          >
+                            <CheckCircle2
+                              className={`h-4 w-4 mt-0.5 shrink-0 ${colors.check}`}
+                            />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
 
                 {/* CTA */}

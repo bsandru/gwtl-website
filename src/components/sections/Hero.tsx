@@ -150,7 +150,7 @@ export function Hero() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-brand-navy">500+</p>
+                      <p className="text-2xl font-bold text-brand-navy">2000+</p>
                       <p className="text-xs text-secondary-500">Active Mentors</p>
                     </div>
                   </div>

@@ -4,21 +4,21 @@ import {
   Handshake,
   ArrowRight,
   Sparkles,
-  DoorOpen,
   Users,
-  Briefcase,
-  Building2,
-  CircleDollarSign,
-  MessageSquareQuote,
   ShieldCheck,
+  CheckCircle2,
+  BarChart3,
+  Compass,
+  KeyRound,
+  BadgeCheck,
   CalendarCheck,
+  Target,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Strategic Council — GWTL",
   description:
-    "GWTL's Strategic Council consists of 10–15 senior leaders who don't advise — they act. Every member commits to 3 warm introductions per quarter.",
+    "GWTL's Strategic Council is a small group of 8–12 senior leaders who govern GWTL's direction — not from a distance, but from the inside. They meet quarterly to challenge our strategy, review our outcomes, and validate that we're building something that lasts.",
 };
 
 function PageHero() {
@@ -45,10 +45,10 @@ function PageHero() {
           </div>
 
           <h1 className="animate-fade-in-up font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.2] stagger-2 opacity-0">
-            <span className="text-secondary-800">The People</span>
+            <span className="text-secondary-800">The People Who</span>
             <br />
             <span className="relative inline-block gradient-text-hero">
-              Opening Doors
+              Hold Us Accountable
               <svg
                 className="absolute -bottom-2.5 left-0 w-full"
                 height="12"
@@ -80,18 +80,14 @@ function PageHero() {
           </h1>
 
           <p className="animate-fade-in-up mt-8 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-secondary-600 stagger-3 opacity-0">
-            GWTL&apos;s Strategic Council consists of 10–15 senior leaders who
-            don&apos;t advise — they{" "}
-            <strong className="text-secondary-800">act</strong>. Every member
-            commits to{" "}
-            <strong className="text-secondary-800">
-              3 warm introductions per quarter
-            </strong>
-            : to sponsors, board opportunities, or capital.
+            GWTL&apos;s Strategic Council is a small group of 8–12 senior
+            leaders who govern GWTL&apos;s direction — not from a distance, but
+            from the inside.
           </p>
 
-          <p className="animate-fade-in-up mt-6 text-2xl sm:text-3xl font-display font-bold gradient-text-hero stagger-4 opacity-0">
-            They are catalysts. Not figureheads.
+          <p className="animate-fade-in-up mt-4 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-secondary-600 stagger-4 opacity-0">
+            They meet quarterly to challenge our strategy, review our outcomes,
+            and validate that we&apos;re building something that lasts.
           </p>
         </div>
       </div>
@@ -114,70 +110,76 @@ function PageHero() {
   );
 }
 
-const doorTypes = [
+const responsibilities = [
   {
-    icon: Briefcase,
-    title: "Board Opportunities",
+    icon: BarChart3,
+    title: "Review quarterly outcomes",
     description:
-      "Warm introductions to board seats and advisory roles at companies committed to leadership diversity. We connect qualified women with decision-makers who have the authority to appoint.",
+      "Hold leadership accountable to the 30% goal — reviewing the numbers, asking hard questions, and refusing to accept vague progress.",
     color: "from-brand-teal to-emerald-600",
   },
   {
-    icon: CircleDollarSign,
-    title: "Capital & Funding",
+    icon: Compass,
+    title: "Validate strategic direction",
     description:
-      "Connections to investors, VCs, and funding bodies for women-led ventures and initiatives. We facilitate introductions that lead to real funding conversations, not just networking events.",
+      "Challenge our assumptions, pressure-test our model, and make sure we're building for lasting impact — not just short-term visibility.",
     color: "from-amber-500 to-orange-600",
   },
   {
-    icon: Building2,
-    title: "Sponsor Connections",
+    icon: KeyRound,
+    title: "Open the doors only they can open",
     description:
-      "Direct introductions to sponsors who stake their reputation on placing women into leadership. Executives who actively advocate and mentor.",
+      "Through their institutional authority — not just their networks. They bring access that comes from decades at the top of their fields.",
+    color: "from-violet-500 to-purple-600",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Attach their name to our results",
+    description:
+      "Council members don't just advise in private — they stake their reputation on what GWTL delivers. Their involvement is visible and is tied to our outcomes.",
     color: "from-rose-500 to-pink-600",
   },
 ];
 
-function ThreeDoors() {
+function WhatTheyDo() {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
-            <DoorOpen className="h-4 w-4" />
-            3 Doors Per Quarter
+            <CheckCircle2 className="h-4 w-4" />
+            What they do
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
-            Every Quarter, We Ask:{" "}
-            <span className="gradient-text">&ldquo;What Did You Deliver?&rdquo;</span>
+            Four Commitments.{" "}
+            <span className="gradient-text">Not Suggestions.</span>
           </h2>
           <p className="mt-6 text-xl text-secondary-500 max-w-2xl mx-auto">
-            Each council member opens at least three doors — not through good
-            intentions, but through concrete introductions.
+            Every council member takes on the same four responsibilities — and
+            is held to them quarterly.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {doorTypes.map((item, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {responsibilities.map((item, index) => (
             <div key={item.title} className="group relative">
-              <div className="absolute inset-0 rounded-4xl bg-linear-to-br opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
               <div
-                className={`relative h-full min-h-[360px] rounded-4xl p-8 lg:p-10 overflow-hidden bg-linear-to-br ${item.color} shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2`}
+                className={`relative h-full min-h-[320px] rounded-3xl p-8 overflow-hidden bg-linear-to-br ${item.color} shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2`}
               >
-                <div className="absolute top-2 right-8 lg:right-10">
-                  <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
+                <div className="absolute top-2 right-6">
+                  <span className="text-7xl font-display font-bold text-white/10">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
                 <div className="relative z-10 h-full flex flex-col justify-end">
-                  <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
-                    <item.icon className="h-8 w-8 text-white" />
+                  <div className="h-14 w-14 rounded-2xl flex items-center justify-center mb-5 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
+                    <item.icon className="h-7 w-7 text-white" />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+                  <h3 className="text-xl font-bold text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-base lg:text-lg text-white/90 leading-relaxed">
+                  <p className="text-sm text-white/90 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -194,96 +196,126 @@ function ThreeDoors() {
   );
 }
 
-function HowItWorks() {
+function NotAnAdvisoryBoard() {
   return (
     <section className="relative py-24 lg:py-32 bg-brand-navy overflow-hidden">
       <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%221%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
-
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl bg-brand-teal" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal-light" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-brand-teal/20 text-brand-teal-light">
-            <ShieldCheck className="h-4 w-4" />
-            Accountability Built In
-          </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Not Advisory.{" "}
-            <span className="text-brand-teal-light">Operational.</span>
-          </h2>
-          <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto">
-            Most councils are decorative. Ours is built on delivery. Every
-            quarter, every member reports what they opened — and for whom.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              icon: CalendarCheck,
-              metric: "Quarterly",
-              label: "Accountability reviews",
-            },
-            {
-              icon: DoorOpen,
-              metric: "3+",
-              label: "Introductions per member, per quarter",
-            },
-            {
-              icon: Users,
-              metric: "10–15",
-              label: "Senior leaders per cohort",
-            },
-            {
-              icon: MessageSquareQuote,
-              metric: "1",
-              label: "Question: \"What did you deliver?\"",
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="group p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-brand-teal/30 transition-all duration-300 text-center"
-            >
-              <div className="h-14 w-14 mx-auto rounded-2xl flex items-center justify-center mb-5 bg-brand-teal/20 group-hover:bg-brand-teal/30 transition-colors">
-                <item.icon className="h-7 w-7 text-brand-teal-light" />
-              </div>
-              <p className="text-4xl font-bold text-white mb-2">
-                {item.metric}
-              </p>
-              <p className="text-sm text-white/60">{item.label}</p>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left — the distinction */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-brand-teal/20 text-brand-teal-light">
+              <ShieldCheck className="h-4 w-4" />
+              Accountability built in
             </div>
-          ))}
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
+              Not an Advisory Board.{" "}
+              <span className="text-brand-teal-light">An Accountability Body.</span>
+            </h2>
+            <div className="space-y-5 text-lg text-white/70 leading-relaxed">
+              <p>
+                Advisory boards give opinions. The Strategic Council gives{" "}
+                <strong className="text-white">accountability</strong> — to us,
+                and to the mission.
+              </p>
+              <p>
+                They ask the hard questions: Are we measuring the right things?
+                Are we moving fast enough? Is the model actually working? And
+                they don&apos;t leave until those questions have real answers.
+              </p>
+            </div>
+          </div>
+
+          {/* Right — cadence stats */}
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              {
+                icon: CalendarCheck,
+                metric: "Quarterly",
+                label: "Council meetings",
+              },
+              {
+                icon: Target,
+                metric: "30%",
+                label: "The goal we're held to",
+              },
+              {
+                icon: Users,
+                metric: "8–12",
+                label: "Senior leaders per cohort",
+              },
+              {
+                icon: ShieldCheck,
+                metric: "Public",
+                label: "Accountability — named and on record",
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-brand-teal/30 transition-all duration-300 text-center"
+              >
+                <div className="h-12 w-12 mx-auto rounded-xl flex items-center justify-center mb-4 bg-brand-teal/20 group-hover:bg-brand-teal/30 transition-colors">
+                  <item.icon className="h-6 w-6 text-brand-teal-light" />
+                </div>
+                <p className="text-3xl font-bold text-white mb-1">
+                  {item.metric}
+                </p>
+                <p className="text-xs text-white/50 leading-snug">{item.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function CouncilMembers() {
+function WhoSitsOnTheCouncil() {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-linear-to-br from-brand-teal to-brand-teal-light animate-float" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
-            <Users className="h-4 w-4" />
-            The Council
-          </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
-            2026 <span className="gradient-text">Council Members</span>
-          </h2>
-
-          <div className="premium-card p-12 lg:p-16">
-            <div className="h-20 w-20 mx-auto rounded-3xl flex items-center justify-center mb-8 bg-linear-to-br from-secondary-100 to-primary-50 border border-primary-100/50">
-              <Sparkles className="h-10 w-10 text-brand-teal" />
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left — profile */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
+              <Users className="h-4 w-4" />
+              Who qualifies
             </div>
-            <p className="text-xl text-secondary-500 leading-relaxed max-w-lg mx-auto">
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
+              Institutional Weight.{" "}
+              <span className="gradient-text inline-block">Not Just Influence.</span>
+            </h2>
+            <p className="text-lg text-secondary-600 leading-relaxed mb-8">
+              Former and sitting board members, institutional investors, senior
+              policy figures, and C-suite executives whose credibility gives
+              GWTL its institutional weight.
+            </p>
+            <p className="text-secondary-500 leading-relaxed">
+              This isn&apos;t a network of well-meaning supporters. It&apos;s a
+              group of people whose involvement changes what&apos;s possible —
+              because of who they are and what they can move.
+            </p>
+          </div>
+
+          {/* Right — members placeholder */}
+          <div className="premium-card p-10 lg:p-12">
+            <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-linear-to-br from-secondary-100 to-primary-50 border border-primary-100/50">
+              <Sparkles className="h-8 w-8 text-brand-teal" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-brand-navy mb-4">
+              2026 Council Members
+            </h3>
+            <p className="text-secondary-500 leading-relaxed mb-4">
               Council member profiles will be published here once the 2026
               cohort is confirmed.
             </p>
-            <p className="mt-4 text-sm text-secondary-400 italic">
+            <p className="text-sm text-secondary-400 italic">
+              Council member profiles will be added when confirmed.<br/>
               Selection is underway.
             </p>
           </div>
@@ -318,27 +350,21 @@ function CouncilCTA() {
         </div>
 
         <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-          Join the
+          Membership Is
           <br />
-          <span className="gradient-text-cta">Strategic Council</span>
+          <span className="gradient-text-cta">By Invitation</span>
         </h2>
 
         <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          We are selecting the 2026 council. If you can open doors we want to talk.
+          The 2026 council is being assembled now. We reach out to the
+          individuals we believe are the right fit. If you think that&apos;s
+          you, you can signal interest below.
         </p>
-
-        <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-white/60">
-          <span>One share a month.</span>
-          <span className="hidden sm:inline">·</span>
-          <span>One referral a quarter.</span>
-          <span className="hidden sm:inline">·</span>
-          <span className="italic">Optional: attend a Power Table in your city.</span>
-        </div>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact">
             <button className="group w-full sm:w-auto h-14 px-10 text-lg rounded-2xl font-bold shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl inline-flex items-center justify-center bg-brand-teal text-white hover:bg-brand-teal-dark">
-              Apply for the Council
+              Express interest
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </Link>
@@ -357,9 +383,9 @@ export default function StrategicCouncilPage() {
   return (
     <div className="pt-20 overflow-hidden">
       <PageHero />
-      <ThreeDoors />
-      <HowItWorks />
-      <CouncilMembers />
+      <WhatTheyDo />
+      <NotAnAdvisoryBoard />
+      <WhoSitsOnTheCouncil />
       <CouncilCTA />
     </div>
   );

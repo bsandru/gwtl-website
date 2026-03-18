@@ -13,6 +13,8 @@ const navigation = [
       { name: "Our Story", href: "/about", description: "Who we are and why we exist" },
       { name: "Our Team", href: "/team", description: "Meet the leadership" },
       { name: "Ambassadors", href: "/about/ambassadors", description: "Our global ambassador network" },
+      { name: "Strategic Council", href: "/about/strategic-council", description: "Our advisory and governance body" },
+      { name: "AI Governance", href: "/ai-governance", description: "Our approach to responsible AI" },
     ],
   },
   {
