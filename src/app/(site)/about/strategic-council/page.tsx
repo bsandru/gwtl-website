@@ -7,18 +7,18 @@ import {
   Users,
   ShieldCheck,
   CheckCircle2,
-  BarChart3,
-  Compass,
-  KeyRound,
-  BadgeCheck,
+  DollarSign,
+  UserPlus,
+  Megaphone,
   CalendarCheck,
   Target,
+  Globe,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Strategic Council — GWTL",
   description:
-    "GWTL's Strategic Council is a small group of 8–12 senior leaders who govern GWTL's direction — not from a distance, but from the inside. They meet quarterly to challenge our strategy, review our outcomes, and validate that we're building something that lasts.",
+    "GWTL's Strategic Council is the board of investors and senior leaders who have put skin in the game — not to advise, but to act. They open doors, bring capital, and make the introductions that change what's possible.",
 };
 
 function PageHero() {
@@ -45,10 +45,10 @@ function PageHero() {
           </div>
 
           <h1 className="animate-fade-in-up font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.2] stagger-2 opacity-0">
-            <span className="text-secondary-800">The People Who</span>
+            <span className="text-secondary-800">The Investors</span>
             <br />
             <span className="relative inline-block gradient-text-hero">
-              Hold Us Accountable
+              Behind the Mission
               <svg
                 className="absolute -bottom-2.5 left-0 w-full"
                 height="12"
@@ -80,14 +80,13 @@ function PageHero() {
           </h1>
 
           <p className="animate-fade-in-up mt-8 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-secondary-600 stagger-3 opacity-0">
-            GWTL&apos;s Strategic Council is a small group of 8–12 senior
-            leaders who govern GWTL&apos;s direction — not from a distance, but
-            from the inside.
+            GWTL&apos;s Strategic Council is the board of investors and senior
+            leaders who have put skin in the game — not to advise, but to act.
           </p>
 
           <p className="animate-fade-in-up mt-4 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-secondary-600 stagger-4 opacity-0">
-            They meet quarterly to challenge our strategy, review our outcomes,
-            and validate that we&apos;re building something that lasts.
+            They open doors, bring capital, and make the introductions that
+            change what&apos;s possible. Their involvement is structural, measurable, and accountable.
           </p>
         </div>
       </div>
@@ -112,31 +111,35 @@ function PageHero() {
 
 const responsibilities = [
   {
-    icon: BarChart3,
-    title: "Review quarterly outcomes",
+    icon: DollarSign,
+    number: "01",
+    title: "Sponsor directly or bring a sponsor",
     description:
-      "Hold leadership accountable to the 30% goal — reviewing the numbers, asking hard questions, and refusing to accept vague progress.",
+      "Each council member commits €5–10K directly to GWTL, or secures a corporate sponsor of equivalent value. This is the baseline. Not a suggestion.",
     color: "from-brand-teal to-emerald-600",
   },
   {
-    icon: Compass,
-    title: "Validate strategic direction",
+    icon: UserPlus,
+    number: "02",
+    title: "Make three warm introductions per quarter",
     description:
-      "Challenge our assumptions, pressure-test our model, and make sure we're building for lasting impact — not just short-term visibility.",
+      "To sponsors, partners, or decision-makers. Every quarter, we ask: who did you bring to the table? The answer is tracked and reviewed.",
     color: "from-amber-500 to-orange-600",
   },
   {
-    icon: KeyRound,
-    title: "Open the doors only they can open",
+    icon: CalendarCheck,
+    number: "03",
+    title: "Attend and participate in Power Tables",
     description:
-      "Through their institutional authority — not just their networks. They bring access that comes from decades at the top of their fields.",
+      "Council members show up in the room — not as observers, but as participants who open doors for the women across the table.",
     color: "from-violet-500 to-purple-600",
   },
   {
-    icon: BadgeCheck,
-    title: "Attach their name to our results",
+    icon: Megaphone,
+    number: "04",
+    title: "Champion GWTL in their networks publicly",
     description:
-      "Council members don't just advise in private — they stake their reputation on what GWTL delivers. Their involvement is visible and is tied to our outcomes.",
+      "Their name is on what we build. That means publicly endorsing the mission and carrying it into rooms we can't access alone.",
     color: "from-rose-500 to-pink-600",
   },
 ];
@@ -152,7 +155,7 @@ function WhatTheyDo() {
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
             Four Commitments.{" "}
-            <span className="gradient-text">Not Suggestions.</span>
+            <span className="gradient-text inline-block">Not Suggestions.</span>
           </h2>
           <p className="mt-6 text-xl text-secondary-500 max-w-2xl mx-auto">
             Every council member takes on the same four responsibilities — and
@@ -161,14 +164,14 @@ function WhatTheyDo() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {responsibilities.map((item, index) => (
+          {responsibilities.map((item) => (
             <div key={item.title} className="group relative">
               <div
                 className={`relative h-full min-h-[320px] rounded-3xl p-8 overflow-hidden bg-linear-to-br ${item.color} shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2`}
               >
                 <div className="absolute top-2 right-6">
                   <span className="text-7xl font-display font-bold text-white/10">
-                    {String(index + 1).padStart(2, "0")}
+                    {item.number}
                   </span>
                 </div>
 
@@ -196,7 +199,7 @@ function WhatTheyDo() {
   );
 }
 
-function NotAnAdvisoryBoard() {
+function Accountability() {
   return (
     <section className="relative py-24 lg:py-32 bg-brand-navy overflow-hidden">
       <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%221%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
@@ -204,53 +207,52 @@ function NotAnAdvisoryBoard() {
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal-light" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — the distinction */}
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-brand-teal/20 text-brand-teal-light">
               <ShieldCheck className="h-4 w-4" />
-              Accountability built in
+              Accountability
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
               Not an Advisory Board.{" "}
-              <span className="text-brand-teal-light">An Accountability Body.</span>
+              <span className="text-brand-teal-light">
+                A Committed Partner Board.
+              </span>
             </h2>
             <div className="space-y-5 text-lg text-white/70 leading-relaxed">
               <p>
                 Advisory boards give opinions. The Strategic Council gives{" "}
-                <strong className="text-white">accountability</strong> — to us,
-                and to the mission.
+                <strong className="text-white">results</strong> — sponsoring
+                directly, tracked quarterly, named publicly.
               </p>
               <p>
-                They ask the hard questions: Are we measuring the right things?
-                Are we moving fast enough? Is the model actually working? And
-                they don&apos;t leave until those questions have real answers.
+                Every member serves a 2-year term with clear commitments
+                reviewed at the end of each quarter.
               </p>
             </div>
           </div>
 
-          {/* Right — cadence stats */}
           <div className="grid grid-cols-2 gap-4">
             {[
               {
                 icon: CalendarCheck,
-                metric: "Quarterly",
-                label: "Council meetings",
+                metric: "2-year",
+                label: "Term commitment",
               },
               {
                 icon: Target,
-                metric: "30%",
-                label: "The goal we're held to",
+                metric: "3 minimum",
+                label: "Introductions per quarter",
               },
               {
                 icon: Users,
-                metric: "8–12",
+                metric: "10–15",
                 label: "Senior leaders per cohort",
               },
               {
-                icon: ShieldCheck,
+                icon: Globe,
                 metric: "Public",
-                label: "Accountability — named and on record",
+                label: "Named and on record",
               },
             ].map((item) => (
               <div
@@ -263,7 +265,9 @@ function NotAnAdvisoryBoard() {
                 <p className="text-3xl font-bold text-white mb-1">
                   {item.metric}
                 </p>
-                <p className="text-xs text-white/50 leading-snug">{item.label}</p>
+                <p className="text-xs text-white/50 leading-snug">
+                  {item.label}
+                </p>
               </div>
             ))}
           </div>
@@ -273,57 +277,106 @@ function NotAnAdvisoryBoard() {
   );
 }
 
-function WhoSitsOnTheCouncil() {
+const profileCriteria = [
+  "Sitting or former VC partner, CEO, CHRO, or board director",
+  "Demonstrated ability to secure sponsorship or open doors to capital",
+  "Willing to make financial commitment or bring equivalent corporate sponsor",
+  "Willing to be publicly named and held to quarterly accountability",
+];
+
+function WhoQualifies() {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-linear-to-br from-brand-teal to-brand-teal-light animate-float" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left — profile */}
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
               <Users className="h-4 w-4" />
               Who qualifies
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
-              Institutional Weight.{" "}
-              <span className="gradient-text inline-block">Not Just Influence.</span>
+              Capital and Authority.{" "}
+              <span className="gradient-text inline-block">
+                Not Just Credibility.
+              </span>
             </h2>
             <p className="text-lg text-secondary-600 leading-relaxed mb-8">
-              Former and sitting board members, institutional investors, senior
-              policy figures, and C-suite executives whose credibility gives
-              GWTL its institutional weight.
+              VCs, sitting CEOs, CHROs, and board directors who have the
+              authority to write a check, make a call, or open a door that
+              others can&apos;t.
             </p>
             <p className="text-secondary-500 leading-relaxed">
-              This isn&apos;t a network of well-meaning supporters. It&apos;s a
-              group of people whose involvement changes what&apos;s possible —
-              because of who they are and what they can move.
+              This isn&apos;t a network of supporters. It&apos;s a group of
+              people whose involvement changes outcomes — because of who they are
+              and what they can move.
             </p>
           </div>
 
-          {/* Right — members placeholder */}
           <div className="premium-card p-10 lg:p-12">
-            <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-linear-to-br from-secondary-100 to-primary-50 border border-primary-100/50">
-              <Sparkles className="h-8 w-8 text-brand-teal" />
-            </div>
-            <h3 className="font-display text-2xl font-bold text-brand-navy mb-4">
-              2026 Council Members
+            <h3 className="font-display text-xl font-bold text-brand-navy mb-6">
+              Profile criteria
             </h3>
-            <p className="text-secondary-500 leading-relaxed mb-4">
-              Council member profiles will be published here once the 2026
-              cohort is confirmed.
-            </p>
-            <p className="text-sm text-secondary-400 italic">
-              Council member profiles will be added when confirmed.<br/>
-              Selection is underway.
-            </p>
+            <ul className="space-y-4">
+              {profileCriteria.map((criterion, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className="mt-0.5 shrink-0 h-6 w-6 rounded-full flex items-center justify-center bg-brand-teal/10 border border-brand-teal/20">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-brand-teal" />
+                  </span>
+                  <span className="text-secondary-600 leading-relaxed">
+                    {criterion}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
         <div className="section-divider" />
+      </div>
+    </section>
+  );
+}
+
+function CouncilMembers() {
+  return (
+    <section className="relative py-24 lg:py-32 bg-secondary-50 overflow-hidden">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal animate-float" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
+            2026 Council Members
+          </h2>
+          <p className="text-lg text-secondary-500 leading-relaxed">
+            Council member profiles will be published here once the 2026 cohort
+            is confirmed. Selection is underway.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div
+              key={i}
+              className="group relative rounded-3xl p-8 bg-white border border-secondary-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-linear-to-br from-brand-teal/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10 flex flex-col items-center text-center gap-4">
+                <div className="h-16 w-16 rounded-2xl bg-linear-to-br from-secondary-100 to-primary-50 border border-primary-100/50 flex items-center justify-center">
+                  <Sparkles className="h-7 w-7 text-brand-teal/40" />
+                </div>
+                <div className="space-y-1">
+                  <div className="h-4 w-32 rounded-full bg-secondary-100 mx-auto" />
+                  <div className="h-3 w-24 rounded-full bg-secondary-100/60 mx-auto" />
+                </div>
+                <div className="h-3 w-40 rounded-full bg-secondary-100/40 mx-auto" />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -358,7 +411,7 @@ function CouncilCTA() {
         <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           The 2026 council is being assembled now. We reach out to the
           individuals we believe are the right fit. If you think that&apos;s
-          you, you can signal interest below.
+          you, signal your interest below — we&apos;ll be in touch.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -384,8 +437,9 @@ export default function StrategicCouncilPage() {
     <div className="pt-20 overflow-hidden">
       <PageHero />
       <WhatTheyDo />
-      <NotAnAdvisoryBoard />
-      <WhoSitsOnTheCouncil />
+      <Accountability />
+      <WhoQualifies />
+      <CouncilMembers />
       <CouncilCTA />
     </div>
   );

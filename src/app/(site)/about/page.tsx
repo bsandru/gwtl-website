@@ -805,17 +805,16 @@ function OurStory() {
 
 /* ─── STRATEGIC COUNCIL ────────────────────────────────────────────────────── */
 function StrategicCouncil() {
-  const responsibilities = [
-    "Review quarterly outcomes and hold leadership accountable to the 30% goal",
-    "Validate strategic direction and challenge assumptions",
-    "Open the doors only they can open — through their institutional authority, not just their networks",
-    "Publicly attach their name and reputation to GWTL's results",
+  const commitments = [
+    "Sponsor directly (€5–10K) or secure a corporate sponsor of equivalent value",
+    "Make 3 warm introductions per quarter — to sponsors, partners, or decision-makers",
+    "Attend and participate in Power Tables, opening doors for the women across the table",
+    "Publicly champion GWTL in their networks — named and on record",
   ];
 
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text */}
           <div>
@@ -824,42 +823,46 @@ function StrategicCouncil() {
               Strategic Council
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
-              The People Who Hold{" "}
-              <span className="gradient-text inline-block">Us Accountable</span>
+              The Investors{" "}
+              <span className="gradient-text inline-block">
+                Behind the Mission
+              </span>
             </h2>
             <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
               <p>
-                GWTL&apos;s Strategic Council is a small group of 8–12 senior
-                leaders who govern GWTL&apos;s direction — not from a distance,
-                but from the inside.
+                GWTL&apos;s Strategic Council is the board of investors and
+                senior leaders who have put skin in the game — not to advise,
+                but to act.
               </p>
               <p>
-                They meet quarterly to challenge our strategy, review our
-                outcomes, and validate that we&apos;re building something that
-                lasts. They ask the hard questions: Are we measuring the right
+                They open doors, bring capital, and make the introductions that
+                change what&apos;s possible.
+                They ask the hard questions: Are we measuring the right
                 things? Are we moving fast enough? Is the model actually working?
               </p>
               <p>
-                This is not an advisory board. Advisory boards give opinions. The
-                Strategic Council gives{" "}
-                <strong className="text-brand-navy">accountability</strong> — to
-                us, and to the mission.
+                This is not an advisory board.
+                Advisory boards give opinions. <br />The Strategic Council gives{" "}
+                <strong className="text-brand-navy">accountability and results</strong> —
+                sponsoring directly, tracked quarterly, named publicly.
               </p>
             </div>
           </div>
 
-
           {/* What members do */}
           <div className="premium-card p-8 lg:p-10 flex flex-col gap-6">
-            <div className="h-16 w-16 rounded-2xl flex items-center justify-center  bg-linear-to-br from-brand-teal to-brand-teal-dark">
+            <div className="h-16 w-16 rounded-2xl flex items-center justify-center bg-linear-to-br from-brand-teal to-brand-teal-dark">
               <Focus className="h-8 w-8 text-white" />
             </div>
             <h3 className="font-display text-2xl font-bold text-brand-navy">
-              What Strategic Council members do
+              Four commitments. Not suggestions.
             </h3>
             <ul className="space-y-4">
-              {responsibilities.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-secondary-600">
+              {commitments.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-secondary-600"
+                >
                   <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-brand-teal" />
                   <span>{item}</span>
                 </li>
@@ -872,170 +875,108 @@ function StrategicCouncil() {
               </Button>
             </Link>
           </div>
-
-          {/* Profile */}
-          {/* <div className="premium-card p-8 lg:p-10 bg-linear-to-br from-secondary-50 to-white">
-            <h3 className="font-display text-xl font-bold text-brand-navy mb-4">
-              Who sits on the Council
-            </h3>
-            <p className="text-secondary-600 leading-relaxed mb-8">
-              Former and sitting board members, institutional investors, senior
-              policy figures, and C-suite executives whose credibility gives
-              GWTL its institutional weight.
-            </p>
-            <p className="text-sm text-secondary-400 italic">
-              Council member profiles — to be added when confirmed
-            </p>
-          </div> */}
-          {/* </div> */}
         </div>
-
-        {/* CTA Banner */}
-        {/* <div className="mt-10 premium-card p-8 lg:p-12 bg-linear-to-br from-secondary-50 to-primary-50/30 border border-primary-100/40">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="max-w-2xl">
-              <p className="text-md text-secondary-600 leading-relaxed mb-2">
-                The 2026 council is being assembled now. Membership is by
-                invitation — we reach out to the individuals we believe are the
-                right fit. If you think that&apos;s you, you can signal
-                interest.
-              </p>
-            </div>
-            <Link href="/contact">
-              <Button size="lg" className="group w-full">
-                Express interest
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
-        </div> */}
       </div>
 
       {/* Divider */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
         <div className="section-divider" />
       </div>
-    </section>
+    </section >
   );
 }
 
-/* ─── GWTL 30 ──────────────────────────────────────────────────────────────── */
-function GWTL30() {
+/* ─── AMBASSADORS ──────────────────────────────────────────────────────────── */
+function Ambassadors() {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0a1628 1px, transparent 0)", backgroundSize: "32px 32px" }} />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="max-w-3xl mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
-            <Target className="h-4 w-4" />
-            The GWTL 30
-          </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
-            The Action Layer Behind{" "}
-            <span className="gradient-text inline-block">the 30% Goal</span>
-          </h2>
-          <div className="space-y-4 text-lg text-secondary-600 leading-relaxed">
-            <p>
-              The GWTL 30 is our distributed network of leaders committed to one thing: moving the number. Named after the 30% target, it&apos;s built on the belief that real change happens when enough people with real influence decide to act — not just advocate.
-            </p>
-            <p className="font-semibold text-secondary-800">
-              Membership is selective. Everyone who applies is reviewed. Not everyone gets in.
-            </p>
-          </div>
-        </div>
-
-        {/* Two-tier cards */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Principals */}
-          <div className="relative rounded-3xl overflow-hidden border border-brand-navy/10 bg-linear-to-br from-brand-navy to-brand-navy-light p-10 lg:p-12 flex flex-col">
-            {/* Tier label */}
-            <div className="flex items-center justify-between mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-white/10 text-white/80 border border-white/15">
-                <Award className="h-3.5 w-3.5" />
-                Senior Tier
-              </div>
-              <span className="text-xs text-white/40 font-medium">Limited spots</span>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
+              <Megaphone className="h-4 w-4" />
+              Ambassadors
             </div>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
+              Selected. Committed.{" "}
+              <span className="gradient-text">Accountable.</span>
+            </h2>
 
-            <h3 className="font-display text-3xl font-bold text-white mb-4">Principals</h3>
-            <p className="text-white/70 leading-relaxed mb-6">
-              C-suite, board members, investors, and senior decision-makers who can open doors that others can&apos;t. Principals make concrete commitments: introductions to board opportunities, connections to capital, sponsorship of specific women leaders.
-            </p>
+            <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
+              <p>
+                GWTL Ambassadors are{" "}
+                <strong className="text-secondary-800">
+                  chosen — not recruited
+                </strong>
+                . Senior professionals selected because they have the
+                credibility to carry the mission and the conviction to act on
+                it.
+              </p>
+              <p className="text-brand-teal font-semibold">
+                Membership is selective. The standard is high. The impact is
+                real.
+              </p>
+            </div>
+          </div>
 
-            <div className="space-y-3 mb-6">
+          <div className="premium-card overflow-hidden">
+            <div className="px-8 py-6 border-b border-secondary-100">
+              <h3 className="font-display text-2xl font-bold text-secondary-800">
+                Three Commitments. Held to All of Them.
+              </h3>
+            </div>
+            <div className="divide-y divide-secondary-100">
               {[
-                "Three meaningful actions per quarter, publicly tracked",
-                "Introductions, capital connections, direct sponsorship",
+                {
+                  icon: Megaphone,
+                  number: "01",
+                  title: "Represent GWTL publicly",
+                  detail:
+                    "Speak about the mission at events, in your industry, and on your platforms.",
+                },
+                {
+                  icon: Handshake,
+                  number: "02",
+                  title: "Refer women and sponsors",
+                  detail:
+                    "One referral per quarter, minimum. One introduction can change a career trajectory.",
+                },
+                {
+                  icon: Globe,
+                  number: "03",
+                  title: "Show up in the community",
+                  detail:
+                    "Attend a Power Table when we're in your city. Engage with fellow ambassadors.",
+                },
               ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-4 w-4 text-brand-teal-light shrink-0 mt-0.5" />
-                  <span className="text-sm text-white/70">{item}</span>
+                <div key={item.number} className="flex items-start gap-4 px-8 py-5 hover:bg-secondary-50/50 transition-colors group">
+                  <div className="shrink-0 h-9 w-9 rounded-lg flex items-center justify-center bg-brand-teal/10 group-hover:bg-brand-teal/20 transition-colors mt-0.5">
+                    <item.icon className="h-4 w-4 text-brand-teal" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold tracking-widest uppercase text-secondary-400 mb-0.5">
+                      {item.number} — {" "}
+                      <span className="font-semibold text-secondary-800 text-sm">
+                        {item.title}
+                      </span>
+                    </p>
+                    <p className="text-sm text-secondary-500 mt-0.5 leading-snug">
+                      {item.detail}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
-
-            <div className="mt-auto pt-6 border-t border-white/10 space-y-4">
-              <p className="text-sm text-white/50 italic">
-                The Strategic Council governs where GWTL goes. Principals are how we get there. This is not an honorary title. It&apos;s an accountability commitment.
-              </p>
-              <Link href="/contact">
+            <div className="px-8 py-6 border-t border-secondary-100">
+              <Link href="/about/ambassadors">
                 <Button size="lg" variant="full" className="w-full group">
-                  Apply as a Principal
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Architects */}
-          <div className="relative rounded-3xl overflow-hidden border border-brand-navy/10 bg-white p-10 lg:p-12 flex flex-col shadow-sm">
-            {/* Tier label */}
-            <div className="flex items-center justify-between mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
-                <Globe className="h-3.5 w-3.5" />
-                Community Tier
-              </div>
-              <span className="text-xs text-secondary-400 font-medium">Selective</span>
-            </div>
-
-            <h3 className="font-display text-3xl font-bold text-brand-navy mb-4">Architects</h3>
-            <p className="text-secondary-600 leading-relaxed mb-6">
-              Rising leaders and active professionals across 10+ countries who build GWTL&apos;s presence on the ground. Architects amplify the message, refer women into programs, and host local conversations.
-            </p>
-
-            <div className="space-y-3 mb-6">
-              {[
-                "One share a month, one referral a quarter",
-                "Host local conversations in your city or network",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-4 w-4 text-brand-teal shrink-0 mt-0.5" />
-                  <span className="text-sm text-secondary-600">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-auto pt-6 border-t border-secondary-100 space-y-4">
-              <p className="text-sm text-secondary-400 italic">
-                Lighter commitment — held to the same standard of intent. If you&apos;re serious about the 30% goal and willing to act on it, this is your entry point.
-              </p>
-              <Link href="/contact">
-                <Button size="lg" className="w-full group">
-                  Apply as an Architect
+                  More about the Ambassadors
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
-        <div className="section-divider" />
       </div>
     </section>
   );
@@ -1106,7 +1047,7 @@ export default function AboutPage() {
       <CoreValues />
       <OurStory />
       <StrategicCouncil />
-      <GWTL30 />
+      <Ambassadors />
       <AboutCTA />
     </div>
   );

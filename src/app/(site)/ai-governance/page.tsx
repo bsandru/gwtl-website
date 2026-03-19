@@ -424,7 +424,7 @@ function AccountabilityStructure() {
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
             Every AI Agent Has a{" "}
-            <span className="text-brand-teal-light">Responsible Human</span>
+            <span className="text-brand-teal-light inline-block">Responsible Human</span>
           </h2>
           <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto">
             Global Women Tech Leaders is AI-native.

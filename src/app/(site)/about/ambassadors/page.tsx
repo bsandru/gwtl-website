@@ -5,19 +5,20 @@ import {
   ArrowRight,
   Globe,
   Handshake,
-  Share2,
-  MapPin,
-  Sparkles,
-  CheckCircle2,
   Users,
-  Zap,
+  CheckCircle2,
+  Eye,
+  Network,
+  Calendar,
+  FileText,
+  BarChart3,
+  BadgeCheck,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Ambassadors — GWTL",
   description:
-    "GWTL Ambassadors are the distributed force behind our reach. Senior professionals across 10+ countries who share our content, refer women into programs, and open their own doors.",
+    "GWTL Ambassadors are chosen — not recruited. Senior professionals selected because they have the credibility to carry the mission and the conviction to act on it.",
 };
 
 function PageHero() {
@@ -44,19 +45,19 @@ function PageHero() {
           </div>
 
           <h1 className="animate-fade-in-up font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.2] stagger-2 opacity-0">
-            <span className="text-secondary-800">The Network That</span>
+            <span className="text-secondary-800">Selected. Committed.</span>
             <br />
             <span className="relative inline-block gradient-text-hero">
-              Amplifies the Message
+              Accountable.
               <svg
                 className="absolute -bottom-2.5 left-0 w-full"
                 height="12"
-                viewBox="0 0 600 12"
+                viewBox="0 0 400 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M2 8.5C75 2.5 225 2.5 300 8.5C375 14.5 525 2.5 598 8.5"
+                  d="M2 8.5C50 2.5 150 2.5 200 8.5C250 14.5 350 2.5 398 8.5"
                   stroke="url(#underline-gradient-ambassadors)"
                   strokeWidth="3"
                   strokeLinecap="round"
@@ -66,7 +67,7 @@ function PageHero() {
                     id="underline-gradient-ambassadors"
                     x1="0"
                     y1="0"
-                    x2="600"
+                    x2="400"
                     y2="0"
                   >
                     <stop stopColor="#00A3A3" />
@@ -79,15 +80,15 @@ function PageHero() {
           </h1>
 
           <p className="animate-fade-in-up mt-8 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-secondary-600 stagger-3 opacity-0">
-            GWTL Ambassadors are the distributed force behind our reach. Senior
-            professionals across{" "}
-            <strong className="text-secondary-800">10+ countries</strong> who
-            share our content, refer women into programs, and open their own
-            doors.
+          GWTL Ambassadors are{" "}
+          <strong className="text-secondary-800">chosen — not recruited</strong>. <br />
+            Senior professionals selected because they have the credibility to
+            carry the mission and the conviction to act on it.
+           
           </p>
 
-          <p className="animate-fade-in-up mt-6 text-2xl sm:text-3xl font-display font-bold gradient-text-hero stagger-4 opacity-0">
-            The bar is low. The impact is real.
+          <p className="animate-fade-in-up mt-6 text-xl sm:text-2xl font-display font-bold gradient-text-hero stagger-4 opacity-0">
+            Membership is selective. The standard is high. The impact is real.
           </p>
         </div>
       </div>
@@ -112,29 +113,29 @@ function PageHero() {
 
 const commitments = [
   {
-    icon: Share2,
-    title: "One share a month",
+    number: "01",
+    title: "Represent GWTL publicly",
     description:
-      "Amplify GWTL content to your professional network. A single LinkedIn post, an email forward, a Slack share — small acts that compound.",
+      "Speak about the mission at events, in your industry, and on your platforms. You carry the GWTL name — that means something, and we hold the standard on both sides. When you speak, you represent thousands of women in tech leadership. Your voice amplifies theirs.",
     color: "from-brand-teal to-emerald-600",
   },
   {
-    icon: Handshake,
-    title: "One referral a quarter",
+    number: "02",
+    title: "Refer women and sponsors into programs",
     description:
-      "Know a woman ready for a Power Table, a board seat, or a leadership program? One introduction can change a career trajectory.",
+      "Know a woman ready for a Power Table or board seat? Know a leader who should be sponsoring? Make the introduction. One referral per quarter, minimum — because one introduction can change a career trajectory.",
     color: "from-amber-500 to-orange-600",
   },
   {
-    icon: MapPin,
-    title: "Attend a Power Table in your city",
+    number: "03",
+    title: "Show up in the community",
     description:
-      "When we host a Power Table near you, show up. Bring your network, your expertise, and your willingness to open doors.",
+      "Ambassadors connect with each other. Attend a Power Table when we're in your city. Share insights, open doors, and engage with your fellow ambassadors. This is a peer network of senior professionals — treat it like one. The connections you make here can shape careers, including your own.",
     color: "from-rose-500 to-pink-600",
   },
 ];
 
-function WhatWeAsk() {
+function TheCommitment() {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -144,17 +145,17 @@ function WhatWeAsk() {
             The Commitment
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
-            Three Things.{" "}
-            <span className="gradient-text">That&apos;s It.</span>
+            Three Commitments.{" "}
+            <span className="gradient-text inline-block">Held to All of Them.</span>
           </h2>
           <p className="mt-6 text-xl text-secondary-500 max-w-2xl mx-auto">
-            No committees. No KPIs. No mandatory calls. Just three simple
-            actions that create outsized impact.
+            Every ambassador carries the GWTL name publicly. That comes with
+            expectation — and accountability.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {commitments.map((item, index) => (
+          {commitments.map((item) => (
             <div key={item.title} className="group relative">
               <div className="absolute inset-0 rounded-4xl bg-linear-to-br opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
               <div
@@ -162,14 +163,14 @@ function WhatWeAsk() {
               >
                 <div className="absolute top-2 right-8 lg:right-10">
                   <span className="text-7xl lg:text-8xl font-display font-bold text-white/10">
-                    {String(index + 1).padStart(2, "0")}
+                    {item.number}
                   </span>
                 </div>
 
                 <div className="relative z-10 h-full flex flex-col justify-end">
-                  <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
-                    <item.icon className="h-8 w-8 text-white" />
-                  </div>
+                  <p className="text-xs font-bold tracking-widest uppercase text-white/60 mb-3">
+                    {item.number} —
+                  </p>
                   <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
                     {item.title}
                   </h3>
@@ -190,21 +191,16 @@ function WhatWeAsk() {
   );
 }
 
-const impactPoints = [
+const impactStats = [
   {
     metric: "10+",
     label: "Countries represented",
     icon: Globe,
   },
   {
-    metric: "50+",
+    metric: "10+",
     label: "Active ambassadors",
     icon: Users,
-  },
-  {
-    metric: "3x",
-    label: "Content reach multiplier",
-    icon: Zap,
   },
   {
     metric: "100+",
@@ -213,7 +209,7 @@ const impactPoints = [
   },
 ];
 
-function WhyItMatters() {
+function GlobalReach() {
   return (
     <section className="relative py-24 lg:py-32 bg-brand-navy overflow-hidden">
       <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%221%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
@@ -229,17 +225,19 @@ function WhyItMatters() {
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
             Distributed by Design.{" "}
-            <span className="inline-block text-brand-teal-light">United by Mission.</span>
+            <span className="inline-block text-brand-teal-light">
+              United by Mission.
+            </span>
           </h2>
           <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto">
             Every ambassador multiplies our reach into rooms, networks, and
-            communities we&apos;d never access from a single headquarters. This
-            is how movements scale.
+            communities we&apos;d never access from a single headquarters.
+            Selected in every region. United by one goal.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {impactPoints.map((item) => (
+        <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          {impactStats.map((item) => (
             <div
               key={item.label}
               className="group p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-brand-teal/30 transition-all duration-300 text-center"
@@ -259,47 +257,82 @@ function WhyItMatters() {
   );
 }
 
-function WhoCanJoin() {
+const requirements = [
+  "5+ years in a senior or leadership role",
+  "An active professional network you're willing to leverage for the mission",
+  "Genuine belief that closing the leadership gap is an economic and strategic imperative",
+  "Willingness to be publicly associated with GWTL's results and reputation",
+];
+
+const benefits = [
+  {
+    icon: Network,
+    benefit: "Direct access",
+    detail: "Direct line to GWTL leadership team",
+  },
+  {
+    icon: Eye,
+    benefit: "Visibility",
+    detail:
+      "Named on the GWTL website, social channels, and at events",
+  },
+  {
+    icon: Users,
+    benefit: "Peer network",
+    detail: "Connection with selected ambassadors across 10+ countries",
+  },
+  {
+    icon: Calendar,
+    benefit: "Priority access",
+    detail: "First invitations to Power Tables and Global Shift Summit",
+  },
+  {
+    icon: FileText,
+    benefit: "Quarterly briefings",
+    detail: "Early access to research, reports, and program updates",
+  },
+  {
+    icon: BarChart3,
+    benefit: "Impact tracking",
+    detail: "See exactly how your referrals translate to placements",
+  },
+];
+
+function WhoWeAreLookingFor() {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="absolute top-20 -right-40 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-linear-to-br from-brand-teal to-brand-teal-light animate-float" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
               <Users className="h-4 w-4" />
               Who We&apos;re Looking For
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-8">
-              Senior Professionals Who{" "}
-              <span className="gradient-text">Open Doors</span>
+              Senior Professionals With{" "}
+              <span className="gradient-text">Standing and Conviction</span>
             </h2>
 
             <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
               <p>
-                You don&apos;t need a title. You don&apos;t need permission. You
-                need a network and the willingness to use it for someone other
-                than yourself.
+                Our ambassadors are senior leaders — VPs, directors, founders,
+                investors, board members — who believe the leadership gap is a
+                problem worth solving and are willing to say so publicly.
               </p>
               <p>
-                Our ambassadors are senior professionals — VPs, directors,
-                founders, investors, board members — who believe the leadership
-                gap is a problem worth solving, and that solving it starts with{" "}
+                We don&apos;t look for volume. We look for people whose
+                involvement{" "}
                 <strong className="text-secondary-800">
-                  one introduction at a time
+                  raises the standard
                 </strong>
                 .
               </p>
             </div>
 
             <div className="mt-10 space-y-4">
-              {[
-                "5+ years in a senior or leadership role",
-                "Active professional network you're willing to leverage",
-                "Belief that more women in leadership is an economic imperative",
-                "Willingness to share, refer, and show up",
-              ].map((item) => (
+              {requirements.map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-brand-teal" />
                   <span className="text-secondary-700">{item}</span>
@@ -308,39 +341,28 @@ function WhoCanJoin() {
             </div>
           </div>
 
-          <div className="premium-card p-10 lg:p-12">
-            <h3 className="font-display text-2xl font-bold text-secondary-800 mb-6">
-              What you get
-            </h3>
-            <div className="space-y-5">
-              {[
-                {
-                  title: "Direct line to GWTL leadership",
-                  desc: "Quarterly briefings, early access to research and reports.",
-                },
-                {
-                  title: "Visibility",
-                  desc: "Featured on our website, social channels, and at events.",
-                },
-                {
-                  title: "Network access",
-                  desc: "Connect with other ambassadors across 10+ countries.",
-                },
-                {
-                  title: "Impact you can measure",
-                  desc: "See exactly how your referrals and shares translate to placements.",
-                },
-              ].map((item) => (
+          <div className="premium-card overflow-hidden">
+            <div className="px-8 py-6 border-b border-secondary-100">
+              <h3 className="font-display text-xl font-bold text-secondary-800">
+                What Ambassadors Receive
+              </h3>
+            </div>
+            <div className="divide-y divide-secondary-100">
+              {benefits.map((item) => (
                 <div
-                  key={item.title}
-                  className="flex gap-4 group/item p-3 rounded-xl hover:bg-white/5 transition-colors"
+                  key={item.benefit}
+                  className="flex items-start gap-4 px-8 py-5 hover:bg-secondary-50/50 transition-colors group"
                 >
-                  <div className="shrink-0 h-10 w-10 rounded-xl flex items-center justify-center bg-brand-teal/20">
-                    <Sparkles className="h-5 w-5 text-brand-teal-light" />
+                  <div className="shrink-0 h-9 w-9 rounded-lg flex items-center justify-center bg-brand-teal/10 group-hover:bg-brand-teal/20 transition-colors mt-0.5">
+                    <item.icon className="h-4 w-4 text-brand-teal" />
                   </div>
                   <div>
-                    <p className="font-semibold">{item.title}</p>
-                    <p className="text-sm text-secondary-600 mt-0.5">{item.desc}</p>
+                    <p className="font-semibold text-secondary-800 text-sm">
+                      {item.benefit}
+                    </p>
+                    <p className="text-sm text-secondary-500 mt-0.5 leading-snug">
+                      {item.detail}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -372,31 +394,25 @@ function AmbassadorCTA() {
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center mb-8">
           <div className="h-20 w-20 rounded-3xl flex items-center justify-center animate-pulse-glow bg-linear-to-br from-primary-500 to-primary-400">
-            <Megaphone className="h-10 w-10 text-white" />
+            <BadgeCheck className="h-10 w-10 text-white" />
           </div>
         </div>
 
         <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-          Become an
-          <br />
-          <span className="gradient-text-cta">Ambassador</span>
+          Selected.{" "}
+          <span className="gradient-text-cta">Not Self-Appointed.</span>
         </h2>
 
         <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          One share. One referral. One door opened. That&apos;s all it takes to
-          be part of the force that puts more women in leadership — worldwide.
+          Applications are reviewed. Every applicant is considered
+          individually. <br />We&apos;ll be in touch if there&apos;s a fit.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-10 flex justify-center">
           <Link href="/contact">
-            <button className="group w-full sm:w-auto h-14 px-10 text-lg rounded-2xl font-bold shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl inline-flex items-center justify-center bg-brand-teal text-white hover:bg-brand-teal-dark">
-              Become an Ambassador
+            <button className="group h-14 px-10 text-lg rounded-2xl font-bold shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl inline-flex items-center justify-center bg-brand-teal text-white hover:bg-brand-teal-dark">
+              Apply to become an Ambassador
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </Link>
-          <Link href="/about">
-            <button className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl font-bold border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 inline-flex items-center justify-center border-white/30 text-white bg-transparent">
-              Learn About GWTL
             </button>
           </Link>
         </div>
@@ -409,9 +425,9 @@ export default function AmbassadorsPage() {
   return (
     <div className="pt-20 overflow-hidden">
       <PageHero />
-      <WhatWeAsk />
-      <WhyItMatters />
-      <WhoCanJoin />
+      <TheCommitment />
+      <GlobalReach />
+      <WhoWeAreLookingFor />
       <AmbassadorCTA />
     </div>
   );

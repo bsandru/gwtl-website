@@ -8,13 +8,14 @@ const footerLinks = {
     { name: "Our Story", href: "/about" },
     { name: "Our Team", href: "/team" },
     { name: "Ambassadors", href: "/about/ambassadors" },
-    { name: "Contact", href: "/contact" },
+    { name: "Strategic Council", href: "/about/strategic-council" },
   ],
   organization: [
-    { name: "Strategic Council", href: "/about/strategic-council" },
-    { name: "Partnerships", href: "/about/partnerships" },
-    { name: "Events", href: "/events" },
+
     { name: "News", href: "/news" },
+    { name: "Events", href: "/events" },
+    { name: "Partnerships", href: "/sponsorship" },
+    { name: "Contact", href: "/contact" },
   ],
   programs: [
     { name: "Power Tables", href: "/programs#power-tables" },
