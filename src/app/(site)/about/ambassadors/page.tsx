@@ -343,7 +343,7 @@ function WhoWeAreLookingFor() {
 
           <div className="premium-card overflow-hidden">
             <div className="px-8 py-6 border-b border-secondary-100">
-              <h3 className="font-display text-xl font-bold text-secondary-800">
+              <h3 className="font-display text-2xl font-bold text-secondary-800">
                 What Ambassadors Receive
               </h3>
             </div>

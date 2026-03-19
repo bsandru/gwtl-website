@@ -315,7 +315,7 @@ function WhoQualifies() {
           </div>
 
           <div className="premium-card p-10 lg:p-12">
-            <h3 className="font-display text-xl font-bold text-brand-navy mb-6">
+            <h3 className="font-display text-2xl font-bold text-brand-navy mb-6">
               Profile criteria
             </h3>
             <ul className="space-y-4">
