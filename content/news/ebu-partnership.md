@@ -1,7 +1,7 @@
 ---
 title: "GWTL Partners with European Business University of Luxembourg"
 excerpt: "Partnership to offer impactful leadership programs for women in technology across Europe."
-date: "2025-01-15"
+date: "2023-09-01"
 category: "Partnerships"
 featured: false
 image: "/images/news/ebu-luxermbourg.jpg"

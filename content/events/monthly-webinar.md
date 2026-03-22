@@ -1,15 +1,15 @@
 ---
 title: "Monthly Webinar: Building Your Personal Brand in Tech"
 excerpt: "Thought leadership and professional presence for women tech leaders."
-date: "2026-03-15"
-location: "Online (Zoom)"
+date: "2026-03-17"
+location: "Online"
 category: "Webinar"
 featured: false
 image: "/images/events/gen-event.jpg"
 registrationUrl: ""
 ---
 
-## February Monthly Webinar
+## March Monthly Webinar
 
 Thought leadership and professional presence for women tech leaders.
 

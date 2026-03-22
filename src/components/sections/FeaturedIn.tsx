@@ -9,7 +9,7 @@ const features = [
       "Co-organized Davos Innovation Week, hosting executive panels on AI-driven leadership and investment trends.",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
     link: "/news/davos-2026",
-    date: "January 2026",
+    date: "19th January 2026",
     location: "Davos, Switzerland",
     tag: "Conference",
     featured: true,
@@ -29,7 +29,7 @@ const features = [
     title: "WeAreDevelopers World Congress",
     description:
       "Hosted panels and main-stage sessions on inclusive innovation, AI ethics, and emerging technologies.",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
+    image: "/images/news/we-are-developers-2025.webp",
     link: "/news/wearedevelopers-2025",
     date: "2025",
     location: "Berlin, Germany",
@@ -38,14 +38,14 @@ const features = [
   },
 ];
 
-const partners = [
-  { name: "EU Digital Skills", abbr: "DSJC" },
-  { name: "WeAreDevelopers", abbr: "WAD" },
-  { name: "ECWT", abbr: "ECWT" },
-  { name: "SEE40", abbr: "SEE" },
-  { name: "EBU Luxembourg", abbr: "EBU" },
-  { name: "WomenTech", abbr: "WT" },
-];
+// const partners = [
+//   { name: "EU Digital Skills", abbr: "DSJC" },
+//   { name: "WeAreDevelopers", abbr: "WAD" },
+//   { name: "ECWT", abbr: "ECWT" },
+//   { name: "SEE40", abbr: "SEE" },
+//   { name: "EBU Luxembourg", abbr: "EBU" },
+//   { name: "WomenTech", abbr: "WT" },
+// ];
 
 export function FeaturedIn() {
   const featuredArticle = features.find((f) => f.featured);

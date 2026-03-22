@@ -1,13 +1,13 @@
 ---
 title: London Summit 2026
 excerpt: The 9th annual GWTL Summit. Two days of structured conversations, power tables, sponsor match introductions, and public commitments from corporate partners.
-date: '2026-08-27'
-endDate: '2026-08-28'
+date: '2026-10-27'
+endDate: '2026-10-28'
 location: London, UK
 category: Conference / Summit
 featured: true
 image: >-
-  https://images.unsplash.com/photo-1573496548045-012ded7fea2c?q=80&w=640&auto=format&fit=crop
+ https://images.unsplash.com/photo-1526041092449-209d556f7a32?q=80&w=2148&auto=format&fit=crop
 registrationUrl: 'https://gwtl.com/register'
 ---
 The 9th annual GWTL Summit. Two days of structured conversations, power tables, sponsor match introductions, and public commitments from corporate partners.

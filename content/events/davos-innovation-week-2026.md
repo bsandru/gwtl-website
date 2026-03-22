@@ -1,8 +1,8 @@
 ---
 title: "Davos Innovation Week"
 excerpt: "Executive panels on AI leadership and investment trends. GWTL co-organized."
-date: "2026-10-20"
-endDate: "2026-10-24"
+date: "2026-01-19"
+endDate: "2026-01-23"
 location: "Davos, Switzerland"
 category: "Conference"
 featured: false

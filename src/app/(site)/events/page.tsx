@@ -20,17 +20,8 @@ export const metadata: Metadata = {
 };
 
 // Default images for events without images
-const defaultImages = [
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop",
-];
+const DefaultImage = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop";
 
-function getDefaultImage(index: number): string {
-  return defaultImages[index % defaultImages.length];
-}
 
 function formatDateRange(start: string, end?: string): string {
   const startDate = new Date(start);
@@ -179,9 +170,9 @@ function EventsHero() {
 function UpcomingEvents() {
   const upcomingEvents = getUpcomingEvents();
   const featuredEvent = upcomingEvents.find((e) => e.featured) || upcomingEvents[0];
-  const otherUpcoming = upcomingEvents.filter(
-    (e) => e.slug !== featuredEvent?.slug
-  );
+  const otherUpcoming = upcomingEvents
+    .filter((e) => e.slug !== featuredEvent?.slug)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   if (upcomingEvents.length === 0) {
     return (
@@ -223,7 +214,7 @@ function UpcomingEvents() {
               {/* Image */}
               <div className="relative h-[420px] lg:h-[520px]">
                 <Image
-                  src={featuredEvent.image || getDefaultImage(0)}
+                  src={featuredEvent.image || DefaultImage}
                   alt={featuredEvent.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -317,7 +308,7 @@ function UpcomingEvents() {
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
                     <Image
-                      src={event.image || getDefaultImage(idx + 1)}
+                      src={event.image || DefaultImage}
                       alt={event.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
