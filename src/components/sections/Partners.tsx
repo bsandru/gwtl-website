@@ -5,14 +5,17 @@ interface Partner {
   name: string;
   logo: string;
   url?: string;
+  small?: boolean;
 }
 
-const strategicPartners: Partner[] = [
+const collaborators: Partner[] = [
   // { name: "Microsoft", logo: "/images/partners/Microsoft.png", url: "https://microsoft.com" },
-  { name: "EU Digital Skills & Jobs Coalition", logo: "/images/partners/DSJC.png", url: "https://digital-strategy.ec.europa.eu/en" },
+  // { name: "EU Digital Skills & Jobs Coalition", logo: "/images/partners/DSJC.png", url: "https://digital-strategy.ec.europa.eu/en" },
+  { name: "Difrnt.", logo: "/images/partners/difrnt.png", url: "https://difrnt.ro" , small: true},
   { name: "WeAreDevelopers", logo: "/images/partners/WAD.svg", url: "https://wearedevelopers.com" },
-  { name: "European Centre for Women and Technology", logo: "/images/partners/ecwt.webp", url: "https://ecwt.eu" },
-  // { name: "Global Semiconductor Alliance", logo: "/images/partners/gsa.png" },
+  // { name: "European Centre for Women and Technology", logo: "/images/partners/ecwt.webp", url: "https://ecwt.eu" },
+  { name: "DevTalks", logo: "/images/partners/devtalks-ro.png", url: "https://www.devtalks.ro", small: true},
+  { name: "QuantumfAI", logo: "/images/partners/quantumfai.png", url: "https://www.davosinnovationweek.com", small: true},
   // { name: "Zitec", logo: "/images/partners/Zitec.webp", url: "https://zitec.com" },
 ];
 
@@ -30,13 +33,13 @@ const communityPartners: Partner[] = [
   { name: "Wolfpack Digital", logo: "/images/partners/wolfpack_digital.svg", url: "https://wolfpackdigital.com" },
   { name: "Women in Tech Alliance", logo: "/images/partners/womenintechalliance.png" },
   { name: "HackAtOns", logo: "/images/partners/hackatons.webp" },
-  { name: "TechVentures", logo: "/images/partners/TechVentures.png" },
-  { name: "House of Public Policies", logo: "/images/partners/HOP.png" },
+  // { name: "TechVentures", logo: "/images/partners/TechVentures.png" },
+  // { name: "House of Public Policies", logo: "/images/partners/HOP.png" },
   // { name: "Reporting Center", logo: "/images/partners/ReportingCenter.png" },
   // { name: "Skillab", logo: "/images/partners/Skillab.png" },
-  { name: "SVF", logo: "/images/partners/svf.png" },
+  // { name: "SVF", logo: "/images/partners/svf.png" },
   // { name: "Arvato Systems", logo: "/images/partners/Arvato.webp", url: "https://arvato-systems.com" },
-  { name: "TechWoman", logo: "/images/partners/techwoman.webp" },
+  // { name: "TechWoman", logo: "/images/partners/techwoman.webp" },
 ];
 
 function PartnerLogo({ partner, small = false }: { partner: Partner, small?: boolean }) {
@@ -87,19 +90,19 @@ export function Partners() {
           </p>
         </div>
 
-        {/* Strategic Partners */}
+        {/* Collaborators */}
         <div className="mb-20 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
-            <h3 className="text-sm font-bold uppercase tracking-widest text-secondary-400 shrink-0">
-              Strategic Partners
+            <h3 className="text-md font-bold uppercase tracking-widest text-secondary-400 shrink-0">
+              Global Collaborators
             </h3>
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
           </div>
 
-          <div className="grid grid-flow-col justify-items-center gap-5">
-            {strategicPartners.map((partner) => (
-              <PartnerLogo key={partner.name} partner={partner} />
+          <div className="grid grid-flow-col justify-items-center gap-12">
+            {collaborators.map((partner) => (
+              <PartnerLogo key={partner.name} partner={partner} small={partner.small} />
             ))}
           </div>
         </div>
@@ -108,13 +111,13 @@ export function Partners() {
         <div className="animate-fade-in-up opacity-0 [animation-delay:0.6s]">
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
-            <h3 className="text-sm font-bold uppercase tracking-widest text-secondary-400 shrink-0">
+            <h3 className="text-md font-bold uppercase tracking-widest text-secondary-400 shrink-0">
               Community Partners
             </h3>
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
             {communityPartners.map((partner) => (
               <PartnerLogo key={partner.name} partner={partner} small={true} />
             ))}
