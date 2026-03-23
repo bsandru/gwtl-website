@@ -48,8 +48,9 @@ const armies = [
     id: "cmo",
     label: "CMO Agentic Army",
     title: "Marketing & Growth",
-    coordinator: "Content Orchestrator",
+    coordinator: "Strategy Orchestrator",
     agents: [
+      "Marketing Research",
       "Content Agent",
       "Social Media Agent",
       "Newsletter Agent",
@@ -76,7 +77,7 @@ const armies = [
 const tasksByArmy: Record<string, string[]> = {
   ceo: ["Grant Application Draft", "Sponsor Research Report", "Program Match List", "CEO Daily Brief", "Strategic Oversight"],
   cto: ["Platform Updates", "Security Audit", "Agent Performance", "Agents Orchestration", "Logging", "Infra Monitoring"],
-  cmo: ["Post Draft", "Newsletter Compilation", "Analytics Report", "Press Release Draft", "Publisher"],
+  cmo: ["Research and Design", "Social Media Post Draft", "Newsletter Compilation", "Press Release Draft", "Publisher Management", "Analytics Report"],
   cpo: ["Prospect Profile", "Outreach Email Draft", "Pipeline Status Update", "Event Logistics Brief", "Revenue Reporting"],
 };
 
