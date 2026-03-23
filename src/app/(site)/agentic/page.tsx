@@ -12,27 +12,72 @@ const PATHS = "/goals /ops /metrics /work";
 
 const executives = [
   { label: "CEO", sublabel: "Human" },
-  { label: "CPO", sublabel: "Human" },
   { label: "CTO", sublabel: "Human" },
   { label: "CMO", sublabel: "Human" },
+  { label: "CPO", sublabel: "Human" },
 ];
 
-const departments = [
-  { id: "eng", label: "ENG" },
-  { id: "sec", label: "SEC" },
-  { id: "fin", label: "FIN" },
-  { id: "mkt", label: "MKT" },
-  { id: "par", label: "PARTNERS" },
-  { id: "ops", label: "OPS" },
+const armies = [
+  {
+    id: "ceo",
+    label: "CEO Agentic Army",
+    title: "Strategy & Programs",
+    coordinator: "Program Orchestrator",
+    agents: [
+      "Research Agent",
+      "Grants Agent",
+      "Program Agent",
+      "Briefing Agent",
+      "Strategic Oversight",
+    ],
+  },
+  {
+    id: "cto",
+    label: "CTO Agentic Army",
+    title: "Platform & Infra",
+    coordinator: "Platform Orchestrator",
+    agents: [
+      "Platform Agent",
+      "Security Agent",
+      "Data Agent",
+      "Agent Orchestrator",
+      "Logging Agent",
+    ],
+  },
+  {
+    id: "cmo",
+    label: "CMO Agentic Army",
+    title: "Marketing & Growth",
+    coordinator: "Content Orchestrator",
+    agents: [
+      "Content Agent",
+      "Social Media Agent",
+      "Newsletter Agent",
+      "Analytics Agent",
+      "PR Agent",
+      "Publisher Agent",
+    ],
+  },
+  {
+    id: "cpo",
+    label: "CPO Agentic Army",
+    title: "Partnerships & Revenue",
+    coordinator: "Partnerships Orchestrator",
+    agents: [
+      "Prospect Agent",
+      "Outreach Agent",
+      "Follow-up Agent",
+      "Event Agent",
+      "Revenue Reporting",
+    ],
+  },
 ];
 
-const tasksByDept: Record<string, string[]> = {
-  eng: ["Task A", "Task B", "Task C", "Task D"],
-  sec: ["Task A", "Task B", "Task C"],
-  fin: ["Task A", "Task B"],
-  mkt: ["Task A", "Task B", "Task C", "Task D"],
-  par: ["Task A", "Task B", "Task C"],
-  ops: ["Task A", "Task B", "Task C"],
+const tasksByArmy: Record<string, string[]> = {
+  ceo: ["Grant Application Draft", "Sponsor Research Report", "Program Match List", "CEO Daily Brief", "Strategic Oversight"],
+  cto: ["Platform Updates", "Security Audit", "Agent Performance", "Agents Orchestration", "Logging", "Infra Monitoring"],
+  cmo: ["Post Draft", "Newsletter Compilation", "Analytics Report", "Press Release Draft", "Publisher"],
+  cpo: ["Prospect Profile", "Outreach Email Draft", "Pipeline Status Update", "Event Logistics Brief", "Revenue Reporting"],
 };
 
 const descCards = [
@@ -41,7 +86,7 @@ const descCards = [
     tierClass: "text-teal-700",
     cardClass: "border border-teal-600/20 bg-white",
     title: "Executive Layer",
-    desc: "CEO, CPO, CTO and CMO operate as humans with full organizational context. They prompt the Coordinating Agents from the Agentic Platform and hold accountability for goals, operations, metrics, and work.",
+    desc: "CEO, CMO, CTO, and CPO operate as humans with full organizational context. They prompt the Coordinating Agents from the Agentic Platform and hold accountability for goals, operations, metrics, and work.",
   },
   {
     tier: "TIER 2",
@@ -54,8 +99,8 @@ const descCards = [
     tier: "TIER 3",
     tierClass: "text-brand-teal",
     cardClass: "border border-brand-teal/20 bg-white",
-    title: "Departments",
-    desc: "Six authoritative departments, each powered by Coordinating Agents that orchestrate tasks across departments without hierarchy bottlenecks, enabling parallel execution and real-time collaboration.",
+    title: "Agents",
+    desc: "Four agent armies — one per C-level executive. Each army operates under a Coordinating Agent that orchestrates task execution without hierarchy bottlenecks. Agents run 24/7, report to their human owner, and escalate only what requires human judgment.",
   },
 ];
 
@@ -157,8 +202,7 @@ export default function AgenticArchitecturePage() {
               {executives.map((exec, idx) => (
                 <div
                   key={exec.label}
-                  className="w-40 rounded-xl p-5 text-center relative group animate-fade-in-up opacity-0 bg-white border border-teal-600/20 shadow-sm hover:shadow-md transition-shadow duration-300"
-                  style={{ animationDelay: `${0.1 + idx * 0.1}s` }}
+                  className="w-40 rounded-xl p-5 text-center relative group bg-white border border-teal-600/20 shadow-sm hover:shadow-md transition-shadow duration-300" 
                 >
                   {/* <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.05)_0%,transparent_70%)]" /> */}
 
@@ -190,8 +234,7 @@ export default function AgenticArchitecturePage() {
           <div className="flex items-center gap-4 mt-1">
             <TierLabel>TIER 2 — PLATFORM</TierLabel>
             <div
-              className="flex-1 relative animate-fade-in-up opacity-0"
-              style={{ animationDelay: "0.3s" }}
+              className="flex-1 relative"
             >
               <div className="absolute inset-0 rounded-2xl blur-xl bg-teal-600/10" />
               <div className="relative rounded-2xl py-8 px-6 text-center border border-teal-600/35 bg-linear-to-br from-teal-600/6 to-purple-500/3 shadow-[0_0_40px_-5px_rgba(124,58,237,0.12),inset_0_1px_0_rgba(124,58,237,0.1)]">
@@ -206,55 +249,58 @@ export default function AgenticArchitecturePage() {
             </div>
           </div>
 
-          {/* Daemon → Depts connectors */}
+          {/* Platform → Armies connectors */}
           <div className="flex gap-4 mt-2">
             <div className="w-40 shrink-0 hidden lg:block" />
-            <div className="flex-1 grid grid-cols-6 gap-1">
-              {departments.map((dept) => (
-                <div key={dept.id} className="flex justify-center">
+            <div className="flex-1 grid grid-cols-4 gap-3">
+              {armies.map((army) => (
+                <div key={army.id} className="flex justify-center">
                   <DownArrow label="ACT" />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ── TIER 3 — DEPARTMENTS ── */}
+          {/* ── TIER 3 — AGENT ARMIES ── */}
           <div className="flex items-start gap-4 mt-1">
-            <TierLabel>TIER 3 — DEPARTMENTS</TierLabel>
+            <TierLabel>TIER 3 — AGENTS</TierLabel>
             <div className="flex-1">
-              <div className="grid grid-cols-6 gap-1">
-                {departments.map((dept, idx) => (
+              <div className="grid grid-cols-4 gap-3">
+                {armies.map((army, idx) => (
                   <div
-                    key={dept.id}
-                    className="rounded-xl p-3 text-center relative group animate-fade-in-up opacity-0 bg-white border border-brand-teal/20 shadow-sm hover:shadow-md transition-shadow duration-300"
-                    style={{ animationDelay: `${0.4 + idx * 0.06}s` }}
+                    key={army.id}
+                    className="rounded-xl p-4 relative group bg-white border border-brand-teal/20 shadow-sm hover:shadow-md transition-shadow duration-300"
                   >
                     <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_center,rgba(0,163,163,0.05)_0%,transparent_70%)]" />
-                    <h3 className="font-mono text-base font-bold text-brand-teal mb-1">
-                      {dept.label}
+                    <h3 className="font-mono text-lg font-bold text-brand-teal mb-0.5">
+                      {army.label}
                     </h3>
-                    {/* <p className="font-mono text-[8px] font-bold mb-1.5 tracking-widest text-brand-navy">
-                      AGENTIC
-                    </p> */}
-                    <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold mb-3 bg-teal-600/8 border border-teal-600/25 text-teal-700">
-                      AI
-                    </div>
-                    <p className="font-mono text-sm italic mb-2 text-slate-500">
-                      Coordinating Agent
+                    <p className="font-mono text-[10px] text-slate-400 mb-3 leading-tight">
+                      {army.title}
                     </p>
-                    <p className="font-mono text-sm  text-slate-400">AI Model Orchestrator</p>
+                    <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold mb-3 bg-teal-600/8 border border-teal-600/25 text-teal-700">
+                      {army.coordinator}
+                    </div>
+                    <ul className="space-y-1.5 mt-1">
+                      {army.agents.map((agent) => (
+                        <li key={agent} className="flex items-center gap-1.5">
+                          <span className="h-1 w-1 rounded-full bg-teal-500 shrink-0" />
+                          <span className="font-mono text-[10px] text-slate-500">{agent}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Depts → Tasks connectors */}
+          {/* Armies → Tasks connectors */}
           <div className="flex gap-4 mt-2">
             <div className="w-40 shrink-0 hidden lg:block" />
-            <div className="flex-1 grid grid-cols-6 gap-1">
-              {departments.map((dept) => (
-                <div key={dept.id} className="flex justify-center">
+            <div className="flex-1 grid grid-cols-4 gap-3">
+              {armies.map((army) => (
+                <div key={army.id} className="flex justify-center">
                   <DownArrow label="Execute" />
                   <UpArrow label="Report" />
                 </div>
@@ -262,26 +308,23 @@ export default function AgenticArchitecturePage() {
             </div>
           </div>
 
-          {/* ── TIER 4 — TEAMS ── */}
+          {/* ── TIER 4 — TASK SUBAGENTS ── */}
           <div className="flex items-start gap-4 mt-1">
             <TierLabel>TIER 4 — TASKS</TierLabel>
-            <div className="flex-1 grid grid-cols-6 gap-1">
-              {departments.map((dept, dIdx) => (
-                <div key={dept.id} className="flex flex-col gap-1.5">
-                  {(tasksByDept[dept.id] ?? ["Task A", "Task B"]).map(
-                    (task, tIdx) => (
-                      <div
-                        key={task}
-                        className="rounded-lg p-2 text-center animate-fade-in-up opacity-0 border border-slate-200/80 bg-slate-50"
-                        style={{ animationDelay: `${0.7 + dIdx * 0.05 + tIdx * 0.04}s` }}
-                      >
-                        <p className="font-mono text-[10px] font-bold text-slate-500 mb-0.5">
-                          {task}
-                        </p>
-                        <p className="font-mono text-[10px] text-slate-400">Subagent</p>
-                      </div>
-                    )
-                  )}
+            <div className="flex-1 grid grid-cols-4 gap-3">
+              {armies.map((army, dIdx) => (
+                <div key={army.id} className="flex flex-col gap-1.5">
+                  {(tasksByArmy[army.id] ?? []).map((task, tIdx) => (
+                    <div
+                      key={task}
+                      className="rounded-lg p-2 text-center border border-slate-200/80 bg-slate-50"
+                    >
+                      <p className="font-mono text-[10px] font-bold text-slate-500 mb-0.5">
+                        {task}
+                      </p>
+                      <p className="font-mono text-[10px] text-slate-400">Subagent</p>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
