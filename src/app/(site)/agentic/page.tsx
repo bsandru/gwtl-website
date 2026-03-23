@@ -112,26 +112,13 @@ function UpArrow({ label }: { label: string }) {
 export default function AgenticArchitecturePage() {
   return (
     <div className="pt-20 min-h-screen text-slate-800 overflow-hidden bg-white">
-      {/* Grid texture — requires backgroundImage, no Tailwind equivalent */}
-      <div
-        className="fixed inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(100,116,139,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(100,116,139,0.4) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* Ambient glows */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-[0.06] pointer-events-none bg-[radial-gradient(ellipse,rgba(124,58,237,0.5)_0%,transparent_70%)]" />
-      <div className="fixed bottom-0 left-0 w-[600px] h-[400px] rounded-full opacity-[0.04] pointer-events-none bg-[radial-gradient(ellipse,rgba(0,163,163,0.8)_0%,transparent_70%)]" />
-
+      
       {/* ─────────────────────────── HERO ─────────────────────────── */}
       <section className="relative py-24 px-4 text-center">
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono mb-8 border border-teal-600/25 bg-teal-600/6 text-teal-700">
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs mb-8 border border-teal-600/25 bg-teal-600/6 text-teal-700">
             <span className="h-1.5 w-1.5 rounded-full animate-pulse bg-teal-600" />
-            GWTL 2.0 ARCHITECTURE
+            GWTL 2.0
           </div>
 
           <h1 className="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight">
@@ -139,18 +126,18 @@ export default function AgenticArchitecturePage() {
             </span>
           </h1>
 
-          <p className="text-lg leading-relaxed font-mono text-slate-500">
+          <p className="text-xl leading-relaxed text-slate-500">
             An AI-native organizational operating system designed for the future of work. Four tiers of AI Governance Framework, 
-            published APIs, autonomous execution at scale, and seamless human-AI collaboration across organization.
+            autonomous execution at scale, and seamless human-AI collaboration across organization layers.
           </p>
 
           <div className="mt-10 flex items-center justify-center gap-8">
             {[
               { icon: Cpu, label: "AI-Native" },
               { icon: Zap, label: "Autonomous" },
-              { icon: Network, label: "Unified Context" },
+              { icon: Network, label: "Seamless Collaboration" },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 text-xs font-mono text-slate-500">
+              <div key={label} className="flex items-center gap-2 text-md text-slate-500">
                 <Icon className="h-3.5 w-3.5 text-teal-600" />
                 {label}
               </div>
@@ -311,7 +298,7 @@ export default function AgenticArchitecturePage() {
                 key={tier}
                 className={`rounded-2xl p-6 shadow-elegant ${cardClass}`}
               >
-                <div className={`font-mono text-[10px] font-bold tracking-widest mb-3 ${tierClass}`}>
+                <div className={`text-sm font-bold tracking-widest mb-3 ${tierClass}`}>
                   {tier}
                 </div>
                 <h3 className="font-display text-xl font-bold text-brand-navy mb-3">
@@ -323,11 +310,11 @@ export default function AgenticArchitecturePage() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="font-mono text-xs uppercase tracking-widest mb-6 text-slate-400">
+            <p className="text-md uppercase tracking-widest mb-6 text-slate-400">
               Built on this architecture
             </p>
             <Link href="/ai-governance">
-              <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl font-mono text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 border border-teal-600/30 bg-teal-600/6 text-teal-700 shadow-[0_0_20px_-5px_rgba(124,58,237,0.1)]">
+              <button className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 border border-teal-600/30 bg-teal-600/6 text-teal-700 shadow-[0_0_20px_-5px_rgba(124,58,237,0.1)]">
                 View AI Governance Framework
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
