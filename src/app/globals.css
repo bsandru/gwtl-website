@@ -164,7 +164,7 @@ body {
 /* Selection styling */
 ::selection {
   background: rgba(0, 163, 163, 0.2);
-  color: var(--brand-navy);
+  /* color: var(--brand-navy); */
 }
 
 /* Premium scrollbar */
