@@ -1,7 +1,7 @@
 import { Cpu } from "lucide-react";
 
 const comparison = [
-  { traditional: "50+ staff to coordinate", gwtl: "4 C-level + 25 agents" },
+  { traditional: "50+ staff to coordinate", gwtl: "4 C-level + 36 agents" },
   { traditional: "High overhead", gwtl: "Maximum impact per dollar" },
   { traditional: "Slow execution", gwtl: "24/7 delivery" },
   { traditional: "Talks about AI", gwtl: "Runs on AI" },

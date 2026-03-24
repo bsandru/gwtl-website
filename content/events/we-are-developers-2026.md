@@ -5,7 +5,7 @@ date: "2026-07-08"
 endDate: "2026-07-10"
 location: "Berlin, Germany"
 category: "Conference"
-featured: true
+featured: false
 image: "/images/events/wad-europe-event-2026.avif"
 registrationUrl: "https://www.wearedevelopers.com/world-congress"
 ---

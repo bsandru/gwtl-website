@@ -526,7 +526,7 @@ function AINativeModel() {
               </p>
               <p>
                 C-level executives set strategy and make decisions.
-                Twenty-five AI agents handle execution — content, outreach,
+                Thirty-six AI agents handle execution — content, outreach,
                 research, coordination, analytics.
               </p>
               {/* <p>
