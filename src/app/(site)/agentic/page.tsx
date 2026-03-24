@@ -27,8 +27,11 @@ const armies = [
       "Research Agent",
       "Grants Agent",
       "Program Agent",
+      "Strategic Council Agent",
+      "Ambassador Relations Agent",
+      "Finance Agent",
+      "KPI Agent",
       "Briefing Agent",
-      "Strategic Oversight",
     ],
   },
   {
@@ -38,10 +41,14 @@ const armies = [
     coordinator: "Platform Orchestrator",
     agents: [
       "Platform Agent",
+      "DevOps Agent",
+      "API Agent",
       "Security Agent",
       "Data Agent",
+      "Cost Agent",
       "Agent Orchestrator",
       "Logging Agent",
+      "Monitoring Agent",
     ],
   },
   {
@@ -51,12 +58,15 @@ const armies = [
     coordinator: "Strategy Orchestrator",
     agents: [
       "Marketing Research",
+      "Campaign Agent",
       "Content Agent",
+      "SEO Agent",
       "Social Media Agent",
       "Newsletter Agent",
-      "Analytics Agent",
-      "PR Agent",
       "Publisher Agent",
+      "PR Agent",
+      "Analytics Agent",
+      "Community Agent",
     ],
   },
   {
@@ -68,17 +78,20 @@ const armies = [
       "Prospect Agent",
       "Outreach Agent",
       "Follow-up Agent",
+      "Contract Agent",
+      "Onboarding Agent",
       "Event Agent",
+      "Retention Agent",
       "Revenue Reporting",
     ],
   },
 ];
 
 const tasksByArmy: Record<string, string[]> = {
-  ceo: ["Grant Application Draft", "Sponsor Research Report", "Program Match List", "CEO Daily Brief", "Strategic Oversight"],
-  cto: ["Platform Updates", "Security Audit", "Agent Performance", "Agents Orchestration", "Logging", "Infra Monitoring"],
-  cmo: ["Research and Design", "Social Media Post Draft", "Newsletter Compilation", "Press Release Draft", "Publisher Management", "Analytics Report"],
-  cpo: ["Prospect Profile", "Outreach Email Draft", "Pipeline Status Update", "Event Logistics Brief", "Revenue Reporting"],
+  ceo: ["Sponsor Research Report", "Grant Application Draft", "Program Match List", "Council Recruitment Brief", "Ambassador Review Report", "Budget Summary", "KPI Dashboard Update", "CEO Daily Brief"],
+  cto: ["Platform Health Check", "Deployment Status Report", "API Health Check", "Security Audit Report", "Data Export", "Cost Optimization Report", "Agent Performance Log", "System Log Review", "Infra Monitoring Report"],
+  cmo: ["Research and Design", "Campaign Launch Brief", "Content Draft", "SEO Audit Report", "Newsletter Compilation", "Publisher Management", "Press Release Draft", "Analytics Report", "Community Activation"],
+  cpo: ["Prospect Profile", "Outreach Email Draft", "Pipeline Status Update", "Contract Draft", "Partner Onboarding", "Event Logistics Brief", "Renewal Risk Report", "Revenue Report"],
 };
 
 const descCards = [
