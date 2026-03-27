@@ -66,7 +66,7 @@ function SponsorsHero() {
           <h1 className="animate-fade-in-up font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] stagger-2 opacity-0">
             <span className="text-secondary-800">Partner With GWTL</span>
             <br />
-            <span className="relative inline-block gradient-text-hero text-6xl leading-[1.25]">
+            <span className="relative inline-block gradient-text-hero text-6xl leading-tight">
               Sponsor Outcomes, Not Overhead
               {/* Decorative underline */}
               <svg

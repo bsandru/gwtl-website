@@ -493,7 +493,7 @@ function PastEvents() {
               style={{ animationDelay: `${0.05 * idx}s` }}
             >
               {/* Date block */}
-              <div className="flex-shrink-0 w-28">
+              <div className="shrink-0 w-28">
                 <div className="text-sm font-semibold text-secondary-800">
                   {new Date(event.date).toLocaleDateString("en-US", {
                     month: "long",
@@ -524,7 +524,7 @@ function PastEvents() {
               </div>
 
               {/* Arrow */}
-              <div className="flex-shrink-0 hidden sm:block">
+              <div className="shrink-0 hidden sm:block">
                 <ArrowRight className="h-5 w-5 text-secondary-300 group-hover:text-brand-teal group-hover:translate-x-1 transition-all" />
               </div>
             </Link>

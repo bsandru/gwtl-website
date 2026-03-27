@@ -71,7 +71,7 @@ export default function NewsPage() {
               {bentoNews[0] && (
                 <Link
                   href={`/news/${bentoNews[0].slug}`}
-                  className="group relative md:col-span-2 rounded-2xl lg:rounded-3xl overflow-hidden border border-white/[0.08] transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_40px_-12px_rgba(0,163,163,0.25)]"
+                  className="group relative md:col-span-2 rounded-2xl lg:rounded-3xl overflow-hidden border border-white/8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_40px_-12px_rgba(0,163,163,0.25)]"
                 >
                   {/* Background image */}
                   <div className="absolute inset-0">
@@ -132,7 +132,7 @@ export default function NewsPage() {
               {bentoNews[1] && (
                 <Link
                   href={`/news/${bentoNews[1].slug}`}
-                  className="group relative rounded-2xl lg:rounded-3xl overflow-hidden border border-white/[0.08] transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_40px_-12px_rgba(0,163,163,0.25)]"
+                  className="group relative rounded-2xl lg:rounded-3xl overflow-hidden border border-white/8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_40px_-12px_rgba(0,163,163,0.25)]"
                 >
                   {/* Background image */}
                   <div className="absolute inset-0">
@@ -181,7 +181,7 @@ export default function NewsPage() {
                 <Link
                   key={item.slug}
                   href={`/news/${item.slug}`}
-                  className="group relative rounded-2xl lg:rounded-3xl overflow-hidden border border-white/[0.08] transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_40px_-12px_rgba(0,163,163,0.25)]"
+                  className="group relative rounded-2xl lg:rounded-3xl overflow-hidden border border-white/8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_40px_-12px_rgba(0,163,163,0.25)]"
                 >
                   {/* Background image */}
                   <div className="absolute inset-0">

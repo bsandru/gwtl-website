@@ -1,12 +1,10 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Cpu, Zap, Network } from "lucide-react";
+import { Cpu, Zap, Network } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Agentic Architecture | GWTL",
-  description:
-    "The Agentic Architecture — a four-tier AI-native organizational operating system with AI Governance Framework, published APIs, and autonomous execution at scale.",
-};
+// export const metadata: Metadata = {
+//   title: "Agentic Architecture | GWTL",
+//   description:
+//     "The Agentic Architecture — a four-tier AI-native organizational operating system with AI Governance Framework, published APIs, and autonomous execution at scale.",
+// };
 
 const PATHS = "/goals /ops /metrics /work";
 
@@ -168,19 +166,19 @@ function UpArrow({ label }: { label: string }) {
   );
 }
 
-export default function AgenticArchitecturePage() {
+export default function AgenticArchitecture() {
   return (
-    <div className="pt-20 min-h-screen text-slate-800 overflow-hidden bg-white">
+    <div>
       
       {/* ─────────────────────────── HERO ─────────────────────────── */}
-      <section className="relative py-24 px-4 text-center">
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs mb-8 border border-teal-600/25 bg-teal-600/6 text-teal-700">
+      <section className="pb-8 px-4 text-center mx-auto max-w-3xl">
+        {/* <div className="relative z-10 max-w-3xl mx-auto"> */}
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs mb-8 border border-teal-600/25 bg-teal-600/6 text-teal-700">
             <span className="h-1.5 w-1.5 rounded-full animate-pulse bg-teal-600" />
             GWTL 2.0
-          </div>
+          </div> */}
 
-          <h1 className="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="font-display text-5xl font-bold mb-6 leading-tight">
             <span className="text-brand-teal">Agentic Architecture
             </span>
           </h1>
@@ -190,7 +188,7 @@ export default function AgenticArchitecturePage() {
             autonomous execution at scale, and seamless human-AI collaboration across organization layers.
           </p>
 
-          <div className="mt-10 flex items-center justify-center gap-8">
+          <div className="mt-8 flex items-center justify-center gap-8">
             {[
               { icon: Cpu, label: "AI-Native" },
               { icon: Zap, label: "Autonomous" },
@@ -202,7 +200,7 @@ export default function AgenticArchitecturePage() {
               </div>
             ))}
           </div>
-        </div>
+        {/* </div> */}
       </section>
 
       {/* ─────────────────────────── DIAGRAM ─────────────────────────── */}
@@ -366,7 +364,7 @@ export default function AgenticArchitecturePage() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          {/* <div className="mt-16 text-center">
             <p className="text-md uppercase tracking-widest mb-6 text-slate-400">
               Built on this architecture
             </p>
@@ -376,7 +374,7 @@ export default function AgenticArchitecturePage() {
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Users, Sparkles, ArrowRight, Globe, Crown, Star, ExternalLink } from "lucide-react";
+import { Linkedin, Users, ArrowRight, Crown, ExternalLink, ShieldCheck, Cpu, Network } from "lucide-react";
 import { getAllTeamMembers } from "@/lib/content";
+import AgenticArchitecturePage from "../../../components/sections/AgenticArhitecture";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   const team = getAllTeamMembers();
   const leadership = team.filter((m) => m.category === "leadership");
-  const advisory = team.filter((m) => m.category === "advisory");
+  // const advisory = team.filter((m) => m.category === "advisory");
 
   return (
     <div className="pt-20 overflow-hidden">
@@ -64,9 +65,8 @@ export default function TeamPage() {
             </h1>
 
             <p className="mt-8 text-xl lg:text-2xl leading-relaxed text-secondary-600 max-w-3xl animate-fade-in-up opacity-0 [animation-delay:0.3s]">
-              Our team can help you at any stage of your growth. Meet the
-              passionate individuals driving our mission to empower women in
-              technology leadership across the globe.
+              Meet the passionate individuals driving our mission to empower
+              women in technology leadership across the globe.
             </p>
           </div>
         </div>
@@ -162,8 +162,40 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* Bridge: Team → Agentic Architecture */}
+      <section className="relative py-20 bg-linear-to-b from-white via-slate-50/60 to-slate-50/30">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-brand-teal/20 to-brand-teal/30" />
+            <div className="flex gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/40" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/40" />
+            </div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-brand-teal/20 to-brand-teal/30" />
+          </div>
+
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-teal mb-5">
+            How We Operate
+          </p>
+
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
+            Humans + AI,{" "}
+            <span className="gradient-text">by Design</span>
+          </h2>
+
+          <p className="mt-5 text-2xl leading-relaxed text-secondary-500 max-w-2xl mx-auto">
+            Each executive leads a dedicated agentic army — autonomous agents
+            that execute, report, and escalate, so the leadership team stays
+            focused on strategy and impact.
+          </p>
+        </div>
+      </section>
+
+      <AgenticArchitecturePage />
+
       {/* Advisory Board */}
-      <section className="relative py-20 lg:py-28">
+      {/* <section className="relative py-20 lg:py-28">
         <div className="absolute inset-0 bg-linear-to-br from-white via-secondary-50/40 to-white" />
         <div className="absolute bottom-40 -right-20 w-[250px] h-[250px] rounded-full opacity-10 blur-3xl bg-linear-to-br from-brand-navy to-brand-navy-light animate-float [animation-delay:2s]" />
 
@@ -198,7 +230,6 @@ export default function TeamPage() {
                   <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-brand-navy to-brand-teal opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700" />
 
                   <div className="relative h-full bg-white rounded-2xl shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-1.5 border border-gray-100/50 pt-8 pb-5 px-4 text-center">
-                    {/* Rounded image with gradient ring */}
                     <div className="relative mx-auto w-28 h-28 mb-4">
                       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-navy via-brand-teal to-brand-teal-light p-[3px] transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-6">
                         <div className="w-full h-full rounded-full bg-white p-[2px]">
@@ -224,7 +255,7 @@ export default function TeamPage() {
                     </div>
 
                     {/* Name and info */}
-                    <h3 className="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight inline-flex items-center justify-center gap-1.5">
+      {/*<h3 className="text-base font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight inline-flex items-center justify-center gap-1.5">
                       {member.name}
                       {member.linkedin && <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-60 transition-opacity" />}
                     </h3>
@@ -238,7 +269,7 @@ export default function TeamPage() {
                     </p>
 
                     {/* Country & LinkedIn badges */}
-                    <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
+      {/*<div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
                       {member.country && (
                         <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-50 text-xs font-medium text-brand-navy">
                           <Globe className="h-3 w-3 text-brand-teal" />
@@ -258,10 +289,10 @@ export default function TeamPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Empty State */}
-      {team.length === 0 && (
+      {/* {team.length === 0 && (
         <section className="py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center py-20 bg-linear-to-br from-primary-50 to-secondary-50 rounded-4xl border border-gray-100">
@@ -277,42 +308,54 @@ export default function TeamPage() {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
-      {/* Join the Team CTA */}
+      {/* AI Governance Framework CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-br from-brand-navy via-brand-navy-dark to-brand-navy" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl bg-brand-teal" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal-light" />
         <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%221%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
 
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 bg-brand-teal/20 text-brand-teal-light">
-            <Sparkles className="h-4 w-4" />
-            Join the Movement
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 bg-brand-teal/20 text-brand-teal-light border border-brand-teal/30">
+            <ShieldCheck className="h-4 w-4" />
+            AI Governance Framework
           </div>
 
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Want to Make an Impact?
+            Built on Principled AI
           </h2>
 
           <p className="mt-6 text-xl text-white/70 max-w-2xl mx-auto">
-            We&apos;re always looking for passionate individuals to help advance
-            our mission of empowering women in tech leadership.
+            Our team operates within an AI Governance Framework — guardrails, safety nets, and regulatory compliance at every layer of our Agentic Architecture.
           </p>
 
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              { icon: ShieldCheck, label: "Accountability & Transparency" },
+              { icon: Cpu, label: "Autonomous Execution" },
+              { icon: Network, label: "Privacy & Identity" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-3 px-5 py-4 rounded-xl bg-white/5 border border-white/10">
+                <Icon className="h-5 w-5 shrink-0 text-brand-teal-light" />
+                <span className="text-sm font-medium text-white/80">{label}</span>
+              </div>
+            ))}
+          </div>
+
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/ai-governance">
               <button className="group w-full sm:w-auto h-16 px-10 text-lg rounded-2xl font-bold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center bg-brand-teal text-white hover:bg-brand-teal-dark">
-                Get in Touch
+                View AI Governance Framework
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/about">
+            {/* <Link href="/about">
               <button className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl font-bold border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 inline-flex items-center justify-center border-white/30 text-white bg-transparent">
                 Learn About Us
               </button>
-            </Link>
+            </Link> */}
           </div>
 
           <div className="mt-16 flex justify-center">

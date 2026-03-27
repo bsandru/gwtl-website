@@ -1,6 +1,6 @@
 ---
 name: "Steliana Moraru"
-role: "Vice President"
+role: "Chief Marketing Officer"
 bio: "Experienced technology executive contributing to GWTL's strategic growth and operational excellence."
 image: "/images/team/StelianaMoraru.jpg"
 linkedin: "https://www.linkedin.com/in/stelianamoraru"

@@ -6,5 +6,5 @@ image: "/images/team/BogdanSandru.jpg"
 linkedin: "https://www.linkedin.com/in/bogdansandru/"
 company: "Trimble"
 category: "leadership"
-order: 7
+order: 3
 ---
