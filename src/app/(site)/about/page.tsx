@@ -326,7 +326,7 @@ function TheMission() {
                   key={item.text}
                   className="flex gap-4 group p-4 rounded-2xl hover:bg-primary-50/50 transition-colors"
                 >
-                  <div className="flex-shrink-0 h-11 w-11 rounded-xl flex items-center justify-center bg-linear-to-br from-brand-teal to-brand-teal-dark group-hover:scale-110 transition-transform">
+                  <div className="shrink-0 h-11 w-11 rounded-xl flex items-center justify-center bg-linear-to-br from-brand-teal to-brand-teal-dark group-hover:scale-110 transition-transform">
                     <item.icon className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -370,8 +370,8 @@ function The2030Goal() {
             The Target
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
-            30% by 2030.{" "}
-            <span className="gradient-text">Why That Number?</span>
+            30% by 2030.<br />
+            <span className="gradient-text">Benchmark, Not Our Boast.</span>
           </h2>
         </div>
 
@@ -380,12 +380,12 @@ function The2030Goal() {
           <div>
             <div className="prose prose-lg max-w-none text-secondary-600 leading-relaxed space-y-5">
               <p>
-                30% isn&apos;t arbitrary. It&apos;s the{" "}
+                30% is the{" "}
                 <strong className="text-secondary-800">
-                  critical mass threshold
+                  industry benchmark
                 </strong>{" "}
-                — the point where women in leadership stop being tokens and
-                start shaping culture.
+                we are built to accelerate. We track what we control:
+                placements, capital, and commitments.
               </p>
               <p>
                 Research by Rosabeth Moss Kanter (Harvard Business School)
@@ -447,7 +447,7 @@ function The2030Goal() {
                   className="premium-card p-6 flex items-center gap-6"
                 >
                   <div
-                    className={`flex-shrink-0 h-16 w-16 rounded-2xl flex items-center justify-center bg-linear-to-br ${stat.color}`}
+                    className={`shrink-0 h-16 w-16 rounded-2xl flex items-center justify-center bg-linear-to-br ${stat.color}`}
                   >
                     <span className="text-xl font-bold text-white">
                       {stat.today}

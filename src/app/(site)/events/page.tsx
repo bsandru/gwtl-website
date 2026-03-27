@@ -379,7 +379,7 @@ function EventTypes() {
       colorTo: "to-orange-500",
       badgeColor: "bg-amber-100 text-amber-700",
       description:
-        "Invite-only. 25 leaders + 25 decision-makers. Structured conversations. Public commitment log. The highest-impact format we run.",
+        "Invite-only. 25 total decision-makers and leaders. Structured conversations. Public commitment log. The highest-impact format we run.",
       cta: "Request an Invitation",
       ctaHref: "/contact",
     },
