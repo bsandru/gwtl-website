@@ -163,17 +163,9 @@ export default function TeamPage() {
       </section>
 
       {/* Bridge: Team → Agentic Architecture */}
-      <section className="relative py-20 bg-linear-to-b from-white via-slate-50/60 to-slate-50/30">
+      <section className="relative pt-20 bg-linear-to-b from-white via-slate-50/60 to-slate-50/30">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center gap-4 mb-10">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-brand-teal/20 to-brand-teal/30" />
-            <div className="flex gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/40" />
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/70" />
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/40" />
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-brand-teal/20 to-brand-teal/30" />
-          </div>
+         
 
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-teal mb-5">
             How We Operate
@@ -189,7 +181,17 @@ export default function TeamPage() {
             that execute, report, and escalate, so the leadership team stays
             focused on strategy and impact.
           </p>
+          <div className="flex items-center justify-center gap-4 my-10">
+            <div className="h-px flex-1 bg-linear-to-r from-transparent via-brand-teal/20 to-brand-teal/30" />
+            <div className="flex gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/40" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal/40" />
+            </div>
+            <div className="h-px flex-1 bg-linear-to-l from-transparent via-brand-teal/20 to-brand-teal/30" />
+          </div>
         </div>
+        
       </section>
 
       <AgenticArchitecturePage />
@@ -358,13 +360,13 @@ export default function TeamPage() {
             </Link> */}
           </div>
 
-          <div className="mt-16 flex justify-center">
+          {/* <div className="mt-16 flex justify-center">
             <div className="flex items-center gap-3">
               <div className="h-1 w-12 rounded-full bg-brand-teal/30" />
               <div className="h-2 w-2 rounded-full bg-brand-teal" />
               <div className="h-1 w-12 rounded-full bg-white/20" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

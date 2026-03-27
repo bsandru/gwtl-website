@@ -204,7 +204,7 @@ export default function AgenticArchitecture() {
       </section>
 
       {/* ─────────────────────────── DIAGRAM ─────────────────────────── */}
-      <section className="pb-32 px-4 overflow-x-auto">
+      <section className="pb-10 px-4 overflow-x-auto">
         <div className="mx-auto pb-4 max-w-6xl">
 
           {/* ── TIER 1 — EXECUTIVE ── */}
