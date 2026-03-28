@@ -533,7 +533,7 @@ function DataProtection() {
             </h3>
             <ul className="space-y-4">
               {[
-                "We use OpenAI, Anthropic, and Google APIs",
+                "We use OpenClaw, Anthropic, and Google APIs",
                 "No member data used for training external models",
                 "All providers under enterprise agreements with no-training clauses",
               ].map((item) => (
@@ -614,14 +614,14 @@ function TransparencyCommitments() {
                 ))}
               </ul>
 
-              <div className="mt-8 p-6 rounded-2xl bg-linear-to-br from-secondary-50 to-primary-50/30 border border-primary-100/50">
+              {/* <div className="mt-8 p-6 rounded-2xl bg-linear-to-br from-secondary-50 to-primary-50/30 border border-primary-100/50">
                 <p className="font-semibold text-brand-navy">
                   First Quarterly Report
                 </p>
                 <p className="text-brand-teal font-bold text-lg mt-1">
                   Q2 2026 (covering Q1 2026)
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
 

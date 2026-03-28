@@ -620,7 +620,7 @@ export default function ForLeadersPage() {
           {/* Trust indicators */}
           <div className="mt-16 pt-12 border-t border-white/10">
             <p className="text-sm font-medium uppercase tracking-wider mb-6 text-white/50">
-              Leaders from these companies are in our network
+              Leaders from these organizations believe in and support GWTL
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
               {COMPANIES.map((company) => (

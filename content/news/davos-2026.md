@@ -1,14 +1,14 @@
 ---
 title: 'GWTL at Davos 2026: Where Global Agendas Meet the Future of Leadership'
 excerpt: >-
-  Global Women TechLeaders co-organizes Davos Innovation Week 2026, hosting two
+  Global Women TechLeaders partner with Davos Innovation Week 2026, hosting two
   executive panels on AI-driven leadership and investment trends.
 date: "2026-01-19"
 category: Events
 featured: true
 image: /images/news/davos-innovation-week-2026.jpg
 ---
-Global Women TechLeaders is proud to co-organize **Davos Innovation Week 2026**, bringing together thought leaders, executives, and innovators from around the world to discuss the future of leadership in an AI-driven era.
+Global Women TechLeaders is proud to partner with **Davos Innovation Week 2026**, to bring together thought leaders, executives, and innovators from around the world to discuss the future of leadership in an AI-driven era.
 
 ### **Women in Tech & Leadership — Davos Innovation Week 2026**
 

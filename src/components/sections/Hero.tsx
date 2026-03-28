@@ -178,7 +178,7 @@ export function Hero() {
           {/* Trusted by section */}
           <div className="mt-20 pt-12 border-t border-secondary-200/50 animate-fade-in-up opacity-0 [animation-delay:0.7s]">
             <p className="text-center text-sm font-medium uppercase tracking-widest text-secondary-400 mb-8">
-              Leaders from top companies trust GWTL
+              Leaders from these organizations believe in and support GWTL
             </p>
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
               {COMPANIES.map((company) => (

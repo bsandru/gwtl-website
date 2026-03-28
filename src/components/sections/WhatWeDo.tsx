@@ -8,7 +8,7 @@ const programs = [
     icon: Users,
     headline: "Where Decisions Happen",
     body: "Invite-only gatherings that bring 25 women leaders face-to-face with 25 board-level decision-makers. Structured conversations. Real commitments. Every table produces measurable outcomes.",
-    proof: "Past tables: 8 board placements, €1.2M in commitments per event.",
+    proof: "Featured tables: 8 board placements, €1.2M in commitments per event.",
     cta: "Request an Invitation",
     ctaLink: "/programs#power-tables",
     color: "teal" as const,

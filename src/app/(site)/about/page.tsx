@@ -57,7 +57,7 @@ const timeline = [
     year: "2025",
     title: "Erasmus+ & Davos",
     description:
-      "Launched Girls Who Lead (Erasmus+ EU initiative). Co-organized Davos Innovation Week. First major international stage.",
+      "Launched Girls Who Lead (Erasmus+ EU initiative). Partnered with Davos Innovation Week. First major international stage.",
     highlight: false,
   },
   {

@@ -6,7 +6,7 @@ const features = [
   {
     title: "GWTL at Davos 2026",
     description:
-      "Co-organized Davos Innovation Week, hosting executive panels on AI-driven leadership and investment trends.",
+      "Partnered with Davos Innovation Week, hosting executive panels on AI-driven leadership and investment trends.",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
     link: "/news/davos-2026",
     date: "19th January 2026",

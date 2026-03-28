@@ -86,7 +86,7 @@ function ProgramsHero() {
           </p>
 
           {/* Quick stats */}
-          <div className="animate-fade-in-up mt-12 flex flex-wrap justify-center gap-8 sm:gap-12 stagger-4 opacity-0">
+          {/* <div className="animate-fade-in-up mt-12 flex flex-wrap justify-center gap-8 sm:gap-12 stagger-4 opacity-0">
             {[
               { value: "8+", label: "Board Intros / Event" },
               { value: "€1.2M", label: "Avg Funding Initiated" },
@@ -99,7 +99,7 @@ function ProgramsHero() {
                 <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 
