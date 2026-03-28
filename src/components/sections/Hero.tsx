@@ -130,8 +130,8 @@ export function Hero() {
                             <span className="text-xl font-bold text-white">26</span>
                           </div>
                           <div>
-                            <p className="text-white font-semibold">2026 Cohort</p>
-                            <p className="text-white/60 text-sm">Now accepting applications</p>
+                            <p className="text-white font-semibold">2026 AI-Native</p>
+                            <p className="text-white/60 text-sm">New model. AI-native operations.</p>
                           </div>
                         </div>
                       </div>

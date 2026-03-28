@@ -172,11 +172,13 @@ function PowerTables() {
                 {[
                   { step: 1, title: "Curated invitations", desc: "Attendance is selective. Every person in the room has real authority and a willingness to commit publicly." },
                   { step: 2, title: "Pre-work", desc: "Each attendee submits their commitment before they arrive. The room knows what's coming." },
-                  { step: 3, title: "Three sessions", subItems: [
-                    { label: "State of play", desc: "regional data on women in tech leadership, framed for this specific room" },
-                    { label: "Commitment round", desc: "each attendee states their pledge publicly, on record" },
-                    { label: "Problem-solving", desc: "what's blocking progress, who can move what" },
-                  ]},
+                  {
+                    step: 3, title: "Three sessions", subItems: [
+                      { label: "State of play", desc: "regional data on women in tech leadership, framed for this specific room" },
+                      { label: "Commitment round", desc: "each attendee states their pledge publicly, on record" },
+                      { label: "Problem-solving", desc: "what's blocking progress, who can move what" },
+                    ]
+                  },
                   { step: 4, title: "Published record", desc: "Commitments go live within 48 hours. Named. Tracked." },
                   { step: 5, title: "Follow-through", desc: "Quarterly check-ins. Annual Accountability Report. Who delivered, who didn't." },
                 ].map((item) => (
@@ -316,7 +318,7 @@ function SponsorMatch() {
             Sponsor Match
           </h2>
           <p className="mt-3 text-xl sm:text-2xl text-primary-500 font-medium">
-            Not mentoring. Sponsorship. The kind that moves careers.
+            Starts with mentoring. Ends with open doors.
           </p>
         </div>
 
@@ -325,26 +327,28 @@ function SponsorMatch() {
           <div className="max-w-3xl">
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-4">
               <p>
-                A mentor gives advice. A sponsor opens doors.
+                You can&apos;t introduce someone to a board you don&apos;t know.
               </p>
               <p>
-                Sponsor Match pairs high-potential women with senior leaders — men
-                and women — who commit to concrete actions: board introductions,
-                investor connections, executive nominations. Time-bound.
-                Outcome-tracked. Publicly accountable.
+                That&apos;s why Sponsor Match works the way it does. We pair
+                high-potential women with senior leaders — men and women — who
+                commit their time, their attention, and their network. The
+                relationship starts on{" "}
+                <strong className="text-secondary-800">GWTL Raise</strong>, our
+                platform for structured collaboration. Over time, as trust is
+                built and competencies are demonstrated, sponsors open the doors
+                they can credibly open.
               </p>
               <p>
-                Every sponsor stakes their professional reputation on their
-                participant&apos;s advancement. <strong className="text-secondary-800">That&apos;s what makes it work.</strong>
+                The sponsor&apos;s time is the investment. The introductions
+                come when they&apos;re ready to stake their reputation on
+                someone they know.
               </p>
             </div>
           </div>
 
           {/* The Difference Table */}
           <div className="max-w-2xl">
-            {/* <h3 className="font-display text-2xl font-bold text-secondary-800 mb-6">
-              The Difference
-            </h3> */}
             <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
               <table className="w-full text-left">
                 <thead>
@@ -359,15 +363,15 @@ function SponsorMatch() {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    ["Advice", "Action"],
-                    ["Open-ended", "12-month commitment"],
-                    ["Conversations", "Introductions & advocacy"],
-                    ["Informal", "Publicly tracked"],
-                    ['"Good luck"', '"I\'m opening this door for you"'],
+                    ["Advice", "Sustained attention + action when ready"],
+                    ["Open-ended", "6 to 12-month structured commitment"],
+                    ["Informal conversations", "Tracked on GWTL Raise platform"],
+                    ["No accountability", "Quarterly check-ins, published outcomes"],
+                    ['"Good luck"', '"I know what she\'s capable of — and I\'m opening this door"'],
                   ].map(([mentoring, sponsor], i) => (
                     <tr key={i} className="hover:bg-gray-50/50 transition-colors">
-                      <td className="px-6 py-2 text-gray-500">{mentoring}</td>
-                      <td className="px-6 py-2 text-secondary-800 font-medium">
+                      <td className="px-6 py-3 text-gray-500 align-top">{mentoring}</td>
+                      <td className="px-6 py-3 text-secondary-800 font-medium align-top">
                         {sponsor}
                       </td>
                     </tr>
@@ -376,6 +380,52 @@ function SponsorMatch() {
               </table>
             </div>
           </div>
+        </div>
+
+        {/* How It Works */}
+        <div className="mt-16">
+          <h3 className="font-display text-2xl font-bold text-secondary-800 mb-8">
+            How It Works
+          </h3>
+          <ol className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                step: 1,
+                title: "Application & matching",
+                desc: "Participants apply with a clear goal — board seat, C-suite role, VP promotion, or funding. Sponsors are matched by sector, geography, and what they can credibly offer. Every match is reviewed by the GWTL team.",
+              },
+              {
+                step: 2,
+                title: "The relationship begins on GWTL Raise",
+                desc: "Both sides onboard to the platform. Structured monthly check-ins, goal tracking, and shared milestones — all in one place. The platform is designed for accountability, not chat.",
+              },
+              {
+                step: 3,
+                title: "The sponsor learns the participant's work",
+                desc: "Real sponsorship requires real knowledge. The first months are about building that — understanding the participant's goals, strengths, and the specific doors worth opening.",
+              },
+              {
+                step: 4,
+                title: "Doors open when the moment is right",
+                desc: "When the sponsor is ready to make an introduction — to a board, an investor, a hiring executive — they do. Logged on the platform. Followed up within 48 hours. Outcome tracked.",
+              },
+              {
+                step: 5,
+                title: "Results published",
+                desc: "Every placement, every funded introduction, every career milestone is logged and published in the annual Accountability Report. Named. Tracked. On record.",
+              },
+            ].map((item) => (
+              <li key={item.step} className="premium-card p-6 flex gap-4 list-none">
+                <span className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-500 text-white text-sm font-bold self-start mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <span className="font-semibold text-secondary-800 block mb-1">{item.title}</span>
+                  <span className="text-gray-600 text-sm leading-relaxed">{item.desc}</span>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
 
         {/* Three audience cards */}
@@ -390,22 +440,49 @@ function SponsorMatch() {
                 For Participants
               </h3>
             </div>
-            <p className="text-xs uppercase tracking-wider text-brand-teal mb-2">Women seeking advancement</p>
+            <p className="text-xs uppercase tracking-wider text-brand-teal mb-4">Women seeking advancement</p>
 
-            <ul className="space-y-3 text-gray-600 text-sm flex-1">
-              <li>
-                <span className="font-semibold text-secondary-700">Who qualifies:</span>{" "}
-                Senior professionals targeting board seats, C-suite roles, VP promotions, or startup funding.
-              </li>
-              <li>
-                <span className="font-semibold text-secondary-700">What you get:</span>{" "}
-                A matched sponsor with direct access to your target domain. Monthly structured check-ins. Tracked introductions with accountability.
-              </li>
-              <li>
-                <span className="font-semibold text-secondary-700">What we ask:</span>{" "}
-                Clarity on your goal. Commitment to follow through. One referral to the program when you&apos;ve made your move.
-              </li>
-            </ul>
+            <div className="flex-1 space-y-4 text-sm">
+              <div>
+                <p className="font-semibold text-secondary-700 mb-1">Who qualifies:</p>
+                <p className="text-gray-600">
+                  Senior professionals targeting board seats, C-suite roles, VP
+                  promotions, or startup funding — who are ready to commit to the
+                  process, not just the outcome.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-secondary-700 mb-2">What you get:</p>
+                <ul className="space-y-1.5 text-gray-600">
+                  {[
+                    "A matched sponsor with access and credibility in your target domain",
+                    "Monthly structured check-ins on GWTL Raise",
+                    "Introduction tracking — every door opened is logged",
+                    "A record of your progress that feeds the Accountability Report",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-primary-500 font-bold mt-0.5 shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-secondary-700 mb-2">What we ask:</p>
+                <ul className="space-y-1.5 text-gray-600">
+                  {[
+                    "Clarity on your goal before you apply",
+                    "Commitment to follow through — respond to introductions within 48 hours",
+                    "One referral to the program when you've made your move",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-primary-500 font-bold mt-0.5 shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
             <Link href="/contact" className="mt-6">
               <Button size="lg" className="w-full group">
@@ -425,26 +502,49 @@ function SponsorMatch() {
                 For Sponsors
               </h3>
             </div>
-            <p className="text-xs uppercase tracking-wider text-brand-teal mb-2">Senior leaders</p>
+            <p className="text-xs uppercase tracking-wider text-brand-teal mb-4">Senior leaders — men and women</p>
 
-            <ul className="space-y-3 text-gray-600 text-sm flex-1">
-              <li>
-                <span className="font-semibold text-secondary-700">Who qualifies:</span>{" "}
-                C-suite executives, board directors, investors, and senior leaders who can credibly open doors in their domain.
-              </li>
-              <li>
-                <span className="font-semibold text-secondary-700">What you commit:</span>{" "}
-                3 introductions per quarter over 12 months. One concrete outcome (board seat, funding connection, C-suite nomination).
-              </li>
-              <li>
-                <span className="font-semibold text-secondary-700">What you get:</span>{" "}
-                Public recognition in our Accountability Report. Association with a pioneering AI-native organization. The satisfaction of measurable impact.
-              </li>
-              <li>
-                <span className="font-semibold text-secondary-700">Men welcome:</span>{" "}
-                Some of our most effective sponsors are men. Diverse leadership is competitive advantage — not charity.
-              </li>
-            </ul>
+            <div className="flex-1 space-y-4 text-sm">
+              <div>
+                <p className="font-semibold text-secondary-700 mb-1">Who qualifies:</p>
+                <p className="text-gray-600">
+                  C-suite executives, board directors, investors, and senior
+                  leaders who have 2–4 hours per month to give, and the network
+                  to open doors when the right moment comes.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-secondary-700 mb-2">What you commit:</p>
+                <ul className="space-y-1.5 text-gray-600">
+                  {[
+                    "6 to 12-month commitment",
+                    "Monthly structured check-in on GWTL Raise (1 hour)",
+                    "Introductions when you're ready — not before",
+                    "Quarterly review with GWTL",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-primary-500 font-bold mt-0.5 shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-secondary-700 mb-2">What you get:</p>
+                <ul className="space-y-1.5 text-gray-600">
+                  {[
+                    "Named in the annual Accountability Report alongside the outcomes you helped create",
+                    "Association with a pioneering AI-native organisation",
+                    "The specific satisfaction of knowing who you helped and how",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-primary-500 font-bold mt-0.5 shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
             <Link href="/contact" className="mt-6">
               <Button size="lg" className="w-full group">
@@ -464,19 +564,49 @@ function SponsorMatch() {
                 For Companies
               </h3>
             </div>
-            <p className="text-xs uppercase tracking-wider text-brand-teal mb-2">Team sponsorship</p>
-            <div className="flex-1 space-y-3">
-              <p className="text-gray-600 text-sm">
-                Commit a cohort of senior leaders as sponsors. Get consolidated
-                outcome data for your DEI and ESG reporting. Be named as a
-                Corporate Sponsor in our Accountability Report.
-              </p>
-              <p className="text-gray-600 text-sm">
-                Gain early access to a diverse talent pool of AI-ready executives and board candidates. We help you identify and nurture the next generation of leadership within and outside your organization.
-              </p>
-              <p className="text-gray-600 text-sm ">
-                Demonstrate your commitment to ethical AI and gender parity through tangible, measurable outcomes. Our program provides the structure for your leaders to make a real-world impact while expanding their own professional networks.
-              </p>
+            <p className="text-xs uppercase tracking-wider text-brand-teal mb-4">Team sponsorship</p>
+
+            <div className="flex-1 space-y-4 text-sm">
+              <div>
+                <p className="font-semibold text-secondary-700 mb-1">Who qualifies:</p>
+                <p className="text-gray-600">
+                  Companies with senior leaders — C-suite, board directors, and
+                  VPs — who want to sponsor a cohort of emerging women executives
+                  as a structured, measurable initiative.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-secondary-700 mb-2">What you commit:</p>
+                <ul className="space-y-1.5 text-gray-600">
+                  {[
+                    "A cohort of senior leaders enrolled as active sponsors",
+                    "6 to 12-month programme cycle per cohort",
+                    "Participation in quarterly reviews with GWTL",
+                    "Named as Corporate Sponsor in the Accountability Report",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-primary-500 font-bold mt-0.5 shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-secondary-700 mb-2">What you get:</p>
+                <ul className="space-y-1.5 text-gray-600">
+                  {[
+                    "Consolidated outcome data formatted for DEI and ESG reporting",
+                    "Access to GWTL's pipeline of AI-ready executives and board candidates",
+                    "Public recognition for commitments delivered — not just made",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-primary-500 font-bold mt-0.5 shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
             </div>
             <Link href="/contact" className="mt-6">
               <Button size="lg" variant="outline" className="w-full group">
@@ -549,12 +679,12 @@ function GlobalShiftSummit() {
             <div className="mt-12 premium-card p-8">
               <h3 className="font-display text-xl font-bold text-secondary-800 mb-6 flex items-center gap-2">
                 <CalendarDays className="h-5 w-5 text-primary-500" />
-                2026 Summit
+                2027 Summit
               </h3>
               <div className="grid sm:grid-cols-3 gap-6 text-sm">
                 <div>
                   <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">Date</span>
-                  <span className="font-semibold text-secondary-800">TBA, Q4 2026</span>
+                  <span className="font-semibold text-secondary-800">TBA, Q2 2027</span>
                 </div>
                 <div>
                   <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">Location</span>
@@ -609,7 +739,7 @@ function GlobalShiftSummit() {
                 },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 group">
-                  <div className="flex-shrink-0 h-11 w-11 rounded-xl flex items-center justify-center bg-primary-50 group-hover:bg-primary-100 transition-colors">
+                  <div className="shrink-0 h-11 w-11 rounded-xl flex items-center justify-center bg-primary-50 group-hover:bg-primary-100 transition-colors">
                     <item.icon className="h-5 w-5 text-primary-600" />
                   </div>
                   <div>

@@ -91,7 +91,7 @@ export default function TeamPage() {
               professionals with studies or work experience in tech, that
               strongly contribute to GWTL&apos;s growth and success.
             </p>
-            <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-brand-teal to-brand-teal-light" />
+            <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-linear-to-r from-brand-teal to-brand-teal-light" />
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-8">
@@ -110,7 +110,7 @@ export default function TeamPage() {
                   <div className="relative h-full bg-white rounded-3xl shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50 py-6 px-5 text-center">
                     {/* Rounded image with gradient ring */}
                     <div className="relative mx-auto w-36 h-36 mb-5">
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-teal via-brand-teal-light to-brand-navy p-[3px] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-6">
+                      <div className="absolute inset-0 rounded-full bg-linear-to-br from-brand-teal via-brand-teal-light to-brand-navy p-[3px] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-6">
                         <div className="w-full h-full rounded-full bg-white p-[3px]">
                           <div className="relative w-full h-full rounded-full overflow-hidden bg-linear-to-br from-secondary-100 to-primary-100">
                             {member.image ? (

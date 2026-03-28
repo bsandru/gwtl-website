@@ -56,7 +56,7 @@ export function FeaturedIn() {
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-0 w-[600px] h-[600px] -translate-y-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-brand-teal/5 to-transparent blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-y-1/2 translate-x-1/4 rounded-full bg-gradient-to-l from-brand-navy/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-y-1/2 translate-x-1/4 rounded-full bg-linear-to-l from-brand-navy/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
