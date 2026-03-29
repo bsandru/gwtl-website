@@ -346,31 +346,30 @@ function PartnershipTiers() {
         {
           label: "Visibility",
           items: [
-            "Lead feature in the annual Accountability Report (named, with outcomes)",
-            "Monthly mention across GWTL social channels",
-            "Monthly co-authored newsletter feature",
-            "Named presence at Global Shift Summit: 10 seats + stage recognition",
+            "Named case study in the annual Accountability Report",
+            "Monthly feature across GWTL social channels",
+            "Quarterly spotlight in the GWTL newsletter",
+            "6 seats at Global Shift Summit",
           ],
         },
         {
           label: "Programs",
           items: [
-            "Named Power Table: your executives + 25 women leaders, fully facilitated",
-            "30 Sponsor Match pairs on GWTL Raise — tracked, reported, accountable",
-            "5 Sponsor Match placements",
+            "Co-branded Power Table: 1 per year",
+            "15 Sponsor Match pairs on GWTL Raise — corporate dashboard, tracked, reported",
           ],
         },
-        // {
-        //   label: "AI Readiness",
-        //   items: [
-        //     "Full AI agent suite: GWTL designs, builds, and documents a set of AI agent workflows for your DEI and talent team — the same model we run on. Delivered and ready to deploy.",
-        //   ],
-        // },
         {
           label: "Reporting",
           items: [
-            "Quarterly outcome report formatted for ESG and sustainability reporting",
-            "Strategic Council observer seat",
+            "Yearly report: placements, introductions, and commitments attributed to your partnership",
+          ],
+        },
+        {
+          label: "AI Readiness",
+          items: [
+            "AI Leadership & Governance consultancy",
+            "AI Workflow consultancy — a focused discovery to identify 3–5 workflows.",
           ],
         },
       ],
@@ -386,29 +385,32 @@ function PartnershipTiers() {
         {
           label: "Visibility",
           items: [
-            "Named case study in the annual Accountability Report",
-            "Monthly feature across GWTL social channels",
-            "Quarterly spotlight in the GWTL newsletter",
-            "6 seats at Global Shift Summit",
+            "Lead feature in the annual Accountability Report (named, with outcomes)",
+            "Monthly mention across GWTL social channels",
+            "Monthly co-authored newsletter feature — your leadership voice, your DEI story",
+            "10 seats at Global Shift Summit",
           ],
         },
         {
           label: "Programs",
           items: [
             "Co-branded Power Table: 1 per year in your city or region",
-            "15 Sponsor Match pairs on GWTL Raise — tracked, reported, accountable",
-            "2 Sponsor Match placements",
+            "30 Sponsor Match pairs on GWTL Raise — corporate dashboard, tracked, reported",
           ],
         },
-        // {
-        //   label: "AI Readiness",
-        //   items: [
-        //     "1 scoped AI agent: GWTL designs and documents one AI agent workflow for your talent or DEI team. Clear input, clear output, ready to use.",
-        //   ],
-        // },
         {
           label: "Reporting",
-          items: ["Bi-annual outcome report for internal and ESG use"],
+          items: [
+            "Yearly report: placements, introductions, and commitments attributed to your partnership",
+          ],
+        },
+        {
+          label: "AI Readiness",
+          items: [
+            "AI Leadership & Governance consultancy",
+            "AI Workflow consultancy — 5 workflows",
+            "1 Agentic workflow built and deployed.",
+          ],
         },
       ],
       cta: "Get in touch for partnership details",
