@@ -4,7 +4,7 @@ role: "Chief Marketing Officer"
 bio: "Experienced technology executive contributing to GWTL's strategic growth and operational excellence."
 image: "/images/team/StelianaMoraru.jpg"
 linkedin: "https://www.linkedin.com/in/stelianamoraru"
-company: "Total Soft"
+company: "GWTL"
 category: "leadership"
 order: 2
 ---
