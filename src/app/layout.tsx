@@ -52,10 +52,10 @@ export const metadata: Metadata = {
       "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. AI-native. Outcomes-driven. Global.",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Global Women TechLeaders",
+        alt: "Global Women TechLeaders — Where AI-Powered Leadership and Visionary Women Reshape Tech",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "Global Women TechLeaders",
     description:
       "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability.",
-    images: ["/images/logo.png"],
+    images: ["/images/og-image.png"],
     creator: "@gwtl",
   },
   robots: {
