@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -76,6 +77,39 @@ export default async function NewsArticlePage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            headline: item.title,
+            description: item.excerpt,
+            image: articleImage.startsWith("/")
+              ? `https://globalwomentechleaders.com${articleImage}`
+              : articleImage,
+            datePublished: item.date,
+            author: {
+              "@type": "Organization",
+              name: "Global Women TechLeaders",
+              url: "https://globalwomentechleaders.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Global Women TechLeaders",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://globalwomentechleaders.com/og-image.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://globalwomentechleaders.com/news/${slug}`,
+            },
+          }),
+        }}
+      />
       {/* Hero Section with Image */}
       <section className="relative pt-24 pb-0">
         {/* Back link - floating */}

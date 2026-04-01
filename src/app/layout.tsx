@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -63,6 +64,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "Oda4D58yKaHNTnQxGa5SBkUDlzJlOI8TvPzzOkYlXEE",
+    other: {
+      "msvalidate.01": "42B8C4AF6BFD7FD6DA44F9AEB01DE36A",
+      "yandex-verification": "YOUR_YANDEX_VERIFICATION_CODE",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -73,6 +81,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="min-h-screen bg-stone-50 antialiased font-sans">
+        <Script
+          id="org-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Global Women TechLeaders",
+              url: "https://globalwomentechleaders.com",
+              logo: "https://globalwomentechleaders.com/images/logo.png",
+              description:
+                "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability.",
+              sameAs: [
+                "https://twitter.com/gwtl",
+                "https://www.linkedin.com/company/global-women-techleaders",
+              ],
+            }),
+          }}
+        />
         {children}
       </body>
     </html>
