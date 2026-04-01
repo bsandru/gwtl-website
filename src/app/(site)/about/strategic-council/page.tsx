@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Strategic Council — GWTL",
   description:
-    "GWTL's Strategic Council is the board of investors and senior leaders who have put skin in the game — not to advise, but to act. They open doors, bring capital, and make the introductions that change what's possible.",
+    "GWTL's Strategic Council: investors and senior leaders who open doors, bring capital, and act — not just advise.",
 };
 
 function PageHero() {

@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Programs — GWTL",
   description:
-    "Three programs that place women in boardrooms, connect them to capital, and hold companies publicly accountable. Power Tables, Sponsor Match, and the Global Shift Summit.",
+    "Power Tables, Sponsor Match, and the Global Shift Summit — three programs placing women in boardrooms and connecting them to capital.",
 };
 
 /* ─── Hero ─────────────────────────────────────────────────────────────────── */

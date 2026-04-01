@@ -28,7 +28,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "About — GWTL",
   description:
-    "From pipeline to power. GWTL accelerates women into tech leadership worldwide by creating access to decision-makers, delivering measurable outcomes, and holding institutions accountable.",
+    "From pipeline to power. GWTL accelerates women into tech leadership worldwide through access, measurable outcomes, and accountability.",
 };
 
 const timeline = [

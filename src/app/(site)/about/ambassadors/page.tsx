@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Ambassadors — GWTL",
   description:
-    "GWTL Ambassadors are chosen — not recruited. Senior professionals selected because they have the credibility to carry the mission and the conviction to act on it.",
+    "GWTL Ambassadors are chosen, not recruited. Senior professionals with the credibility and conviction to carry the mission.",
 };
 
 function PageHero() {
