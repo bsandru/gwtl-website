@@ -28,6 +28,10 @@ interface EventFormData {
   featured: boolean;
   image: string;
   registrationUrl: string;
+  discount: {
+    url: string;
+    percentage: number;
+  };
   content: string;
 }
 
@@ -52,6 +56,10 @@ export default function EditEventPage({
     featured: false,
     image: "",
     registrationUrl: "",
+    discount: {
+      url: "",
+      percentage: 0,
+    },
     content: "",
   });
 
@@ -74,6 +82,7 @@ export default function EditEventPage({
             featured: data.featured || false,
             image: data.image || "",
             registrationUrl: data.registrationUrl || "",
+            discount: data.discount || { url: "", percentage: 0 },
             content: data.content || "",
           });
           setLoading(false);
@@ -246,6 +255,23 @@ export default function EditEventPage({
                   }
                   placeholder="https://example.com/register"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Discount URL
+                </label>
+                <Input
+                  type="url"
+                  value={formData.discount?.url || ""}
+                  onChange={(e) =>
+                    setFormData({ ...formData, discount: { ...formData.discount, url: e.target.value } })
+                  }
+                  placeholder="https://example.com/tickets?discount=CODE"
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Community discount link (shown as a separate CTA)
+                </p>
               </div>
 
               <div>

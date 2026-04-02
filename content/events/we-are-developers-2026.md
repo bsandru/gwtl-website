@@ -23,7 +23,6 @@ WeAreDevelopers World Congress is the flagship event for developers and tech lea
 - Curated GWTL delegation presence across keynotes and deep-dive sessions
 - Structured introductions between women tech leaders and corporate partners
 - Networking with 500+ global experts and decision-makers
-- Hands-on labs and technical sessions covering AI, cloud, and modern software development
 - Public visibility for GWTL members and sponsors on a global stage
 
 ### Who Should Attend

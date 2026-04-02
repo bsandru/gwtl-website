@@ -119,6 +119,10 @@ interface EventData {
   featured: boolean;
   image?: string;
   registrationUrl?: string;
+  discount?: {
+    url: string;
+    percentage: number;
+  };
   content: string;
 }
 
@@ -145,6 +149,7 @@ export async function getEvent(slug: string) {
     featured: data.featured || false,
     image: data.image || "",
     registrationUrl: data.registrationUrl || "",
+    discount: data.discount || undefined,
     content,
   };
 }
@@ -178,6 +183,9 @@ export async function saveEvent(formData: EventData, existingSlug?: string) {
     ...(formData.image && { image: formData.image }),
     ...(formData.registrationUrl && {
       registrationUrl: formData.registrationUrl,
+    }),
+    ...(formData.discount && {
+      discount: formData.discount,
     }),
   };
 

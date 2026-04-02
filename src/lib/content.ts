@@ -37,6 +37,10 @@ export interface EventItem {
   content: string;
   image?: string;
   registrationUrl?: string;
+  discount?: {
+    url: string;
+    percentage: number;
+  };
 }
 
 export interface TeamMember {
@@ -159,6 +163,7 @@ export function getAllEvents(): EventItem[] {
       featured: data.featured || false,
       image: data.image || undefined,
       registrationUrl: data.registrationUrl || undefined,
+      discountUrl: data.discountUrl || undefined,
       content,
     } as EventItem;
   });
@@ -190,6 +195,7 @@ export async function getEventItem(slug: string): Promise<EventItem | null> {
     featured: data.featured || false,
     image: data.image || undefined,
     registrationUrl: data.registrationUrl || undefined,
+    discount: data.discount || undefined,
     content: htmlContent,
   };
 }

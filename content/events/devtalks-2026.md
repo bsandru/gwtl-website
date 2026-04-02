@@ -8,6 +8,9 @@ category: "Conference"
 featured: true
 image: "/images/events/devtalks-2026.png"
 registrationUrl: "https://www.devtalks.ro/"
+discount:
+  url: "https://myconnector.ro/devtalks-2026/2245/tickets?discount=BA2B2A"
+  percentage: 20
 ---
 
 ## GWTL @ DevTalks 2026
@@ -17,14 +20,6 @@ GWTL joins DevTalks 2026 — the largest and most anticipated tech conference in
 ### About DevTalks
 
 DevTalks is the premier expo-conference for developers and IT professionals in CEE. The 2026 edition runs June 3–4 at Romexpo's B1 Pavilion, featuring 12+ dedicated stages covering the most critical technologies shaping the industry — from AI and cloud infrastructure to cybersecurity, mobile, and software engineering leadership.
-
-### What We're Doing at DevTalks
-
-- GWTL delegation presence across keynotes and specialized technical stages
-- Networking with 100,000+ developers and tech decision-makers
-- Visibility at the Women in Tech Hub, included with all ticket types
-- Access to Roundtable workshops led by international trainers (limited to 20 participants per session)
-- Structured introductions between women tech leaders and corporate partners
 
 ### Conference Stages
 
@@ -51,6 +46,13 @@ DevTalks is the premier expo-conference for developers and IT professionals in C
 - **Stages:** 12+ dedicated technical tracks
 - **Format:** Keynotes, workshops, expo floor, roundtables, networking
 
+### What We're Doing at DevTalks
+
+- GWTL delegation presence across keynotes and specialized technical stages
+- Networking with 100,000+ developers and tech decision-makers
+- Visibility at the Women in Tech Hub, included with all ticket types
+- Structured introductions between women tech leaders and corporate partners
+
 ## Registration
 
-Early Bird tickets are available through March 31, 2026. General Pass starts at €169, Premium Pass at €219, and VIP Pass at €299 (VAT not included). All ticket types include access to the Women in Tech Hub.
+Register through our dedicated link to receive an exclusive 20% discount for the GWTL community: [Get your discounted ticket](https://myconnector.ro/devtalks-2026/2245/tickets?discount=BA2B2A).

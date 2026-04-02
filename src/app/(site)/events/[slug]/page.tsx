@@ -8,6 +8,7 @@ import {
   Calendar,
   MapPin,
   ExternalLink,
+  Ticket,
   Users,
   Clock,
   Sparkles,
@@ -218,15 +219,26 @@ export default async function EventPage({ params }: Props) {
                   </div>
 
                   {event.registrationUrl && !isPastEvent ? (
-                    <a
-                      href={event.registrationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="magnetic-btn w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy font-bold rounded-2xl hover:shadow-lg hover:shadow-brand-teal/30 transition-all text-base"
-                    >
-                      Register Now
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
+                    <div className="space-y-3">
+                      <a
+                        href={event.discount ? event.discount.url : event.registrationUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="magnetic-btn w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy font-bold rounded-2xl hover:shadow-lg hover:shadow-brand-teal/30 transition-all text-base"
+                      >
+                        {event.discount ? (
+                          <>
+                            <Ticket className="h-4 w-4" />
+                            GWTL Community — {event.discount.percentage ?? 20}% Off
+                          </>
+                        ) : (
+                          <>
+                            Register Now
+                            <ExternalLink className="h-4 w-4" />
+                          </>
+                        )}
+                      </a>
+                    </div>
                   ) : isPastEvent ? (
                     <div className="w-full py-3.5 text-center rounded-2xl bg-white/5 border border-white/10">
                       <p className="text-white/50 text-sm font-medium">This event has ended</p>
@@ -237,11 +249,11 @@ export default async function EventPage({ params }: Props) {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
 
       {/* ─── Main Content ─── */}
-      <section className="py-16">
+      < section className="py-16" >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Article */}
@@ -315,23 +327,22 @@ export default async function EventPage({ params }: Props) {
                   {event.registrationUrl && !isPastEvent && (
                     <>
                       <div className="h-px bg-secondary-100 my-6" />
-                      {/* <a
-                        href={event.registrationUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="magnetic-btn w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy font-bold rounded-2xl hover:shadow-lg hover:shadow-brand-teal/30 transition-all"
+
+                      {event.discount && (
+                        <Link href={event.discount.url} target="_blank" rel="noopener noreferrer">
+                          <Button
+                            variant="full"
+                            size="xlg"
+                          >
+                            <Ticket className="h-4 w-4" />
+                            GWTL Community — 20% Off
+                          </Button>
+                        </Link>
+                      )}
+                      <Link href={event.registrationUrl} target="_blank" rel="noopener noreferrer" className="mt-3 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-linear-to-r from-brand-teal/10 to-brand-teal-light/10 border border-brand-teal/20 text-brand-teal font-semibold hover:from-brand-teal/20 hover:to-brand-teal-light/20 transition-all text-sm"
                       >
-                        Register Now
+                        Details
                         <ExternalLink className="h-4 w-4" />
-                      </a> */}
-                      <Link href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
-                        <Button
-                          variant="full"
-                          size="xlg"
-                        >
-                          Details
-                          <ExternalLink className="h-4 w-4" />
-                        </Button>
                       </Link>
                     </>
                   )}
@@ -390,100 +401,102 @@ export default async function EventPage({ params }: Props) {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── Related Events ─── */}
-      {relatedEvents.length > 0 && (
-        <section className="relative py-20 lg:py-28 overflow-hidden">
-          {/* Bottom edge gradient for seamless transition */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-teal/50 to-transparent" />
-          {/* Background */}
-          <div className="absolute inset-0 bg-brand-teal/2" />
+      {
+        relatedEvents.length > 0 && (
+          <section className="relative py-20 lg:py-28 overflow-hidden">
+            {/* Bottom edge gradient for seamless transition */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-teal/50 to-transparent" />
+            {/* Background */}
+            <div className="absolute inset-0 bg-brand-teal/2" />
 
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <span className="text-sm font-bold uppercase tracking-widest text-brand-teal mb-3 block">
-                  Don&apos;t Miss Out
-                </span>
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight">
-                  More Upcoming Events
-                </h2>
+            <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex items-end justify-between mb-12">
+                <div>
+                  <span className="text-sm font-bold uppercase tracking-widest text-brand-teal mb-3 block">
+                    Don&apos;t Miss Out
+                  </span>
+                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight">
+                    More Upcoming Events
+                  </h2>
+                </div>
+                <Link
+                  href="/events"
+                  className="hidden sm:inline-flex items-center gap-2 text-brand-teal font-semibold hover:gap-3 transition-all duration-300"
+                >
+                  View all events
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
-              <Link
-                href="/events"
-                className="hidden sm:inline-flex items-center gap-2 text-brand-teal font-semibold hover:gap-3 transition-all duration-300"
-              >
-                View all events
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedEvents.map((relatedEvent, idx) => {
-                const relDate = formatShortDate(relatedEvent.date);
-                return (
-                  <Link
-                    key={relatedEvent.slug}
-                    href={`/events/${relatedEvent.slug}`}
-                    className="group block rounded-3xl bg-white overflow-hidden hover:shadow-elegant-lg transition-all duration-500"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                  >
-                    {/* Card image */}
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={relatedEvent.image || getDefaultImage(relatedEvent.slug)}
-                        alt={relatedEvent.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 to-transparent" />
-                      {/* Date badge */}
-                      <div className="absolute bottom-4 left-4">
-                        <div className="h-14 w-14 rounded-xl bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center shadow-lg">
-                          <span className="text-[10px] font-bold text-brand-teal uppercase leading-none">
-                            {relDate.month}
-                          </span>
-                          <span className="text-lg font-bold text-brand-navy leading-none">
-                            {relDate.day}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {relatedEvents.map((relatedEvent, idx) => {
+                  const relDate = formatShortDate(relatedEvent.date);
+                  return (
+                    <Link
+                      key={relatedEvent.slug}
+                      href={`/events/${relatedEvent.slug}`}
+                      className="group block rounded-3xl bg-white overflow-hidden hover:shadow-elegant-lg transition-all duration-500"
+                      style={{ animationDelay: `${idx * 0.1}s` }}
+                    >
+                      {/* Card image */}
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={relatedEvent.image || getDefaultImage(relatedEvent.slug)}
+                          alt={relatedEvent.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 to-transparent" />
+                        {/* Date badge */}
+                        <div className="absolute bottom-4 left-4">
+                          <div className="h-14 w-14 rounded-xl bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center shadow-lg">
+                            <span className="text-[10px] font-bold text-brand-teal uppercase leading-none">
+                              {relDate.month}
+                            </span>
+                            <span className="text-lg font-bold text-brand-navy leading-none">
+                              {relDate.day}
+                            </span>
+                          </div>
+                        </div>
+                        {/* Category badge */}
+                        <div className="absolute top-4 right-4">
+                          <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-teal/90 text-white backdrop-blur-sm">
+                            {relatedEvent.category}
                           </span>
                         </div>
                       </div>
-                      {/* Category badge */}
-                      <div className="absolute top-4 right-4">
-                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-teal/90 text-white backdrop-blur-sm">
-                          {relatedEvent.category}
-                        </span>
+
+                      {/* Card body */}
+                      <div className="p-6">
+                        <h3 className="font-display text-lg font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 mb-2 line-clamp-2">
+                          {relatedEvent.title}
+                        </h3>
+                        <p className="text-secondary-500 text-sm flex items-center gap-1.5">
+                          <MapPin className="h-3.5 w-3.5 shrink-0" />
+                          {relatedEvent.location}
+                        </p>
                       </div>
-                    </div>
+                    </Link>
+                  );
+                })}
+              </div>
 
-                    {/* Card body */}
-                    <div className="p-6">
-                      <h3 className="font-display text-lg font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 mb-2 line-clamp-2">
-                        {relatedEvent.title}
-                      </h3>
-                      <p className="text-secondary-500 text-sm flex items-center gap-1.5">
-                        <MapPin className="h-3.5 w-3.5 shrink-0" />
-                        {relatedEvent.location}
-                      </p>
-                    </div>
-                  </Link>
-                );
-              })}
+              <div className="mt-10 text-center sm:hidden">
+                <Link
+                  href="/events"
+                  className="inline-flex items-center gap-2 text-brand-teal font-semibold"
+                >
+                  View all events
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-
-            <div className="mt-10 text-center sm:hidden">
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 text-brand-teal font-semibold"
-              >
-                View all events
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )
+      }
 
       {/* ─── Bottom CTA ─── */}
       <section className="relative py-24 overflow-hidden bg-brand-navy">
@@ -514,6 +527,6 @@ export default async function EventPage({ params }: Props) {
           </Link>
         </div>
       </section>
-    </div>
+    </div >
   );
 }
