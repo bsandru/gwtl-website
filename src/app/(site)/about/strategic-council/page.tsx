@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Handshake,
@@ -13,7 +14,10 @@ import {
   CalendarCheck,
   Target,
   Globe,
+  Linkedin,
+  ExternalLink,
 } from "lucide-react";
+import { getAllStrategicCouncilMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Strategic Council — GWTL",
@@ -342,23 +346,99 @@ function WhoQualifies() {
 }
 
 function CouncilMembers() {
+  const members = getAllStrategicCouncilMembers();
+
+  if (members.length === 0) return null;
+
   return (
     <section className="relative py-24 lg:py-32 bg-secondary-50 overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-brand-teal animate-float" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
-            2026 Council Members
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
+            <Users className="h-4 w-4" />
+            Meet the Council
+          </div>
+          <h2 className="font-display text-3xl lg:text-5xl font-bold text-brand-navy">
+            2026 Council{" "}
+            <span className="gradient-text">Members</span>
           </h2>
-          <p className="text-lg text-secondary-500 leading-relaxed">
-            Council member profiles will be published here once the 2026 cohort
-            is confirmed. Selection is underway.
+          <p className="mt-4 text-lg text-secondary-500 max-w-3xl mx-auto">
+            The investors and senior leaders behind the mission. Additional members will be announced as the cohort is confirmed.
           </p>
+          <div className="mt-6 mx-auto w-20 h-1 rounded-full bg-linear-to-r from-brand-teal to-brand-teal-light" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Array.from({ length: 6 }).map((_, i) => (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 xl:gap-8 max-w-4xl mx-auto">
+          {members.map((member, index) => (
+            <a
+              key={member.slug}
+              href={member.linkedin || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group animate-fade-in-up opacity-0"
+              style={{ animationDelay: `${0.1 + index * 0.08}s` }}
+            >
+              <div className="relative h-full">
+                <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-brand-teal to-brand-navy opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700" />
+
+                <div className="relative h-full bg-white rounded-3xl shadow-elegant group-hover:shadow-elegant-lg transition-all duration-500 group-hover:-translate-y-2 border border-gray-100/50 py-6 px-5 text-center">
+                  <div className="relative mx-auto w-36 h-36 mb-5">
+                    <div className="absolute inset-0 rounded-full bg-linear-to-br from-brand-teal via-brand-teal-light to-brand-navy p-[3px] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-6">
+                      <div className="w-full h-full rounded-full bg-white p-[3px]">
+                        <div className="relative w-full h-full rounded-full overflow-hidden bg-linear-to-br from-secondary-100 to-primary-100">
+                          {member.image ? (
+                            <Image
+                              src={member.image}
+                              alt={member.name}
+                              fill
+                              className="object-cover"
+                              sizes="144px"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="font-bold text-brand-teal/30">
+                                {member.name}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-brand-navy group-hover:text-brand-teal transition-colors duration-300 leading-tight inline-flex items-center justify-center gap-1.5">
+                    {member.name}
+                    {member.linkedin && (
+                      <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />
+                    )}
+                  </h3>
+                  {member.company && (
+                    <p className="mt-1.5 text-xs font-semibold text-brand-teal uppercase tracking-wider">
+                      {member.company}
+                    </p>
+                  )}
+                  {member.country && (
+                    <p className="mt-1 text-md text-secondary-500">
+                      {member.country}
+                    </p>
+                  )}
+                  <p className="mt-1 text-sm text-secondary-500">
+                    {member.role}
+                  </p>
+
+                  {member.linkedin && (
+                    <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0077B5]/5 text-[#0077B5] text-xs font-medium transition-all duration-300 group-hover:bg-[#0077B5]/10">
+                      <Linkedin className="h-3.5 w-3.5" />
+                      LinkedIn
+                    </div>
+                  )}
+                </div>
+              </div>
+            </a>
+          ))}
+          {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
               className="group relative rounded-3xl p-8 bg-white border border-secondary-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"

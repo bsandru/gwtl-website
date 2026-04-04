@@ -62,7 +62,7 @@ export interface TeamMember {
 // Helper Functions
 // ============================================
 
-function getContentDirectory(type: "news" | "events" | "team"): string {
+function getContentDirectory(type: "news" | "events" | "team" | "ambassadors" | "strategic-council"): string {
   return path.join(contentDirectory, type);
 }
 
@@ -248,5 +248,63 @@ export function getAllTeamMembers(): TeamMember[] {
 
   // Sort by order field
   return team.sort((a, b) => a.order - b.order);
+}
+
+export function getAllAmbassadors(): TeamMember[] {
+  const ambassadorDirectory = getContentDirectory("ambassadors");
+  const files = getAllFiles(ambassadorDirectory);
+
+  const ambassadors = files.map((filename) => {
+    const slug = filename.replace(/\.md$/, "");
+    const fullPath = path.join(ambassadorDirectory, filename);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      name: data.name || "",
+      role: data.role || "",
+      bio: data.bio || "",
+      image: data.image || undefined,
+      linkedin: data.linkedin || undefined,
+      twitter: data.twitter || undefined,
+      order: data.order || 999,
+      category: data.category || "ambassador",
+      company: data.company || undefined,
+      country: data.country || undefined,
+      content,
+    } as TeamMember;
+  });
+
+  return ambassadors.sort((a, b) => a.order - b.order);
+}
+
+export function getAllStrategicCouncilMembers(): TeamMember[] {
+  const councilDirectory = getContentDirectory("strategic-council");
+  const files = getAllFiles(councilDirectory);
+
+  const members = files.map((filename) => {
+    const slug = filename.replace(/\.md$/, "");
+    const fullPath = path.join(councilDirectory, filename);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      name: data.name || "",
+      role: data.role || "",
+      bio: data.bio || "",
+      image: data.image || undefined,
+      linkedin: data.linkedin || undefined,
+      twitter: data.twitter || undefined,
+      order: data.order || 999,
+      category: data.category || "strategic-council",
+      company: data.company || undefined,
+      country: data.country || undefined,
+      content,
+    } as TeamMember;
+  });
+
+  return members.sort((a, b) => a.order - b.order);
 }
 
