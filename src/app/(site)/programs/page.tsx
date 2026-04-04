@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Programs — GWTL",
+  title: "Programs",
   description:
     "Power Tables, Sponsor Match, and the Global Shift Summit — three programs placing women in boardrooms and connecting them to capital.",
 };

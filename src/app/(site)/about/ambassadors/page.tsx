@@ -20,7 +20,7 @@ import {
 import { getAllAmbassadors } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Ambassadors — GWTL",
+  title: "Ambassadors",
   description:
     "GWTL Ambassadors are chosen, not recruited. Senior professionals with the credibility and conviction to carry the mission.",
 };

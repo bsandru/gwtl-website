@@ -20,7 +20,7 @@ import {
 import { getAllStrategicCouncilMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Strategic Council — GWTL",
+  title: "Strategic Council",
   description:
     "GWTL's Strategic Council: investors and senior leaders who open doors, bring capital, and act — not just advise.",
 };

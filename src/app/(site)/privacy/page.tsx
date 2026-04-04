@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Global Women TechLeaders",
+  title: "Privacy Policy",
   description:
     "Learn how Global Women TechLeaders collects, uses, and protects your personal information when you use our platform, programs, and services.",
 };

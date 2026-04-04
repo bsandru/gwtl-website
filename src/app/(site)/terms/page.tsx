@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Global Women TechLeaders",
+  title: "Terms of Service",
   description:
     "Read the Terms of Service for Global Women TechLeaders — the conditions governing your use of our website, platform, programs, and services.",
 };

@@ -26,7 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "About — GWTL",
+  title: "About",
   description:
     "From pipeline to power. GWTL accelerates women into tech leadership worldwide through access, measurable outcomes, and accountability.",
 };

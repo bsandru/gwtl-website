@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Governance Framework - GWTL",
+  title: "AI Governance Framework",
   description:
     "Global Women Tech Leaders is AI-native. Here's how we govern responsibly. Led by humans. Run by AI agents. Governed responsibly.",
 };

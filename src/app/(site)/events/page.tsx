@@ -14,7 +14,7 @@ import {
 import { getUpcomingEvents, getPastEvents } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Events | GWTL",
+  title: "Events",
   description:
     "GWTL events are structured sessions designed to produce outcomes: board introductions, funding conversations, and public commitments.",
 };

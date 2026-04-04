@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Sponsors & Partners — GWTL",
+  title: "Sponsors & Partners",
   description:
     "Partner with GWTL: sponsor outcomes, not overhead. Measurable placements, public accountability, and competitive advantage through gender-diverse leadership.",
 };
