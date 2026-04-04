@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://globalwomentechleaders.com"),
   title: {
     default: "Global Women TechLeaders — Board Seats. Capital. Accountability.",
-    template: "%s \ Global Women TechLeaders",
+    template: "%s | Global Women TechLeaders",
   },
   description:
     "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. AI-native. Outcomes-driven. Global.",
