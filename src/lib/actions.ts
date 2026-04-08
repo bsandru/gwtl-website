@@ -525,10 +525,10 @@ export async function sendContactEmail(formData: FormData) {
     }
 
     return { success: true };
-  } catch (err=>{
+  } catch (err){
     console.error("Sent Error >>"+err);
     return { error: "Failed to send message. Please try again later." };
-  })
+  }
 }
 
 function escapeHtml(str: string): string {
