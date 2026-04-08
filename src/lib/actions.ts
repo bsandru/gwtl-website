@@ -521,7 +521,7 @@ export async function sendContactEmail(formData: FormData) {
     });
 
     if (!res.ok) {
-      console.log(`Faild to sent email:${res.error}`);
+      console.log(`Faild to sent email:${res.ok}`);
       return { error: "Failed to send message. Please try again later." };
     }
 
