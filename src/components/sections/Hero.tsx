@@ -16,10 +16,10 @@ export function Hero() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large teal gradient blob */}
-        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-gradient-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
+        <div className="absolute -top-[400px] -right-[300px] w-[900px] h-[900px] rounded-full bg-linear-to-br from-brand-teal/20 via-brand-teal-light/10 to-transparent blur-3xl animate-morph-blob" />
 
         {/* Secondary blob */}
-        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
+        <div className="absolute -bottom-[200px] -left-[200px] w-[600px] h-[600px] rounded-full bg-linear-to-tr from-brand-navy/5 via-brand-teal/5 to-transparent blur-3xl animate-morph-blob [animation-delay:5s]" />
 
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-brand-teal/40 animate-float [animation-delay:0s]" />
