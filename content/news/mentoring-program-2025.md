@@ -3,6 +3,7 @@ title: "GWTL Launches the Global Top Tech Mentoring Program 2025"
 excerpt: "Join Global Women TechLeaders as a mentor to empower and guide women in tech through tailored mentorship."
 date: "2025-03-01"
 category: "Programs"
+tags: ["mentorship", "career-growth", "leadership-development", "programs", "women-in-tech"]
 featured: false
 image: "/images/news/mentoring-program-2025.png"
 ---

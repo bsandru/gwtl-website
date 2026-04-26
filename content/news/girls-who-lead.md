@@ -5,6 +5,7 @@ excerpt: >-
   entrepreneurial, and leadership skills.
 date: '2025-12-15'
 category: Events
+tags: ["erasmus-plus", "youth", "leadership", "digital-skills", "girls-in-tech"]
 featured: true
 image: /images/news/Girls-Who-Lead.png
 ---

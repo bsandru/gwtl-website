@@ -8,6 +8,7 @@ excerpt: >-
   global leaders. 
 date: '2025-07-08'
 category: News
+tags: ["davos", "world-economic-forum", "leadership", "women-in-tech", "advocacy"]
 featured: false
 image: /images/news/img1-1771756475635.png
 ---

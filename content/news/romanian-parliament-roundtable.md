@@ -3,6 +3,7 @@ title: "GWTL Hosts Roundtable at Romanian Parliament on Women's Leadership"
 excerpt: "GWTL and the Committee for Labour held a Roundtable on 'Shaping the Future: Tech Talent, Leadership & Startup Investment for Women'."
 date: "2025-06-10"
 category: "Advocacy"
+tags: ["advocacy", "roundtable", "startup-investment", "leadership", "romania"]
 featured: false
 image: "/images/news/parlament-roundtable-2025.jpg"
 ---

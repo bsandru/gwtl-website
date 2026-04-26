@@ -3,6 +3,7 @@ title: "GWTL at WeAreDevelopers World Congress 2025: Women Shaping AI"
 excerpt: "GWTL highlighted women's leadership in AI, hosting panels on inclusive innovation, AI ethics, and emerging technologies."
 date: "2025-07-20"
 category: "Events"
+tags: ["conference", "ai", "inclusion", "women-in-tech", "berlin"]
 featured: false
 image: "/images/news/we-are-developers-2025.webp"
 ---

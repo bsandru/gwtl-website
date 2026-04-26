@@ -20,6 +20,7 @@ export interface NewsItem {
   excerpt: string;
   date: string;
   category: string;
+  tags?: string[];
   featured: boolean;
   content: string;
   image?: string;
@@ -104,6 +105,9 @@ export function getAllNews(): NewsItem[] {
       excerpt: data.excerpt || "",
       date: data.date || "",
       category: data.category || "News",
+      tags: Array.isArray(data.tags)
+        ? data.tags.filter((tag: unknown): tag is string => typeof tag === "string")
+        : [],
       featured: data.featured || false,
       image: data.image || undefined,
       content,
@@ -132,6 +136,9 @@ export async function getNewsItem(slug: string): Promise<NewsItem | null> {
     excerpt: data.excerpt || "",
     date: data.date || "",
     category: data.category || "News",
+    tags: Array.isArray(data.tags)
+      ? data.tags.filter((tag: unknown): tag is string => typeof tag === "string")
+      : [],
     featured: data.featured || false,
     image: data.image || undefined,
     content: htmlContent,

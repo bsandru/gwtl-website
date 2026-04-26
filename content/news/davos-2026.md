@@ -5,6 +5,7 @@ excerpt: >-
   executive panels on AI-driven leadership and investment trends.
 date: "2026-01-19"
 category: Events
+tags: ["davos", "leadership", "AI", "investment", "global-forum"]
 featured: true
 image: /images/news/davos-innovation-week-2026.jpg
 ---

@@ -36,6 +36,10 @@ function getReadTime(content: string): number {
   return Math.max(1, Math.ceil(words / wordsPerMinute));
 }
 
+function formatTagLabel(tag: string): string {
+  return tag.replace(/-/g, " ");
+}
+
 export async function generateStaticParams() {
   const news = getAllNews();
   return news.map((item) => ({
@@ -250,15 +254,14 @@ export default async function NewsArticlePage({ params }: Props) {
               {/* Tags/Categories */}
               <div className="mt-12 pt-8 border-t border-secondary-200">
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-4 py-2 rounded-full text-sm font-medium bg-brand-teal/10 text-brand-teal">
-                    {item.category}
-                  </span>
-                  <span className="px-4 py-2 rounded-full text-sm font-medium bg-secondary-100 text-secondary-600">
-                    Women in Tech
-                  </span>
-                  <span className="px-4 py-2 rounded-full text-sm font-medium bg-secondary-100 text-secondary-600">
-                    Leadership
-                  </span>
+                  {(item.tags && item.tags.length > 0 ? item.tags : ["women-in-tech", "leadership"]).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 rounded-full text-sm font-medium uppercase bg-brand-teal/10 text-brand-teal"
+                    >
+                      {formatTagLabel(tag)}
+                    </span>
+                  ))}
                 </div>
               </div>
             </article>

@@ -3,6 +3,7 @@ title: "GWTL Forum in Partnership with the Romanian IT&C Commission"
 excerpt: "Women in leadership positions in STEM, high-ranking officials, and academics gathered at the Palace of Parliament for a forum on inclusive leadership, innovation, and the role of women in STEM."
 date: "2024-02-28"
 category: "Advocacy"
+tags: ["advocacy", "public-policy", "stem", "leadership", "romania"]
 featured: false
 image: "/images/news/gwtl_forum_itc.jpg"
 ---
