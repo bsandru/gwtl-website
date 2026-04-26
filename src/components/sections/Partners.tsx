@@ -20,7 +20,8 @@ const collaborators: Partner[] = [
 ];
 
 const communityPartners: Partner[] = [
-  { name: "SEE 40 under 40", logo: "/images/partners/SEE.png" },
+  // { name: "SEE 40 under 40", logo: "/images/partners/SEE.png" },
+  { name: "Tech Show Frankfurt", logo: "/images/partners/TSF.png", url: "https://www.techshowfrankfurt.de" },
   { name: "European Business Union", logo: "/images/partners/EBU.png", url: "https://ebu.lu" },
   { name: "ANIS", logo: "/images/partners/anis.png", url: "https://anis.ro" },
   { name: "WomenTech Network", logo: "/images/partners/WomenTechNetwork.png", url: "https://womentech.net" },
@@ -100,7 +101,7 @@ export function Partners() {
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
           </div>
 
-          <div className="grid grid-flow-col justify-items-center gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-12">
             {collaborators.map((partner) => (
               <PartnerLogo key={partner.name} partner={partner} small={partner.small} />
             ))}

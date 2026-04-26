@@ -42,4 +42,4 @@ WeAreDevelopers World Congress is the flagship event for developers and tech lea
 
 ## Registration
 
-Register through the GWTL delegation for curated access to structured sessions, partner introductions, and exclusive GWTL networking opportunities alongside the main conference.
+Register through the GWTL delegation for curated access to structured sessions, partner introductions, and exclusive GWTL networking opportunities alongside the main conference. Use code `globalwomenintech10` for 10% off regular congress passes.
