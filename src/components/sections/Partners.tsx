@@ -34,7 +34,7 @@ const communityPartners: Partner[] = [
   { name: "WinTech Series", logo: "/images/partners/WinTechSeries.webp" },
   { name: "AmCham", logo: "/images/partners/AmCham.png" },
   { name: "Wolfpack Digital", logo: "/images/partners/wolfpack_digital.svg", url: "https://wolfpackdigital.com" },
-  { name: "Women in Tech Alliance", logo: "/images/partners/womenintechalliance.png" },
+  { name: "Women in Tech Alliance", logo: "/images/partners/womenintechalliance.png", url: "https://womenintechalliance.com" },
   { name: "HackAtOns", logo: "/images/partners/hackatons.webp" },
   // { name: "TechVentures", logo: "/images/partners/TechVentures.png" },
   // { name: "House of Public Policies", logo: "/images/partners/HOP.png" },
@@ -45,7 +45,7 @@ const communityPartners: Partner[] = [
   // { name: "TechWoman", logo: "/images/partners/techwoman.webp" },
 ];
 
-function PartnerLogo({ partner, small = false }: { partner: Partner, small?: boolean }) {
+function PartnerLogo({ partner }: { partner: Partner }) {
   const className =
     "group flex items-center justify-center transition-all duration-500 hover:-translate-y-1";
 
@@ -54,14 +54,20 @@ function PartnerLogo({ partner, small = false }: { partner: Partner, small?: boo
       src={partner.logo}
       alt={partner.name}
       width={256}
-      height={144}
-      className={`object-contain ${small ? "h-32" : "h-36"} w-auto max-w-full`}
+      height={106}
+      className={`object-contain min-h-20 w-auto max-w-full`}
     />
   );
 
   if (partner.url) {
     return (
-      <a href={partner.url} target="_blank" rel="noopener noreferrer" title={partner.name}>
+      <a
+        href={partner.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={partner.name}
+        className={className}
+      >
         {content}
       </a>
     );
@@ -108,13 +114,13 @@ export function Partners() {
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-10">
             {collaborators.map((partner) => (
               <div
                 key={partner.name}
-                className="flex items-center justify-center sm:h-36 sm:w-56 h-24 w-36"
+                className="flex items-center justify-center sm:h-30 sm:w-56 h-24 w-36"
               >
-                <PartnerLogo partner={partner} small={partner.small} />
+                <PartnerLogo partner={partner} />
               </div>
             ))}
           </div>
@@ -134,9 +140,9 @@ export function Partners() {
             {communityPartners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex h-24 w-36 sm:w-40 md:w-44 items-center justify-center"
+                className="flex w-36 sm:w-44 items-center justify-center"
               >
-                <PartnerLogo partner={partner} small={true} />
+                <PartnerLogo partner={partner} />
               </div>
             ))}
           </div>
