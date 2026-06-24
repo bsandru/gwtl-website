@@ -512,7 +512,7 @@ function AINativeModel() {
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
             Led by Humans.{" "}
-            <span className="text-brand-teal-light">Run by AI Agents.</span>
+            <span className="text-brand-teal-light">Amplified by AI.</span>
           </h2>
         </div>
 
@@ -521,21 +521,21 @@ function AINativeModel() {
           <div>
             <div className="space-y-5 text-lg text-white/80 leading-relaxed">
               <p>
-                GWTL is the world&apos;s first{" "}
-                <strong className="text-white">AI-native nonprofit</strong>.
+                GWTL is a human-led organization using AI as mission
+                infrastructure.
               </p>
               <p>
-                C-level executives set strategy and make decisions.
-                Thirty-six AI agents handle execution — content, outreach,
-                research, coordination, analytics.
+                Human leaders set strategy, build relationships, make
+                decisions, and hold the ethical line. AI supports research,
+                coordination, reporting, follow-up, and content preparation.
               </p>
               {/* <p>
                 The result: we operate with the output of a 50-person
                 organization and the overhead of four.
               </p> */}
               <p className="text-brand-teal-light font-semibold">
-                We don&apos;t talk about AI transforming leadership. <br />We
-                demonstrate it.
+                AI is not the mission. People are. <br />AI helps us scale the
+                work responsibly.
               </p>
             </div>
 

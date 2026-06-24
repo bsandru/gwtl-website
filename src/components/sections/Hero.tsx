@@ -4,10 +4,10 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { COMPANIES } from "@/lib/content";
 
 const stats = [
-  { value: "30%", label: "Tech leadership by 2030" },
-  { value: "1,200+", label: "Placements by 2030" },
-  { value: "10+", label: "Countries" },
-  { value: "€150M+", label: "Funding directed to women-led ventures" },
+  { value: "30%", label: "2030 leadership benchmark" },
+  { value: "1,200+", label: "2030 placement target" },
+  { value: "2018", label: "Community work began" },
+  { value: "€150M+", label: "2030 capital-direction target" },
 ];
 
 export function Hero() {
@@ -36,18 +36,20 @@ export function Hero() {
           {/* Main headline */}
           <div className="text-center max-w-5xl mx-auto mb-8">
             <h1 className="editorial-headline font-display animate-fade-in-up opacity-0 [animation-delay:0.2s]">
-              <span className="text-brand-navy">Where AI-Powered Leadership<br />and </span>
-              <span className="gradient-text-hero leading-tight">Visionary Women</span>
-              <span className="block text-brand-navy">Reshape Tech</span>
+              <span className="text-brand-navy">Where Women Tech Leaders</span>
+              <span className="block gradient-text-hero leading-tight">Move From Visibility</span>
+              <span className="block text-brand-navy">to Power</span>
             </h1>
           </div>
 
           {/* Subheadline */}
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in-up opacity-0 [animation-delay:0.3s]">
             <p className="text-lg sm:text-xl text-secondary-600 leading-relaxed mb-4">
-              Women are 50% of talent. 15% of tech leadership.<br />
+              GWTL connects women leaders with the people, rooms, sponsors,
+              capital, and commitments that accelerate real leadership outcomes.
+              <br />
               <span className="font-semibold text-brand-teal">
-                That&apos;s not a fairness gap — it&apos;s a $12 trillion inefficiency.
+                Human-led. AI-amplified. Outcomes-driven.
               </span>
             </p>
           </div>
@@ -74,7 +76,7 @@ export function Hero() {
           <div className="max-w-5xl text-center mx-auto mb-20 animate-fade-in-up opacity-0 [animation-delay:0.5s]">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/10 mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
               <Sparkles className="h-4 w-4 text-brand-teal" />
-              <span className="text-sm font-semibold text-brand-teal">Our Target</span>
+              <span className="text-sm font-semibold text-brand-teal">Our 2030 Targets</span>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-secondary-200/60">
               {stats.map((stat) => (
@@ -115,11 +117,11 @@ export function Hero() {
                       {/* Quote */}
                       <div className="max-w-lg">
                         <p className="text-white/90 text-lg sm:text-xl font-medium italic mb-3">
-                          &quot;GWTL accelerates women into tech leadership through board
-                          placements, capital connections, and corporate accountability&quot;
+                          &quot;AI is not the mission. People are. AI helps us scale
+                          the trust, follow-through, and accountability this work requires.&quot;
                         </p>
                         <p className="text-white/60 text-sm">
-                          — GWTL Global Mission
+                          - GWTL human-AI operating principle
                         </p>
                       </div>
 
@@ -127,11 +129,11 @@ export function Hero() {
                       <div className="glass-card-dark rounded-2xl p-4 sm:p-5">
                         <div className="flex items-center gap-4">
                           <div className="h-12 w-12 rounded-xl bg-linear-to-br from-brand-teal to-brand-teal-light flex items-center justify-center">
-                            <span className="text-xl font-bold text-white">26</span>
+                            <span className="text-xl font-bold text-white">2.0</span>
                           </div>
                           <div>
-                            <p className="text-white font-semibold">2026 AI-Native</p>
-                            <p className="text-white/60 text-sm">New model. AI-native operations.</p>
+                            <p className="text-white font-semibold">Human-led</p>
+                            <p className="text-white/60 text-sm">AI-amplified execution</p>
                           </div>
                         </div>
                       </div>
@@ -150,8 +152,8 @@ export function Hero() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-brand-navy">2000+</p>
-                      <p className="text-xs text-secondary-500">Active Mentors</p>
+                      <p className="text-2xl font-bold text-brand-navy">150+</p>
+                      <p className="text-xs text-secondary-500">Mentors & mentees reached</p>
                     </div>
                   </div>
                 </div>
@@ -166,8 +168,8 @@ export function Hero() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-brand-navy">10+</p>
-                      <p className="text-xs text-secondary-500">Countries</p>
+                      <p className="text-2xl font-bold text-brand-navy">2018</p>
+                      <p className="text-xs text-secondary-500">Legacy of programs</p>
                     </div>
                   </div>
                 </div>
@@ -178,7 +180,7 @@ export function Hero() {
           {/* Trusted by section */}
           <div className="mt-20 pt-12 border-t border-secondary-200/50 animate-fade-in-up opacity-0 [animation-delay:0.7s]">
             <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary-600 mb-8">
-              Leaders from these organizations believe in and support GWTL
+              People in the GWTL ecosystem have worked with and led across organizations including
             </p>
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
               {COMPANIES.map((company) => (

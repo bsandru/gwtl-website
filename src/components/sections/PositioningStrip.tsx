@@ -9,12 +9,13 @@ export function PositioningStrip() {
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         <p className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
-          We don&apos;t do awareness.{" "}
-          <span className="gradient-text-cta">We do outcomes.</span>
+          Before GWTL became AI-native,<br/>
+          <span className="gradient-text-cta">it was human-native</span>
         </p>
         <p className="text-lg sm:text-xl text-white/60 leading-relaxed animate-fade-in-up opacity-0 [animation-delay:0.2s]">
-          Board placements. Capital connections. Corporate commitments.
-          Published and tracked.
+          Years of mentoring cohorts, leadership events, roundtables, global
+          forums, and community trust now power a sharper model: access,
+          sponsorship, accountability, and measurable outcomes.
         </p>
       </div>
     </section>

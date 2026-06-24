@@ -18,11 +18,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://globalwomentechleaders.com"),
   title: {
-    default: "Global Women TechLeaders — Board Seats. Capital. Accountability.",
+    default: "Global Women TechLeaders — From Pipeline to Power",
     template: "%s | Global Women TechLeaders",
   },
   description:
-    "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. AI-native. Outcomes-driven. Global.",
+    "GWTL accelerates women into technology leadership through human sponsorship, access to decision-makers, capital connections, and accountable outcomes. Human-led. AI-amplified. Global.",
   keywords: [
     "women in tech",
     "tech leadership",
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://globalwomentechleaders.com",
     siteName: "Global Women TechLeaders",
-    title: "Global Women TechLeaders — Board Seats. Capital. Accountability.",
+    title: "Global Women TechLeaders — From Pipeline to Power",
     description:
-      "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. AI-native. Outcomes-driven. Global.",
+      "GWTL accelerates women into technology leadership through human sponsorship, access to decision-makers, capital connections, and accountable outcomes. Human-led. AI-amplified. Global.",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Global Women TechLeaders — Where AI-Powered Leadership and Visionary Women Reshape Tech",
+        alt: "Global Women TechLeaders — Where women tech leaders move from visibility to power",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Global Women TechLeaders",
     description:
-      "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability.",
+      "GWTL accelerates women into technology leadership through sponsorship, access, capital connections, and accountability.",
     images: ["/images/og-image.png"],
     creator: "@gwtl",
   },
@@ -105,7 +105,7 @@ export default function RootLayout({
               url: "https://globalwomentechleaders.com",
               logo: "https://globalwomentechleaders.com/images/logo.png",
               description:
-                "GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. AI-native. Outcomes-driven. Global.",
+                "GWTL accelerates women into technology leadership through human sponsorship, access to decision-makers, capital connections, and accountable outcomes. Human-led. AI-amplified. Global.",
               sameAs: [
                 "https://x.com/gwtl",
                 "https://www.linkedin.com/company/global-women-techleaders",
