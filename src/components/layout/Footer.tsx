@@ -1,17 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight, Heart, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Instagram, ArrowUpRight, Heart, Facebook } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 
 const footerLinks = {
   about: [
     { name: "Our Story", href: "/about" },
+    { name: "Our Legacy", href: "/about/legacy" },
     { name: "Our Team", href: "/team" },
     { name: "Ambassadors", href: "/about/ambassadors" },
     { name: "Strategic Council", href: "/about/strategic-council" },
   ],
   organization: [
-
     { name: "News", href: "/news" },
     { name: "Events", href: "/events" },
     { name: "Partnerships", href: "/sponsorship" },
@@ -65,8 +65,12 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-6 text-sm max-w-md leading-relaxed text-white/50">
-              GWTL accelerates women into tech leadership through board placements, capital connections, and corporate accountability. <br />AI-native. Outcomes-driven. Global.
-              <span className="block mt-2 text-brand-teal-light">Led by humans. Run by AI agents.</span>
+              GWTL accelerates women into technology leadership through human
+              sponsorship, access to decision-makers, capital connections, and
+              accountable outcomes.
+              <span className="block mt-2 text-brand-teal-light">
+                Human-led. AI-amplified. Global.
+              </span>
             </p>
 
             {/* Social links */}
@@ -126,8 +130,6 @@ export function Footer() {
             </ul>
           </div>
 
-
-
           {/* Programs */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-brand-teal-light">
@@ -172,9 +174,12 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <p className="text-sm flex flex-wrap gap-1.5 text-white/40">
-              © {new Date().getFullYear()} Global Women TechLeaders. <span className="flex items-center gap-1">Made with
+              © {new Date().getFullYear()} Global Women TechLeaders.{" "}
+              <span className="flex items-center gap-1">
+                Made with
                 <Heart className="h-4 w-4 text-brand-teal fill-brand-teal" />
-                worldwide.</span>
+                worldwide.
+              </span>
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link

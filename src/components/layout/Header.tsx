@@ -11,9 +11,10 @@ const navigation = [
     href: "/about",
     children: [
       { name: "Our Story", href: "/about", description: "Who we are and why we exist" },
+      { name: "Our Legacy", href: "/about/legacy", description: "The human history behind GWTL 2.0" },
       { name: "Our Team", href: "/team", description: "Meet the leadership" },
       { name: "Ambassadors", href: "/about/ambassadors", description: "Our global ambassador network" },
-      { name: "Strategic Council", href: "/about/strategic-council", description: "Our advisory and governance body" },
+      { name: "Strategic Council", href: "/about/strategic-council", description: "Our active door-opening council" },
       { name: "AI Governance", href: "/ai-governance", description: "Our approach to responsible AI" },
     ],
   },
@@ -21,9 +22,9 @@ const navigation = [
     name: "Programs",
     href: "/programs",
     children: [
-      { name: "Power Tables", href: "/programs#power-tables", description: "Curated peer-learning circles" },
-      { name: "Sponsor Match", href: "/programs#sponsor-match", description: "AI-powered sponsorship pairing" },
-      { name: "Global Shift Summit", href: "/programs#global-shift-summit", description: "Our flagship annual event" },
+      { name: "Power Tables", href: "/programs#power-tables", description: "Commitment rooms for senior leaders" },
+      { name: "Sponsor Match", href: "/programs#sponsor-match", description: "Human sponsorship, AI tracked on Raise" },
+      { name: "Global Shift Summit", href: "/programs#global-shift-summit", description: "Our flagship accountability moment" },
     ],
   },
   { name: "Events", href: "/events" },
@@ -59,15 +60,12 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? "py-2"
-        : "py-4"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "py-2" : "py-4"
+      }`}
     >
       {/* Background blur layer */}
-      <div
-        className={"absolute inset-0 transition-all duration-500 bg-white/90 backdrop-blur-2xl border-b border-black/5 shadow-lg shadow-black/5"}
-      />
+      <div className="absolute inset-0 transition-all duration-500 bg-white/90 backdrop-blur-2xl border-b border-black/5 shadow-lg shadow-black/5" />
 
       <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -142,7 +140,7 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
+           {/* CTA Buttons */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
             <Link href="https://platform.globalwomentechleaders.com" target="_blank">
               <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
@@ -165,8 +163,9 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className={`lg:hidden p-2.5 rounded-xl transition-colors ${scrolled ? "hover:bg-brand-navy/5" : "hover:bg-white/50"
-              }`}
+            className={`lg:hidden p-2.5 rounded-xl transition-colors ${
+              scrolled ? "hover:bg-brand-navy/5" : "hover:bg-white/50"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -181,8 +180,9 @@ export function Header() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
       >
         {/* Backdrop */}
         <div
@@ -192,8 +192,9 @@ export function Header() {
 
         {/* Menu panel */}
         <div
-          className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-2xl transition-transform duration-500 ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+          className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-2xl transition-transform duration-500 ${
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
           {/* Close button */}
           <div className="flex justify-end p-4">

@@ -89,7 +89,7 @@ function ProgramsHero() {
           {/* <div className="animate-fade-in-up mt-12 flex flex-wrap justify-center gap-8 sm:gap-12 stagger-4 opacity-0">
             {[
               { value: "8+", label: "Board Intros / Event" },
-              { value: "€1.2M", label: "Avg Funding Initiated" },
+              { value: "TBA", label: "Funding Initiated" },
               { value: "73%", label: "Commitments Delivered" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

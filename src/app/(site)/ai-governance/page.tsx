@@ -29,7 +29,7 @@ import {
 export const metadata: Metadata = {
   title: "AI Governance Framework",
   description:
-    "Global Women Tech Leaders is AI-native. Here's how we govern responsibly. Led by humans. Run by AI agents. Governed responsibly.",
+    "Global Women Tech Leaders is human-led and AI-amplified. Here's how we govern responsibly.",
 };
 
 const corePrinciples = [
@@ -238,7 +238,7 @@ function PageHero() {
           </p>
 
           <p className="animate-fade-in-up mt-6 text-2xl sm:text-3xl font-display font-bold gradient-text-hero stagger-4 opacity-0">
-            Led by humans. Run by AI agents.
+            Human-led. AI-amplified.
           </p>
         </div>
       </div>
@@ -853,7 +853,7 @@ function GovernanceCTA() {
         </h2>
 
         <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed italic font-display">
-          &ldquo;Led by humans. Run by AI agents. Governed responsibly.&rdquo;
+          &ldquo;Human-led. AI-amplified. Governed responsibly.&rdquo;
         </p>
 
         <p className="mt-3 text-sm text-gray-500">

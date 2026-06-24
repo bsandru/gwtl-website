@@ -6,9 +6,9 @@ const programs = [
     title: "Power Tables",
     label: "By Invitation",
     icon: Users,
-    headline: "Where Decisions Happen",
-    body: "Invite-only gatherings that bring 25 women leaders face-to-face with 25 board-level decision-makers. Structured conversations. Real commitments. Every table produces measurable outcomes.",
-    proof: "Featured tables: 8 board placements, €1.2M in commitments per event.",
+    headline: "Human rooms where decisions happen",
+    body: "Invite-only gatherings that bring women leaders together with board-level decision-makers, investors, policymakers, and sponsors. The format is intimate by design: fewer people, deeper trust, clearer commitments.",
+    proof: "Every table is designed to produce commitments that can be tracked after the room closes.",
     cta: "Request an Invitation",
     ctaLink: "/programs#power-tables",
     color: "teal" as const,
@@ -17,9 +17,9 @@ const programs = [
     title: "Sponsor Match",
     label: "Open",
     icon: Handshake,
-    headline: "Sponsorship That Delivers",
-    body: "Senior leaders — men and women — commit to concrete actions: introductions, board nominations, investor connections. Not advice. Not mentoring. Action. Every commitment is tracked and published.",
-    proof: "The difference: a sponsor stakes their reputation on your advancement.",
+    headline: "Sponsorship with human trust",
+    body: "Senior leaders — men and women — commit time, attention, and network access. Trust is built first. Introductions, nominations, investor connections, and board conversations follow when sponsors can credibly open the door.",
+    proof: "Not mentoring alone. A sponsor uses their reputation to create opportunity.",
     cta: "Find Your Sponsor",
     ctaLink: "/programs#sponsor-match",
     color: "navy" as const,
@@ -28,9 +28,9 @@ const programs = [
     title: "Global Shift Summit",
     label: "Annual",
     icon: Globe,
-    headline: "The Global Moment",
-    body: "Our annual flagship event. 500+ leaders. Multiple continents. The place where the companies making real progress on gender leadership stand up, and the ones falling short are named. Where commitments become public record.",
-    proof: "Next Summit: 2026. Applications open soon.",
+    headline: "The global moment for accountability",
+    body: "Our annual flagship gathering for women leaders, sponsors, companies, and ecosystem partners. The Summit celebrates progress, names commitments, and turns a year of human work into public accountability.",
+    proof: "The Summit is where commitments become visible and the next cycle begins.",
     cta: "Get Early Access",
     ctaLink: "/programs#global-shift-summit",
     color: "teal" as const,
@@ -72,18 +72,20 @@ export function WhatWeDo() {
               >
                 {/* Card background */}
                 <div
-                  className={`absolute inset-0 transition-opacity duration-500 ${isTeal
+                  className={`absolute inset-0 transition-opacity duration-500 ${
+                    isTeal
                       ? "bg-linear-to-br from-brand-teal via-brand-teal to-brand-teal-dark"
                       : "bg-linear-to-br from-brand-navy via-brand-navy to-brand-navy-dark"
-                    }`}
+                  }`}
                 />
 
                 {/* Hover gradient overlay */}
                 <div
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isTeal
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                    isTeal
                       ? "bg-linear-to-br from-brand-teal-light via-brand-teal to-brand-teal-dark"
                       : "bg-linear-to-br from-brand-navy-light via-brand-navy to-brand-navy-dark"
-                    }`}
+                  }`}
                 />
 
                 {/* Pattern overlay */}

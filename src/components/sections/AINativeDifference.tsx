@@ -1,11 +1,11 @@
 import { Cpu } from "lucide-react";
 
 const comparison = [
-  { traditional: "50+ staff to coordinate", gwtl: "4 C-level + 36 agents" },
-  { traditional: "High overhead", gwtl: "Maximum impact per dollar" },
-  { traditional: "Slow execution", gwtl: "24/7 delivery" },
-  { traditional: "Talks about AI", gwtl: "Runs on AI" },
-  { traditional: "Awareness-focused", gwtl: "Outcome-driven" },
+  { traditional: "Human energy lost to coordination", gwtl: "Human energy focused on relationships" },
+  { traditional: "High operational overhead", gwtl: "More resources directed to impact" },
+  { traditional: "Slow research and follow-up", gwtl: "Faster evidence, coordination, and reporting" },
+  { traditional: "Technology as a talking point", gwtl: "AI as mission infrastructure" },
+  { traditional: "Awareness-focused", gwtl: "Outcome-driven and accountable" },
 ];
 
 export function AINativeDifference() {
@@ -23,7 +23,7 @@ export function AINativeDifference() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-navy/5 mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
             <Cpu className="h-4 w-4 text-brand-navy" />
             <span className="text-sm font-semibold text-brand-navy">
-              Built Different
+              Human-Led, AI-Amplified
             </span>
           </div>
         </div>
@@ -34,21 +34,21 @@ export function AINativeDifference() {
           <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s]">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy leading-[1.1] mb-8">
               Led by humans. <br />
-              <span className="gradient-text-teal">Run by AI agents.</span>
+              <span className="gradient-text-teal">Amplified by AI.</span>
             </h2>
 
             <div className="space-y-5 text-lg text-secondary-600 leading-relaxed">
               <p>
-                C-level executives. Twenty-five AI agents. We operate with
-                the output of a 50-person organization and the overhead of four.
+                GWTL is built around human judgment, trust, ethics, and
+                relationships. Those cannot be automated — and we do not try to.
               </p>
               <p>
-                Every dollar goes to impact. Every decision is made by a human.
-                Every execution is handled by agents.
+                AI helps our human leaders research faster, coordinate better,
+                track commitments, prepare reports, and keep follow-through from
+                disappearing into inboxes.
               </p>
               <p className="font-semibold text-brand-navy">
-                We don&apos;t just talk about AI transforming leadership. We
-                demonstrate it.
+                AI is not the mission. People are. AI is how we scale the work.
               </p>
             </div>
           </div>
@@ -60,12 +60,12 @@ export function AINativeDifference() {
               <div className="grid grid-cols-2">
                 <div className="bg-secondary-100 px-6 py-4">
                   <span className="text-sm font-bold text-secondary-500 uppercase tracking-wider">
-                    Traditional Nonprofit
+                    Traditional constraint
                   </span>
                 </div>
                 <div className="bg-brand-navy px-6 py-4">
                   <span className="text-sm font-bold text-brand-teal-light uppercase tracking-wider">
-                    GWTL
+                    GWTL model
                   </span>
                 </div>
               </div>
@@ -74,8 +74,7 @@ export function AINativeDifference() {
               {comparison.map((row, idx) => (
                 <div
                   key={idx}
-                  className={`grid grid-cols-2 ${idx % 2 === 0 ? "bg-white" : "bg-secondary-50"
-                    }`}
+                  className={`grid grid-cols-2 ${idx % 2 === 0 ? "bg-white" : "bg-secondary-50"}`}
                 >
                   <div className="px-6 py-4 border-t border-secondary-100">
                     <span className="text-secondary-500 text-sm">
@@ -96,8 +95,9 @@ export function AINativeDifference() {
         {/* Tagline */}
         <div className="text-center mt-16 animate-fade-in-up opacity-0 [animation-delay:0.6s]">
           <p className="text-lg italic text-secondary-500">
-            The world&apos;s first AI-native nonprofit in women&apos;s
-            leadership.
+            The future of technology leadership should be designed by people,
+            for people — with AI used responsibly to expand what mission-driven
+            organizations can achieve.
           </p>
         </div>
       </div>
