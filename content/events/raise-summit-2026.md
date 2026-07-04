@@ -6,7 +6,7 @@ endDate: "2026-07-09"
 location: "Le Carrousel du Louvre, Paris, France"
 category: "AI Summit"
 featured: false
-image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop"
+image: "/images/events/RAISE-Summit-2026.png"
 registrationUrl: "https://www.raisesummit.com/"
 discount:
   url: "https://www.raisesummit.com/"
