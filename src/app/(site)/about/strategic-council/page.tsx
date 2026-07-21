@@ -438,7 +438,7 @@ function CouncilMembers() {
               </div>
             </a>
           ))}
-          {Array.from({ length: 4 }).map((_, i) => (
+          {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
               className="group relative rounded-3xl p-8 bg-white border border-secondary-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
