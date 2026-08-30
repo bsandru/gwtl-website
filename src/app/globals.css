@@ -9,6 +9,7 @@
 :root {
   --brand-teal: #00A3A3;
   --brand-teal-light: #2DD4BF;
+  --brand-teal-dark: #008585;
   --brand-navy: #0f1629;
   --brand-navy-light: #1a2744;
   --accent-coral: #ff6b6b;
@@ -55,6 +56,7 @@
   /* Fonts */
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-playfair), Georgia, serif;
+  --font-brand: var(--font-brand-space), var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
   /* Primary colors (Teal palette) */
   --color-primary-50: #f0fdfa;
@@ -159,6 +161,8 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "calt";
 }
 
 /* Selection styling */
@@ -189,6 +193,28 @@ body {
 /* Typography */
 .font-display {
   font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* Brand wordmark lockup — Space Grotesk, all-teal gradient */
+.wordmark {
+  font-family: var(--font-brand);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.wordmark-accent {
+  background: linear-gradient(100deg, var(--brand-teal-dark) 0%, var(--brand-teal) 45%, var(--brand-teal-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.wordmark-tagline {
+  font-family: var(--font-brand);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
 }
 
 /* Gradient text */
@@ -544,9 +570,9 @@ body {
 .editorial-headline {
   /* font-size: clamp(2.5rem, 8vw, 6rem); */
   font-size: clamp(2rem, 6vw, 4.5rem);
-  line-height: 0.99;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
 .editorial-subhead {

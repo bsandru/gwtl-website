@@ -80,9 +80,12 @@ export function Header() {
                 className="group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="hidden sm:block">
-              <span className="text-brand-teal text-xl font-semibold tracking-tight">
+            <div className="hidden sm:block ml-1 lg:ml-2">
+              <span className="wordmark wordmark-accent block text-[1.35rem] font-bold">
                 Global Women TechLeaders
+              </span>
+              <span className="wordmark-tagline mt-1.5 block text-[0.5rem] lg:text-[0.55rem] font-semibold text-secondary-400/90 transition-colors duration-300 group-hover:text-brand-teal">
+                From Pipeline to Power
               </span>
             </div>
           </Link>

@@ -58,8 +58,10 @@ export function Footer() {
                 className="group-hover:scale-105 transition-transform brightness-0 invert"
               />
               <div>
-                <span className="font-display text-xl font-bold text-white">GWTL</span>
-                <span className="block text-xs text-white/40 mt-0.5">
+                <span className="wordmark block text-2xl font-bold text-white">
+                  GWTL
+                </span>
+                <span className="wordmark mt-1 block text-xs font-medium text-brand-teal-light/90">
                   Global Women TechLeaders
                 </span>
               </div>
