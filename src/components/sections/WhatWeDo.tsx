@@ -67,9 +67,10 @@ export function WhatWeDo() {
             return (
               <div
                 key={program.title}
-                className="group relative rounded-4xl overflow-hidden transition-all duration-500 hover:-translate-y-3 animate-fade-in-up opacity-0"
-                style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
+                className="animate-fade-in-up opacity-0"
+                style={{ animationDelay: `${0.15 + idx * 0.12}s` }}
               >
+              <div className="group relative h-full rounded-4xl overflow-hidden shadow-xl shadow-brand-navy/10 transition-[translate,box-shadow] duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-brand-teal/20">
                 {/* Card background */}
                 <div
                   className={`absolute inset-0 transition-opacity duration-500 ${
@@ -93,11 +94,19 @@ export function WhatWeDo() {
                   <div className="absolute inset-0 bg-pattern-dots" />
                 </div>
 
+                {/* Oversized index number */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -bottom-6 right-4 font-display text-[9rem] font-bold leading-none text-white/[0.06] transition-all duration-700 group-hover:text-white/[0.12] group-hover:-translate-y-2"
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
                 {/* Content */}
                 <div className="relative p-8 lg:p-10 flex flex-col h-full">
                   {/* Label badge */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="inline-flex h-14 w-14 rounded-2xl items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
+                    <div className="inline-flex h-14 w-14 rounded-2xl items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 group-hover:scale-110 group-hover:-rotate-6 group-hover:bg-white/20 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
                       <IconComponent className="h-7 w-7 text-white" />
                     </div>
                     <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/15 text-white/90 border border-white/10">
@@ -138,7 +147,8 @@ export function WhatWeDo() {
                 </div>
 
                 {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-brl from-white/10 to-transparent rounded-bl-[4rem]" />
+                <div className="pointer-events-none absolute top-0 right-0 w-48 h-48 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.14),transparent_65%)] transition-transform duration-700 group-hover:scale-125 origin-top-right" />
+              </div>
               </div>
             );
           })}

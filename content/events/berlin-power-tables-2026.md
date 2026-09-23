@@ -5,8 +5,7 @@ date: '2026-07-07'
 location: Berlin, 🇩🇪 Germany 
 category: Conference / Summit
 featured: true
-image: >-
- https://images.unsplash.com/photo-1526041092449-209d556f7a32?q=80&w=2148&auto=format&fit=crop
+image: /images/events/arena.avif
 registrationUrl: ''
 ---
 

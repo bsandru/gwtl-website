@@ -12,9 +12,9 @@ interface Props {
 
 // Default images for news items without images
 const defaultImages = [
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=900&fit=crop",
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=900&fit=crop",
-  "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1600&h=900&fit=crop",
+  "/images/event.jpg",
+  "/images/news/students-collaborating.jpeg",
+  "/images/mic.jpg",
 ];
 
 function getDefaultImage(slug: string): string {
@@ -134,6 +134,7 @@ export default async function NewsArticlePage({ params }: Props) {
               src={articleImage}
               alt={item.title}
               fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
               className="object-cover"
               priority
             />
@@ -304,6 +305,7 @@ export default async function NewsArticlePage({ params }: Props) {
                       src={related.image || getDefaultImage(related.slug)}
                       alt={related.title}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 to-transparent" />

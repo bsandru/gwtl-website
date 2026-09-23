@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function getDefaultImage(slug: string): string {
-  return "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop;"
+  return "/images/event.jpg";
 }
 
 function formatDateRange(start: string, end?: string): string {
@@ -147,6 +147,7 @@ export default async function EventPage({ params }: Props) {
             src={event.image || getDefaultImage(slug)}
             alt={event.title}
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -447,6 +448,7 @@ export default async function EventPage({ params }: Props) {
                           src={relatedEvent.image || getDefaultImage(relatedEvent.slug)}
                           alt={relatedEvent.title}
                           fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 to-transparent" />

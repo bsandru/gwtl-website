@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 // Default images for events without images
-const DefaultImage = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop";
+const DefaultImage = "/images/event.jpg";
 
 
 function formatDateRange(start: string, end?: string): string {
@@ -217,6 +217,7 @@ function UpcomingEvents() {
                   src={featuredEvent.image || DefaultImage}
                   alt={featuredEvent.title}
                   fill
+                  sizes="(min-width: 1280px) 1280px, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/60 to-brand-navy/20" />
@@ -311,6 +312,7 @@ function UpcomingEvents() {
                       src={event.image || DefaultImage}
                       alt={event.title}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-brand-navy/80 via-brand-navy/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />

@@ -7,7 +7,7 @@ const features = [
     title: "GWTL at Davos 2026",
     description:
       "Partnered with Davos Innovation Week, hosting executive panels on AI-driven leadership and investment trends.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+    image: "/images/event.jpg",
     link: "/news/davos-2026",
     date: "19th January 2026",
     location: "Davos, Switzerland",
@@ -18,7 +18,7 @@ const features = [
     title: "Girls Who Lead - Erasmus+",
     description:
       "A 24-month initiative empowering girls aged 16-18 with digital, entrepreneurial, and leadership skills.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+    image: "/images/news/students-collaborating.jpeg",
     link: "/news/girls-who-lead",
     date: "2025-2027",
     location: "Europe",
@@ -64,7 +64,7 @@ export function FeaturedIn() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-navy/5 mb-6 animate-fade-in-up opacity-0 [animation-delay:0.1s]">
-              <span className="h-2 w-2 rounded-full bg-brand-teal animate-pulse" />
+              <span className="ping-ring h-2 w-2 rounded-full bg-brand-teal" />
               <span className="text-sm font-semibold text-brand-navy">Latest Updates</span>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-navy leading-[1.1] animate-fade-in-up opacity-0 [animation-delay:0.2s]">
@@ -88,14 +88,15 @@ export function FeaturedIn() {
           {featuredArticle && (
             <Link
               href={featuredArticle.link}
-              className="group relative rounded-4xl overflow-hidden animate-fade-in-up opacity-0 [animation-delay:0.3s] lg:row-span-2"
+              className="group relative rounded-4xl overflow-hidden animate-fade-in-scale opacity-0 [animation-delay:0.2s] lg:row-span-2 shadow-xl shadow-brand-navy/10"
             >
               <div className="absolute inset-0">
                 <Image
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/50 to-transparent" />
@@ -147,8 +148,8 @@ export function FeaturedIn() {
               <Link
                 key={article.title}
                 href={article.link}
-                className="group relative flex flex-col sm:flex-row gap-6 p-6 rounded-[1.5rem] bg-white shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-all duration-500 hover:-translate-y-1 animate-fade-in-up opacity-0"
-                style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
+                className="group relative flex flex-col sm:flex-row gap-6 p-6 rounded-[1.5rem] bg-white shadow-lg shadow-black/5 ring-1 ring-transparent hover:ring-brand-teal/20 hover:shadow-xl hover:shadow-brand-teal/10 transition-all duration-500 hover:-translate-y-1 animate-reveal-right opacity-0"
+                style={{ animationDelay: `${0.3 + idx * 0.12}s` }}
               >
                 {/* Image */}
                 <div className="relative w-full sm:w-48 h-48 sm:h-auto rounded-xl overflow-hidden shrink-0">
@@ -156,7 +157,8 @@ export function FeaturedIn() {
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 640px) 192px, 100vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                   {/* Tag overlay */}
                   <div className="absolute top-3 left-3">

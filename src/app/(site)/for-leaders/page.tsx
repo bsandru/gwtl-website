@@ -124,7 +124,7 @@ const testimonials = [
     author: "Elena Vasquez",
     role: "VP of Engineering",
     company: "Stripe",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=faces",
+    image: "/images/team/elena.jpeg",
   },
   {
     quote:
@@ -132,7 +132,7 @@ const testimonials = [
     author: "Priya Sharma",
     role: "Chief Technology Officer",
     company: "Deliveroo",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=faces",
+    image: "/images/team/priya.jpeg",
   },
   {
     quote:
@@ -140,7 +140,7 @@ const testimonials = [
     author: "Sarah Mitchell",
     role: "Founder & CEO",
     company: "TechForward",
-    image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=200&h=200&fit=crop&crop=faces",
+    image: "/images/team/sarah.jpeg",
   },
 ];
 
@@ -276,9 +276,10 @@ export default function ForLeadersPage() {
                 {/* Main image */}
                 <div className="relative aspect-4/5 rounded-5xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&crop=faces"
+                    src="/images/team/elena-van.jpeg"
                     alt="Women tech leader"
                     fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
                     className="object-cover"
                     priority
                   />
@@ -558,6 +559,7 @@ export default function ForLeadersPage() {
                       src={testimonial.image}
                       alt={testimonial.author}
                       fill
+                      sizes="56px"
                       className="object-cover"
                     />
                   </div>

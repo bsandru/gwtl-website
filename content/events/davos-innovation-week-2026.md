@@ -6,7 +6,7 @@ endDate: "2026-01-23"
 location: "Davos, Switzerland"
 category: "Conference"
 featured: false
-image: "https://globalwomentechleaders.com/images/news/davos-innovation-week-2026.jpg"
+image: "/images/news/davos-innovation-week-2026.jpg"
 registrationUrl: ""
 ---
 

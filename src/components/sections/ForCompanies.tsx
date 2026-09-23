@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
+import { CountUp, SpotlightCard } from "@/components/motion";
 
 const stats = [
   {
@@ -54,24 +55,31 @@ export function ForCompanies() {
           {stats.map((stat, idx) => (
             <div
               key={stat.source}
-              className="group relative rounded-4xl bg-secondary-50 p-8 lg:p-10 border border-secondary-200/60 hover:border-brand-teal/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-teal/5 animate-fade-in-up opacity-0"
-              style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
+              className="animate-fade-in-up opacity-0"
+              style={{ animationDelay: `${0.15 + idx * 0.12}s` }}
             >
-              <div className="font-display text-5xl lg:text-6xl font-bold gradient-text-teal mb-3 leading-tight">
-                {stat.value}
+            <SpotlightCard
+              tilt={4}
+              className="group relative h-full overflow-hidden rounded-4xl bg-secondary-50 p-8 lg:p-10 border border-secondary-200/60 hover:border-brand-teal/30 transition-[translate,box-shadow,border-color] duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-teal/10 [--spotlight-color:rgba(0,163,163,0.12)]"
+            >
+              <div className="spotlight-glow" />
+              <div className="relative font-display text-5xl lg:text-6xl font-bold gradient-text-teal mb-3 leading-tight tabular-nums">
+                <CountUp value={stat.value} duration={2000} />
               </div>
-              <p className="text-secondary-600 leading-relaxed mb-4">
+              <div className="relative mb-5 h-0.5 w-10 rounded-full bg-linear-to-r from-brand-teal to-brand-teal-light transition-all duration-500 group-hover:w-20" />
+              <p className="relative text-secondary-600 leading-relaxed mb-4">
                 {stat.description}
               </p>
-              <span className="text-xs font-semibold uppercase tracking-wider text-secondary-400">
+              <span className="relative text-xs font-semibold uppercase tracking-wider text-secondary-400">
                 {stat.source}
               </span>
+            </SpotlightCard>
             </div>
           ))}
         </div>
 
         {/* Closing line + CTA */}
-        <div className="text-center animate-fade-in-up opacity-0 [animation-delay:0.7s]">
+        <div className="text-center animate-fade-in-up opacity-0 [animation-delay:0.2s]">
           <p className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-8">
             This isn&apos;t charity. It&apos;s{" "}
             <span className="gradient-text-teal">competitive advantage.</span>

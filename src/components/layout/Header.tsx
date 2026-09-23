@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 const navigation = [
@@ -37,14 +38,28 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const y = window.scrollY;
+      const delta = y - lastScrollY.current;
+      setScrolled(y > 20);
+      // Tuck the header away while reading down the page, bring it back on scroll up
+      if (Math.abs(delta) > 6) {
+        setHidden(delta > 0 && y > 240);
+        lastScrollY.current = y;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+  const headerHidden = hidden && !mobileMenuOpen && !openDropdown;
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -60,12 +75,18 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         scrolled ? "py-2" : "py-4"
-      }`}
+      } ${headerHidden ? "-translate-y-full" : ""}`}
     >
       {/* Background blur layer */}
-      <div className="absolute inset-0 transition-all duration-500 bg-white/90 backdrop-blur-2xl border-b border-black/5 shadow-lg shadow-black/5" />
+      <div
+        className={`absolute inset-0 transition-all duration-500 backdrop-blur-2xl border-b ${
+          scrolled
+            ? "bg-white/80 border-black/5 shadow-lg shadow-black/5"
+            : "bg-white/90 border-transparent shadow-none"
+        }`}
+      />
 
       <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -75,8 +96,9 @@ export function Header() {
               <Image
                 src="/images/logo.png"
                 alt="Global Women TechLeaders"
-                width={80}
+                width={81}
                 height={64}
+                loading="eager"
                 className="group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -101,26 +123,32 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="group flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 text-brand-navy hover:text-brand-teal hover:bg-brand-teal/5"
+                  data-active={isActive(item.href)}
+                  className="nav-underline group flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-colors duration-300 text-brand-navy hover:text-brand-teal data-[active=true]:text-brand-teal"
                 >
                   <span>{item.name}</span>
                   {item.children && (
-                    <ChevronDown className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                    <ChevronDown
+                      className={`h-4 w-4 opacity-50 group-hover:opacity-100 transition-all duration-300 ${
+                        openDropdown === item.name ? "rotate-180 opacity-100" : ""
+                      }`}
+                    />
                   )}
                 </Link>
 
                 {/* Dropdown */}
                 {item.children && openDropdown === item.name && (
                   <div className="absolute top-full left-0 w-72 pt-2">
-                    <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-secondary-100 shadow-xl shadow-black/10 py-3 animate-fade-in-scale origin-top-left">
+                    <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-secondary-100 shadow-xl shadow-black/10 py-3 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-300 origin-top-left">
                       <div className="absolute -top-0.5 left-6 w-4 h-4 bg-white border-l border-t border-secondary-100 rotate-45" />
 
                       <div className="relative">
-                        {item.children.map((child) => (
+                        {item.children.map((child, childIdx) => (
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="group block px-5 py-3 transition-colors hover:bg-brand-teal/5"
+                            className="group block px-5 py-3 transition-colors hover:bg-brand-teal/5 animate-in fade-in-0 slide-in-from-left-2 fill-mode-both duration-300"
+                            style={{ animationDelay: `${childIdx * 35}ms` }}
                           >
                             <div className="flex items-center justify-between">
                               <div>
@@ -217,8 +245,10 @@ export function Header() {
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-4 text-lg font-semibold text-brand-navy rounded-xl transition-colors hover:bg-brand-teal/5  animate-fade-in-up"
-                    style={{ animationDelay: `${idx * 0.05}s` }}
+                    className={`block px-4 py-4 text-lg font-semibold text-brand-navy rounded-xl transition-colors hover:bg-brand-teal/5 ${
+                      mobileMenuOpen ? "animate-in fade-in-0 slide-in-from-right-8 fill-mode-both duration-500" : "opacity-0"
+                    }`}
+                    style={{ animationDelay: `${120 + idx * 50}ms` }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}

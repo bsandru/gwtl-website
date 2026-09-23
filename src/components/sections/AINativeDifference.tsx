@@ -1,4 +1,4 @@
-import { Cpu } from "lucide-react";
+import { ArrowRight, Cpu } from "lucide-react";
 
 const comparison = [
   { traditional: "Human energy lost to coordination", gwtl: "Human energy focused on relationships" },
@@ -31,7 +31,7 @@ export function AINativeDifference() {
         {/* Side-by-side layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left column — Headline + body */}
-          <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s]">
+          <div className="animate-reveal-left opacity-0 [animation-delay:0.15s]">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy leading-[1.1] mb-8">
               Led by humans. <br />
               <span className="gradient-text-teal">Amplified by AI.</span>
@@ -54,8 +54,8 @@ export function AINativeDifference() {
           </div>
 
           {/* Right column — Comparison table */}
-          <div className="animate-fade-in-up opacity-0 [animation-delay:0.4s]">
-            <div className="rounded-3xl overflow-hidden shadow-xl shadow-black/5 border border-secondary-200/60">
+          <div className="animate-reveal-right opacity-0 [animation-delay:0.25s]">
+            <div className="rounded-3xl overflow-hidden shadow-xl shadow-black/5 border border-secondary-200/60 transition-shadow duration-500 hover:shadow-2xl hover:shadow-brand-teal/10">
               {/* Table header */}
               <div className="grid grid-cols-2">
                 <div className="bg-secondary-100 px-6 py-4">
@@ -74,15 +74,18 @@ export function AINativeDifference() {
               {comparison.map((row, idx) => (
                 <div
                   key={idx}
-                  className={`grid grid-cols-2 ${idx % 2 === 0 ? "bg-white" : "bg-secondary-50"}`}
+                  className={`group grid grid-cols-2 animate-fade-in-up opacity-0 ${idx % 2 === 0 ? "bg-white" : "bg-secondary-50"}`}
+                  style={{ animationDelay: `${0.45 + idx * 0.09}s` }}
                 >
-                  <div className="px-6 py-4 border-t border-secondary-100">
-                    <span className="text-secondary-500 text-sm">
+                  <div className="relative px-6 py-4 border-t border-secondary-100">
+                    <span className="text-secondary-500 text-sm transition-colors duration-300 group-hover:text-secondary-400 group-hover:line-through decoration-secondary-300">
                       {row.traditional}
                     </span>
+                    <ArrowRight className="absolute right-0 top-1/2 z-10 h-4 w-4 -translate-y-1/2 translate-x-1/2 rounded-full bg-white p-0.5 text-brand-teal opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100" />
                   </div>
-                  <div className="px-6 py-4 border-t border-secondary-100 bg-brand-navy/5">
-                    <span className="text-brand-navy font-semibold text-sm">
+                  <div className="relative overflow-hidden px-6 py-4 border-t border-secondary-100 bg-brand-navy/5">
+                    <span className="absolute inset-y-0 left-0 w-0.5 origin-top scale-y-0 bg-linear-to-b from-brand-teal to-brand-teal-light transition-transform duration-500 group-hover:scale-y-100" />
+                    <span className="relative text-brand-navy font-semibold text-sm transition-colors duration-300 group-hover:text-brand-teal-dark">
                       {row.gwtl}
                     </span>
                   </div>

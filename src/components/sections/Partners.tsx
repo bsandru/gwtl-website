@@ -45,16 +45,20 @@ const communityPartners: Partner[] = [
   // { name: "TechWoman", logo: "/images/partners/techwoman.webp" },
 ];
 
-function PartnerLogo({ partner }: { partner: Partner }) {
-  const className =
-    "group flex items-center justify-center transition-all duration-500 hover:-translate-y-1";
+const half = Math.ceil(communityPartners.length / 2);
+const communityRows = [communityPartners.slice(0, half), communityPartners.slice(half)];
+
+function PartnerLogo({ partner, hidden = false }: { partner: Partner; hidden?: boolean }) {
+  const className = "logo-bloom flex items-center justify-center";
 
   const content = (
     <Image
       src={partner.logo}
       alt={partner.name}
+      // Placeholder dimensions: CSS renders each logo at its natural ratio, at least
+      // 80px tall and at most 224px wide, so both always differ from these values.
       width={256}
-      height={106}
+      height={64}
       className={`object-contain min-h-20 w-auto max-w-full`}
     />
   );
@@ -66,6 +70,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
         target="_blank"
         rel="noopener noreferrer"
         title={partner.name}
+        tabIndex={hidden ? -1 : undefined}
         className={className}
       >
         {content}
@@ -105,7 +110,7 @@ export function Partners() {
         </div>
 
         {/* Collaborators */}
-        <div className="mb-20 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
+        <div className="mb-20">
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
             <h3 className="text-md font-bold uppercase tracking-widest text-secondary-400 shrink-0">
@@ -115,10 +120,11 @@ export function Partners() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-10">
-            {collaborators.map((partner) => (
+            {collaborators.map((partner, idx) => (
               <div
                 key={partner.name}
-                className="flex items-center justify-center sm:h-30 sm:w-56 h-24 w-36"
+                className="flex items-center justify-center sm:h-30 sm:w-56 h-24 w-36 animate-fade-in-up opacity-0"
+                style={{ animationDelay: `${0.2 + idx * 0.08}s` }}
               >
                 <PartnerLogo partner={partner} />
               </div>
@@ -136,13 +142,24 @@ export function Partners() {
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-secondary-300 to-transparent" />
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {communityPartners.map((partner) => (
+          <div className="marquee-mask marquee-pause space-y-6 overflow-hidden py-2">
+            {communityRows.map((row, rowIdx) => (
               <div
-                key={partner.name}
-                className="flex w-36 sm:w-44 items-center justify-center"
+                key={rowIdx}
+                className={`marquee-track ${rowIdx === 0 ? "animate-marquee" : "animate-marquee-reverse"} [animation-duration:50s]`}
               >
-                <PartnerLogo partner={partner} />
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex shrink-0 gap-8 pr-8" aria-hidden={copy === 1}>
+                    {row.map((partner) => (
+                      <div
+                        key={partner.name}
+                        className="flex w-36 sm:w-44 items-center justify-center"
+                      >
+                        <PartnerLogo partner={partner} hidden={copy === 1} />
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
             ))}
           </div>

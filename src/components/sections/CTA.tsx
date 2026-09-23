@@ -7,25 +7,32 @@ export function CTA() {
       {/* Dark background with animated gradient mesh */}
       <div className="absolute inset-0 bg-brand-navy">
         {/* Animated gradient orbs */}
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full bg-linear-to-br from-brand-teal/30 to-transparent blur-[120px] animate-glow-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-linear-to-tl from-brand-teal-light/20 to-transparent blur-[100px] animate-glow-pulse [animation-delay:2s]" />
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] animate-drift">
+          <div className="h-full w-full rounded-full bg-linear-to-br from-brand-teal/30 to-transparent blur-[120px] animate-glow-pulse" />
+        </div>
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] animate-drift-slow">
+          <div className="h-full w-full rounded-full bg-linear-to-tl from-brand-teal-light/20 to-transparent blur-[100px] animate-glow-pulse [animation-delay:2s]" />
+        </div>
+
+        {/* Perspective grid floor */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(rgba(45,212,191,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(45,212,191,0.08)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_top,black,transparent)] [transform:perspective(600px)_rotateX(55deg)] origin-bottom" />
 
         {/* Noise texture */}
         <div className="absolute inset-0 noise-overlay" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+        <div className="border-beam relative grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl shadow-brand-teal/10 animate-fade-in-scale opacity-0 [animation-delay:0.1s]">
           {/* Left — Women Leaders */}
-          <div className="relative p-10 sm:p-14 lg:p-16 bg-white/5 backdrop-blur-2xl border-b lg:border-b-0 lg:border-r border-white/10">
+          <div className="group/panel relative p-10 sm:p-14 lg:p-16 bg-white/5 backdrop-blur-2xl border-b lg:border-b-0 lg:border-r border-white/10 transition-colors duration-500 hover:bg-white/[0.08]">
             {/* Inner glow */}
             <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-teal-light/40 to-transparent" />
 
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
                   Ready to step into the room where{" "}
-                  <span className="gradient-text-cta">
+                  <span className="gradient-text-cta gradient-text-animated">
                     decisions happen?
                   </span>
                 </h3>
@@ -48,13 +55,13 @@ export function CTA() {
           </div>
 
           {/* Right — Companies */}
-          <div className="relative p-10 sm:p-14 lg:p-16 bg-white/[0.03] backdrop-blur-2xl">
+          <div className="group/panel relative p-10 sm:p-14 lg:p-16 bg-white/[0.03] backdrop-blur-2xl transition-colors duration-500 hover:bg-white/[0.06]">
             {/* Inner glow */}
             <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-teal-light/20 to-transparent" />
 
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6 animate-fade-in-up opacity-0 [animation-delay:0.4s]">
                   Want to be on the right side of history{" "}
                   <span className="text-white/60">
                     — and the right side of the P&amp;L?

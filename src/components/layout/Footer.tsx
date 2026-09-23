@@ -54,7 +54,7 @@ export function Footer() {
                 src="/images/logo.png"
                 alt="Global Women TechLeaders"
                 width={48}
-                height={48}
+                height={38}
                 className="group-hover:scale-105 transition-transform brightness-0 invert"
               />
               <div>

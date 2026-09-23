@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 // Default images for news items without images
-const DefaultImage = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop"
+const DefaultImage = "/images/event.jpg"
 
 
 function formatDate(dateString: string): string {
@@ -79,6 +79,8 @@ export default function NewsPage() {
                       src={bentoNews[0].image || DefaultImage}
                       alt={bentoNews[0].title}
                       fill
+                      sizes="(min-width: 768px) 66vw, 100vw"
+                      loading="eager"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/70 to-brand-navy/30" />
@@ -140,6 +142,8 @@ export default function NewsPage() {
                       src={bentoNews[1].image || DefaultImage}
                       alt={bentoNews[1].title}
                       fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      loading="eager"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/70 to-brand-navy/30" />
@@ -189,6 +193,7 @@ export default function NewsPage() {
                       src={item.image || DefaultImage}
                       alt={item.title}
                       fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/70 to-brand-navy/30" />
@@ -270,6 +275,7 @@ export default function NewsPage() {
                       src={item.image || DefaultImage}
                       alt={item.title}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {/* Gradient overlay */}

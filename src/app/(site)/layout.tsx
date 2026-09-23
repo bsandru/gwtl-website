@@ -1,4 +1,5 @@
 import { Header, Footer } from "@/components";
+import { ScrollReveal } from "@/components/motion";
 
 export default function SiteLayout({
   children,
@@ -10,6 +11,7 @@ export default function SiteLayout({
       <Header />
       <main>{children}</main>
       <Footer />
+      <ScrollReveal />
     </>
   );
 }
