@@ -103,7 +103,7 @@ export function FeaturedIn() {
               </div>
 
               {/* Content */}
-              <div className="relative h-full min-h-[500px] lg:min-h-[600px] flex flex-col justify-end p-8 lg:p-10">
+              <div className="relative h-full min-h-[400px] flex flex-col justify-end p-8 lg:p-10">
                 {/* Tag */}
                 <div className="absolute top-6 left-6">
                   <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-teal text-white">

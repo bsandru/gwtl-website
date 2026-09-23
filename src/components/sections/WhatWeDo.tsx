@@ -97,7 +97,7 @@ export function WhatWeDo() {
                 {/* Oversized index number */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -bottom-6 right-4 font-display text-[9rem] font-bold leading-none text-white/[0.06] transition-all duration-700 group-hover:text-white/[0.12] group-hover:-translate-y-2"
+                  className="pointer-events-none absolute -bottom-1 right-4 font-display text-[9rem] font-bold leading-none text-white/[0.06] transition-all duration-700 group-hover:text-white/[0.12] group-hover:-translate-y-2"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
