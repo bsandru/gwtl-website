@@ -260,7 +260,7 @@ export default async function EventPage({ params }: Props) {
             {/* Article */}
             <div className="lg:col-span-7 xl:col-span-8">
               {/* Decorative line */}
-              <div className="decorative-line mb-10 animate-line-grow" />
+              <div className="decorative-line mb-10 animate-line-grow origin-left" />
 
               <article
                 className="prose prose-lg max-w-none"

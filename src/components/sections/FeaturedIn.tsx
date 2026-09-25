@@ -38,15 +38,6 @@ const features = [
   },
 ];
 
-// const partners = [
-//   { name: "EU Digital Skills", abbr: "DSJC" },
-//   { name: "WeAreDevelopers", abbr: "WAD" },
-//   { name: "ECWT", abbr: "ECWT" },
-//   { name: "SEE40", abbr: "SEE" },
-//   { name: "EBU Luxembourg", abbr: "EBU" },
-//   { name: "WomenTech", abbr: "WT" },
-// ];
-
 export function FeaturedIn() {
   const featuredArticle = features.find((f) => f.featured);
   const otherArticles = features.filter((f) => !f.featured);

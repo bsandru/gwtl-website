@@ -171,7 +171,7 @@ export function Header() {
             ))}
           </div>
 
-           {/* CTA Buttons */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
             <Link href="https://platform.globalwomentechleaders.com" target="_blank">
               <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
@@ -181,14 +181,6 @@ export function Header() {
                 </span>
               </button>
             </Link>
-            {/* <Link href="/contact">
-              <button className="magnetic-btn group relative h-11 px-6 rounded-xl text-sm font-bold overflow-hidden bg-brand-navy text-white shadow-lg shadow-brand-navy/20">
-                <span className="relative z-10 flex items-center gap-2">
-                  Apply / Partner
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                </span>
-              </button>
-            </Link> */}
           </div>
 
           {/* Mobile menu button */}

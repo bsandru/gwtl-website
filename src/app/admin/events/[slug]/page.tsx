@@ -4,7 +4,7 @@ import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
-import { WYSIWYGEditor } from "@/components/admin/Editor";
+import { MarkdownEditor } from "@/components/admin/Editor";
 import { DateRangePicker } from "@/components/ui/date-range-picker";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -178,7 +178,7 @@ export default function EditEventPage({
               <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Event Details
               </label>
-              <WYSIWYGEditor
+              <MarkdownEditor
                 content={formData.content}
                 onChange={(markdown) => setFormData({ ...formData, content: markdown })}
                 placeholder="Write the event details..."

@@ -70,7 +70,7 @@ export function Hero() {
                         <span key={word} className={isPower ? "relative inline-block" : undefined}>
                           <span className="word-mask">
                             <span
-                              className={`word-rise ${line.className}`}
+                              className={`word-rise md:mb-1.5 ${line.className}`}
                               style={{ animationDelay: `${delay}s` }}
                             >
                               {word}

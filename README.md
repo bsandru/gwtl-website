@@ -84,11 +84,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Brand Colors
 
-The site uses a custom color palette defined in `tailwind.config.ts`:
+Theme tokens (colors, fonts, shadows, animations) live in the `@theme` block of `src/app/globals.css` (Tailwind v4, no JS config):
 
-- **Primary**: Purple (#c026d3) - Main brand color
-- **Secondary**: Green (#22c55e) - Accent for CTAs
-- **Accent**: Blue (#3b82f6) - Supporting accent
+- **Brand**: `brand-teal` (#00A3A3) and `brand-navy` (#051D28), each with `-light` / `-dark` variants
+- **Primary**: teal scale `primary-50` … `primary-950`, with `primary-500` = brand teal
+- **Secondary**: slate scale `secondary-50` … `secondary-950` for text and neutrals
+- **Fonts**: `font-sans` (DM Sans), `font-display` (Playfair Display), `font-brand` (Mulish, wordmark)
 
 ### Adding Pages
 

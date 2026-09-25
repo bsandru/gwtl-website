@@ -4,7 +4,7 @@ import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
-import { WYSIWYGEditor } from "@/components/admin/Editor";
+import { MarkdownEditor } from "@/components/admin/Editor";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ImageUpload } from "@/components/ui/image-upload";
@@ -203,7 +203,7 @@ export default function EditTeamMemberPage({
               <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Full Bio / Description
               </label>
-              <WYSIWYGEditor
+              <MarkdownEditor
                 content={formData.content}
                 onChange={(markdown) =>
                   setFormData({ ...formData, content: markdown })

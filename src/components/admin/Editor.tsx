@@ -188,12 +188,6 @@ interface MarkdownEditorProps {
   placeholder?: string;
 }
 
-/**
- * Markdown WYSIWYG Editor
- * 
- * This editor accepts markdown content and outputs markdown.
- * It uses Tiptap with the tiptap-markdown extension for markdown support.
- */
 export function MarkdownEditor({
   content,
   onChange,
@@ -229,7 +223,6 @@ export function MarkdownEditor({
     ],
     content,
     onUpdate: ({ editor }) => {
-      // Get content as markdown using the tiptap-markdown extension
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const markdownStorage = (editor.storage as any).markdown;
       onChange(markdownStorage.getMarkdown());
@@ -249,20 +242,3 @@ export function MarkdownEditor({
     </div>
   );
 }
-
-// Keep the old WYSIWYGEditor for backwards compatibility, but now it uses markdown
-export function WYSIWYGEditor({
-  content,
-  onChange,
-  placeholder = "Start writing...",
-}: MarkdownEditorProps) {
-  return (
-    <MarkdownEditor
-      content={content}
-      onChange={onChange}
-      placeholder={placeholder}
-    />
-  );
-}
-
-export default MarkdownEditor;

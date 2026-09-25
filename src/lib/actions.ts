@@ -521,13 +521,13 @@ export async function sendContactEmail(formData: FormData) {
     });
 
     if (!res.ok) {
-      console.log(`Faild to sent email:${res.ok}`);
+      console.error(`Failed to send contact email: ${res.status}`);
       return { error: "Failed to send message. Please try again later." };
     }
 
     return { success: true };
-  } catch (err){
-    console.error("Sent Error >>"+err);
+  } catch (err) {
+    console.error("Failed to send contact email:", err);
     return { error: "Failed to send message. Please try again later." };
   }
 }

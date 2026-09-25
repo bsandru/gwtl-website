@@ -61,10 +61,6 @@ export function ContactForm() {
 
   return (
     <>
-      {/* <h2 className="mb-6 text-2xl font-bold text-gray-900">
-        Send us a Message
-      </h2> */}
-
       {status === "error" && (
         <div className="mt-4 flex items-start gap-3 rounded-lg bg-red-50 border border-red-200 p-4">
           <AlertCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
@@ -149,18 +145,20 @@ export function ContactForm() {
         </div>
 
         {sitekey && (
-          <HCaptcha
-            sitekey={sitekey}
-            theme="light"
-            size="normal"
-            onVerify={(token) => {
-              setCaptchaToken(token);
-              if (status === "error") setStatus("idle");
-            }}
-            onExpire={() => setCaptchaToken(null)}
-            onError={() => setCaptchaToken(null)}
-            ref={captchaRef}
-          />
+          <div className="hcaptcha-frame">
+            <HCaptcha
+              sitekey={sitekey}
+              theme="light"
+              size="normal"
+              onVerify={(token) => {
+                setCaptchaToken(token);
+                if (status === "error") setStatus("idle");
+              }}
+              onExpire={() => setCaptchaToken(null)}
+              onError={() => setCaptchaToken(null)}
+              ref={captchaRef}
+            />
+          </div>
         )}
 
         <Button

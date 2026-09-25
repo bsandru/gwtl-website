@@ -15,8 +15,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-// Brand wordmark face — distinctive geometric with a modern, techy character
-const spaceGrotesk = Mulish({
+const brandSpace = Mulish({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-brand-space",
@@ -100,7 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${brandSpace.variable}`}>
       <body className="min-h-screen bg-stone-50 antialiased font-sans">
         <Script
           id="org-jsonld"
