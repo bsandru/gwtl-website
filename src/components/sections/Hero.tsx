@@ -177,7 +177,6 @@ export function Hero() {
                       fill
                       sizes="(min-width: 1024px) 1024px, 100vw"
                       className="object-cover transition-transform duration-[1.6s] ease-out group-hover/hero:scale-105"
-                      priority
                     />
                   </div>
                   {/* Gradient overlay */}

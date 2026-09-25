@@ -20,6 +20,7 @@ const brandSpace = Mulish({
   weight: ["400", "500", "600", "700"],
   variable: "--font-brand-space",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

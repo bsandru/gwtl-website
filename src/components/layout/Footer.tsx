@@ -175,7 +175,7 @@ export function Footer() {
       <div className="relative border-t border-white/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <p className="text-sm flex flex-wrap gap-1.5 text-white/40">
+            <p className="text-sm flex flex-wrap gap-1.5 text-white/60">
               © {new Date().getFullYear()} Global Women TechLeaders.{" "}
               <span className="flex items-center gap-1">
                 Made with
@@ -186,13 +186,13 @@ export function Footer() {
             <div className="flex flex-wrap gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-white/60 hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-white/60 hover:text-white transition-colors"
               >
                 Terms of Service
               </Link>
