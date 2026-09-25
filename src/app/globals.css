@@ -822,10 +822,3 @@
 .ProseMirror img {
   margin: 1rem 0;
 }
-
-/* The iframe element can be transparent. The card fill is painted inside hCaptcha's frame. */
-.hcaptcha-frame,
-.hcaptcha-frame iframe {
-  background-color: transparent !important;
-  color-scheme: normal;
-}

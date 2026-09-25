@@ -18,8 +18,6 @@ export function SubscribeForm({
 }: SubscribeFormProps) {
   const [email, setEmail] = useState("");
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  // hCaptcha is heavy and sets third-party cookies, so only load it once the user engages with the form
-  const [captchaActive, setCaptchaActive] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [isPending, startTransition] = useTransition();
@@ -69,12 +67,7 @@ export function SubscribeForm({
   const isDark = variant === "dark";
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      onFocus={() => setCaptchaActive(true)}
-      onPointerEnter={() => setCaptchaActive(true)}
-      className="w-full space-y-4"
-    >
+    <form onSubmit={handleSubmit} className="w-full space-y-4">
       <div className="flex flex-col sm:flex-row gap-4 w-full">
         <input
           type="email"
@@ -106,7 +99,7 @@ export function SubscribeForm({
         </button>
       </div>
 
-      {sitekey && captchaActive && (
+      {sitekey && (
         <HCaptcha
           sitekey={sitekey}
           theme={isDark ? "dark" : "light"}

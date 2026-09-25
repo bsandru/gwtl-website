@@ -161,7 +161,7 @@ export function Hero() {
             </div>
           </div>
           {/* Hero Image Section */}
-          <div className="relative max-w-5xl mx-auto animate-fade-in-scale opacity-0 [animation-delay:1.2s]">
+          <div className="relative max-w-5xl mx-auto animate-fade-in-scale opacity-0 [animation-delay:0.2s]">
             {/* Main image container with creative shape */}
             <Parallax speed={0.06}>
               {/* Glow effect behind image */}
@@ -170,13 +170,13 @@ export function Hero() {
               {/* Main image */}
               <div className="group/hero relative rounded-5xl overflow-hidden shadow-2xl shadow-brand-navy/10 ring-1 ring-black/5">
                 <div className="aspect-video relative">
-                  <div className="absolute inset-0 animate-ken-burns [animation-delay:1.2s]">
+                  <div className="absolute inset-0 ">
                     <Image
                       src="/images/hero.avif"
                       alt="Women tech leaders collaborating"
                       fill
                       sizes="(min-width: 1024px) 1024px, 100vw"
-                      className="object-cover transition-transform duration-[1.6s] ease-out group-hover/hero:scale-105"
+                      className="object-cover transition-transform duration-[0.6s] ease-out group-hover/hero:scale-105"
                     />
                   </div>
                   {/* Gradient overlay */}

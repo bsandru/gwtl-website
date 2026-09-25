@@ -8,8 +8,6 @@ import { CheckCircle, AlertCircle } from "lucide-react";
 
 export function ContactForm() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  // hCaptcha is heavy and sets third-party cookies, so only load it once the user engages with the form
-  const [captchaActive, setCaptchaActive] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [isPending, startTransition] = useTransition();
@@ -70,13 +68,7 @@ export function ContactForm() {
         </div>
       )}
 
-      <form
-        ref={formRef}
-        onSubmit={handleSubmit}
-        onFocus={() => setCaptchaActive(true)}
-        onPointerEnter={() => setCaptchaActive(true)}
-        className="space-y-4"
-      >
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label
             htmlFor="name"
@@ -153,22 +145,18 @@ export function ContactForm() {
         </div>
 
         {sitekey && (
-          <div className="hcaptcha-frame min-h-[78px]">
-            {captchaActive && (
-              <HCaptcha
-                sitekey={sitekey}
-                theme="light"
-                size="normal"
-                onVerify={(token) => {
-                  setCaptchaToken(token);
-                  if (status === "error") setStatus("idle");
-                }}
-                onExpire={() => setCaptchaToken(null)}
-                onError={() => setCaptchaToken(null)}
-                ref={captchaRef}
-              />
-            )}
-          </div>
+          <HCaptcha
+            sitekey={sitekey}
+            theme="light"
+            size="normal"
+            onVerify={(token) => {
+              setCaptchaToken(token);
+              if (status === "error") setStatus("idle");
+            }}
+            onExpire={() => setCaptchaToken(null)}
+            onError={() => setCaptchaToken(null)}
+            ref={captchaRef}
+          />
         )}
 
         <Button
