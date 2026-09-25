@@ -10,7 +10,7 @@
   --brand-teal: #00A3A3;
   --brand-teal-light: #2DD4BF;
   --brand-teal-dark: #008585;
-  --brand-navy: #0f1629;
+  --brand-navy: #051d28;
   --brand-navy-light: #1a2744;
   --accent-coral: #ff6b6b;
   --accent-gold: #fbbf24;
@@ -90,7 +90,7 @@
   --color-brand-teal: #00A3A3;
   --color-brand-teal-light: #2DD4BF;
   --color-brand-teal-dark: #008585;
-  --color-brand-navy: #0f1629;
+  --color-brand-navy: #051d28;
   --color-brand-navy-light: #1a2744;
   --color-brand-navy-dark: #080c18;
 
@@ -757,6 +757,7 @@ body {
   transform: translateY(-2px) scale(1.04);
   background: linear-gradient(to right, var(--brand-teal), var(--brand-teal-light));
   box-shadow: 0 14px 30px -10px rgba(0, 163, 163, 0.55);
+  color: white;
 }
 
 /* Light sweep across buttons on hover */

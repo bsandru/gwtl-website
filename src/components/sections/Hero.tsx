@@ -133,7 +133,7 @@ export function Hero() {
               </button>
             </Link>
             <Link href="/sponsorship">
-              <button className="magnetic-btn group h-14 px-8 rounded-2xl font-bold text-brand-navy border-2 border-brand-navy/10 hover:border-brand-teal/30 hover:bg-brand-teal/5 transition-all duration-300 flex items-center justify-center gap-2">
+              <button className="magnetic-btn group h-14 px-8 rounded-2xl font-bold border-2 border-brand-navy/10 hover:border-brand-teal/30 hover:bg-brand-teal/5 transition-all duration-300 flex items-center justify-center gap-2">
                 Partner With Us
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
@@ -198,7 +198,7 @@ export function Hero() {
                       </div>
 
                       {/* Floating action card */}
-                      <div className="glass-card-dark rounded-2xl p-4 sm:p-5 transition-transform duration-500 hover:-translate-y-1">
+                      <div className="hidden sm:block glass-card-dark rounded-2xl p-4 sm:p-5 transition-transform duration-500 hover:-translate-y-1">
                         <div className="flex items-center gap-4">
                           <div className="h-12 w-12 rounded-xl bg-linear-to-br from-brand-teal to-brand-teal-light flex items-center justify-center animate-pulse-glow">
                             <span className="text-xl font-bold text-white">2.0</span>
@@ -226,22 +226,6 @@ export function Hero() {
                     <div>
                       <p className="text-2xl font-bold text-brand-navy tabular-nums"><CountUp value="150+" /></p>
                       <p className="text-xs text-secondary-500">Mentors & mentees reached</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hidden lg:block absolute -right-12 bottom-1/4 animate-float-reverse [animation-delay:1s]">
-                <div className="glass-card rounded-2xl p-5 shadow-xl">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-linear-to-br from-brand-navy to-brand-navy-light flex items-center justify-center">
-                      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-bold text-brand-navy">2018</p>
-                      <p className="text-xs text-secondary-500">Legacy of programs</p>
                     </div>
                   </div>
                 </div>
