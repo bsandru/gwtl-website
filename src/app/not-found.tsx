@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 
 export default function NotFound() {
   return (
@@ -91,7 +92,7 @@ export default function NotFound() {
             Back to home
           </Link>
           <Link
-            href="/contact"
+            href={contactHref("general")}
             className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-white/70 font-semibold rounded-xl transition-all duration-300 hover:border-white/30 hover:text-white hover:bg-white/5"
           >
             Contact us

@@ -1,13 +1,19 @@
 import { Metadata } from "next";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { resolveContactSubject } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with Global Women TechLeaders. We'd love to hear from you.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ subject?: string | string[] }>;
+}) {
+  const initialSubject = resolveContactSubject((await searchParams).subject);
   return (
     <div className="pt-20">
       <section className="py-20 lg:py-32">
@@ -91,7 +97,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="rounded-2xl p-8 lg:p-12">
-              <ContactForm />
+              <ContactForm key={initialSubject} initialSubject={initialSubject} />
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteLink } from "@/components/SiteLink";
 import Image from "next/image";
 import { Linkedin, Twitter, Instagram, ArrowUpRight, Heart, Facebook } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
@@ -120,13 +121,13 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.organization.map((link) => (
                 <li key={link.name}>
-                  <Link
+                  <SiteLink
                     href={link.href}
                     className="group text-sm text-white/50 hover:text-white transition-colors inline-flex items-center gap-1"
                   >
                     <span>{link.name}</span>
                     <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
-                  </Link>
+                  </SiteLink>
                 </li>
               ))}
             </ul>

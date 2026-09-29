@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -383,7 +384,7 @@ function EventTypes() {
       description:
         "Invite-only. 25 total decision-makers and leaders. Structured conversations. Public commitment log. The highest-impact format we run.",
       cta: "Request an Invitation",
-      ctaHref: "/contact",
+      ctaHref: contactHref("power-tables"),
     },
     {
       icon: Landmark,
@@ -394,7 +395,7 @@ function EventTypes() {
       description:
         "Annual and regional flagship events. Accountability Report release. Keynote conversations. The biggest gathering of the GWTL community.",
       cta: "Register Interest",
-      ctaHref: "/contact",
+      ctaHref: contactHref("summit"),
     },
     {
       icon: Handshake,
@@ -561,7 +562,7 @@ function NewsletterSignup() {
 
         <div className="flex justify-center max-w-lg mx-auto">
           <Link
-            href="/contact"
+            href={contactHref("newsletter")}
             className="magnetic-btn px-8 py-4 font-bold rounded-xl transition-all duration-300 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30 flex items-center justify-center gap-2"
           >
             <span>Subscribe</span>

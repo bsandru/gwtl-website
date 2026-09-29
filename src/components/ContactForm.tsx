@@ -4,9 +4,10 @@ import { useRef, useState, useTransition } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { Button } from "@/components/ui/button";
 import { sendContactEmail } from "@/lib/actions";
+import { contactSubjects, type ContactSubject } from "@/lib/contact";
 import { CheckCircle, AlertCircle } from "lucide-react";
 
-export function ContactForm() {
+export function ContactForm({ initialSubject = "general" }: { initialSubject?: ContactSubject }) {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -110,21 +111,14 @@ export function ContactForm() {
           <select
             id="subject"
             name="subject"
+            defaultValue={contactSubjects[initialSubject]}
             required
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           >
             <option value="">Select a subject…</option>
-            <option>Become an Ambassador</option>
-            <option>Apply for the Strategic Council</option>
-            <option>Power Tables — Apply / Register Interest</option>
-            <option>Sponsor Match — Apply as Participant</option>
-            <option>Sponsor Match — Apply as Sponsor</option>
-            <option>Corporate Sponsorship</option>
-            <option>Summit — Register Early Interest</option>
-            <option>Event Inquiry</option>
-            <option>Subscribe to Newsletter</option>
-            <option>Join the Team</option>
-            <option>General Inquiry</option>
+            {Object.entries(contactSubjects).map(([id, label]) => (
+              <option key={id} value={label}>{label}</option>
+            ))}
           </select>
         </div>
 

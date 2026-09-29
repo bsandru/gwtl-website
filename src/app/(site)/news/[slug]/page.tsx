@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter, Facebook, ArrowRight } from "lucide-react";
@@ -367,7 +368,7 @@ export default async function NewsArticlePage({ params }: Props) {
                 Browse All Articles
               </button>
             </Link>
-            <Link href="/for-leaders/join">
+            <Link href={contactHref("newsletter")}>
               <button className="magnetic-btn px-8 py-4 font-bold rounded-xl border border-white/20 text-white hover:bg-white/10 transition-colors">
                 Join the Community
               </button>

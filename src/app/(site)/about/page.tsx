@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import {
   Target,
   ArrowRight,
@@ -1025,7 +1026,7 @@ function AboutCTA() {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </Link>
-          <Link href="/contact">
+          <Link href={contactHref("general")}>
             <button className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl font-bold border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 inline-flex items-center justify-center border-white/30 text-white bg-transparent">
               Contact Us
             </button>

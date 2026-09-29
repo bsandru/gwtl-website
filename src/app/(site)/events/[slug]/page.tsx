@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
@@ -391,7 +392,7 @@ export default async function EventPage({ params }: Props) {
                     Have questions about this event? We&apos;re here to help.
                   </p>
                   <Link
-                    href="/contact"
+                    href={contactHref("event")}
                     className="inline-flex items-center gap-2 text-brand-teal-light text-sm font-semibold hover:gap-3 transition-all duration-300"
                   >
                     Contact Us
