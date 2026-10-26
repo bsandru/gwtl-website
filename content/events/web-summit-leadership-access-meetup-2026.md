@@ -1,5 +1,5 @@
 ---
-title: "Why AI Skills Must Translate into Leadership Access for Women"
+title: "From AI Skills to Leadership Access"
 excerpt: "At Web Summit Lisbon, GWTL convenes a Community Space meetup on the gap between AI capability and leadership opportunity — with Simona Sandru, Radiana Miteva, Madalena Costa, and moderator Steliana Moraru."
 date: "2026-11-11"
 location: "Community Space, Web Summit Lisbon"
