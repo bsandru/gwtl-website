@@ -14,6 +14,10 @@ registrationUrl: "https://websummit.com/"
 
 GWTL at one of Europe's largest tech stages. Our delegation of women tech leaders meets corporate partners, investors, and decision-makers in structured sessions alongside the main conference.
 
+### GWTL at Web Summit
+
+Don't miss our Community Space meetup on **11 November**: [**Why AI Skills Must Translate into Leadership Access for Women**](/events/web-summit-leadership-access-meetup-2026) (10:00–10:50, Community Space).
+
 ### What We're Doing at Web Summit
 
 - Structured sessions between GWTL leaders and decision-makers
@@ -30,4 +34,4 @@ GWTL at one of Europe's largest tech stages. Our delegation of women tech leader
 
 ## Registration
 
-Register through the GWTL delegation for structured access to our curated sessions and introductions.
+Register for Web Summit at [websummit.com](https://websummit.com/). For our 11 November meetup, [view the official session and add it to your agenda](https://websummit.com/sessions/lis26/00fd5630-70f4-4468-8721-22d6a1031875/why-ai-skills-must-translate-into-leadership-access-for-women/).
