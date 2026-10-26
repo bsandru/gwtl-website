@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Calendar, Sparkles, Clock } from "lucide-react";
 import { getAllNews } from "@/lib/content";
@@ -364,7 +365,7 @@ export default function NewsPage() {
 
           <div className="flex justify-center max-w-lg mx-auto">
             <Link
-              href="/contact"
+              href={contactHref("newsletter")}
               className="magnetic-btn px-8 py-4 font-bold rounded-xl transition-all duration-300 bg-linear-to-r from-brand-teal to-brand-teal-light text-brand-navy hover:shadow-lg hover:shadow-brand-teal/30 flex items-center justify-center gap-2"
             >
               <span>Subscribe</span>

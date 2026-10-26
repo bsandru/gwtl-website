@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -649,7 +650,7 @@ export default function PrivacyPolicyPage() {
                     contact@globalwomentechleaders.com
                   </a>
                   <Link
-                    href="/contact"
+                    href={contactHref("general")}
                     className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                   >
                     Contact Form →

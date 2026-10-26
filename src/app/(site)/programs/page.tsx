@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -264,13 +265,13 @@ function PowerTables() {
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contact" className="flex-1">
+              <Link href={contactHref("power-tables")} className="flex-1">
                 <Button size="lg" className="w-full group">
                   Apply (Referred)
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/contact" className="flex-1">
+              <Link href={contactHref("power-tables")} className="flex-1">
                 <Button size="lg" variant="outline" className="w-full group">
                   Register Interest
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -484,7 +485,7 @@ function SponsorMatch() {
               </div>
             </div>
 
-            <Link href="/contact" className="mt-6">
+            <Link href={contactHref("sponsor-match-participant")} className="mt-6">
               <Button size="lg" className="w-full group">
                 Apply as Participant
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -546,7 +547,7 @@ function SponsorMatch() {
               </div>
             </div>
 
-            <Link href="/contact" className="mt-6">
+            <Link href={contactHref("sponsor-match-sponsor")} className="mt-6">
               <Button size="lg" className="w-full group">
                 Apply as Sponsor
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -608,7 +609,7 @@ function SponsorMatch() {
               </div>
               
             </div>
-            <Link href="/contact" className="mt-6">
+            <Link href={contactHref("sponsorship")} className="mt-6">
               <Button size="lg" variant="outline" className="w-full group">
                 Enquire about Corporate Sponsorship
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -696,7 +697,7 @@ function GlobalShiftSummit() {
                 </div>
               </div>
 
-              <Link href="/contact" className="mt-8 block">
+              <Link href={contactHref("summit")} className="mt-8 block">
                 <Button size="lg" className="w-full group">
                   Register Early Interest
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -792,7 +793,7 @@ function ProgramsCTA() {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <Link href="/contact">
+          <Link href={contactHref("general")}>
             <Button size="xlg" variant="full" className="sm:w-auto group">
               Contact Us
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

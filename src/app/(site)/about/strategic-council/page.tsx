@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import {
   Handshake,
   ArrowRight,
@@ -495,7 +496,7 @@ function CouncilCTA() {
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact">
+          <Link href={contactHref("strategic-council")}>
             <button className="group w-full sm:w-auto h-14 px-10 text-lg rounded-2xl font-bold shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl inline-flex items-center justify-center bg-brand-teal text-white hover:bg-brand-teal-dark">
               Express interest
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

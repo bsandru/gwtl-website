@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import {
   Megaphone,
   ArrowRight,
@@ -517,7 +518,7 @@ function AmbassadorCTA() {
         </p>
 
         <div className="mt-10 flex justify-center">
-          <Link href="/contact">
+          <Link href={contactHref("ambassador")}>
             <button className="group h-14 px-10 text-lg rounded-2xl font-bold shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl inline-flex items-center justify-center bg-brand-teal text-white hover:bg-brand-teal-dark">
               Apply to become an Ambassador
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

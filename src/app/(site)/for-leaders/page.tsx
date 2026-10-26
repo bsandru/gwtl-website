@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { COMPANIES } from "@/lib/content";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import Image from "next/image";
 import {
   Sparkles,
@@ -612,7 +613,7 @@ export default function ForLeadersPage() {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/contact">
+            <Link href={contactHref("general")}>
               <button className="w-full sm:w-auto h-16 px-10 text-lg rounded-2xl font-bold border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 inline-flex items-center justify-center btn-outline-dark">
                 Talk to Our Team
               </button>

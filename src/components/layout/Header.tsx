@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { contactHref, contactSubjectForPath } from "@/lib/contact";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -122,7 +123,7 @@ export function Header() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <Link
-                  href={item.href}
+                  href={item.href === "/contact" ? contactHref(contactSubjectForPath(pathname)) : item.href}
                   data-active={isActive(item.href)}
                   className="nav-underline group flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-colors duration-300 text-brand-navy hover:text-brand-teal data-[active=true]:text-brand-teal"
                 >
@@ -236,7 +237,7 @@ export function Header() {
               {navigation.map((item, idx) => (
                 <div key={item.name}>
                   <Link
-                    href={item.href}
+                    href={item.href === "/contact" ? contactHref(contactSubjectForPath(pathname)) : item.href}
                     className={`block px-4 py-4 text-lg font-semibold text-brand-navy rounded-xl transition-colors hover:bg-brand-teal/5 ${
                       mobileMenuOpen ? "animate-in fade-in-0 slide-in-from-right-8 fill-mode-both duration-500" : "opacity-0"
                     }`}
@@ -268,7 +269,7 @@ export function Header() {
               {/* <button className="w-full py-3.5 px-6 rounded-xl font-semibold border-2 border-brand-navy text-brand-navy transition-all hover:bg-brand-navy hover:text-white">
                 Sign In
               </button> */}
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+              <Link href={contactHref(contactSubjectForPath(pathname))} onClick={() => setMobileMenuOpen(false)}>
                 <button className="w-full py-3.5 px-6 rounded-xl font-bold bg-brand-navy text-white shadow-lg shadow-brand-navy/20 hover:bg-brand-teal transition-colors flex items-center justify-center gap-2">
                   Apply / Partner
                   <ArrowRight className="h-4 w-4" />

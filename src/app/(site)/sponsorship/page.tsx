@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { contactHref } from "@/lib/contact";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -530,7 +531,7 @@ function PartnershipTiers() {
                 </div>
 
                 {/* CTA */}
-                <Link href="/contact" className="mt-8 block">
+                <Link href={contactHref("sponsorship")} className="mt-8 block">
                   <Button
                     size="lg"
                     variant={tier.featured ? "default" : "outline"}
@@ -563,7 +564,7 @@ function PartnershipTiers() {
                 tailored to your goals.
               </p>
             </div>
-            <Link href="/contact" className="shrink-0">
+            <Link href={contactHref("sponsorship")} className="shrink-0">
               <Button size="lg" className="group w-full lg:w-auto">
                 Tell us what you have in mind
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -756,7 +757,7 @@ function SponsorsCTA() {
 
         {/* CTA */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <Link href="/contact">
+          <Link href={contactHref("sponsorship")}>
             <Button size="xlg" variant="full" className="sm:w-auto group">
               Schedule a Conversation
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
