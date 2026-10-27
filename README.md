@@ -1,6 +1,6 @@
 # GWTL Website
 
-The official website for **Global Women TechLeaders** - a non-profit organization empowering women in technology since 2017.
+The official website for **Global Women TechLeaders (GWTL)**, operated by **Global Women in Tech**, a non-profit organization empowering women in technology since 2017.
 
 ## 🚀 Tech Stack
 

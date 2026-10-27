@@ -30,7 +30,7 @@ import {
 export const metadata: Metadata = {
   title: "AI Governance Framework",
   description:
-    "Global Women Tech Leaders is human-led and AI-amplified. Here's how we govern responsibly.",
+    "Global Women TechLeaders is human-led and AI-amplified. Here's how we govern responsibly.",
 };
 
 const corePrinciples = [
@@ -234,7 +234,7 @@ function PageHero() {
           </h1>
 
           <p className="animate-fade-in-up mt-8 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed text-secondary-600 stagger-3 opacity-0">
-            Global Women Tech Leaders is AI-native. Here&apos;s how we govern
+            Global Women TechLeaders is AI-native. Here&apos;s how we govern
             responsibly.
           </p>
 
@@ -428,7 +428,7 @@ function AccountabilityStructure() {
             <span className="text-brand-teal-light inline-block">Responsible Human</span>
           </h2>
           <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto">
-            Global Women Tech Leaders is AI-native.
+            Global Women TechLeaders is AI-native.
           </p>
         </div>
 

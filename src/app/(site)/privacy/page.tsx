@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { contactHref } from "@/lib/contact";
+import { GWTL_NAME, GWTL_SHORT, GWIT_NAME, OPERATOR_TAGLINE } from "@/lib/org";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Learn how Global Women TechLeaders collects, uses, and protects your personal information when you use our platform, programs, and services.",
+    "Learn how Global Women TechLeaders (operated by Global Women in Tech, a non-profit organization) collects, uses, and protects your personal information.",
 };
 
 const sections = [
@@ -46,10 +47,11 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <p className="mt-6 text-lg leading-relaxed text-slate-600">
-            Global Women TechLeaders (GWTL, &ldquo;us&rdquo;, &ldquo;we&rdquo;, or
-            &ldquo;our&rdquo;) is committed to protecting your personal privacy. This
-            Privacy Policy explains how we collect, use, maintain, and disclose your
-            information when you interact with our website at{" "}
+            {GWTL_NAME} ({GWTL_SHORT}, &ldquo;us&rdquo;, &ldquo;we&rdquo;, or
+            &ldquo;our&rdquo;), {OPERATOR_TAGLINE}, is committed to protecting your
+            personal privacy. This Privacy Policy explains how we collect, use,
+            maintain, and disclose your information when you interact with our
+            website at {" "}
             <a
               href="https://globalwomentechleaders.com"
               className="text-teal-700 hover:underline"
@@ -565,9 +567,9 @@ export default function PrivacyPolicyPage() {
               <p className="text-slate-600 leading-relaxed mb-4">
                 All personal data is stored securely in accordance with the EU
                 General Data Protection Regulation (GDPR, Regulation (EU) 2016/679).
-                GWTL is headquartered in Romania, an EU member state, and processes
-                personal data in compliance with applicable European data protection
-                law.
+                {GWIT_NAME}, the non-profit organization that operates {GWTL_SHORT},
+                is headquartered in Romania, an EU member state, and processes personal
+                data in compliance with applicable European data protection law.
               </p>
               <p className="text-slate-600 leading-relaxed mb-4">
                 We process your personal data only where at least one of the
@@ -639,8 +641,9 @@ export default function PrivacyPolicyPage() {
                   Get in Touch
                 </p>
                 <h3 className="text-xl font-bold text-brand-navy mb-2">
-                  Global Women TechLeaders
+                  {GWTL_NAME}
                 </h3>
+                <p className="text-slate-600 text-sm mb-3">{OPERATOR_TAGLINE}</p>
                 <p className="text-slate-600 text-sm mb-1">Brașov, Romania</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

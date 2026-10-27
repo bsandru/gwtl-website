@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { resolveContactSubject } from "@/lib/contact";
+import { OPERATOR_TAGLINE } from "@/lib/org";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -25,6 +26,9 @@ export default async function ContactPage({
               <p className="mt-4 text-lg text-gray-600">
                 Whether you&apos;re interested in joining our network, partnering with
                 us, or just want to say hello — we&apos;d love to hear from you.
+              </p>
+              <p className="mt-3 text-sm text-gray-500">
+                Global Women TechLeaders is {OPERATOR_TAGLINE}.
               </p>
 
               <div className="mt-12 space-y-8">

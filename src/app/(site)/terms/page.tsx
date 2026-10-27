@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { contactHref } from "@/lib/contact";
+import { GWTL_NAME, GWTL_SHORT, OPERATOR_TAGLINE } from "@/lib/org";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Read the Terms of Service for Global Women TechLeaders — the conditions governing your use of our website, platform, programs, and services.",
+    "Terms of Service for Global Women TechLeaders (operated by Global Women in Tech, a non-profit organization) — website, platform, programs, and services.",
 };
 
 const sections = [
@@ -48,11 +49,10 @@ export default function TermsOfServicePage() {
           </div>
           <p className="mt-6 text-lg leading-relaxed text-slate-600">
             This Terms of Service Agreement (&ldquo;Agreement&rdquo;) is entered into
-            between Global Women TechLeaders (&ldquo;GWTL&rdquo;, &ldquo;we&rdquo;,
-            &ldquo;us&rdquo;, or &ldquo;our&rdquo;), a non-profit organization
-            incorporated under the laws of Romania, and you, the user
-            (&ldquo;User&rdquo;, &ldquo;you&rdquo;, or &ldquo;your&rdquo;) who
-            intends to use the services offered by GWTL.
+            between {GWTL_NAME} (&ldquo;{GWTL_SHORT}&rdquo;, &ldquo;we&rdquo;,
+            &ldquo;us&rdquo;, or &ldquo;our&rdquo;), {OPERATOR_TAGLINE}, and you,
+            the user (&ldquo;User&rdquo;, &ldquo;you&rdquo;, or &ldquo;your&rdquo;)
+            who intends to use the services offered by {GWTL_SHORT}.
           </p>
 
           {/* Callout banner */}
@@ -620,8 +620,9 @@ export default function TermsOfServicePage() {
                   Get in Touch
                 </p>
                 <h3 className="text-xl font-bold text-brand-navy mb-2">
-                  Global Women TechLeaders
+                  {GWTL_NAME}
                 </h3>
+                <p className="text-slate-600 text-sm mb-3">{OPERATOR_TAGLINE}</p>
                 <p className="text-slate-600 text-sm mb-1">Brașov, Romania</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

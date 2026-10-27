@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Playfair_Display, DM_Sans, Mulish } from "next/font/google";
 import "./globals.css";
+import { GWIT_NAME, GWTL_NAME, PRIMARY_SITE_URL } from "@/lib/org";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ const brandSpace = Mulish({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://globalwomentechleaders.com"),
+  metadataBase: new URL(PRIMARY_SITE_URL),
   title: {
     default: "Global Women TechLeaders — From Pipeline to Power",
     template: "%s | Global Women TechLeaders",
@@ -48,12 +49,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Global Women TechLeaders" }],
   creator: "Global Women TechLeaders",
   alternates: {
-    canonical: "https://globalwomentechleaders.com",
+    canonical: PRIMARY_SITE_URL,
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://globalwomentechleaders.com",
+    url: PRIMARY_SITE_URL,
     siteName: "Global Women TechLeaders",
     title: "Global Women TechLeaders — From Pipeline to Power",
     description:
@@ -109,12 +110,19 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Global Women TechLeaders",
-              url: "https://globalwomentechleaders.com",
-              logo: "https://globalwomentechleaders.com/images/logo.png",
+              name: GWTL_NAME,
+              url: PRIMARY_SITE_URL,
+              logo: `${PRIMARY_SITE_URL}/images/logo.png`,
               description:
                 "GWTL accelerates women into technology leadership through human sponsorship, access to decision-makers, capital connections, and accountable outcomes. Human-led. AI-amplified. Global.",
+              parentOrganization: {
+                "@type": "Organization",
+                name: GWIT_NAME,
+                url: PRIMARY_SITE_URL,
+              },
               sameAs: [
+                "https://globalwomentechleaders.com",
+                "https://globalwomenintech.com",
                 "https://x.com/gwtl",
                 "https://www.linkedin.com/company/global-women-techleaders",
               ],
