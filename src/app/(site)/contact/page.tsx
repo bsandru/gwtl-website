@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Facebook } from "@/components/icons/brands";
 import { ContactForm } from "@/components/ContactForm";
 import { resolveContactSubject } from "@/lib/contact";
 import { OPERATOR_TAGLINE } from "@/lib/org";

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { SiteLink } from "@/components/SiteLink";
 import Image from "next/image";
-import { Linkedin, Twitter, Instagram, ArrowUpRight, Heart, Facebook } from "lucide-react";
+import { ArrowUpRight, Heart } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Facebook } from "@/components/icons/brands";
 import { SubscribeForm } from "@/components/SubscribeForm";
 
 const footerLinks = {

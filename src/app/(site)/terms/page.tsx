@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { contactHref } from "@/lib/contact";
-import { GWTL_NAME, GWTL_SHORT, OPERATOR_TAGLINE } from "@/lib/org";
+import {
+  GWIT_LEGAL_FORM,
+  GWIT_NAME,
+  GWTL_NAME,
+  GWTL_SHORT,
+  OPERATOR_TAGLINE,
+} from "@/lib/org";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -49,10 +55,11 @@ export default function TermsOfServicePage() {
           </div>
           <p className="mt-6 text-lg leading-relaxed text-slate-600">
             This Terms of Service Agreement (&ldquo;Agreement&rdquo;) is entered into
-            between {GWTL_NAME} (&ldquo;{GWTL_SHORT}&rdquo;, &ldquo;we&rdquo;,
-            &ldquo;us&rdquo;, or &ldquo;our&rdquo;), {OPERATOR_TAGLINE}, and you,
-            the user (&ldquo;User&rdquo;, &ldquo;you&rdquo;, or &ldquo;your&rdquo;)
-            who intends to use the services offered by {GWTL_SHORT}.
+            between {GWIT_NAME}, {GWIT_LEGAL_FORM}, operating under the name{" "}
+            {GWTL_NAME} (&ldquo;{GWTL_SHORT}&rdquo;, &ldquo;we&rdquo;,
+            &ldquo;us&rdquo;, or &ldquo;our&rdquo;), and you, the user
+            (&ldquo;User&rdquo;, &ldquo;you&rdquo;, or &ldquo;your&rdquo;) who
+            intends to use the services offered by {GWTL_SHORT}.
           </p>
 
           {/* Callout banner */}
@@ -340,7 +347,7 @@ export default function TermsOfServicePage() {
                     and to the Service, including any underlying software, technology,
                     brand assets, program frameworks, curriculum materials, and
                     content (excluding User Content). The GWTL name, logo, and all
-                    related marks are trademarks of Global Women TechLeaders.
+                    related marks are trademarks of {GWIT_NAME}.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-100 bg-slate-50/60 p-5">
@@ -357,9 +364,9 @@ export default function TermsOfServicePage() {
                   <h3 className="font-semibold text-slate-800 mb-2">Trademarks</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     All trademarks, service marks, logos, trade names, and
-                    proprietary designations belonging to GWTL are trademarks of
-                    Global Women TechLeaders. You may not use them without prior
-                    written consent.
+                    proprietary designations belonging to GWTL are trademarks of{" "}
+                    {GWIT_NAME}. You may not use them without prior written
+                    consent.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-100 bg-slate-50/60 p-5">
@@ -580,7 +587,7 @@ export default function TermsOfServicePage() {
                   },
                   {
                     title: "Entire Agreement",
-                    body: "These Terms, together with the Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and Global Women TechLeaders regarding your use of the Services and supersede all prior agreements and understandings.",
+                    body: "These Terms, together with the Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and GWTL regarding your use of the Services and supersede all prior agreements and understandings.",
                   },
                   {
                     title: "Assignment",

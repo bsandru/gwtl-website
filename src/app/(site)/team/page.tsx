@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Users, ArrowRight, Crown, ExternalLink, ShieldCheck, Cpu, Network } from "lucide-react";
+import { Users, ArrowRight, Crown, ExternalLink, ShieldCheck, Cpu, Network } from "lucide-react";
+import { Linkedin } from "@/components/icons/brands";
 import { getAllTeamMembers } from "@/lib/content";
 import AgenticArchitecturePage from "../../../components/sections/AgenticArhitecture";
 

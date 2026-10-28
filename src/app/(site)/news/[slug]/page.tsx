@@ -4,7 +4,8 @@ import Link from "next/link";
 import { contactHref } from "@/lib/contact";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter, Facebook, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, ArrowRight } from "lucide-react";
+import { Linkedin, Twitter, Facebook } from "@/components/icons/brands";
 import { getAllNews, getNewsItem } from "@/lib/content";
 
 interface Props {

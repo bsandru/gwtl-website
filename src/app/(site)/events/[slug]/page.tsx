@@ -13,11 +13,9 @@ import {
   Users,
   Clock,
   Sparkles,
-  Linkedin,
-  Twitter,
-  Facebook,
   Share2,
 } from "lucide-react";
+import { Linkedin, Twitter, Facebook } from "@/components/icons/brands";
 import { getAllEvents, getEventItem, getUpcomingEvents } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 

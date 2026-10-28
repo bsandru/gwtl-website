@@ -15,9 +15,9 @@ import {
   CalendarCheck,
   Target,
   Globe,
-  Linkedin,
   ExternalLink,
 } from "lucide-react";
+import { Linkedin } from "@/components/icons/brands";
 import { getAllStrategicCouncilMembers } from "@/lib/content";
 
 export const metadata: Metadata = {

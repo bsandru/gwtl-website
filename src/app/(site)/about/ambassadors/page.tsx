@@ -15,9 +15,9 @@ import {
   FileText,
   BarChart3,
   BadgeCheck,
-  Linkedin,
   ExternalLink,
 } from "lucide-react";
+import { Linkedin } from "@/components/icons/brands";
 import { getAllAmbassadors } from "@/lib/content";
 
 export const metadata: Metadata = {

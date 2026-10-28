@@ -5,6 +5,15 @@ import path from "path";
 import matter from "gray-matter";
 import { revalidatePath } from "next/cache";
 import { verify } from "hcaptcha";
+import { auth } from "@/auth";
+import { isAdminEmail } from "@/lib/admin";
+
+async function requireAdmin() {
+  const session = await auth();
+  if (!isAdminEmail(session?.user?.email)) {
+    throw new Error("Unauthorized");
+  }
+}
 
 // ============================================
 // Directory Helpers
@@ -127,6 +136,7 @@ interface EventData {
 }
 
 export async function getEvent(slug: string) {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "events");
   ensureDir(dir);
   const filePath = path.join(dir, `${slug}.md`);
@@ -155,6 +165,7 @@ export async function getEvent(slug: string) {
 }
 
 export async function saveEvent(formData: EventData, existingSlug?: string) {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "events");
   ensureDir(dir);
 
@@ -197,6 +208,7 @@ export async function saveEvent(formData: EventData, existingSlug?: string) {
 }
 
 export async function deleteEvent(slug: string): Promise<void> {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "events");
   const filePath = path.join(dir, `${slug}.md`);
 
@@ -223,6 +235,7 @@ interface NewsData {
 }
 
 export async function getNews(slug: string) {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "news");
   ensureDir(dir);
   const filePath = path.join(dir, `${slug}.md`);
@@ -247,6 +260,7 @@ export async function getNews(slug: string) {
 }
 
 export async function saveNews(formData: NewsData, existingSlug?: string) {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "news");
   ensureDir(dir);
 
@@ -281,6 +295,7 @@ export async function saveNews(formData: NewsData, existingSlug?: string) {
 }
 
 export async function deleteNews(slug: string): Promise<void> {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "news");
   const filePath = path.join(dir, `${slug}.md`);
 
@@ -311,6 +326,7 @@ interface TeamMemberData {
 }
 
 export async function getTeamMemberAction(slug: string) {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "team");
   ensureDir(dir);
   const filePath = path.join(dir, `${slug}.md`);
@@ -342,6 +358,7 @@ export async function saveTeamMember(
   formData: TeamMemberData,
   existingSlug?: string
 ) {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "team");
   ensureDir(dir);
 
@@ -381,6 +398,7 @@ export async function saveTeamMember(
 }
 
 export async function deleteTeamMember(slug: string): Promise<void> {
+  await requireAdmin();
   const dir = path.join(contentDirectory, "team");
   const filePath = path.join(dir, `${slug}.md`);
 
@@ -406,6 +424,7 @@ function sanitizeFilename(name: string): string {
 }
 
 export async function uploadImage(formData: FormData) {
+  await requireAdmin();
   ensureDir(uploadDirectory);
 
   const file = formData.get("file") as File | null;

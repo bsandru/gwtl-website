@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { contactHref } from "@/lib/contact";
-import { GWTL_NAME, GWTL_SHORT, GWIT_NAME, OPERATOR_TAGLINE } from "@/lib/org";
+import {
+  GWIT_LEGAL_FORM,
+  GWIT_NAME,
+  GWTL_NAME,
+  GWTL_SHORT,
+  OPERATOR_TAGLINE,
+} from "@/lib/org";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -47,11 +53,13 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <p className="mt-6 text-lg leading-relaxed text-slate-600">
+            {GWIT_NAME}, {GWIT_LEGAL_FORM} operating under the name{" "}
             {GWTL_NAME} ({GWTL_SHORT}, &ldquo;us&rdquo;, &ldquo;we&rdquo;, or
-            &ldquo;our&rdquo;), {OPERATOR_TAGLINE}, is committed to protecting your
-            personal privacy. This Privacy Policy explains how we collect, use,
+            &ldquo;our&rdquo;), is the data controller responsible for your personal
+            data and is committed to protecting your personal privacy. This Privacy
+            Policy explains how we collect, use,
             maintain, and disclose your information when you interact with our
-            website at {" "}
+            website at{" "}
             <a
               href="https://globalwomentechleaders.com"
               className="text-teal-700 hover:underline"

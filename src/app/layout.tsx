@@ -121,8 +121,6 @@ export default function RootLayout({
                 url: PRIMARY_SITE_URL,
               },
               sameAs: [
-                "https://globalwomentechleaders.com",
-                "https://globalwomenintech.com",
                 "https://x.com/gwtl",
                 "https://www.linkedin.com/company/global-women-techleaders",
               ],
